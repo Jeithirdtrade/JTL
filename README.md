@@ -186,9 +186,9 @@ button:active {
             يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ كُتِبَ عَلَيۡكُمُ ٱلصِّيَامُ كَمَا كُتِبَ عَلَى ٱلَّذِينَ مِن قَبۡلِكُمۡ لَعَلَّكُمۡ تَتَّقُونَ
         </h2>
         <p>🤍 Heri ya mwezi mtukufu wa Ramadhani 🤍</p>
-        <!-- Badala ya button ya kufunga, tumekuwa link ya moja kwa moja ya fomu, lakini bado tunahitaji njia ya kuifunga overlay. Tumebadilisha: sasa kuna fungo ndogo ya "Funga" au tunaweka kiungo cha fomu na kitu kingine. Lakini maagizo yanasema "JAZA FOMU KUPOKEA SWADAQ" ikiwa ni kiungo cha form. Na pia mtumiaji anaweza kutaka kuifunga overlay. Nitaweka link ya fomu kubwa na chini yake "Funga" ndogo ili asije akakwama. -->
+        <!-- Badala ya button ya kufunga, tumekuwa link ya moja kwa moja ya fomu, lakini bado tunahitaji njia ya kuifunga overlay. Tumebadilisha: sasa kuna fungo ndogo ya "Funga" au tunaweka kiungo cha fomu na kitu kingine. Lakini maagizo yanasema "BONYEZA HAPA ILI KUONA ZAIDI" ikiwa ni kiungo cha form. Na pia mtumiaji anaweza kutaka kuifunga overlay. Nitaweka link ya fomu kubwa na chini yake "Funga" ndogo ili asije akakwama. -->
         <a href="https://forms.gle/BHq4fi2e4PocRNqk6" target="_blank" class="fomu-link" onclick="event.stopPropagation();">
-            📋 JAZA FOMU KUPOKEA SWADAQ
+            📋 BONYEZA HAPA ILI KUONA ZAIDI
         </a>
         <div style="margin-top: 18px;">
             <button class="close-surprise" onclick="closeSurprise()" style="padding:8px 25px; font-size:1.0rem; background:#b8860b; box-shadow:0 4px 0 #6b4b0e; min-width:auto;">✖ Funga</button>
