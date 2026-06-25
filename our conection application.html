@@ -1,48 +1,70 @@
+<!DOCTYPE html>
 <html lang="sw">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Jumma Kareem · Ijumaa Tukufu · Fataki</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
     <style>
-        /* RESET na msingi */
-        html,
-        body {
+        /* ---------- RESET ---------- */
+        * {
             margin: 0;
             padding: 0;
-            height: 100%;
-            overflow: hidden;
-            background: #0b2a1f;
-            font-family: 'Segoe UI', Tahoma, sans-serif;
+            box-sizing: border-box;
         }
 
-        /* CANVAS ya fataki */
+        html,
+        body {
+            min-height: 100%;
+            background: #0b2a1f;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            /* SCROLL INAWEZEKANA */
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* ---------- CANVAS – FATAKI (background fixed) ---------- */
         #fireworksCanvas {
             position: fixed;
             inset: 0;
             width: 100%;
             height: 100%;
             display: block;
-            z-index: 1000;
+            z-index: 0;
             pointer-events: none;
         }
 
-        /* KARATASI KUU – SIKU YA IJUMAA */
+        /* ---------- WRAPPER – yote yanaweza kusogea ---------- */
+        .scroll-wrapper {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 2vh 1rem 5vh;
+            /* nafasi ya kusogea chini */
+        }
+
+        /* ---------- KARATASI KUU ---------- */
         .box {
             position: relative;
-            z-index: 500;
-            background: rgba(0, 0, 0, 0.75);
+            z-index: 5;
+            background: rgba(0, 0, 0, 0.78);
             color: #ffe9a8;
             max-width: 480px;
-            width: 92%;
-            margin: 3vh auto 0;
+            width: 100%;
+            margin: 1vh auto 2vh;
             padding: 22px 18px 28px;
             border-radius: 30px;
             text-align: center;
             border: 2px solid #d4af37;
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.9);
             backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
         }
 
         /* AYA ZA QUR-ANI */
@@ -118,13 +140,14 @@
             transition: 0.05s linear;
             width: auto;
             min-width: 200px;
+            -webkit-tap-highlight-color: transparent;
         }
         button:active {
             transform: translateY(6px);
             box-shadow: 0 2px 0 #7a5f1a;
         }
 
-        /* OVERLAY – SURPRISE */
+        /* ---------- OVERLAY – SURPRISE ---------- */
         .surprise-overlay {
             position: fixed;
             inset: 0;
@@ -138,6 +161,8 @@
             transition: 0.3s ease;
             pointer-events: auto;
             backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+            padding: 1rem;
         }
         .surprise-overlay.show {
             visibility: visible;
@@ -150,10 +175,13 @@
             border-radius: 40px;
             padding: 28px 22px 32px;
             max-width: 400px;
-            width: 88%;
+            width: 100%;
             text-align: center;
             color: #fff3c4;
             box-shadow: 0 0 60px rgba(212, 175, 55, 0.5);
+            max-height: 90vh;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         .surprise-card h2 {
@@ -190,6 +218,7 @@
             width: auto;
             min-width: 180px;
             cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
         }
         .fomu-link:active {
             transform: translateY(5px);
@@ -216,10 +245,28 @@
             opacity: 0.8;
         }
 
+        /* ---------- VIPINDE VYA ZIADA – kusaidia kusogea ---------- */
+        .extra-spacer {
+            height: 2rem;
+            width: 100%;
+        }
+
+        .footer-note {
+            color: rgba(255, 215, 120, 0.35);
+            font-size: 0.75rem;
+            text-align: center;
+            margin-top: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
         @media (max-width: 480px) {
+            .scroll-wrapper {
+                padding: 1rem 0.75rem 3rem;
+            }
             .box {
                 padding: 18px 14px 22px;
-                margin-top: 2vh;
+                margin: 0.5vh auto 1.5vh;
             }
             .quran-ayah {
                 font-size: 1.0rem;
@@ -234,6 +281,8 @@
             }
             .surprise-card {
                 padding: 20px 16px 24px;
+                max-width: 100%;
+                margin: 0 0.5rem;
             }
             .surprise-card h2 {
                 font-size: 1.1rem;
@@ -243,71 +292,135 @@
                 padding: 12px 18px;
                 min-width: 150px;
             }
+            .surprise-overlay {
+                padding: 0.5rem;
+            }
+        }
+
+        @media (min-width: 481px) and (max-width: 768px) {
+            .box {
+                max-width: 440px;
+                padding: 20px 16px 26px;
+            }
+            .scroll-wrapper {
+                padding: 2rem 1.5rem 4rem;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .box {
+                max-width: 460px;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .box {
+                max-width: 500px;
+                padding: 28px 24px 32px;
+            }
+            .scroll-wrapper {
+                padding: 3vh 2rem 6vh;
+            }
+        }
+
+        /* ---------- SAHIHISHA KWA VIFAA VYA GUSHA ---------- */
+        @media (hover: none) {
+            button:active,
+            .fomu-link:active {
+                transform: translateY(5px);
+            }
+            .close-surprise:active {
+                transform: translateY(4px);
+            }
+        }
+
+        /* Hakikisha overlay inafunika vizuri */
+        .surprise-overlay.show {
+            pointer-events: auto;
+        }
+
+        /* Fomu-link ndani ya overlay isifunge overlay */
+        .fomu-link {
+            position: relative;
+            z-index: 10001;
         }
     </style>
 </head>
 <body>
 
-    <!-- CANVAS ya fataki -->
+    <!-- CANVAS – fataki zinaendelea nyuma -->
     <canvas id="fireworksCanvas"></canvas>
 
-    <!-- KARATASI KUU – IJUMAA KAREEM -->
-    <div class="box">
+    <!-- WRAPPER – yote inaweza kusogea juu/chini -->
+    <div class="scroll-wrapper">
 
-        <!-- Surah Al-Jumu'ah 62:9 -->
-        <div class="quran-ayah">
-            ﴿ يَا أَيُّهَا الَّذِينَ آمَنُوا إِذَا نُودِيَ لِلصَّلَاةِ مِن يَوْمِ الْجُمُعَةِ فَاسْعَوْا إِلَىٰ ذِكْرِ اللَّهِ وَذَرُوا الْبَيْعَ ﴾
-            <small>— Surah Al-Jumu'ah (62:9) —</small>
+        <!-- KARATASI KUU -->
+        <div class="box">
+
+            <!-- Surah Al-Jumu'ah 62:9 -->
+            <div class="quran-ayah">
+                ﴿ يَا أَيُّهَا الَّذِينَ آمَنُوا إِذَا نُودِيَ لِلصَّلَاةِ مِن يَوْمِ الْجُمُعَةِ فَاسْعَوْا إِلَىٰ ذِكْرِ اللَّهِ وَذَرُوا الْبَيْعَ ﴾
+                <small>— Surah Al-Jumu'ah (62:9) —</small>
+            </div>
+            <div class="swahili-trans">
+                <i class="fas fa-quote-left" style="opacity:0.6;"></i>
+                Enyi mlio amini! Mnapoitwa kwa swala siku ya Ijumaa, nendeni kwa haraka kwenye dhikri ya Mwenyezi Mungu, na acheni biashara.
+                <i class="fas fa-quote-right" style="opacity:0.6;"></i>
+            </div>
+
+            <hr class="divider" />
+
+            <!-- Surah Al-Jumu'ah 62:10 -->
+            <div class="quran-ayah">
+                ﴿ فَإِذَا قُضِيَتِ الصَّلَاةُ فَانتَشِرُوا فِي الْأَرْضِ وَابْتَغُوا مِن فَضْلِ اللَّهِ وَاذْكُرُوا اللَّهَ كَثِيرًا لَّعَلَّكُمْ تُفْلِحُونَ ﴾
+                <small>— Surah Al-Jumu'ah (62:10) —</small>
+            </div>
+            <div class="swahili-trans">
+                <i class="fas fa-quote-left" style="opacity:0.6;"></i>
+                Na swala ikisha kamilika, enendeni katika ardhi, na kutafuta fadhili za Mwenyezi Mungu, na mtajeni Mwenyezi Mungu sana ili mpate kufanikiwa.
+                <i class="fas fa-quote-right" style="opacity:0.6;"></i>
+            </div>
+
+            <hr class="divider" />
+
+            <h2><i class="fas fa-mosque"></i> JUMAA KAREEM <i class="fas fa-mosque"></i></h2>
+            <div class="sub">✨ Ijumaa Tukufu · Baraka tele ✨</div>
+
+            <p>
+                <b>HAJI JECHA KHAMIS</b> akishirikiana na <b>JTL Zanzibar</b><br />
+                anakutakia Ijumaa Kareem iliyojaa baraka, neema na mafanikio.
+            </p>
+
+            <button onclick="openSurprise()">✨ FUNGUA BARAKA ✨</button>
         </div>
-        <div class="swahili-trans">
-            <i class="fas fa-quote-left" style="opacity:0.6;"></i>
-            Enyi mlio amini! Mnapoitwa kwa swala siku ya Ijumaa, nendeni kwa haraka kwenye dhikri ya Mwenyezi Mungu, na acheni biashara.
-            <i class="fas fa-quote-right" style="opacity:0.6;"></i>
+
+        <!-- Nafasi ya ziada ili kuweza kusogea chini zaidi -->
+        <div class="extra-spacer"></div>
+
+        <!-- Kitu kidogo cha chini – kwa ajili ya scrolling -->
+        <div class="footer-note">
+            <i class="fas fa-chevron-down"></i> Sogea chini · Ijumaa Kareem <i class="fas fa-chevron-down"></i>
         </div>
 
-        <hr class="divider">
-
-        <!-- Surah Al-Jumu'ah 62:10 -->
-        <div class="quran-ayah">
-            ﴿ فَإِذَا قُضِيَتِ الصَّلَاةُ فَانتَشِرُوا فِي الْأَرْضِ وَابْتَغُوا مِن فَضْلِ اللَّهِ وَاذْكُرُوا اللَّهَ كَثِيرًا لَّعَلَّكُمْ تُفْلِحُونَ ﴾
-            <small>— Surah Al-Jumu'ah (62:10) —</small>
-        </div>
-        <div class="swahili-trans">
-            <i class="fas fa-quote-left" style="opacity:0.6;"></i>
-            Na swala ikisha kamilika, enendeni katika ardhi, na kutafuta fadhili za Mwenyezi Mungu, na mtajeni Mwenyezi Mungu sana ili mpate kufanikiwa.
-            <i class="fas fa-quote-right" style="opacity:0.6;"></i>
-        </div>
-
-        <hr class="divider">
-
-        <h2><i class="fas fa-mosque"></i> JUMAA KAREEM <i class="fas fa-mosque"></i></h2>
-        <div class="sub">✨ Ijumaa Tukufu · Baraka tele ✨</div>
-
-        <p>
-            <b>HAJI JECHA KHAMIS</b> akishirikiana na <b>JTL Zanzibar</b><br>
-            anakutakia Ijumaa Kareem iliyojaa baraka, neema na mafanikio.
-        </p>
-
-        <button onclick="openSurprise()">✨ FUNGUA BARAKA ✨</button>
+        <div style="height:4vh;"></div>
     </div>
 
-    <!-- OVERLAY ya baraka + kiungo cha fomu -->
+    <!-- OVERLAY – baraka + kiungo cha fomu -->
     <div id="overlay" class="surprise-overlay">
         <div class="surprise-card">
             <h2>
                 <i class="fas fa-star" style="color:gold;"></i>
                 ────⊹⊱✫⊰⊹────
-                <br>
+                <br />
                 جُمُعَةٌ مُبَارَكَةٌ
-                <br>
+                <br />
                 ────⊹⊱✫⊰⊹────
                 <i class="fas fa-star" style="color:gold;"></i>
             </h2>
 
-            <!-- Ayah fupi katika kadi -->
             <div class="quran-ayah-sm">
                 ﴿ وَاذْكُرُوا اللَّهَ كَثِيرًا لَّعَلَّكُمْ تُفْلِحُونَ ﴾
-                <br>
+                <br />
                 <small style="color:#c9b27c; font-family:'Segoe UI',sans-serif;">— Surah Al-Jumu'ah (62:10) —</small>
             </div>
 
@@ -327,7 +440,7 @@
 
     <script>
         /* ============================================================
-           FIREWORKS – inayoendelea
+           FIREWORKS – inayoendelea nyuma, haizuii kusogea
            ============================================================ */
         const canvas = document.getElementById("fireworksCanvas");
         const ctx = canvas.getContext("2d");
@@ -391,12 +504,12 @@
 
         // ---------- Explosion ----------
         function explode(x, y, color) {
-            let count = 60 + Math.floor(random(20, 50));
+            const count = 60 + Math.floor(random(20, 50));
             for (let i = 0; i < count; i++) {
                 particles.push(new Particle(x, y, color));
             }
             for (let i = 0; i < 18; i++) {
-                let extra = `hsl(${random(0, 360)}, 90%, 72%)`;
+                const extra = `hsl(${random(0, 360)}, 90%, 72%)`;
                 particles.push(new Particle(x, y, extra));
             }
         }
@@ -441,10 +554,32 @@
             particles = [];
         }
 
-        // hakikisha kiungo hakijafungwa na overlay
+        // Hakikisha kiungo hakijafungwa na overlay
         document.querySelector('.fomu-link').addEventListener('click', function(e) {
             e.stopPropagation();
         });
+
+        // Funga overlay kwa kugusa nje ya kadi (kwenye simu)
+        document.getElementById("overlay").addEventListener("click", function(e) {
+            if (e.target === this) {
+                closeSurprise();
+            }
+        });
+
+        // Kwa ufunguo wa Escape
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "Escape") {
+                closeSurprise();
+            }
+        });
+
+        // Anzisha fataki mara baada ya mzigo (ili kuwa na harakati)
+        window.addEventListener("load", function() {
+            running = true;
+            animate();
+        });
+
+        // Ikiwa mtumiaji anasogea, fataki zinaendelea – hakuna haja ya kuzima
     </script>
 
 </body>
