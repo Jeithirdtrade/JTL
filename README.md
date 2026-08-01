@@ -18,17 +18,15 @@
 
     <style>
         /* ============================================================
-               MASTER CSS — Nane Nane Day Landing Page
-               Premium Poster-Style Design — BLUE DOMINANT + COLORFUL TEXT
-               ============================================================ */
+           MASTER CSS — Nane Nane Day Landing Page
+           Premium Poster-Style Design — BLUE DOMINANT + COLORFUL TEXT
+           ============================================================ */
 
         /* ============================================================
-               1.  CSS VARIABLES (Root)
-               ============================================================ */
+           1.  CSS VARIABLES (Root)
+           ============================================================ */
         :root {
-            /* ----- Primary Colors (Blue Dominant) ----- */
             --color-primary: #0d2b4e;
-            /* deep navy blue */
             --color-primary-dark: #071b33;
             --color-primary-light: #1a4d7a;
             --color-primary-mid: #143b5e;
@@ -41,7 +39,6 @@
             --color-blue-pale: #d6eaf8;
             --color-blue-glass: rgba(13, 43, 78, 0.85);
 
-            /* ----- Accent Colors ----- */
             --color-gold: #d4a02b;
             --color-gold-dark: #b8860b;
             --color-gold-light: #f0d078;
@@ -76,17 +73,14 @@
             --color-text-light: #5a5a5a;
             --color-shadow: rgba(13, 43, 78, 0.15);
 
-            /* ----- Typography ----- */
             --font-heading: 'Playfair Display', serif;
             --font-body: 'Poppins', sans-serif;
 
-            /* ----- Spacing ----- */
             --section-padding: 5rem 0;
             --container-width: 1200px;
             --card-radius: 1.25rem;
             --transition-speed: 0.4s;
 
-            /* ----- Gradients (Blue-Dominant) ----- */
             --gradient-hero: linear-gradient(145deg, rgba(13, 43, 78, 0.94) 0%, rgba(7, 27, 51, 0.96) 100%);
             --gradient-blue: linear-gradient(135deg, var(--color-blue-mid), var(--color-blue-bright));
             --gradient-blue-dark: linear-gradient(135deg, var(--color-primary), var(--color-blue-deep));
@@ -96,7 +90,6 @@
             --gradient-purple: linear-gradient(135deg, var(--color-purple), var(--color-purple-bright));
             --gradient-yellow: linear-gradient(135deg, var(--color-yellow), var(--color-yellow-bright));
 
-            /* ----- Shadows ----- */
             --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.06);
             --shadow-md: 0 12px 40px rgba(0, 0, 0, 0.08);
             --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.12);
@@ -106,8 +99,8 @@
         }
 
         /* ============================================================
-               2.  GLOBAL RESET & BASE
-               ============================================================ */
+           2.  GLOBAL RESET & BASE
+           ============================================================ */
         *,
         *::before,
         *::after {
@@ -146,8 +139,8 @@
         }
 
         /* ============================================================
-               3.  TYPOGRAPHY
-               ============================================================ */
+           3.  TYPOGRAPHY
+           ============================================================ */
         .container {
             max-width: var(--container-width);
             margin: 0 auto;
@@ -182,7 +175,7 @@
 
         .section-title {
             font-family: var(--font-heading);
-            font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+            font-size: clamp(2rem, 4.5vw, 3.4rem);
             font-weight: 900;
             color: var(--color-blue-deep);
             margin-bottom: 0.75rem;
@@ -244,8 +237,8 @@
         }
 
         /* ============================================================
-               4.  BUTTONS
-               ============================================================ */
+           4.  BUTTONS
+           ============================================================ */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -337,8 +330,8 @@
         }
 
         /* ============================================================
-               5.  PRELOADER
-               ============================================================ */
+           5.  PRELOADER
+           ============================================================ */
         #preloader {
             position: fixed;
             inset: 0;
@@ -413,8 +406,8 @@
         }
 
         /* ============================================================
-               6.  HEADER / NAVIGATION
-               ============================================================ */
+           6.  HEADER / NAVIGATION
+           ============================================================ */
         .navbar {
             position: fixed;
             top: 0;
@@ -453,6 +446,7 @@
             font-size: 1.5rem;
             font-weight: 900;
             letter-spacing: 0.02em;
+            flex-shrink: 0;
         }
 
         .nav-logo i {
@@ -522,8 +516,8 @@
         }
 
         /* ============================================================
-               7.  HERO SECTION
-               ============================================================ */
+           7.  HERO SECTION
+           ============================================================ */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -533,6 +527,7 @@
             overflow: hidden;
             background: var(--color-blue-deep);
             padding: 7rem 1.5rem 4rem;
+            width: 100%;
         }
 
         #particleCanvas {
@@ -542,6 +537,7 @@
             height: 100%;
             z-index: 1;
             pointer-events: none;
+            display: block;
         }
 
         .hero-overlay {
@@ -552,7 +548,6 @@
             pointer-events: none;
         }
 
-        /* Decorative abstract shapes */
         .hero-shape {
             position: absolute;
             border-radius: 50%;
@@ -622,12 +617,13 @@
 
         .hero-title {
             font-family: var(--font-heading);
-            font-size: clamp(3rem, 10vw, 5.6rem);
+            font-size: clamp(2.6rem, 10vw, 5.6rem);
             font-weight: 900;
             line-height: 1.05;
             margin-bottom: 1.2rem;
             animation: fadeInUp 1s ease;
             letter-spacing: -0.02em;
+            word-break: break-word;
         }
 
         .hero-title .highlight-gold {
@@ -667,13 +663,14 @@
         }
 
         .hero-subtitle {
-            font-size: clamp(1rem, 1.4vw, 1.3rem);
+            font-size: clamp(0.95rem, 1.4vw, 1.3rem);
             font-weight: 300;
             max-width: 720px;
             margin: 1.2rem auto 2.8rem;
             color: rgba(255, 255, 255, 0.8);
             line-height: 1.9;
             animation: fadeInUp 1.1s ease;
+            padding: 0 0.5rem;
         }
 
         .hero-actions {
@@ -684,7 +681,6 @@
             animation: fadeInUp 1.2s ease;
         }
 
-        /* Floating decorative icons */
         .float-icon {
             position: absolute;
             font-size: 2.4rem;
@@ -733,7 +729,6 @@
             }
         }
 
-        /* Scroll indicator */
         .scroll-indicator {
             position: absolute;
             bottom: 2rem;
@@ -766,8 +761,8 @@
         }
 
         /* ============================================================
-               8.  THEME / VISION SECTION
-               ============================================================ */
+           8.  THEME / VISION SECTION
+           ============================================================ */
         .theme-section {
             padding: var(--section-padding);
             background: var(--color-white);
@@ -837,7 +832,7 @@
 
         .theme-quote {
             font-family: var(--font-heading);
-            font-size: clamp(1.5rem, 2.8vw, 2.4rem);
+            font-size: clamp(1.3rem, 2.8vw, 2.4rem);
             font-weight: 700;
             font-style: italic;
             color: var(--color-blue-deep);
@@ -895,7 +890,6 @@
             font-size: 1.2rem;
         }
 
-        /* Stats Grid */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -951,7 +945,7 @@
 
         .stat-number {
             font-family: var(--font-heading);
-            font-size: clamp(2.8rem, 5.5vw, 4rem);
+            font-size: clamp(2.6rem, 5.5vw, 4rem);
             font-weight: 900;
             line-height: 1.1;
         }
@@ -991,8 +985,8 @@
         }
 
         /* ============================================================
-               9.  SPONSORS SECTION
-               ============================================================ */
+           9.  SPONSORS SECTION
+           ============================================================ */
         .sponsors-section {
             padding: var(--section-padding);
             background: var(--color-blue-pale);
@@ -1013,7 +1007,7 @@
 
         .sponsors-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2.5rem;
             max-width: 940px;
             margin: 0 auto 2.5rem;
@@ -1024,7 +1018,7 @@
         .sponsor-card {
             background: var(--color-white);
             border-radius: var(--card-radius);
-            padding: 2.8rem 2.2rem;
+            padding: 2.8rem 2rem;
             text-align: center;
             transition: all var(--transition-speed) cubic-bezier(0.25, 0.46, 0.45, 0.94);
             border: 1px solid rgba(13, 43, 78, 0.06);
@@ -1248,8 +1242,8 @@
         }
 
         /* ============================================================
-               10. APPRECIATION / MESSAGE SECTION
-               ============================================================ */
+           10. APPRECIATION / MESSAGE SECTION
+           ============================================================ */
         .appreciation-section {
             padding: var(--section-padding);
             background: var(--color-white);
@@ -1315,7 +1309,7 @@
 
         .appreciation-text {
             font-family: var(--font-heading);
-            font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+            font-size: clamp(1.05rem, 1.8vw, 1.5rem);
             font-weight: 400;
             color: var(--color-text);
             line-height: 1.9;
@@ -1417,8 +1411,8 @@
         }
 
         /* ============================================================
-               11. FOOTER
-               ============================================================ */
+           11. FOOTER
+           ============================================================ */
         .footer {
             background: var(--color-blue-deep);
             color: rgba(255, 255, 255, 0.8);
@@ -1482,6 +1476,7 @@
             display: flex;
             gap: 0.8rem;
             margin-top: 1.2rem;
+            flex-wrap: wrap;
         }
 
         .footer-social a {
@@ -1633,8 +1628,8 @@
         }
 
         /* ============================================================
-               12. BACK TO TOP BUTTON
-               ============================================================ */
+           12. BACK TO TOP BUTTON
+           ============================================================ */
         .back-to-top {
             position: fixed;
             bottom: 2rem;
@@ -1671,9 +1666,8 @@
         }
 
         /* ============================================================
-               13. UTILITY & ANIMATIONS
-               ============================================================ */
-        /* Scroll reveal */
+           13. UTILITY & ANIMATIONS
+           ============================================================ */
         [data-animate] {
             opacity: 0;
             transform: translateY(50px);
@@ -1725,25 +1719,9 @@
             }
         }
 
-        /* Glow pulse - blue version */
-        .glow-pulse-blue {
-            animation: glowPulseBlue 3s ease-in-out infinite;
-        }
-
-        @keyframes glowPulseBlue {
-            0%,
-            100% {
-                box-shadow: 0 0 20px rgba(46, 134, 193, 0.2);
-            }
-            50% {
-                box-shadow: 0 0 50px rgba(46, 134, 193, 0.5);
-            }
-        }
-
         /* ============================================================
-               14. RESPONSIVE MEDIA QUERIES
-               ============================================================ */
-        /* ----- Tablets & small laptops (≤ 1024px) ----- */
+           14. RESPONSIVE MEDIA QUERIES
+           ============================================================ */
         @media (max-width: 1024px) {
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
@@ -1751,7 +1729,7 @@
             }
 
             .hero-title {
-                font-size: clamp(2.6rem, 8vw, 4.2rem);
+                font-size: clamp(2.4rem, 8vw, 4.2rem);
             }
 
             .float-icon {
@@ -1761,11 +1739,13 @@
             .stats-grid {
                 gap: 1.2rem;
             }
+
+            .sponsors-grid {
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            }
         }
 
-        /* ----- Tablets (≤ 768px) ----- */
         @media (max-width: 768px) {
-            /* Navigation */
             .nav-toggle {
                 display: block;
             }
@@ -1805,7 +1785,6 @@
                 display: none;
             }
 
-            /* Stats */
             .stats-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 1rem;
@@ -1815,13 +1794,11 @@
                 grid-column: span 2;
             }
 
-            /* Sponsors */
             .sponsors-grid {
                 grid-template-columns: 1fr;
                 max-width: 500px;
             }
 
-            /* Footer */
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -1859,7 +1836,6 @@
                 text-align: center;
             }
 
-            /* Appreciation */
             .appreciation-card {
                 padding: 2rem 1.5rem;
             }
@@ -1869,7 +1845,6 @@
                 text-align: center;
             }
 
-            /* Theme card */
             .theme-card {
                 padding: 2rem 1.5rem;
             }
@@ -1878,7 +1853,6 @@
                 font-size: 1.2rem;
             }
 
-            /* Back to top */
             .back-to-top {
                 bottom: 1.2rem;
                 right: 1.2rem;
@@ -1892,46 +1866,61 @@
             .hero-shape-3 {
                 display: none;
             }
+
+            .hero-title {
+                font-size: clamp(2rem, 7vw, 3.2rem);
+            }
+
+            .hero {
+                padding: 6rem 1rem 3rem;
+                min-height: 92vh;
+            }
         }
 
-        /* ----- Mobile (≤ 480px) ----- */
         @media (max-width: 480px) {
             .container {
                 padding: 0 1rem;
             }
 
             .hero {
-                padding: 5.5rem 1rem 3rem;
-                min-height: 92vh;
+                padding: 5.5rem 1rem 2.5rem;
+                min-height: 90vh;
             }
 
             .hero-title {
-                font-size: 2.2rem;
+                font-size: 1.8rem;
             }
 
             .hero-title-sub {
-                font-size: 0.5em;
+                font-size: 0.45em;
             }
 
             .hero-subtitle {
-                font-size: 0.9rem;
+                font-size: 0.85rem;
+                margin: 0.8rem auto 2rem;
             }
 
             .hero-actions {
                 flex-direction: column;
                 align-items: center;
                 gap: 0.8rem;
+                width: 100%;
+            }
+
+            .hero-actions .btn {
+                width: 100%;
+                justify-content: center;
             }
 
             .btn {
-                padding: 0.7rem 1.6rem;
+                padding: 0.7rem 1.4rem;
                 font-size: 0.9rem;
                 width: 100%;
                 justify-content: center;
             }
 
             .section-title {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
             }
 
             .stats-grid {
@@ -1944,7 +1933,7 @@
             }
 
             .stat-number {
-                font-size: 2.6rem;
+                font-size: 2.4rem;
             }
 
             .sponsor-card {
@@ -1956,7 +1945,7 @@
             }
 
             .appreciation-text {
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
 
             .appreciation-decorations {
@@ -1975,7 +1964,7 @@
             }
 
             .theme-quote {
-                font-size: 1.05rem;
+                font-size: 1rem;
             }
 
             .footer {
@@ -2004,7 +1993,7 @@
             }
 
             .hero-badge {
-                font-size: 0.65rem;
+                font-size: 0.6rem;
                 padding: 0.25rem 1rem;
             }
 
@@ -2014,23 +2003,12 @@
             }
 
             .section-subtitle {
-                font-size: 0.9rem;
-            }
-        }
-
-        /* ----- Extra small (≤ 360px) ----- */
-        @media (max-width: 360px) {
-            .hero-title {
-                font-size: 1.8rem;
+                font-size: 0.85rem;
             }
 
-            .btn {
-                font-size: 0.8rem;
-                padding: 0.6rem 1.2rem;
-            }
-
-            .section-title {
-                font-size: 1.3rem;
+            .section-tag {
+                font-size: 0.7rem;
+                padding: 0.3rem 1rem;
             }
 
             .sponsor-tags span {
@@ -2038,8 +2016,43 @@
                 padding: 0.15rem 0.6rem;
             }
 
+            .appreciation-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .appreciation-quote-mark {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .hero-title {
+                font-size: 1.5rem;
+            }
+
+            .btn {
+                font-size: 0.8rem;
+                padding: 0.6rem 1rem;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
             .stat-number {
-                font-size: 2.2rem;
+                font-size: 2rem;
+            }
+
+            .theme-quote {
+                font-size: 0.9rem;
+            }
+
+            .appreciation-text {
+                font-size: 0.85rem;
+            }
+
+            .sponsor-name {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -2081,7 +2094,6 @@
 
         <div class="hero-overlay"></div>
 
-        <!-- Decorative shapes -->
         <div class="hero-shape hero-shape-1"></div>
         <div class="hero-shape hero-shape-2"></div>
         <div class="hero-shape hero-shape-3"></div>
@@ -2111,14 +2123,12 @@
                 </a>
             </div>
 
-            <!-- Floating decorative elements -->
             <div class="float-icon float-icon-1"><i class="fas fa-wheat-alt"></i></div>
             <div class="float-icon float-icon-2"><i class="fas fa-tractor"></i></div>
             <div class="float-icon float-icon-3"><i class="fas fa-apple-alt"></i></div>
             <div class="float-icon float-icon-4"><i class="fas fa-cloud-sun"></i></div>
         </div>
 
-        <!-- Scroll indicator -->
         <div class="scroll-indicator">
             <span>Scroll</span>
             <i class="fas fa-chevron-down"></i>
@@ -2160,7 +2170,6 @@
                 </div>
             </div>
 
-            <!-- Stats -->
             <div class="stats-grid" data-animate="fade-up">
                 <div class="stat-item">
                     <div class="stat-number color-blue" data-count="70">0</div>
@@ -2194,7 +2203,6 @@
             </div>
 
             <div class="sponsors-grid" data-animate="fade-up">
-                <!-- Sponsored By -->
                 <div class="sponsor-card sponsor-primary">
                     <div class="sponsor-badge sponsor-badge-blue">Sponsored By</div>
                     <div class="sponsor-icon">
@@ -2211,7 +2219,6 @@
                     </p>
                 </div>
 
-                <!-- In Collaboration With -->
                 <div class="sponsor-card sponsor-secondary">
                     <div class="sponsor-badge sponsor-badge-gold">In Collaboration With</div>
                     <div class="sponsor-icon">
@@ -2296,7 +2303,6 @@
     <footer id="footer" class="footer">
         <div class="container">
             <div class="footer-grid">
-                <!-- Brand -->
                 <div class="footer-brand" data-animate="fade-up">
                     <div class="footer-logo">
                         <i class="fas fa-seedling"></i>
@@ -2317,7 +2323,6 @@
                     </div>
                 </div>
 
-                <!-- Quick Links -->
                 <div class="footer-links" data-animate="fade-up">
                     <h4>Quick <span class="color-gold">Links</span></h4>
                     <ul>
@@ -2328,7 +2333,6 @@
                     </ul>
                 </div>
 
-                <!-- Contact -->
                 <div class="footer-contact" data-animate="fade-up">
                     <h4>Get in <span class="color-blue-light">Touch</span></h4>
                     <ul>
@@ -2338,7 +2342,6 @@
                     </ul>
                 </div>
 
-                <!-- Newsletter -->
                 <div class="footer-newsletter" data-animate="fade-up">
                     <h4>Stay <span class="color-gold">Connected</span></h4>
                     <p>Join our community and celebrate agriculture.</p>
@@ -2382,7 +2385,7 @@
                 window.addEventListener('load', function() {
                     setTimeout(function() {
                         preloader.classList.add('fade-out');
-                    }, 600);
+                    }, 500);
                 });
                 setTimeout(function() {
                     if (!preloader.classList.contains('fade-out')) {
@@ -2392,51 +2395,66 @@
             }
 
             // ============================================================
-            // 2. PARTICLE CANVAS
+            // 2. PARTICLE CANVAS — robust resize
             // ============================================================
             const canvas = document.getElementById('particleCanvas');
             if (canvas) {
                 let ctx = canvas.getContext('2d');
                 let particles = [];
                 let w, h;
+                let animationFrame;
 
                 function resizeCanvas() {
                     const rect = canvas.parentElement.getBoundingClientRect();
-                    w = canvas.width = rect.width;
-                    h = canvas.height = rect.height;
+                    w = canvas.width = rect.width || window.innerWidth;
+                    h = canvas.height = rect.height || window.innerHeight;
+                    return { w, h };
                 }
                 resizeCanvas();
-                window.addEventListener('resize', resizeCanvas);
 
-                function Particle() {
-                    this.x = Math.random() * w;
-                    this.y = Math.random() * h;
-                    this.size = Math.random() * 2.5 + 0.5;
-                    this.speedX = (Math.random() - 0.5) * 0.5;
-                    this.speedY = (Math.random() - 0.5) * 0.5;
-                    this.opacity = Math.random() * 0.4 + 0.1;
+                // Rebuild particles on resize with new dimensions
+                function rebuildParticles() {
+                    const dims = resizeCanvas();
+                    const count = Math.min(70, Math.floor((dims.w * dims.h) / 9000));
+                    particles = [];
+                    for (let i = 0; i < count; i++) {
+                        particles.push({
+                            x: Math.random() * dims.w,
+                            y: Math.random() * dims.h,
+                            size: Math.random() * 2.5 + 0.5,
+                            speedX: (Math.random() - 0.5) * 0.5,
+                            speedY: (Math.random() - 0.5) * 0.5,
+                            opacity: Math.random() * 0.4 + 0.1
+                        });
+                    }
                 }
+                rebuildParticles();
 
-                Particle.prototype.update = function() {
-                    this.x += this.speedX;
-                    this.y += this.speedY;
-                    if (this.x < 0 || this.x > w) this.speedX *= -1;
-                    if (this.y < 0 || this.y > h) this.speedY *= -1;
-                };
+                let resizeTimeout;
+                window.addEventListener('resize', function() {
+                    clearTimeout(resizeTimeout);
+                    resizeTimeout = setTimeout(function() {
+                        rebuildParticles();
+                    }, 200);
+                });
 
-                Particle.prototype.draw = function() {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                    ctx.fillStyle = 'rgba(46, 134, 193, ' + this.opacity + ')';
-                    ctx.fill();
-                };
+                function drawParticles() {
+                    if (!ctx) return;
+                    ctx.clearRect(0, 0, w, h);
 
-                const count = Math.min(70, Math.floor((w * h) / 9000));
-                for (let i = 0; i < count; i++) {
-                    particles.push(new Particle());
-                }
+                    particles.forEach(function(p) {
+                        p.x += p.speedX;
+                        p.y += p.speedY;
+                        if (p.x < 0 || p.x > w) p.speedX *= -1;
+                        if (p.y < 0 || p.y > h) p.speedY *= -1;
 
-                function drawLines() {
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                        ctx.fillStyle = 'rgba(46, 134, 193, ' + p.opacity + ')';
+                        ctx.fill();
+                    });
+
+                    // Lines
                     for (let i = 0; i < particles.length; i++) {
                         for (let j = i + 1; j < particles.length; j++) {
                             const dx = particles[i].x - particles[j].x;
@@ -2452,18 +2470,18 @@
                             }
                         }
                     }
+
+                    animationFrame = requestAnimationFrame(drawParticles);
                 }
 
-                function animateParticles() {
-                    ctx.clearRect(0, 0, w, h);
-                    particles.forEach(function(p) {
-                        p.update();
-                        p.draw();
-                    });
-                    drawLines();
-                    requestAnimationFrame(animateParticles);
-                }
-                animateParticles();
+                drawParticles();
+
+                // Cleanup on page unload
+                window.addEventListener('beforeunload', function() {
+                    if (animationFrame) {
+                        cancelAnimationFrame(animationFrame);
+                    }
+                });
             }
 
             // ============================================================
@@ -2564,7 +2582,7 @@
             setTimeout(revealElements, 300);
 
             // ============================================================
-            // 7. STAT COUNTER
+            // 7. STAT COUNTER — with intersection observer fallback
             // ============================================================
             const statNumbers = document.querySelectorAll('.stat-number[data-count]');
             let statsAnimated = false;
@@ -2602,7 +2620,18 @@
 
             window.addEventListener('scroll', animateStats);
             window.addEventListener('resize', animateStats);
-            setTimeout(animateStats, 500);
+            // Also check after load
+            window.addEventListener('load', function() {
+                setTimeout(animateStats, 600);
+            });
+            // Fallback: check every 2s until animated
+            const statsCheckInterval = setInterval(function() {
+                if (statsAnimated) {
+                    clearInterval(statsCheckInterval);
+                    return;
+                }
+                animateStats();
+            }, 2000);
 
             // ============================================================
             // 8. NEWSLETTER FORM
@@ -2646,6 +2675,23 @@
                         });
                     }
                 });
+            });
+
+            // ============================================================
+            // 10. FIX for GitHub Pages: ensure canvas gets proper size after load
+            // ============================================================
+            window.addEventListener('load', function() {
+                if (canvas) {
+                    setTimeout(function() {
+                        const rect = canvas.parentElement.getBoundingClientRect();
+                        if (rect.width > 0 && rect.height > 0) {
+                            canvas.width = rect.width;
+                            canvas.height = rect.height;
+                            w = rect.width;
+                            h = rect.height;
+                        }
+                    }, 300);
+                }
             });
 
         })();
