@@ -1,585 +1,2654 @@
 <!DOCTYPE html>
-<html lang="sw">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>Jumma Kareem · Ijumaa Tukufu · Fataki</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Happy Nane Nane Day to all farmers - Celebrating the hard work, dedication, and contribution of farmers towards food security and national development." />
+    <meta name="keywords" content="Nane Nane, Farmers Day, Tanzania, Agriculture, Food Security, JTL Zanzibar" />
+    <meta name="author" content="JTL Zanzibar" />
+    <title>Happy Nane Nane Day | Celebrating Our Farmers</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
     <style>
-        /* ---------- RESET ---------- */
-        * {
+        /* ============================================================
+               MASTER CSS — Nane Nane Day Landing Page
+               Premium Poster-Style Design — BLUE DOMINANT + COLORFUL TEXT
+               ============================================================ */
+
+        /* ============================================================
+               1.  CSS VARIABLES (Root)
+               ============================================================ */
+        :root {
+            /* ----- Primary Colors (Blue Dominant) ----- */
+            --color-primary: #0d2b4e;
+            /* deep navy blue */
+            --color-primary-dark: #071b33;
+            --color-primary-light: #1a4d7a;
+            --color-primary-mid: #143b5e;
+
+            --color-blue-deep: #0d2b4e;
+            --color-blue-dark: #071b33;
+            --color-blue-mid: #1a4d7a;
+            --color-blue-bright: #2e86c1;
+            --color-blue-light: #5dade2;
+            --color-blue-pale: #d6eaf8;
+            --color-blue-glass: rgba(13, 43, 78, 0.85);
+
+            /* ----- Accent Colors ----- */
+            --color-gold: #d4a02b;
+            --color-gold-dark: #b8860b;
+            --color-gold-light: #f0d078;
+            --color-gold-pale: #fcf3e0;
+
+            --color-red: #c0392b;
+            --color-red-bright: #e74c3c;
+            --color-red-pale: #fadbd8;
+
+            --color-green: #1e8449;
+            --color-green-bright: #27ae60;
+            --color-green-pale: #d5f5e3;
+            --color-green-light: #7ddfa0;
+
+            --color-yellow: #d4ac0d;
+            --color-yellow-bright: #f1c40f;
+            --color-yellow-pale: #fcf3cf;
+
+            --color-purple: #6c3483;
+            --color-purple-bright: #8e44ad;
+            --color-purple-pale: #ebdef0;
+
+            --color-gray: #5a5a5a;
+            --color-gray-light: #8a8a8a;
+            --color-gray-pale: #f0f0f0;
+
+            --color-white: #ffffff;
+            --color-dark: #1a1a1a;
+            --color-black: #0a0a0a;
+
+            --color-text: #2c2c2c;
+            --color-text-light: #5a5a5a;
+            --color-shadow: rgba(13, 43, 78, 0.15);
+
+            /* ----- Typography ----- */
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+
+            /* ----- Spacing ----- */
+            --section-padding: 5rem 0;
+            --container-width: 1200px;
+            --card-radius: 1.25rem;
+            --transition-speed: 0.4s;
+
+            /* ----- Gradients (Blue-Dominant) ----- */
+            --gradient-hero: linear-gradient(145deg, rgba(13, 43, 78, 0.94) 0%, rgba(7, 27, 51, 0.96) 100%);
+            --gradient-blue: linear-gradient(135deg, var(--color-blue-mid), var(--color-blue-bright));
+            --gradient-blue-dark: linear-gradient(135deg, var(--color-primary), var(--color-blue-deep));
+            --gradient-gold: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
+            --gradient-green: linear-gradient(135deg, var(--color-green), var(--color-green-bright));
+            --gradient-red: linear-gradient(135deg, var(--color-red), var(--color-red-bright));
+            --gradient-purple: linear-gradient(135deg, var(--color-purple), var(--color-purple-bright));
+            --gradient-yellow: linear-gradient(135deg, var(--color-yellow), var(--color-yellow-bright));
+
+            /* ----- Shadows ----- */
+            --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 12px 40px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.12);
+            --shadow-blue: 0 8px 32px rgba(26, 77, 122, 0.3);
+            --shadow-blue-lg: 0 16px 48px rgba(26, 77, 122, 0.4);
+            --shadow-gold: 0 8px 32px rgba(212, 160, 43, 0.3);
+        }
+
+        /* ============================================================
+               2.  GLOBAL RESET & BASE
+               ============================================================ */
+        *,
+        *::before,
+        *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html,
-        body {
-            min-height: 100%;
-            background: #0b2a1f;
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            /* SCROLL INAWEZEKANA */
-            overflow-y: auto;
-            overflow-x: hidden;
-            -webkit-overflow-scrolling: touch;
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* ---------- CANVAS – FATAKI (background fixed) ---------- */
-        #fireworksCanvas {
+        body {
+            font-family: var(--font-body);
+            font-weight: 400;
+            color: var(--color-text);
+            background-color: var(--color-white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ============================================================
+               3.  TYPOGRAPHY
+               ============================================================ */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-blue-bright);
+            background: var(--color-blue-pale);
+            padding: 0.4rem 1.4rem;
+            border-radius: 2rem;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(46, 134, 193, 0.2);
+        }
+
+        .section-tag i {
+            font-size: 0.7rem;
+            color: var(--color-blue-bright);
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+            font-weight: 900;
+            color: var(--color-blue-deep);
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .section-title .color-red {
+            color: var(--color-red);
+        }
+        .section-title .color-green {
+            color: var(--color-green);
+        }
+        .section-title .color-gold {
+            color: var(--color-gold);
+        }
+        .section-title .color-purple {
+            color: var(--color-purple);
+        }
+        .section-title .color-blue {
+            color: var(--color-blue-bright);
+        }
+        .section-title .color-black {
+            color: var(--color-black);
+        }
+        .section-title .color-gray {
+            color: var(--color-gray);
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            font-weight: 300;
+            color: var(--color-text-light);
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .section-divider {
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-blue);
+            border-radius: 4px;
+            margin: 0.8rem auto 0;
+            position: relative;
+        }
+
+        .section-divider::after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            background: var(--color-blue-bright);
+            border-radius: 50%;
+            border: 2px solid var(--color-white);
+        }
+
+        /* ============================================================
+               4.  BUTTONS
+               ============================================================ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 0.85rem 2.2rem;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            border-radius: 3rem;
+            cursor: pointer;
+            transition: all var(--transition-speed) cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.02em;
+        }
+
+        .btn i {
+            font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient-blue);
+            color: var(--color-white);
+            box-shadow: var(--shadow-blue);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: var(--shadow-blue-lg);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0) scale(0.97);
+        }
+
+        .btn-gold {
+            background: var(--gradient-gold);
+            color: var(--color-white);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--color-white);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(4px);
+        }
+
+        .btn-outline:hover {
+            background: var(--color-white);
+            color: var(--color-blue-deep);
+            border-color: var(--color-white);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-red {
+            background: var(--gradient-red);
+            color: var(--color-white);
+            box-shadow: 0 8px 32px rgba(192, 57, 43, 0.3);
+        }
+
+        .btn-red:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 40px rgba(192, 57, 43, 0.4);
+        }
+
+        .btn-green {
+            background: var(--gradient-green);
+            color: var(--color-white);
+            box-shadow: 0 8px 32px rgba(30, 132, 73, 0.3);
+        }
+
+        .btn-green:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 40px rgba(30, 132, 73, 0.4);
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1.2rem;
+            font-size: 0.85rem;
+        }
+
+        /* ============================================================
+               5.  PRELOADER
+               ============================================================ */
+        #preloader {
             position: fixed;
             inset: 0;
-            width: 100%;
-            height: 100%;
-            display: block;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        /* ---------- WRAPPER – yote yanaweza kusogea ---------- */
-        .scroll-wrapper {
-            position: relative;
-            z-index: 1;
-            min-height: 100vh;
+            z-index: 9999;
+            background: var(--color-blue-deep);
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
-            padding: 2vh 1rem 5vh;
-            /* nafasi ya kusogea chini */
+            justify-content: center;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
         }
 
-        /* ---------- KARATASI KUU ---------- */
-        .box {
+        #preloader.fade-out {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loader-icon {
+            font-size: 4rem;
+            color: var(--color-gold);
+            animation: pulseLoader 1.2s ease-in-out infinite;
+        }
+
+        .loader-bar {
+            width: 200px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 4px;
+            margin-top: 1.5rem;
+            overflow: hidden;
             position: relative;
-            z-index: 5;
-            background: rgba(0, 0, 0, 0.78);
-            color: #ffe9a8;
-            max-width: 480px;
+        }
+
+        .loader-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
             width: 100%;
-            margin: 1vh auto 2vh;
-            padding: 22px 18px 28px;
-            border-radius: 30px;
-            text-align: center;
-            border: 2px solid #d4af37;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
+            height: 100%;
+            background: var(--gradient-blue);
+            border-radius: 4px;
+            animation: loaderSlide 1.5s ease-in-out infinite;
         }
 
-        /* AYA ZA QUR-ANI */
-        .quran-ayah {
-            font-size: 1.2rem;
-            color: #f0d080;
-            line-height: 1.7;
-            margin: 6px 0 4px;
-            word-break: break-word;
-            font-family: 'Traditional Arabic', 'Amiri', 'Segoe UI', serif;
-        }
-        .quran-ayah small {
-            font-size: 0.75rem;
-            color: #c9b27c;
-            display: block;
-            margin-top: 2px;
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            letter-spacing: 0.5px;
-        }
-        .swahili-trans {
-            font-size: 0.9rem;
-            color: #eedbaa;
-            background: rgba(255, 215, 120, 0.10);
-            padding: 8px 12px;
-            border-radius: 20px;
-            margin: 6px 0 10px;
-            line-height: 1.5;
-            border-left: 3px solid #d4af37;
-            border-right: 3px solid #d4af37;
+        @keyframes loaderSlide {
+            0% {
+                left: -100%;
+                width: 30%;
+            }
+            50% {
+                left: 20%;
+                width: 60%;
+            }
+            100% {
+                left: 100%;
+                width: 30%;
+            }
         }
 
-        .divider {
-            border: none;
-            height: 2px;
-            background: linear-gradient(to right, transparent, #d4af37, transparent);
-            margin: 10px 0;
+        @keyframes pulseLoader {
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.15);
+                opacity: 0.6;
+            }
         }
 
-        .box h2 {
-            font-size: 1.4rem;
-            margin: 6px 0 4px;
-            color: #ffd966;
-            letter-spacing: 1px;
-        }
-        .box .sub {
-            font-size: 0.85rem;
-            color: #c9b27c;
-            margin-top: -2px;
-            margin-bottom: 10px;
-        }
-
-        .box p {
-            background: rgba(255, 215, 120, 0.08);
-            padding: 10px 14px;
-            border-radius: 25px;
-            font-size: 0.95rem;
-            margin: 8px 0 12px;
-            line-height: 1.5;
-        }
-
-        /* KITUO CHA KUFUNGUA */
-        button {
-            margin-top: 8px;
-            padding: 14px 28px;
-            font-size: 1.2rem;
-            border-radius: 40px;
-            border: none;
-            background: #d4af37;
-            color: #1f3a1f;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 8px 0 #7a5f1a;
-            transition: 0.05s linear;
-            width: auto;
-            min-width: 200px;
-            -webkit-tap-highlight-color: transparent;
-        }
-        button:active {
-            transform: translateY(6px);
-            box-shadow: 0 2px 0 #7a5f1a;
-        }
-
-        /* ---------- OVERLAY – SURPRISE ---------- */
-        .surprise-overlay {
+        /* ============================================================
+               6.  HEADER / NAVIGATION
+               ============================================================ */
+        .navbar {
             position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.7);
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0.9rem 0;
+            background: rgba(13, 43, 78, 0.95);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(7, 27, 51, 0.98);
+            box-shadow: 0 4px 40px rgba(0, 0, 0, 0.25);
+            padding: 0.5rem 0;
+        }
+
+        .nav-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--color-white);
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-logo i {
+            color: var(--color-gold);
+            font-size: 1.8rem;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--color-white);
+            font-size: 1.6rem;
+            cursor: pointer;
+            padding: 0.3rem;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-toggle:hover {
+            transform: rotate(90deg);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.75);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            position: relative;
+            padding: 0.3rem 0;
+            cursor: pointer;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2.5px;
+            background: var(--color-gold);
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--color-white);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link.active {
+            color: var(--color-gold);
+        }
+
+        /* ============================================================
+               7.  HERO SECTION
+               ============================================================ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            visibility: hidden;
-            opacity: 0;
-            z-index: 10000;
-            transition: 0.3s ease;
-            pointer-events: auto;
-            backdrop-filter: blur(3px);
-            -webkit-backdrop-filter: blur(3px);
-            padding: 1rem;
+            overflow: hidden;
+            background: var(--color-blue-deep);
+            padding: 7rem 1.5rem 4rem;
         }
-        .surprise-overlay.show {
-            visibility: visible;
+
+        #particleCanvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background: var(--gradient-hero);
+            pointer-events: none;
+        }
+
+        /* Decorative abstract shapes */
+        .hero-shape {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.05;
+        }
+
+        .hero-shape-1 {
+            width: 600px;
+            height: 600px;
+            top: -200px;
+            right: -150px;
+            background: var(--color-blue-bright);
+            border-radius: 50%;
+        }
+
+        .hero-shape-2 {
+            width: 400px;
+            height: 400px;
+            bottom: -100px;
+            left: -100px;
+            background: var(--color-gold);
+            border-radius: 50%;
+            opacity: 0.04;
+        }
+
+        .hero-shape-3 {
+            width: 200px;
+            height: 200px;
+            top: 30%;
+            right: 10%;
+            background: var(--color-purple-bright);
+            border-radius: 50%;
+            opacity: 0.04;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 960px;
+            text-align: center;
+            color: var(--color-white);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px);
+            padding: 0.4rem 1.6rem;
+            border-radius: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 1.8rem;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .hero-badge i {
+            color: var(--color-gold);
+            font-size: 0.75rem;
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(3rem, 10vw, 5.6rem);
+            font-weight: 900;
+            line-height: 1.05;
+            margin-bottom: 1.2rem;
+            animation: fadeInUp 1s ease;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-title .highlight-gold {
+            color: var(--color-gold);
+            text-shadow: 0 0 60px rgba(212, 160, 43, 0.25);
+        }
+
+        .hero-title .highlight-green {
+            color: #7ddfa0;
+            text-shadow: 0 0 60px rgba(125, 223, 160, 0.2);
+        }
+
+        .hero-title .highlight-blue {
+            color: #85c1e9;
+            text-shadow: 0 0 60px rgba(133, 193, 233, 0.3);
+        }
+
+        .hero-title .highlight-red {
+            color: #f1948a;
+            text-shadow: 0 0 60px rgba(241, 148, 138, 0.2);
+        }
+
+        .hero-title .highlight-purple {
+            color: #bb8fce;
+            text-shadow: 0 0 60px rgba(187, 143, 206, 0.2);
+        }
+
+        .hero-title-sub {
+            display: block;
+            font-size: 0.42em;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 0.12em;
+            margin-top: 0.3rem;
+            font-family: var(--font-body);
+            text-transform: uppercase;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 1.4vw, 1.3rem);
+            font-weight: 300;
+            max-width: 720px;
+            margin: 1.2rem auto 2.8rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.9;
+            animation: fadeInUp 1.1s ease;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.2rem;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        /* Floating decorative icons */
+        .float-icon {
+            position: absolute;
+            font-size: 2.4rem;
+            color: rgba(255, 255, 255, 0.06);
+            z-index: 2;
+            animation: floatY 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .float-icon-1 {
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+            font-size: 3.2rem;
+            color: rgba(212, 160, 43, 0.08);
+        }
+        .float-icon-2 {
+            bottom: 15%;
+            right: 4%;
+            animation-delay: 1.5s;
+            font-size: 3.6rem;
+            color: rgba(133, 193, 233, 0.08);
+        }
+        .float-icon-3 {
+            top: 22%;
+            right: 8%;
+            animation-delay: 3s;
+            font-size: 2.8rem;
+            color: rgba(241, 148, 138, 0.06);
+        }
+        .float-icon-4 {
+            bottom: 28%;
+            left: 6%;
+            animation-delay: 0.8s;
+            font-size: 3rem;
+            color: rgba(187, 143, 206, 0.06);
+        }
+
+        @keyframes floatY {
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-22px) rotate(6deg);
+            }
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            animation: bounceDown 2.5s ease-in-out infinite;
+        }
+
+        .scroll-indicator i {
+            font-size: 1.2rem;
+        }
+
+        @keyframes bounceDown {
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(10px);
+            }
+        }
+
+        /* ============================================================
+               8.  THEME / VISION SECTION
+               ============================================================ */
+        .theme-section {
+            padding: var(--section-padding);
+            background: var(--color-white);
+            position: relative;
+        }
+
+        .theme-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse at 10% 20%, rgba(46, 134, 193, 0.04) 0%, transparent 60%),
+                radial-gradient(ellipse at 90% 80%, rgba(13, 43, 78, 0.04) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .theme-card {
+            background: var(--color-white);
+            border-radius: var(--card-radius);
+            padding: 3.5rem 3rem;
+            max-width: 860px;
+            margin: 0 auto 3.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(46, 134, 193, 0.12);
+            position: relative;
+            transition: all var(--transition-speed) ease;
+            overflow: hidden;
+        }
+
+        .theme-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-blue);
+        }
+
+        .theme-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .theme-icon-wrapper {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            background: var(--gradient-blue);
+            color: var(--color-white);
+            font-size: 2.6rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-blue);
+            transition: transform 0.4s ease;
+        }
+
+        .theme-card:hover .theme-icon-wrapper {
+            transform: scale(1.05) rotate(-4deg);
+        }
+
+        .theme-quote {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 2.8vw, 2.4rem);
+            font-weight: 700;
+            font-style: italic;
+            color: var(--color-blue-deep);
+            line-height: 1.5;
+            margin-bottom: 0.75rem;
+        }
+
+        .theme-quote .color-red {
+            color: var(--color-red);
+        }
+        .theme-quote .color-green {
+            color: var(--color-green);
+        }
+        .theme-quote .color-gold {
+            color: var(--color-gold);
+        }
+        .theme-quote .color-purple {
+            color: var(--color-purple);
+        }
+        .theme-quote .color-blue {
+            color: var(--color-blue-bright);
+        }
+
+        .theme-quote::before {
+            content: '\201C';
+            font-size: 3.2rem;
+            color: var(--color-blue-bright);
+            opacity: 0.3;
+            margin-right: 0.2rem;
+        }
+
+        .theme-attribution {
+            font-weight: 500;
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+        }
+
+        .theme-decoration {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .theme-decoration span {
+            flex: 1;
+            max-width: 60px;
+            height: 1.5px;
+            background: linear-gradient(90deg, transparent, var(--color-blue-bright), transparent);
+        }
+
+        .theme-decoration i {
+            color: var(--color-blue-bright);
+            font-size: 1.2rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: var(--color-white);
+            padding: 2.2rem 1.5rem;
+            border-radius: var(--card-radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(13, 43, 78, 0.06);
+            transition: all var(--transition-speed) ease;
+            position: relative;
+        }
+
+        .stat-item:nth-child(1) {
+            border-top: 3px solid var(--color-blue-bright);
+        }
+        .stat-item:nth-child(2) {
+            border-top: 3px solid var(--color-gold);
+        }
+        .stat-item:nth-child(3) {
+            border-top: 3px solid var(--color-green);
+        }
+
+        .stat-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40%;
+            height: 3px;
+            background: var(--gradient-blue);
+            border-radius: 2px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .stat-item:hover::after {
             opacity: 1;
         }
 
-        .surprise-card {
-            background: #1d3b1d;
-            border: 4px solid #d4af37;
-            border-radius: 40px;
-            padding: 28px 22px 32px;
-            max-width: 400px;
-            width: 100%;
-            text-align: center;
-            color: #fff3c4;
-            box-shadow: 0 0 60px rgba(212, 175, 55, 0.5);
-            max-height: 90vh;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
+        .stat-item:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(46, 134, 193, 0.15);
         }
 
-        .surprise-card h2 {
-            font-size: 1.3rem;
+        .stat-number {
+            font-family: var(--font-heading);
+            font-size: clamp(2.8rem, 5.5vw, 4rem);
+            font-weight: 900;
+            line-height: 1.1;
+        }
+
+        .stat-number.color-blue {
+            color: var(--color-blue-bright);
+        }
+        .stat-number.color-gold {
+            color: var(--color-gold);
+        }
+        .stat-number.color-green {
+            color: var(--color-green);
+        }
+
+        .stat-number::after {
+            content: '%';
+            font-size: 0.5em;
+            font-weight: 700;
+        }
+
+        .stat-number.color-blue::after {
+            color: var(--color-blue-mid);
+        }
+        .stat-number.color-gold::after {
+            color: var(--color-gold-dark);
+        }
+        .stat-number.color-green::after {
+            color: var(--color-green);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-text-light);
+            margin-top: 0.3rem;
             line-height: 1.5;
-            margin: 8px 0;
-            word-break: break-word;
-        }
-        .surprise-card .quran-ayah-sm {
-            font-size: 1.0rem;
-            color: #f0d080;
-            line-height: 1.6;
-            margin: 8px 0;
-            font-family: 'Traditional Arabic', 'Amiri', serif;
-        }
-        .surprise-card p {
-            font-size: 1.1rem;
-            margin: 12px 0;
         }
 
-        .fomu-link {
+        /* ============================================================
+               9.  SPONSORS SECTION
+               ============================================================ */
+        .sponsors-section {
+            padding: var(--section-padding);
+            background: var(--color-blue-pale);
+            border-top: 1px solid rgba(46, 134, 193, 0.1);
+            border-bottom: 1px solid rgba(46, 134, 193, 0.1);
+            position: relative;
+        }
+
+        .sponsors-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(46, 134, 193, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 50%, rgba(13, 43, 78, 0.04) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .sponsors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            max-width: 940px;
+            margin: 0 auto 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .sponsor-card {
+            background: var(--color-white);
+            border-radius: var(--card-radius);
+            padding: 2.8rem 2.2rem;
+            text-align: center;
+            transition: all var(--transition-speed) cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(13, 43, 78, 0.06);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .sponsor-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(46, 134, 193, 0.03), transparent);
+            pointer-events: none;
+        }
+
+        .sponsor-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-blue);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .sponsor-card:hover::after {
+            opacity: 1;
+        }
+
+        .sponsor-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(46, 134, 193, 0.15);
+        }
+
+        .sponsor-primary {
+            border-color: rgba(46, 134, 193, 0.15);
+        }
+
+        .sponsor-primary::after {
+            background: var(--gradient-blue);
+        }
+
+        .sponsor-secondary {
+            border-color: rgba(13, 43, 78, 0.08);
+        }
+
+        .sponsor-secondary::after {
+            background: var(--gradient-gold);
+        }
+
+        .sponsor-badge {
             display: inline-block;
-            margin-top: 10px;
-            padding: 14px 24px;
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 0.3rem 1.2rem;
+            border-radius: 2rem;
+            color: var(--color-white);
+            margin-bottom: 1.2rem;
+        }
+
+        .sponsor-badge-blue {
+            background: var(--gradient-blue);
+        }
+
+        .sponsor-badge-gold {
+            background: var(--gradient-gold);
+        }
+
+        .sponsor-icon {
+            font-size: 3rem;
+            color: var(--color-blue-bright);
+            margin-bottom: 0.8rem;
+            transition: transform 0.4s ease;
+        }
+
+        .sponsor-card:hover .sponsor-icon {
+            transform: scale(1.1) rotate(-4deg);
+        }
+
+        .sponsor-secondary .sponsor-icon {
+            color: var(--color-gold);
+        }
+
+        .sponsor-name {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--color-blue-deep);
+            margin-bottom: 0.2rem;
+        }
+
+        .sponsor-name .color-red {
+            color: var(--color-red);
+        }
+        .sponsor-name .color-green {
+            color: var(--color-green);
+        }
+        .sponsor-name .color-purple {
+            color: var(--color-purple);
+        }
+
+        .sponsor-role {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .sponsor-divider {
+            width: 40px;
+            height: 2px;
+            background: var(--color-blue-bright);
+            margin: 1rem auto;
+            border-radius: 2px;
+            opacity: 0.3;
+        }
+
+        .sponsor-secondary .sponsor-divider {
+            background: var(--color-gold);
+        }
+
+        .sponsor-message {
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--color-text);
+            font-weight: 400;
+        }
+
+        .sponsor-message .color-red {
+            color: var(--color-red);
+        }
+        .sponsor-message .color-green {
+            color: var(--color-green);
+        }
+        .sponsor-message .color-gold {
+            color: var(--color-gold);
+        }
+        .sponsor-message .color-purple {
+            color: var(--color-purple);
+        }
+        .sponsor-message .color-blue {
+            color: var(--color-blue-bright);
+        }
+
+        .sponsor-message i {
+            color: var(--color-blue-bright);
+            opacity: 0.5;
+            margin-right: 0.3rem;
+        }
+
+        .sponsor-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+        }
+
+        .sponsor-tags span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.9rem;
+            background: var(--color-blue-pale);
+            border-radius: 2rem;
+            color: var(--color-blue-deep);
+            border: 1px solid rgba(46, 134, 193, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .sponsor-tags span:hover {
+            background: var(--color-gold-pale);
+            border-color: var(--color-gold);
+            transform: translateY(-2px);
+        }
+
+        .sponsor-tags span i {
+            font-size: 0.65rem;
+            color: var(--color-blue-bright);
+        }
+
+        .partners-strip {
+            text-align: center;
+            padding: 1.4rem;
+            background: var(--color-white);
+            border-radius: var(--card-radius);
+            max-width: 720px;
+            margin: 0 auto;
+            font-weight: 500;
+            color: var(--color-text-light);
+            border: 1px dashed rgba(46, 134, 193, 0.2);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            z-index: 1;
+        }
+
+        .partners-strip i {
+            color: var(--color-blue-bright);
+            margin-right: 0.6rem;
+        }
+
+        .partners-strip .color-red {
+            color: var(--color-red);
+        }
+        .partners-strip .color-green {
+            color: var(--color-green);
+        }
+        .partners-strip .color-gold {
+            color: var(--color-gold);
+        }
+        .partners-strip .color-purple {
+            color: var(--color-purple);
+        }
+
+        /* ============================================================
+               10. APPRECIATION / MESSAGE SECTION
+               ============================================================ */
+        .appreciation-section {
+            padding: var(--section-padding);
+            background: var(--color-white);
+            position: relative;
+        }
+
+        .appreciation-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 70%, rgba(46, 134, 193, 0.04) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 30%, rgba(13, 43, 78, 0.04) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .appreciation-card {
+            max-width: 860px;
+            margin: 0 auto;
+            background: var(--color-white);
+            border-radius: var(--card-radius);
+            padding: 3.5rem 3rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(13, 43, 78, 0.06);
+            position: relative;
+            transition: all var(--transition-speed) ease;
+            overflow: hidden;
+        }
+
+        .appreciation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-blue-bright), var(--color-gold), var(--color-green), var(--color-purple), var(--color-red));
+            background-size: 200% 100%;
+            animation: shimmerBorder 6s ease-in-out infinite;
+        }
+
+        @keyframes shimmerBorder {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 200% 0%;
+            }
+        }
+
+        .appreciation-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .appreciation-quote-mark {
+            font-size: 4rem;
+            color: var(--color-blue-bright);
+            opacity: 0.15;
+            line-height: 1;
+            margin-bottom: -1.2rem;
+        }
+
+        .appreciation-text {
+            font-family: var(--font-heading);
+            font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+            font-weight: 400;
+            color: var(--color-text);
+            line-height: 1.9;
+            padding: 0.5rem 0 1.5rem;
+        }
+
+        .appreciation-text .color-red {
+            color: var(--color-red);
+        }
+        .appreciation-text .color-green {
+            color: var(--color-green);
+        }
+        .appreciation-text .color-gold {
+            color: var(--color-gold);
+        }
+        .appreciation-text .color-purple {
+            color: var(--color-purple);
+        }
+        .appreciation-text .color-blue {
+            color: var(--color-blue-bright);
+        }
+        .appreciation-text .color-gray {
+            color: var(--color-gray);
+        }
+        .appreciation-text .color-black {
+            color: var(--color-black);
+        }
+
+        .appreciation-footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(13, 43, 78, 0.06);
+            gap: 1rem;
+        }
+
+        .appreciation-signature {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 700;
+            color: var(--color-blue-deep);
+            font-size: 1.05rem;
+        }
+
+        .appreciation-signature i {
+            color: var(--color-blue-bright);
             font-size: 1.2rem;
-            border-radius: 40px;
-            border: none;
-            background: #e4a010;
-            color: #1f3a1f;
-            font-weight: bold;
-            text-decoration: none;
-            box-shadow: 0 6px 0 #7a4f0e;
-            transition: 0.05s linear;
-            width: auto;
-            min-width: 180px;
-            cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
-        }
-        .fomu-link:active {
-            transform: translateY(5px);
-            box-shadow: 0 1px 0 #7a4f0e;
         }
 
-        .close-surprise {
-            padding: 8px 28px;
-            font-size: 1.0rem;
-            background: #b8860b;
-            box-shadow: 0 4px 0 #6b4b0e;
-            min-width: auto;
-            margin-top: 6px;
-        }
-        .close-surprise:active {
-            transform: translateY(4px);
-            box-shadow: 0 1px 0 #6b4b0e;
+        .appreciation-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--color-text-light);
         }
 
-        .surprise-card .footnote {
-            font-size: 0.8rem;
-            margin-top: 14px;
-            background: transparent;
+        .appreciation-date i {
+            color: var(--color-gold);
+        }
+
+        .appreciation-decorations {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            font-size: 1.8rem;
+            color: rgba(46, 134, 193, 0.2);
+            flex-wrap: wrap;
+        }
+
+        .appreciation-decorations i {
+            transition: all 0.4s ease;
+            cursor: default;
+        }
+
+        .appreciation-decorations i:nth-child(1) {
+            color: var(--color-blue-bright);
+        }
+        .appreciation-decorations i:nth-child(2) {
+            color: var(--color-gold);
+        }
+        .appreciation-decorations i:nth-child(3) {
+            color: var(--color-red);
+        }
+        .appreciation-decorations i:nth-child(4) {
+            color: var(--color-green);
+        }
+        .appreciation-decorations i:nth-child(5) {
+            color: var(--color-purple);
+        }
+
+        .appreciation-decorations i:hover {
+            transform: scale(1.2) rotate(10deg);
             opacity: 0.8;
         }
 
-        /* ---------- VIPINDE VYA ZIADA – kusaidia kusogea ---------- */
-        .extra-spacer {
-            height: 2rem;
-            width: 100%;
+        /* ============================================================
+               11. FOOTER
+               ============================================================ */
+        .footer {
+            background: var(--color-blue-deep);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 4.5rem 0 2rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .footer-note {
-            color: rgba(255, 215, 120, 0.35);
-            font-size: 0.75rem;
-            text-align: center;
-            margin-top: 1rem;
-            letter-spacing: 0.5px;
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-blue);
         }
 
-        /* ---------- RESPONSIVE ---------- */
-        @media (max-width: 480px) {
-            .scroll-wrapper {
-                padding: 1rem 0.75rem 3rem;
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 2.5rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-brand .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: var(--font-heading);
+            font-size: 1.7rem;
+            font-weight: 900;
+            color: var(--color-white);
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-brand .footer-logo i {
+            color: var(--color-gold);
+            font-size: 1.8rem;
+        }
+
+        .footer-tagline {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--color-gold-light);
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.04em;
+        }
+
+        .footer-mission {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            max-width: 280px;
+            line-height: 1.7;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--color-white);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .footer-social a:hover {
+            background: var(--gradient-blue);
+            color: var(--color-white);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-blue);
+            border-color: transparent;
+        }
+
+        .footer h4 {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.04em;
+        }
+
+        .footer h4 .color-gold {
+            color: var(--color-gold);
+        }
+        .footer h4 .color-blue-light {
+            color: var(--color-blue-light);
+        }
+
+        .footer-links ul,
+        .footer-contact ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .footer-links a,
+        .footer-contact li {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--color-gold);
+            padding-left: 0.3rem;
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .footer-contact li i {
+            color: var(--color-gold);
+            width: 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer-newsletter p {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+
+        .newsletter-form:focus-within {
+            border-color: var(--color-gold);
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.7rem 1.2rem;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: var(--color-white);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            min-width: 0;
+        }
+
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .newsletter-form button {
+            background: var(--gradient-blue);
+            color: var(--color-white);
+            border: none;
+            padding: 0.7rem 1.4rem;
+            border-radius: 0 3rem 3rem 0;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .newsletter-form button:hover {
+            background: var(--color-blue-mid);
+            transform: scale(1.02);
+        }
+
+        .footer-bottom {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            font-size: 0.8rem;
+            opacity: 0.5;
+            gap: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-credit {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .footer-credit i {
+            color: var(--color-gold);
+        }
+
+        /* ============================================================
+               12. BACK TO TOP BUTTON
+               ============================================================ */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient-blue);
+            color: var(--color-white);
+            border: none;
+            box-shadow: var(--shadow-blue);
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px) scale(0.9);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-4px) scale(1.06);
+            box-shadow: var(--shadow-blue-lg);
+        }
+
+        .back-to-top:active {
+            transform: scale(0.92);
+        }
+
+        /* ============================================================
+               13. UTILITY & ANIMATIONS
+               ============================================================ */
+        /* Scroll reveal */
+        [data-animate] {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.9s ease, transform 0.9s ease;
+        }
+
+        [data-animate].visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        [data-animate="fade-up"] {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        [data-animate="fade-up"].visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        [data-animate="fade-in"] {
+            opacity: 0;
+        }
+
+        [data-animate="fade-in"].visible {
+            opacity: 1;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
             }
-            .box {
-                padding: 18px 14px 22px;
-                margin: 0.5vh auto 1.5vh;
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
-            .quran-ayah {
-                font-size: 1.0rem;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
             }
-            .box h2 {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Glow pulse - blue version */
+        .glow-pulse-blue {
+            animation: glowPulseBlue 3s ease-in-out infinite;
+        }
+
+        @keyframes glowPulseBlue {
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(46, 134, 193, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 50px rgba(46, 134, 193, 0.5);
+            }
+        }
+
+        /* ============================================================
+               14. RESPONSIVE MEDIA QUERIES
+               ============================================================ */
+        /* ----- Tablets & small laptops (≤ 1024px) ----- */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+
+            .hero-title {
+                font-size: clamp(2.6rem, 8vw, 4.2rem);
+            }
+
+            .float-icon {
+                display: none;
+            }
+
+            .stats-grid {
+                gap: 1.2rem;
+            }
+        }
+
+        /* ----- Tablets (≤ 768px) ----- */
+        @media (max-width: 768px) {
+            /* Navigation */
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--color-blue-deep);
+                flex-direction: column;
+                padding: 1.5rem 2rem;
+                gap: 0.6rem;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+                transform: scaleY(0);
+                transform-origin: top center;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.35s ease;
+                border-radius: 0 0 1rem 1rem;
+            }
+
+            .nav-menu.open {
+                transform: scaleY(1);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-link {
+                padding: 0.6rem 0;
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            }
+
+            .nav-link::after {
+                display: none;
+            }
+
+            /* Stats */
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .stat-item:last-child {
+                grid-column: span 2;
+            }
+
+            /* Sponsors */
+            .sponsors-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+
+            /* Footer */
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .footer-brand .footer-logo {
+                justify-content: center;
+            }
+
+            .footer-mission {
+                max-width: 100%;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+
+            .footer-links ul,
+            .footer-contact ul {
+                align-items: center;
+            }
+
+            .footer-contact li {
+                justify-content: center;
+            }
+
+            .newsletter-form {
+                max-width: 380px;
+                margin: 0 auto;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            /* Appreciation */
+            .appreciation-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .appreciation-footer {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            /* Theme card */
+            .theme-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .theme-quote {
                 font-size: 1.2rem;
             }
-            button {
-                font-size: 1.0rem;
-                padding: 12px 18px;
-                min-width: 160px;
+
+            /* Back to top */
+            .back-to-top {
+                bottom: 1.2rem;
+                right: 1.2rem;
+                width: 44px;
+                height: 44px;
+                font-size: 1rem;
             }
-            .surprise-card {
-                padding: 20px 16px 24px;
-                max-width: 100%;
-                margin: 0 0.5rem;
-            }
-            .surprise-card h2 {
-                font-size: 1.1rem;
-            }
-            .fomu-link {
-                font-size: 1.0rem;
-                padding: 12px 18px;
-                min-width: 150px;
-            }
-            .surprise-overlay {
-                padding: 0.5rem;
+
+            .hero-shape-1,
+            .hero-shape-2,
+            .hero-shape-3 {
+                display: none;
             }
         }
 
-        @media (min-width: 481px) and (max-width: 768px) {
-            .box {
-                max-width: 440px;
-                padding: 20px 16px 26px;
+        /* ----- Mobile (≤ 480px) ----- */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
             }
-            .scroll-wrapper {
-                padding: 2rem 1.5rem 4rem;
+
+            .hero {
+                padding: 5.5rem 1rem 3rem;
+                min-height: 92vh;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-title-sub {
+                font-size: 0.5em;
+            }
+
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.8rem;
+            }
+
+            .btn {
+                padding: 0.7rem 1.6rem;
+                font-size: 0.9rem;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+
+            .stat-item:last-child {
+                grid-column: span 1;
+            }
+
+            .stat-number {
+                font-size: 2.6rem;
+            }
+
+            .sponsor-card {
+                padding: 1.8rem 1.2rem;
+            }
+
+            .sponsor-name {
+                font-size: 1.3rem;
+            }
+
+            .appreciation-text {
+                font-size: 1rem;
+            }
+
+            .appreciation-decorations {
+                gap: 1.2rem;
+                font-size: 1.4rem;
+            }
+
+            .theme-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .theme-icon-wrapper {
+                width: 68px;
+                height: 68px;
+                font-size: 2rem;
+            }
+
+            .theme-quote {
+                font-size: 1.05rem;
+            }
+
+            .footer {
+                padding: 2.5rem 0 1.5rem;
+            }
+
+            .footer-grid {
+                gap: 1.5rem;
+                padding-bottom: 2rem;
+            }
+
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                font-size: 0.85rem;
+                bottom: 1rem;
+                right: 1rem;
+            }
+
+            .scroll-indicator {
+                display: none;
+            }
+
+            .float-icon {
+                display: none;
+            }
+
+            .hero-badge {
+                font-size: 0.65rem;
+                padding: 0.25rem 1rem;
+            }
+
+            .partners-strip {
+                font-size: 0.8rem;
+                padding: 1rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.9rem;
             }
         }
 
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .box {
-                max-width: 460px;
+        /* ----- Extra small (≤ 360px) ----- */
+        @media (max-width: 360px) {
+            .hero-title {
+                font-size: 1.8rem;
             }
-        }
 
-        @media (min-width: 1025px) {
-            .box {
-                max-width: 500px;
-                padding: 28px 24px 32px;
+            .btn {
+                font-size: 0.8rem;
+                padding: 0.6rem 1.2rem;
             }
-            .scroll-wrapper {
-                padding: 3vh 2rem 6vh;
-            }
-        }
 
-        /* ---------- SAHIHISHA KWA VIFAA VYA GUSHA ---------- */
-        @media (hover: none) {
-            button:active,
-            .fomu-link:active {
-                transform: translateY(5px);
+            .section-title {
+                font-size: 1.3rem;
             }
-            .close-surprise:active {
-                transform: translateY(4px);
+
+            .sponsor-tags span {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.6rem;
             }
-        }
 
-        /* Hakikisha overlay inafunika vizuri */
-        .surprise-overlay.show {
-            pointer-events: auto;
-        }
-
-        /* Fomu-link ndani ya overlay isifunge overlay */
-        .fomu-link {
-            position: relative;
-            z-index: 10001;
+            .stat-number {
+                font-size: 2.2rem;
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <!-- CANVAS – fataki zinaendelea nyuma -->
-    <canvas id="fireworksCanvas"></canvas>
+    <!-- ===== PRELOADER ===== -->
+    <div id="preloader" aria-hidden="true">
+        <div class="loader-icon">
+            <i class="fas fa-seedling"></i>
+        </div>
+        <div class="loader-bar"></div>
+    </div>
 
-    <!-- WRAPPER – yote inaweza kusogea juu/chini -->
-    <div class="scroll-wrapper">
-
-        <!-- KARATASI KUU -->
-        <div class="box">
-
-            <!-- Surah Al-Jumu'ah 62:9 -->
-            <div class="quran-ayah">
-                ﴿ يَا أَيُّهَا الَّذِينَ آمَنُوا إِذَا نُودِيَ لِلصَّلَاةِ مِن يَوْمِ الْجُمُعَةِ فَاسْعَوْا إِلَىٰ ذِكْرِ اللَّهِ وَذَرُوا الْبَيْعَ ﴾
-                <small>— Surah Al-Jumu'ah (62:9) —</small>
+    <!-- ===== NAVIGATION ===== -->
+    <header class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-seedling"></i>
+                <span>Nane Nane</span>
             </div>
-            <div class="swahili-trans">
-                <i class="fas fa-quote-left" style="opacity:0.6;"></i>
-                Enyi mlio amini! Mnapoitwa kwa swala siku ya Ijumaa, nendeni kwa haraka kwenye dhikri ya Mwenyezi Mungu, na acheni biashara.
-                <i class="fas fa-quote-right" style="opacity:0.6;"></i>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#theme" class="nav-link">Theme</a></li>
+                <li><a href="#sponsors" class="nav-link">Sponsors</a></li>
+                <li><a href="#appreciation" class="nav-link">Appreciation</a></li>
+                <li><a href="#footer" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section id="home" class="hero">
+        <canvas id="particleCanvas"></canvas>
+
+        <div class="hero-overlay"></div>
+
+        <!-- Decorative shapes -->
+        <div class="hero-shape hero-shape-1"></div>
+        <div class="hero-shape hero-shape-2"></div>
+        <div class="hero-shape hero-shape-3"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-award"></i> National Farmers' Day
             </div>
 
-            <hr class="divider" />
+            <h1 class="hero-title">
+                <span class="highlight-gold">HAPPY</span>
+                <span class="highlight-blue">NANE NANE</span>
+                <span class="highlight-gold">DAY</span>
+                <span class="hero-title-sub"><span class="highlight-green">To All Farmers</span> <span class="highlight-red">•</span> <span class="highlight-purple">Tanzania</span></span>
+            </h1>
 
-            <!-- Surah Al-Jumu'ah 62:10 -->
-            <div class="quran-ayah">
-                ﴿ فَإِذَا قُضِيَتِ الصَّلَاةُ فَانتَشِرُوا فِي الْأَرْضِ وَابْتَغُوا مِن فَضْلِ اللَّهِ وَاذْكُرُوا اللَّهَ كَثِيرًا لَّعَلَّكُمْ تُفْلِحُونَ ﴾
-                <small>— Surah Al-Jumu'ah (62:10) —</small>
-            </div>
-            <div class="swahili-trans">
-                <i class="fas fa-quote-left" style="opacity:0.6;"></i>
-                Na swala ikisha kamilika, enendeni katika ardhi, na kutafuta fadhili za Mwenyezi Mungu, na mtajeni Mwenyezi Mungu sana ili mpate kufanikiwa.
-                <i class="fas fa-quote-right" style="opacity:0.6;"></i>
-            </div>
-
-            <hr class="divider" />
-
-            <h2><i class="fas fa-mosque"></i> JUMAA KAREEM <i class="fas fa-mosque"></i></h2>
-            <div class="sub">✨ Ijumaa Tukufu · Baraka tele ✨</div>
-
-            <p>
-                <b>HAJI JECHA KHAMIS</b> akishirikiana na <b>JTL Zanzibar</b><br />
-                anakutakia Ijumaa Kareem iliyojaa baraka, neema na mafanikio.
+            <p class="hero-subtitle">
+                Celebrating the Hard Work, Dedication, and Contribution of Farmers Towards <span style="color:#7ddfa0;">Food Security</span> and <span style="color:#f0d078;">National Development</span>.
             </p>
 
-            <button onclick="openSurprise()">✨ FUNGUA BARAKA ✨</button>
-        </div>
-
-        <!-- Nafasi ya ziada ili kuweza kusogea chini zaidi -->
-        <div class="extra-spacer"></div>
-
-        <!-- Kitu kidogo cha chini – kwa ajili ya scrolling -->
-        <div class="footer-note">
-            <i class="fas fa-chevron-down"></i> Sogea chini · Ijumaa Kareem <i class="fas fa-chevron-down"></i>
-        </div>
-
-        <div style="height:4vh;"></div>
-    </div>
-
-    <!-- OVERLAY – baraka + kiungo cha fomu -->
-    <div id="overlay" class="surprise-overlay">
-        <div class="surprise-card">
-            <h2>
-                <i class="fas fa-star" style="color:gold;"></i>
-                ────⊹⊱✫⊰⊹────
-                <br />
-                جُمُعَةٌ مُبَارَكَةٌ
-                <br />
-                ────⊹⊱✫⊰⊹────
-                <i class="fas fa-star" style="color:gold;"></i>
-            </h2>
-
-            <div class="quran-ayah-sm">
-                ﴿ وَاذْكُرُوا اللَّهَ كَثِيرًا لَّعَلَّكُمْ تُفْلِحُونَ ﴾
-                <br />
-                <small style="color:#c9b27c; font-family:'Segoe UI',sans-serif;">— Surah Al-Jumu'ah (62:10) —</small>
+            <div class="hero-actions">
+                <a href="#theme" class="btn btn-primary">
+                    <i class="fas fa-leaf"></i> Explore Theme
+                </a>
+                <a href="#sponsors" class="btn btn-outline">
+                    <i class="fas fa-handshake"></i> Our Sponsors
+                </a>
             </div>
 
-            <p>🤍 Ijumaa Kareem · Heri na baraka kwako na familia yako 🤍</p>
+            <!-- Floating decorative elements -->
+            <div class="float-icon float-icon-1"><i class="fas fa-wheat-alt"></i></div>
+            <div class="float-icon float-icon-2"><i class="fas fa-tractor"></i></div>
+            <div class="float-icon float-icon-3"><i class="fas fa-apple-alt"></i></div>
+            <div class="float-icon float-icon-4"><i class="fas fa-cloud-sun"></i></div>
+        </div>
 
-            <a href="https://drive.google.com/drive/folders/1sEbZHMdj91dEGRR6rqK-W6d9s57s-H_a" target="_blank" class="fomu-link" onclick="event.stopPropagation();">
-                📋 BONYEZA HAPA · FOMU
-            </a>
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
 
-            <div style="margin-top: 16px;">
-                <button class="close-surprise" onclick="closeSurprise()">✖ Funga</button>
+    <!-- ===== THEME / VISION SECTION ===== -->
+    <section id="theme" class="theme-section">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag"><i class="fas fa-quote-left"></i> Theme Message</span>
+                <h2 class="section-title">
+                    Our <span class="color-blue">Guiding</span> <span class="color-green">Vision</span>
+                </h2>
+                <p class="section-subtitle">
+                    A shared commitment to <span style="color:var(--color-green);">agricultural growth</span>,
+                    <span style="color:var(--color-blue-bright);">food security</span>, and
+                    <span style="color:var(--color-gold);">national prosperity</span>.
+                </p>
+                <div class="section-divider"></div>
             </div>
 
-            <p class="footnote">Bonyeza fomu ili kujaza, au funga kuendelea kutazama fataki.</p>
-        </div>
-    </div>
+            <div class="theme-card" data-animate="fade-up">
+                <div class="theme-icon-wrapper">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <blockquote class="theme-quote">
+                    "<span class="color-blue">Agriculture</span> is the Backbone of Our Nation.
+                    <span class="color-green">Together</span> We <span class="color-gold">Grow</span>,
+                    <span class="color-red">Together</span> We <span class="color-purple">Prosper</span>."
+                </blockquote>
+                <p class="theme-attribution">
+                    — Nane Nane Day 2026
+                </p>
+                <div class="theme-decoration">
+                    <span></span>
+                    <i class="fas fa-seedling"></i>
+                    <span></span>
+                </div>
+            </div>
 
+            <!-- Stats -->
+            <div class="stats-grid" data-animate="fade-up">
+                <div class="stat-item">
+                    <div class="stat-number color-blue" data-count="70">0</div>
+                    <p class="stat-label">% of Population<br />in Agriculture</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number color-gold" data-count="65">0</div>
+                    <p class="stat-label">% of Employment<br />from Farming</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number color-green" data-count="85">0</div>
+                    <p class="stat-label">% of Food<br />Self-Sufficiency</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SPONSORS SECTION ===== -->
+    <section id="sponsors" class="sponsors-section">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag"><i class="fas fa-star"></i> Partners</span>
+                <h2 class="section-title">
+                    Our <span class="color-gold">Esteemed</span> <span class="color-blue">Sponsors</span>
+                </h2>
+                <p class="section-subtitle">
+                    Proudly supported by leaders who believe in the <span style="color:var(--color-red);">power</span> of
+                    <span style="color:var(--color-green);">agriculture</span>.
+                </p>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="sponsors-grid" data-animate="fade-up">
+                <!-- Sponsored By -->
+                <div class="sponsor-card sponsor-primary">
+                    <div class="sponsor-badge sponsor-badge-blue">Sponsored By</div>
+                    <div class="sponsor-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="sponsor-name">Haji <span class="color-gold">Jecha</span> Khamis</h3>
+                    <p class="sponsor-role">Patron &amp; Supporter of Agriculture</p>
+                    <div class="sponsor-divider"></div>
+                    <p class="sponsor-message">
+                        <i class="fas fa-quote-left"></i>
+                        <span class="color-blue">Empowering</span> farmers,
+                        <span class="color-green">building</span> a
+                        <span class="color-gold">food-secure</span> nation.
+                    </p>
+                </div>
+
+                <!-- In Collaboration With -->
+                <div class="sponsor-card sponsor-secondary">
+                    <div class="sponsor-badge sponsor-badge-gold">In Collaboration With</div>
+                    <div class="sponsor-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="sponsor-name">JTL <span class="color-red">Zanzibar</span></h3>
+                    <p class="sponsor-role">Jeithird Trade &amp; Logistics</p>
+                    <div class="sponsor-divider"></div>
+                    <div class="sponsor-tags">
+                        <span><i class="fas fa-chart-line"></i> Trade</span>
+                        <span><i class="fas fa-graduation-cap"></i> Education</span>
+                        <span><i class="fas fa-briefcase"></i> Business</span>
+                        <span><i class="fas fa-truck"></i> Logistics</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="partners-strip" data-animate="fade-up">
+                <p><i class="fas fa-handshake"></i> Supported by the agricultural community of
+                    <span class="color-red">Zanzibar</span> &amp;
+                    <span class="color-green">Tanzania</span>
+                    <span style="color:var(--color-gold);">★</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== APPRECIATION SECTION ===== -->
+    <section id="appreciation" class="appreciation-section">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag"><i class="fas fa-heart"></i> Appreciation</span>
+                <h2 class="section-title">
+                    A <span class="color-red">Message</span> of <span class="color-gold">Gratitude</span>
+                </h2>
+                <p class="section-subtitle">
+                    Honoring the <span style="color:var(--color-purple);">resilience</span> and
+                    <span style="color:var(--color-blue-bright);">dedication</span> of every farmer who
+                    <span style="color:var(--color-green);">nourishes</span> our nation.
+                </p>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="appreciation-card" data-animate="fade-up">
+                <div class="appreciation-quote-mark">
+                    <i class="fas fa-quote-right"></i>
+                </div>
+                <p class="appreciation-text">
+                    We extend our <span class="color-red">heartfelt appreciation</span> and
+                    <span class="color-gold">best wishes</span> to all farmers on the occasion of
+                    <span class="color-blue">Nane Nane</span>. Your
+                    <span class="color-green">commitment</span>,
+                    <span class="color-purple">resilience</span>, and
+                    <span class="color-gold">hard work</span> continue to
+                    <span class="color-blue">nourish</span> our nation and build a
+                    <span class="color-green">stronger</span> future.
+                    <span class="color-red">Happy Nane Nane</span>!
+                </p>
+                <div class="appreciation-footer">
+                    <div class="appreciation-signature">
+                        <i class="fas fa-signature"></i>
+                        <span>JTL Zanzibar Team</span>
+                    </div>
+                    <div class="appreciation-date">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>August 1, 2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appreciation-decorations">
+                <i class="fas fa-seedling"></i>
+                <i class="fas fa-wheat-alt"></i>
+                <i class="fas fa-apple-alt"></i>
+                <i class="fas fa-carrot"></i>
+                <i class="fas fa-leaf"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-brand" data-animate="fade-up">
+                    <div class="footer-logo">
+                        <i class="fas fa-seedling"></i>
+                        <span>JTL Zanzibar</span>
+                    </div>
+                    <p class="footer-tagline">
+                        Trade • Education • Business • Logistics
+                    </p>
+                    <p class="footer-mission">
+                        Empowering Communities Through Knowledge and Opportunity
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-links" data-animate="fade-up">
+                    <h4>Quick <span class="color-gold">Links</span></h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#theme">Theme</a></li>
+                        <li><a href="#sponsors">Sponsors</a></li>
+                        <li><a href="#appreciation">Appreciation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-contact" data-animate="fade-up">
+                    <h4>Get in <span class="color-blue-light">Touch</span></h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Zanzibar, Tanzania</li>
+                        <li><i class="fas fa-envelope"></i> info@jtlzanzibar.com</li>
+                        <li><i class="fas fa-phone"></i> +255 777 123 456</li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-newsletter" data-animate="fade-up">
+                    <h4>Stay <span class="color-gold">Connected</span></h4>
+                    <p>Join our community and celebrate agriculture.</p>
+                    <form id="newsletterForm" class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required id="newsletterEmail" />
+                        <button type="submit" class="btn btn-primary btn-sm">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 JTL Zanzibar — Jeithird Trade &amp; Logistics. All rights reserved.</p>
+                <p class="footer-credit">
+                    <i class="fas fa-seedling"></i> Nane Nane Day Celebration
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- ===== JAVASCRIPT ===== -->
     <script>
-        /* ============================================================
-           FIREWORKS – inayoendelea nyuma, haizuii kusogea
-           ============================================================ */
-        const canvas = document.getElementById("fireworksCanvas");
-        const ctx = canvas.getContext("2d");
-        let w, h, fireworks = [],
-            particles = [],
-            running = false;
+        // ============================================================
+        // MASTER JAVASCRIPT — Nane Nane Day Landing Page
+        // ============================================================
 
-        function resize() {
-            w = canvas.width = window.innerWidth;
-            h = canvas.height = window.innerHeight;
-        }
-        window.addEventListener("resize", resize);
-        resize();
+        (function() {
+            'use strict';
 
-        function random(min, max) { return Math.random() * (max - min) + min; }
-
-        // ---------- Firework ----------
-        class Firework {
-            constructor() {
-                this.x = random(0, w);
-                this.y = h;
-                this.targetY = random(h * 0.15, h * 0.50);
-                this.color = `hsl(${random(0, 360)}, 100%, 65%)`;
-                this.speed = random(10, 16);
-                this.radius = 4;
+            // ============================================================
+            // 1. PRELOADER
+            // ============================================================
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                window.addEventListener('load', function() {
+                    setTimeout(function() {
+                        preloader.classList.add('fade-out');
+                    }, 600);
+                });
+                setTimeout(function() {
+                    if (!preloader.classList.contains('fade-out')) {
+                        preloader.classList.add('fade-out');
+                    }
+                }, 4000);
             }
-            update() {
-                this.y -= this.speed;
-                if (this.y <= this.targetY) {
-                    explode(this.x, this.y, this.color);
-                    return true;
+
+            // ============================================================
+            // 2. PARTICLE CANVAS
+            // ============================================================
+            const canvas = document.getElementById('particleCanvas');
+            if (canvas) {
+                let ctx = canvas.getContext('2d');
+                let particles = [];
+                let w, h;
+
+                function resizeCanvas() {
+                    const rect = canvas.parentElement.getBoundingClientRect();
+                    w = canvas.width = rect.width;
+                    h = canvas.height = rect.height;
                 }
-                drawCircle(this.x, this.y, this.radius, this.color);
-                return false;
+                resizeCanvas();
+                window.addEventListener('resize', resizeCanvas);
+
+                function Particle() {
+                    this.x = Math.random() * w;
+                    this.y = Math.random() * h;
+                    this.size = Math.random() * 2.5 + 0.5;
+                    this.speedX = (Math.random() - 0.5) * 0.5;
+                    this.speedY = (Math.random() - 0.5) * 0.5;
+                    this.opacity = Math.random() * 0.4 + 0.1;
+                }
+
+                Particle.prototype.update = function() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                    if (this.x < 0 || this.x > w) this.speedX *= -1;
+                    if (this.y < 0 || this.y > h) this.speedY *= -1;
+                };
+
+                Particle.prototype.draw = function() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(46, 134, 193, ' + this.opacity + ')';
+                    ctx.fill();
+                };
+
+                const count = Math.min(70, Math.floor((w * h) / 9000));
+                for (let i = 0; i < count; i++) {
+                    particles.push(new Particle());
+                }
+
+                function drawLines() {
+                    for (let i = 0; i < particles.length; i++) {
+                        for (let j = i + 1; j < particles.length; j++) {
+                            const dx = particles[i].x - particles[j].x;
+                            const dy = particles[i].y - particles[j].y;
+                            const dist = Math.sqrt(dx * dx + dy * dy);
+                            if (dist < 140) {
+                                ctx.beginPath();
+                                ctx.moveTo(particles[i].x, particles[i].y);
+                                ctx.lineTo(particles[j].x, particles[j].y);
+                                ctx.strokeStyle = 'rgba(46, 134, 193, ' + (0.05 * (1 - dist / 140)) + ')';
+                                ctx.lineWidth = 0.5;
+                                ctx.stroke();
+                            }
+                        }
+                    }
+                }
+
+                function animateParticles() {
+                    ctx.clearRect(0, 0, w, h);
+                    particles.forEach(function(p) {
+                        p.update();
+                        p.draw();
+                    });
+                    drawLines();
+                    requestAnimationFrame(animateParticles);
+                }
+                animateParticles();
             }
-        }
 
-        // ---------- Particle ----------
-        class Particle {
-            constructor(x, y, color) {
-                this.x = x;
-                this.y = y;
-                this.color = color;
-                this.radius = random(2.5, 6);
-                this.speedX = random(-9, 9);
-                this.speedY = random(-9, 9);
-                this.life = 70;
-                this.decay = 0.93;
+            // ============================================================
+            // 3. NAVIGATION TOGGLE
+            // ============================================================
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('open');
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                });
+
+                navMenu.querySelectorAll('.nav-link').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        navMenu.classList.remove('open');
+                        const icon = navToggle.querySelector('i');
+                        if (icon) {
+                            icon.classList.add('fa-bars');
+                            icon.classList.remove('fa-times');
+                        }
+                    });
+                });
             }
-            update() {
-                this.life--;
-                this.x += this.speedX;
-                this.y += this.speedY;
-                this.speedX *= this.decay;
-                this.speedY *= this.decay;
-                this.radius *= 0.97;
-                drawCircle(this.x, this.y, this.radius, this.color);
-                return this.life <= 0 || this.radius < 0.3;
+
+            // ============================================================
+            // 4. SCROLL EFFECTS
+            // ============================================================
+            const navbar = document.querySelector('.navbar');
+            const backToTop = document.getElementById('backToTop');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section[id]');
+
+            function updateScrollState() {
+                const scrollY = window.scrollY;
+
+                if (navbar) {
+                    navbar.classList.toggle('scrolled', scrollY > 80);
+                }
+
+                if (backToTop) {
+                    backToTop.classList.toggle('visible', scrollY > 500);
+                }
+
+                let current = '';
+                sections.forEach(function(section) {
+                    const sectionTop = section.offsetTop - 120;
+                    if (scrollY >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(function(link) {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
             }
-        }
 
-        // ---------- Explosion ----------
-        function explode(x, y, color) {
-            const count = 60 + Math.floor(random(20, 50));
-            for (let i = 0; i < count; i++) {
-                particles.push(new Particle(x, y, color));
+            window.addEventListener('scroll', updateScrollState);
+            window.addEventListener('resize', updateScrollState);
+            setTimeout(updateScrollState, 100);
+
+            // ============================================================
+            // 5. BACK TO TOP
+            // ============================================================
+            if (backToTop) {
+                backToTop.addEventListener('click', function() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
             }
-            for (let i = 0; i < 18; i++) {
-                const extra = `hsl(${random(0, 360)}, 90%, 72%)`;
-                particles.push(new Particle(x, y, extra));
+
+            // ============================================================
+            // 6. SCROLL REVEAL
+            // ============================================================
+            const animateElements = document.querySelectorAll('[data-animate]');
+
+            function revealElements() {
+                const windowHeight = window.innerHeight;
+                const revealThreshold = 100;
+
+                animateElements.forEach(function(el) {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < windowHeight - revealThreshold) {
+                        el.classList.add('visible');
+                    }
+                });
             }
-        }
 
-        function drawCircle(x, y, r, c) {
-            ctx.beginPath();
-            ctx.arc(x, y, r, 0, Math.PI * 2);
-            ctx.fillStyle = c;
-            ctx.shadowColor = c;
-            ctx.shadowBlur = 14;
-            ctx.fill();
-            ctx.shadowBlur = 0;
-        }
+            window.addEventListener('scroll', revealElements);
+            window.addEventListener('resize', revealElements);
+            setTimeout(revealElements, 300);
 
-        // ---------- Animation loop ----------
-        function animate() {
-            if (!running) return;
-            ctx.clearRect(0, 0, w, h);
+            // ============================================================
+            // 7. STAT COUNTER
+            // ============================================================
+            const statNumbers = document.querySelectorAll('.stat-number[data-count]');
+            let statsAnimated = false;
 
-            if (Math.random() < 0.10) fireworks.push(new Firework());
+            function animateStats() {
+                if (statsAnimated) return;
+                const windowHeight = window.innerHeight;
 
-            fireworks = fireworks.filter(f => !f.update());
-            particles = particles.filter(p => !p.update());
+                let shouldAnimate = false;
+                statNumbers.forEach(function(el) {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < windowHeight - 50) {
+                        shouldAnimate = true;
+                    }
+                });
 
-            requestAnimationFrame(animate);
-        }
-
-        // ============================================================
-        //   OPEN / CLOSE
-        // ============================================================
-        function openSurprise() {
-            document.getElementById("overlay").classList.add("show");
-            running = true;
-            animate();
-        }
-
-        function closeSurprise() {
-            document.getElementById("overlay").classList.remove("show");
-            running = false;
-            ctx.clearRect(0, 0, w, h);
-            fireworks = [];
-            particles = [];
-        }
-
-        // Hakikisha kiungo hakijafungwa na overlay
-        document.querySelector('.fomu-link').addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
-
-        // Funga overlay kwa kugusa nje ya kadi (kwenye simu)
-        document.getElementById("overlay").addEventListener("click", function(e) {
-            if (e.target === this) {
-                closeSurprise();
+                if (shouldAnimate) {
+                    statsAnimated = true;
+                    statNumbers.forEach(function(el) {
+                        const target = parseInt(el.getAttribute('data-count'), 10);
+                        if (isNaN(target)) return;
+                        let current = 0;
+                        const increment = Math.ceil(target / 50);
+                        const timer = setInterval(function() {
+                            current += increment;
+                            if (current >= target) {
+                                current = target;
+                                clearInterval(timer);
+                            }
+                            el.textContent = current;
+                        }, 25);
+                    });
+                }
             }
-        });
 
-        // Kwa ufunguo wa Escape
-        document.addEventListener("keydown", function(e) {
-            if (e.key === "Escape") {
-                closeSurprise();
+            window.addEventListener('scroll', animateStats);
+            window.addEventListener('resize', animateStats);
+            setTimeout(animateStats, 500);
+
+            // ============================================================
+            // 8. NEWSLETTER FORM
+            // ============================================================
+            const newsletterForm = document.getElementById('newsletterForm');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const input = this.querySelector('input[type="email"]');
+                    if (input && input.value.trim() !== '') {
+                        const btn = this.querySelector('button');
+                        const originalText = btn.innerHTML;
+                        btn.innerHTML = '<i class="fas fa-check"></i>';
+                        btn.style.background = '#1a4d7a';
+                        setTimeout(function() {
+                            btn.innerHTML = originalText;
+                            btn.style.background = '';
+                            input.value = '';
+                            alert('Thank you for subscribing! Stay tuned for updates.');
+                        }, 1500);
+                    } else {
+                        alert('Please enter a valid email address.');
+                    }
+                });
             }
-        });
 
-        // Anzisha fataki mara baada ya mzigo (ili kuwa na harakati)
-        window.addEventListener("load", function() {
-            running = true;
-            animate();
-        });
+            // ============================================================
+            // 9. SMOOTH SCROLL
+            // ============================================================
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#') return;
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        const offsetTop = target.offsetTop - 70;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
 
-        // Ikiwa mtumiaji anasogea, fataki zinaendelea – hakuna haja ya kuzima
+        })();
     </script>
 
 </body>
