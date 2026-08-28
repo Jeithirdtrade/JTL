@@ -2,7 +2,7 @@
 <html lang="sw">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
     <title>JTL Zanzibar - Kampuni ya Biashara</title>
 
     <!-- ===== FONT AWESOME ICONS ===== -->
@@ -14,6 +14,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
         html {
@@ -22,10 +23,39 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
+            background: #0a0a12;
             color: #1e1e2a;
             line-height: 1.6;
             overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 12px 0;
+        }
+
+        /* ===== PHONE FRAME ===== */
+        .phone-frame {
+            width: 100%;
+            max-width: 414px;
+            background: #f8f9fa;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.06);
+            position: relative;
+            margin: 0 12px;
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--blue);
+            border-radius: 8px;
         }
 
         a {
@@ -39,9 +69,7 @@
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 16px;
         }
 
         /* ===== COLORS ===== */
@@ -60,134 +88,78 @@
             --purple-light: #a569bd;
             --gray: #f0f2f5;
             --shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-            --radius: 16px;
-            --transition: 0.35s ease;
-        }
-
-        /* ===== SCROLLBAR ===== */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--gray);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--blue);
-            border-radius: 8px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--purple);
+            --radius: 14px;
+            --transition: 0.3s ease;
         }
 
         /* ===== HEADER / NAV ===== */
         header {
-            position: fixed;
+            position: sticky;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(26, 82, 118, 0.92);
+            background: rgba(26, 82, 118, 0.96);
             backdrop-filter: blur(12px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
-            transition: var(--transition);
-            padding: 6px 0;
-        }
-
-        header.scrolled {
-            background: rgba(26, 82, 118, 0.97);
-            padding: 2px 0;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
+            padding: 8px 0;
         }
 
         .nav-container {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 12px;
+            padding: 0 16px;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             color: var(--white);
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 800;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         .logo-icon {
             background: var(--yellow);
             color: var(--black);
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 900;
-            box-shadow: 0 4px 12px rgba(241, 196, 15, 0.4);
+            box-shadow: 0 4px 12px rgba(241, 196, 15, 0.35);
+            flex-shrink: 0;
         }
 
         .logo span {
             color: var(--yellow);
         }
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .nav-links a {
-            color: rgba(255, 255, 255, 0.85);
-            padding: 8px 18px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            background: var(--yellow);
-            color: var(--black);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 16px rgba(241, 196, 15, 0.35);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 4px;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--yellow);
-            transition: var(--transition);
-            transform: translateX(-50%);
-        }
-
-        .nav-links a:hover::after {
-            width: 60%;
-        }
-
         .hamburger {
-            display: none;
+            display: flex;
             flex-direction: column;
             gap: 5px;
             cursor: pointer;
-            padding: 6px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
+            padding: 8px 10px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
             border: none;
+            transition: var(--transition);
+            touch-action: manipulation;
+        }
+
+        .hamburger:active {
+            transform: scale(0.92);
         }
 
         .hamburger span {
-            width: 28px;
+            width: 26px;
             height: 3px;
             background: var(--white);
             border-radius: 4px;
@@ -204,15 +176,53 @@
             transform: rotate(-45deg) translate(5px, -6px);
         }
 
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            background: rgba(26, 82, 118, 0.98);
+            padding: 12px 0 16px;
+            border-radius: 0 0 16px 16px;
+            gap: 2px;
+            list-style: none;
+            margin-top: 4px;
+        }
+
+        .nav-links.open {
+            display: flex;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.85);
+            padding: 12px 20px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            border-radius: 10px;
+            display: block;
+            touch-action: manipulation;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:active,
+        .nav-links a.active {
+            background: var(--yellow);
+            color: var(--black);
+        }
+
+        .nav-links a:active {
+            transform: scale(0.96);
+        }
+
         /* ===== HERO ===== */
         .hero {
-            min-height: 100vh;
+            min-height: 85vh;
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 60%, var(--red) 100%);
             position: relative;
             overflow: hidden;
-            padding: 120px 0 80px;
+            padding: 24px 0 48px;
         }
 
         .hero::before {
@@ -220,13 +230,11 @@
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(circle at 10% 20%, rgba(241, 196, 15, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 90% 80%, rgba(46, 204, 113, 0.12) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(142, 68, 173, 0.08) 0%, transparent 70%);
+                radial-gradient(circle at 10% 20%, rgba(241, 196, 15, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(46, 204, 113, 0.10) 0%, transparent 50%);
             pointer-events: none;
         }
 
-        /* animated shapes */
         .hero-shapes {
             position: absolute;
             inset: 0;
@@ -237,33 +245,33 @@
         .shape {
             position: absolute;
             border-radius: 50%;
-            opacity: 0.10;
+            opacity: 0.08;
             animation: floatShape 18s infinite alternate ease-in-out;
         }
 
         .shape-1 {
-            width: 500px;
-            height: 500px;
+            width: 300px;
+            height: 300px;
             background: var(--yellow);
-            top: -150px;
-            right: -100px;
+            top: -80px;
+            right: -60px;
             animation-duration: 22s;
         }
         .shape-2 {
-            width: 350px;
-            height: 350px;
+            width: 200px;
+            height: 200px;
             background: var(--green);
-            bottom: -100px;
-            left: -80px;
+            bottom: -40px;
+            left: -40px;
             animation-duration: 26s;
             animation-delay: 2s;
         }
         .shape-3 {
-            width: 200px;
-            height: 200px;
+            width: 120px;
+            height: 120px;
             background: var(--red);
-            top: 50%;
-            left: 60%;
+            top: 40%;
+            left: 70%;
             animation-duration: 20s;
             animation-delay: 4s;
         }
@@ -272,34 +280,31 @@
             0% {
                 transform: translate(0, 0) scale(1) rotate(0deg);
             }
-            33% {
-                transform: translate(30px, -40px) scale(1.05) rotate(8deg);
-            }
-            66% {
-                transform: translate(-20px, 20px) scale(0.95) rotate(-5deg);
+            50% {
+                transform: translate(15px, -25px) scale(1.04) rotate(6deg);
             }
             100% {
-                transform: translate(10px, -10px) scale(1.02) rotate(3deg);
+                transform: translate(-10px, 15px) scale(0.96) rotate(-4deg);
             }
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
             width: 100%;
+            padding: 0 16px;
         }
 
         .hero-text h1 {
-            font-size: 3.6rem;
+            font-size: 2.2rem;
             font-weight: 900;
             color: var(--white);
             line-height: 1.15;
-            margin-bottom: 18px;
-            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 12px;
+            text-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
         }
 
         .hero-text h1 .highlight-yellow {
@@ -313,149 +318,156 @@
         }
 
         .hero-text p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: rgba(255, 255, 255, 0.85);
-            max-width: 500px;
-            margin-bottom: 30px;
+            max-width: 100%;
+            margin-bottom: 20px;
             font-weight: 400;
-            line-height: 1.8;
+            line-height: 1.7;
         }
 
         .hero-buttons {
             display: flex;
             flex-wrap: wrap;
-            gap: 14px;
+            gap: 10px;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 14px 34px;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 28px;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.9rem;
             border: none;
             cursor: pointer;
             transition: var(--transition);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            touch-action: manipulation;
+            flex: 1;
+            min-height: 52px;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
         }
 
         .btn-primary {
             background: var(--yellow);
             color: var(--black);
         }
-        .btn-primary:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 10px 35px rgba(241, 196, 15, 0.45);
+        .btn-primary:active {
+            box-shadow: 0 6px 24px rgba(241, 196, 15, 0.5);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.12);
             color: var(--white);
             backdrop-filter: blur(6px);
-            border: 2px solid rgba(255, 255, 255, 0.25);
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
-        .btn-secondary:hover {
-            background: var(--white);
-            color: var(--blue);
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 10px 35px rgba(255, 255, 255, 0.25);
+        .btn-secondary:active {
+            background: rgba(255, 255, 255, 0.25);
         }
 
         .btn-green {
             background: var(--green);
             color: var(--white);
         }
-        .btn-green:hover {
-            background: var(--green-light);
-            transform: translateY(-4px);
-            box-shadow: 0 10px 35px rgba(39, 174, 96, 0.45);
-        }
-
         .btn-purple {
             background: var(--purple);
             color: var(--white);
-        }
-        .btn-purple:hover {
-            background: var(--purple-light);
-            transform: translateY(-4px);
-            box-shadow: 0 10px 35px rgba(142, 68, 173, 0.45);
         }
 
         .hero-image {
             display: flex;
             justify-content: center;
-            align-items: center;
         }
 
         .hero-image-card {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.06);
             backdrop-filter: blur(12px);
             border-radius: var(--radius);
-            padding: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-            max-width: 480px;
+            padding: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
             width: 100%;
+            max-width: 400px;
             transition: var(--transition);
         }
 
-        .hero-image-card:hover {
-            transform: scale(1.01);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
-        }
-
         .hero-image-card img {
-            border-radius: 12px;
+            border-radius: 10px;
             width: 100%;
-            height: 320px;
+            height: 200px;
             object-fit: cover;
             background: var(--gray);
         }
 
+        .hero-image-card .tags {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image-card .tags span {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+
         .hero-stats {
             display: flex;
-            gap: 30px;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            gap: 16px;
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.10);
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .hero-stats .stat {
             text-align: center;
             color: var(--white);
+            flex: 1;
+            min-width: 60px;
         }
 
         .hero-stats .stat-number {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 900;
             color: var(--yellow);
             display: block;
         }
 
         .hero-stats .stat-label {
-            font-size: 0.8rem;
+            font-size: 0.65rem;
             opacity: 0.7;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         /* ===== SECTION COMMON ===== */
         section {
-            padding: 80px 0;
+            padding: 48px 0 40px;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 32px;
+            padding: 0 8px;
         }
 
         .section-title h2 {
-            font-size: 2.6rem;
+            font-size: 1.8rem;
             font-weight: 800;
             color: var(--black);
             position: relative;
@@ -465,22 +477,21 @@
         .section-title h2::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -8px;
             left: 50%;
             transform: translateX(-50%);
-            width: 70px;
-            height: 4px;
+            width: 50px;
+            height: 3px;
             border-radius: 4px;
             background: linear-gradient(90deg, var(--yellow), var(--red), var(--purple));
         }
 
         .section-title p {
-            margin-top: 18px;
+            margin-top: 14px;
             color: #666;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 1.1rem;
+            max-width: 100%;
+            font-size: 0.95rem;
+            padding: 0 8px;
         }
 
         /* ===== ABOUT ===== */
@@ -489,30 +500,23 @@
         }
 
         .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
         }
 
         .about-image img {
             border-radius: var(--radius);
             width: 100%;
-            height: 400px;
+            height: 220px;
             object-fit: cover;
             box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .about-image img:hover {
-            transform: scale(1.01);
-            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.18);
         }
 
         .about-text h3 {
-            font-size: 2rem;
+            font-size: 1.6rem;
             font-weight: 800;
-            margin-bottom: 16px;
+            margin-bottom: 10px;
             color: var(--blue);
         }
 
@@ -522,40 +526,40 @@
 
         .about-text p {
             color: #555;
-            margin-bottom: 18px;
-            font-size: 1.05rem;
-            line-height: 1.8;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            line-height: 1.7;
         }
 
         .about-features {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 14px;
-            margin-top: 20px;
+            gap: 10px;
+            margin-top: 14px;
         }
 
         .about-feature {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             background: var(--gray);
-            padding: 12px 18px;
-            border-radius: 12px;
+            padding: 10px 14px;
+            border-radius: 10px;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.8rem;
             transition: var(--transition);
         }
 
-        .about-feature:hover {
+        .about-feature:active {
             background: var(--yellow);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(241, 196, 15, 0.3);
+            transform: scale(0.96);
         }
 
         .about-feature .icon {
-            font-size: 1.4rem;
-            width: 1.8rem;
+            font-size: 1.1rem;
+            width: 1.6rem;
             text-align: center;
+            flex-shrink: 0;
         }
 
         /* ===== SERVICES ===== */
@@ -565,36 +569,22 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 30px;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
         }
 
         .service-card {
             background: var(--white);
             border-radius: var(--radius);
-            padding: 32px 24px;
+            padding: 20px 14px;
             text-align: center;
             box-shadow: var(--shadow);
             transition: var(--transition);
-            border-bottom: 4px solid var(--blue);
-            position: relative;
-            overflow: hidden;
+            border-bottom: 3px solid var(--blue);
         }
 
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(26, 82, 118, 0.03), rgba(142, 68, 173, 0.03));
-            pointer-events: none;
-        }
-
-        .service-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        .service-card:active {
+            transform: scale(0.96);
         }
 
         .service-card:nth-child(1) {
@@ -617,34 +607,30 @@
         }
 
         .service-icon {
-            font-size: 3.2rem;
-            margin-bottom: 16px;
+            font-size: 2.4rem;
+            margin-bottom: 10px;
             display: inline-block;
-            padding: 16px;
+            padding: 12px;
             border-radius: 50%;
             background: rgba(26, 82, 118, 0.08);
             transition: var(--transition);
-            width: 5.5rem;
-            height: 5.5rem;
+            width: 4.2rem;
+            height: 4.2rem;
             line-height: 1.2;
             text-align: center;
         }
 
-        .service-card:hover .service-icon {
-            transform: scale(1.1) rotate(-6deg);
-        }
-
         .service-card h3 {
-            font-size: 1.2rem;
+            font-size: 0.95rem;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
             color: var(--black);
         }
 
         .service-card p {
             color: #666;
-            font-size: 0.95rem;
-            line-height: 1.6;
+            font-size: 0.8rem;
+            line-height: 1.5;
         }
 
         /* ===== CONTACT ===== */
@@ -653,38 +639,38 @@
         }
 
         .contact-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: start;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
         }
 
         .contact-info {
             background: linear-gradient(135deg, var(--blue), var(--purple));
-            padding: 40px 36px;
+            padding: 28px 20px;
             border-radius: var(--radius);
             color: var(--white);
             box-shadow: var(--shadow);
         }
 
         .contact-info h3 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 800;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .contact-info p {
             opacity: 0.85;
-            margin-bottom: 28px;
-            line-height: 1.7;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-size: 0.9rem;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 16px;
-            padding: 14px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            gap: 14px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .contact-item:last-child {
@@ -692,107 +678,90 @@
         }
 
         .contact-item .icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(255, 255, 255, 0.12);
+            width: 42px;
+            height: 42px;
+            background: rgba(255, 255, 255, 0.10);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             flex-shrink: 0;
-            transition: var(--transition);
-        }
-
-        .contact-item:hover .icon {
-            background: var(--yellow);
-            color: var(--black);
-            transform: scale(1.08);
-        }
-
-        .contact-item .info {
-            flex: 1;
         }
 
         .contact-item .info .label {
-            font-size: 0.75rem;
+            font-size: 0.65rem;
             opacity: 0.6;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         .contact-item .info .value {
             font-weight: 600;
-            font-size: 1.05rem;
+            font-size: 0.9rem;
             word-break: break-word;
         }
 
         .contact-item .info .value a {
             color: var(--yellow);
-            transition: var(--transition);
-        }
-
-        .contact-item .info .value a:hover {
-            color: var(--white);
-            text-decoration: underline;
         }
 
         .contact-social {
             display: flex;
-            gap: 14px;
-            margin-top: 24px;
+            gap: 10px;
+            margin-top: 16px;
             flex-wrap: wrap;
         }
 
         .contact-social a {
-            width: 48px;
-            height: 48px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.10);
+            background: rgba(255, 255, 255, 0.08);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            touch-action: manipulation;
         }
 
-        .contact-social a:hover {
+        .contact-social a:active {
             background: var(--yellow);
             color: var(--black);
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(241, 196, 15, 0.35);
+            transform: scale(0.92);
         }
 
         .contact-form {
             background: var(--gray);
-            padding: 36px 32px;
+            padding: 24px 18px;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
         }
 
         .contact-form h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
             font-weight: 800;
             color: var(--blue);
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
 
         .contact-form .sub {
             color: #777;
-            margin-bottom: 24px;
-            font-size: 0.95rem;
+            margin-bottom: 18px;
+            font-size: 0.85rem;
         }
 
         .form-group {
-            margin-bottom: 18px;
+            margin-bottom: 14px;
         }
 
         .form-group label {
             display: block;
             font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 5px;
+            font-size: 0.8rem;
+            margin-bottom: 4px;
             color: var(--black);
         }
 
@@ -800,13 +769,15 @@
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 14px 18px;
+            padding: 12px 14px;
             border: 2px solid #e0e0e0;
-            border-radius: 12px;
-            font-size: 1rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
             transition: var(--transition);
             background: var(--white);
             font-family: inherit;
+            -webkit-appearance: none;
+            appearance: none;
         }
 
         .form-group input:focus,
@@ -814,55 +785,52 @@
         .form-group select:focus {
             outline: none;
             border-color: var(--blue);
-            box-shadow: 0 0 0 4px rgba(26, 82, 118, 0.12);
+            box-shadow: 0 0 0 3px rgba(26, 82, 118, 0.10);
         }
 
         .form-group textarea {
-            min-height: 120px;
+            min-height: 100px;
             resize: vertical;
         }
 
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 18px;
+            gap: 14px;
         }
 
         .btn-submit {
             background: linear-gradient(135deg, var(--blue), var(--purple));
             color: var(--white);
             width: 100%;
-            padding: 16px;
+            padding: 14px;
             border: none;
             border-radius: 50px;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 700;
             cursor: pointer;
             transition: var(--transition);
             box-shadow: 0 4px 20px rgba(26, 82, 118, 0.3);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-        }
-
-        .btn-submit:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(26, 82, 118, 0.4);
-            background: linear-gradient(135deg, var(--purple), var(--blue));
+            gap: 10px;
+            touch-action: manipulation;
+            min-height: 52px;
         }
 
         .btn-submit:active {
-            transform: scale(0.97);
+            transform: scale(0.96);
+            box-shadow: 0 2px 12px rgba(26, 82, 118, 0.3);
         }
 
-        /* ===== MAP / LOCATION ===== */
+        /* ===== LOCATION ===== */
         .location {
             background: var(--gray);
             padding-top: 0;
-            padding-bottom: 80px;
+            padding-bottom: 40px;
         }
 
         .location-card {
@@ -874,24 +842,9 @@
 
         .location-card .map-placeholder {
             width: 100%;
-            height: 350px;
+            height: 200px;
             background: linear-gradient(135deg, var(--blue), var(--purple));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.4rem;
-            font-weight: 600;
             position: relative;
-        }
-
-        .location-card .map-placeholder::after {
-            content: '📍 Zanzibar, Tanzania';
-            font-size: 2rem;
-            opacity: 0.3;
-            font-weight: 900;
-            letter-spacing: 4px;
-            position: absolute;
         }
 
         .location-card .map-placeholder iframe {
@@ -901,12 +854,10 @@
         }
 
         .location-details {
-            padding: 24px 30px;
+            padding: 16px 18px;
             display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 16px;
-            align-items: center;
+            flex-direction: column;
+            gap: 10px;
             background: var(--white);
         }
 
@@ -916,33 +867,35 @@
             gap: 10px;
             color: #555;
             font-weight: 500;
+            font-size: 0.85rem;
         }
 
         .location-details .loc-item .icon {
-            font-size: 1.4rem;
-            width: 1.8rem;
+            font-size: 1.1rem;
+            width: 1.6rem;
             text-align: center;
+            flex-shrink: 0;
         }
 
         /* ===== FOOTER ===== */
         footer {
             background: var(--black);
             color: rgba(255, 255, 255, 0.7);
-            padding: 50px 0 20px;
+            padding: 32px 0 16px;
         }
 
         .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+            margin-bottom: 20px;
         }
 
         .footer-brand h3 {
             color: var(--white);
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 800;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .footer-brand h3 span {
@@ -950,67 +903,82 @@
         }
 
         .footer-brand p {
-            max-width: 320px;
-            line-height: 1.8;
-            font-size: 0.95rem;
+            max-width: 100%;
+            line-height: 1.7;
+            font-size: 0.85rem;
         }
 
         .footer-links h4,
         .footer-social h4 {
             color: var(--white);
-            font-size: 1.1rem;
-            margin-bottom: 14px;
+            font-size: 1rem;
+            margin-bottom: 10px;
         }
 
         .footer-links ul {
             list-style: none;
-        }
-
-        .footer-links ul li {
-            margin-bottom: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 16px;
         }
 
         .footer-links ul li a {
             transition: var(--transition);
-            font-size: 0.95rem;
+            font-size: 0.85rem;
+            padding: 4px 0;
+            display: inline-block;
         }
 
-        .footer-links ul li a:hover {
+        .footer-links ul li a:active {
             color: var(--yellow);
-            padding-left: 6px;
         }
 
         .footer-social .social-icons {
             display: flex;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
         }
 
         .footer-social .social-icons a {
-            width: 44px;
-            height: 44px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.06);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1rem;
             transition: var(--transition);
             border: 1px solid rgba(255, 255, 255, 0.06);
+            touch-action: manipulation;
         }
 
-        .footer-social .social-icons a:hover {
+        .footer-social .social-icons a:active {
             background: var(--yellow);
             color: var(--black);
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(241, 196, 15, 0.3);
+            transform: scale(0.92);
+        }
+
+        .footer-social .contact-mini {
+            margin-top: 12px;
+            font-size: 0.8rem;
+            opacity: 0.7;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .footer-social .contact-mini p {
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.06);
-            padding-top: 20px;
+            padding-top: 16px;
             text-align: center;
-            font-size: 0.9rem;
+            font-size: 0.75rem;
         }
 
         .footer-bottom .highlight {
@@ -1021,23 +989,27 @@
         /* ===== TOAST ===== */
         .toast {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
             background: var(--black);
             color: var(--white);
-            padding: 16px 28px;
+            padding: 14px 24px;
             border-radius: 14px;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-            transform: translateY(100px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
             opacity: 0;
-            transition: 0.5s ease;
+            transition: 0.4s ease;
             z-index: 9999;
             font-weight: 500;
-            border-left: 5px solid var(--green);
+            font-size: 0.85rem;
+            border-left: 4px solid var(--green);
+            max-width: 90%;
+            text-align: center;
+            pointer-events: none;
         }
 
         .toast.show {
-            transform: translateY(0);
+            transform: translateX(-50%) translateY(0);
             opacity: 1;
         }
 
@@ -1045,547 +1017,511 @@
             border-left-color: var(--red);
         }
 
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 992px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
+        /* ===== RESPONSIVE TWEAKS ===== */
+        @media (max-width: 430px) {
+            .hero-text h1 {
+                font-size: 1.8rem;
             }
 
-            .hero-text p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .hero-buttons {
-                justify-content: center;
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
             }
 
-            .about-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
+            .service-card {
+                padding: 16px 10px;
+            }
+
+            .service-icon {
+                font-size: 2rem;
+                width: 3.6rem;
+                height: 3.6rem;
+                padding: 8px;
+            }
+
+            .service-card h3 {
+                font-size: 0.8rem;
+            }
+
+            .service-card p {
+                font-size: 0.7rem;
             }
 
             .about-features {
-                justify-items: center;
-            }
-
-            .contact-wrapper {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-grid {
                 grid-template-columns: 1fr 1fr;
+                gap: 8px;
             }
 
-            .hero-text h1 {
-                font-size: 2.8rem;
+            .about-feature {
+                font-size: 0.7rem;
+                padding: 8px 10px;
             }
 
-            .section-title h2 {
-                font-size: 2.2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                background: rgba(26, 82, 118, 0.98);
-                padding: 16px 0;
-                border-radius: 12px;
-                margin-top: 6px;
-                gap: 4px;
-            }
-
-            .nav-links.open {
-                display: flex;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .hero-text h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-image-card img {
-                height: 220px;
-            }
-
-            .hero-stats {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 16px;
+            .btn {
+                font-size: 0.8rem;
+                padding: 12px 18px;
+                min-height: 44px;
             }
 
             .form-row {
                 grid-template-columns: 1fr;
             }
 
-            .footer-grid {
+            .hero-image-card img {
+                height: 160px;
+            }
+
+            .hero-stats .stat-number {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .hero-text h1 {
+                font-size: 1.5rem;
+            }
+
+            .services-grid {
                 grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .footer-brand p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .footer-social .social-icons {
-                justify-content: center;
-            }
-
-            .location-details {
-                flex-direction: column;
-                align-items: flex-start;
             }
 
             .about-features {
                 grid-template-columns: 1fr;
             }
 
-            .contact-info {
-                padding: 28px 20px;
-            }
-
-            .contact-form {
-                padding: 24px 18px;
-            }
-
-            section {
-                padding: 50px 0;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-text h1 {
-                font-size: 1.8rem;
-            }
-
-            .btn {
-                padding: 12px 24px;
-                font-size: 0.9rem;
-            }
-
             .logo {
-                font-size: 1.2rem;
+                font-size: 1rem;
             }
             .logo-icon {
-                width: 36px;
-                height: 36px;
-                font-size: 1.2rem;
+                width: 32px;
+                height: 32px;
+                font-size: 1rem;
             }
 
             .section-title h2 {
-                font-size: 1.8rem;
+                font-size: 1.4rem;
+            }
+        }
+
+        /* ===== Desktop fallback: center the phone ===== */
+        @media (min-width: 768px) {
+            body {
+                padding: 24px 0;
+                background: #0a0a12;
+                align-items: center;
+                min-height: 100vh;
+            }
+
+            .phone-frame {
+                border-radius: 36px;
+                box-shadow: 0 30px 100px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.04);
+                max-height: 95vh;
+                overflow-y: auto;
+            }
+
+            /* subtle scroll indicator for desktop */
+            .phone-frame::-webkit-scrollbar {
+                width: 3px;
+            }
+            .phone-frame::-webkit-scrollbar-thumb {
+                background: var(--blue);
+                border-radius: 8px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- ===== HEADER ===== -->
-    <header id="header">
-        <div class="container nav-container">
-            <a href="#" class="logo">
-                <div class="logo-icon">J</div>
-                JTL <span>Zanzibar</span>
-            </a>
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="active">Nyumbani</a></li>
-                <li><a href="#about">Kuhusu</a></li>
-                <li><a href="#services">Huduma</a></li>
-                <li><a href="#contact">Mawasiliano</a></li>
-            </ul>
-        </div>
-    </header>
+    <!-- ===== PHONE FRAME ===== -->
+    <div class="phone-frame">
 
-    <!-- ===== HERO ===== -->
-    <section class="hero" id="home">
-        <div class="hero-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-        </div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>
-                        JTL <span class="highlight-yellow">Zanzibar</span><br />
-                        <span class="highlight-green">Biashara</span> &
-                        <span class="highlight-red">Ushirikiano</span>
-                    </h1>
-                    <p>
-                        Kampuni inayoaminika ya biashara na huduma mbalimbali
-                        Zanzibar. Tunatoa ubora, uaminifu na ufanisi katika
-                        kila kazi tunayoifanya.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">
-                            <i class="fas fa-phone-alt"></i> Wasiliana Nasi
-                        </a>
-                        <a href="#about" class="btn btn-secondary">
-                            Jifunze Zaidi <i class="fas fa-arrow-right"></i>
-                        </a>
+        <!-- ===== HEADER ===== -->
+        <header id="header">
+            <div class="nav-container">
+                <a href="#" class="logo">
+                    <div class="logo-icon">J</div>
+                    JTL <span>Zanzibar</span>
+                </a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" class="active">Nyumbani</a></li>
+                    <li><a href="#about">Kuhusu</a></li>
+                    <li><a href="#services">Huduma</a></li>
+                    <li><a href="#contact">Mawasiliano</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <!-- ===== HERO ===== -->
+        <section class="hero" id="home">
+            <div class="hero-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+            <div class="container" style="width:100%;">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>
+                            JTL <span class="highlight-yellow">Zanzibar</span><br />
+                            <span class="highlight-green">Biashara</span> &
+                            <span class="highlight-red">Ushirikiano</span>
+                        </h1>
+                        <p>
+                            Kampuni inayoaminika ya biashara na huduma mbalimbali
+                            Zanzibar. Tunatoa ubora, uaminifu na ufanisi katika
+                            kila kazi tunayoifanya.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#contact" class="btn btn-primary">
+                                <i class="fas fa-phone-alt"></i> Wasiliana
+                            </a>
+                            <a href="#about" class="btn btn-secondary">
+                                Jifunze <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat">
+                                <span class="stat-number">5+</span>
+                                <span class="stat-label">Miaka</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">200+</span>
+                                <span class="stat-label">Wateja</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">Uaminifu</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <span class="stat-number">5+</span>
-                            <span class="stat-label">Miaka ya Uzoefu</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">200+</span>
-                            <span class="stat-label">Wateja Walioridhika</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Uaminifu</span>
+                    <div class="hero-image">
+                        <div class="hero-image-card">
+                            <img
+                            src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&h=400&fit=crop&crop=center&auto=format"
+                            alt="JTL Zanzibar"
+                            loading="lazy"
+                            />
+                            <div class="tags">
+                                <span style="background:var(--yellow); color:var(--black);">
+                                    <i class="fas fa-trophy"></i> Ubora
+                                </span>
+                                <span style="background:var(--green); color:white;">
+                                    <i class="fas fa-check-circle"></i> Uaminifu
+                                </span>
+                                <span style="background:var(--purple); color:white;">
+                                    <i class="fas fa-rocket"></i> Ufanisi
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <div class="hero-image-card">
+            </div>
+        </section>
+
+        <!-- ===== ABOUT ===== -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Kuhusu <span style="color:var(--purple);">JTL</span></h2>
+                    <p>Kampuni yetu inajengwa juu ya msingi wa uaminifu, ubora na maendeleo.</p>
+                </div>
+                <div class="about-grid">
+                    <div class="about-image">
                         <img
-                        src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&h=600&fit=crop&crop=center&auto=format"
-                        alt="JTL Zanzibar - Biashara na Huduma"
+                        src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop&crop=center&auto=format"
+                        alt="Kampuni ya JTL Zanzibar"
                         loading="lazy"
                         />
-                        <div style="display:flex; gap:12px; justify-content:center; margin-top:14px; flex-wrap:wrap;">
-                            <span style="background:var(--yellow); padding:4px 14px; border-radius:20px; font-size:0.8rem; font-weight:700; color:var(--black);">
-                                <i class="fas fa-trophy"></i> Ubora
-                            </span>
-                            <span style="background:var(--green); padding:4px 14px; border-radius:20px; font-size:0.8rem; font-weight:700; color:white;">
-                                <i class="fas fa-check-circle"></i> Uaminifu
-                            </span>
-                            <span style="background:var(--purple); padding:4px 14px; border-radius:20px; font-size:0.8rem; font-weight:700; color:white;">
-                                <i class="fas fa-rocket"></i> Ufanisi
-                            </span>
-                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== ABOUT ===== -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>Kuhusu <span style="color:var(--purple);">JTL</span> Zanzibar</h2>
-                <p>Kampuni yetu inajengwa juu ya msingi wa uaminifu, ubora na maendeleo ya pamoja.</p>
-            </div>
-            <div class="about-grid">
-                <div class="about-image">
-                    <img
-                    src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop&crop=center&auto=format"
-                    alt="Kampuni ya JTL Zanzibar"
-                    loading="lazy"
-                    />
-                </div>
-                <div class="about-text">
-                    <h3>JTL <span>Zanzibar</span></h3>
-                    <p>
-                        JTL Zanzibar ni kampuni inayoongoza katika biashara na
-                        huduma mbalimbali kisiwani Zanzibar. Tumejitolea kutoa
-                        huduma bora kwa wateja wetu kwa kutumia teknolojia ya
-                        kisasa na wataalamu wenye uzoefu.
-                    </p>
-                    <p>
-                        Tunaamini katika ukuaji wa pamoja na kujenga uhusiano
-                        wa muda mrefu na wateja wetu kupitia uwazi, uaminifu
-                        na ubora wa huduma.
-                    </p>
-                    <div class="about-features">
-                        <div class="about-feature">
-                            <span class="icon"><i class="fas fa-star"></i></span> Ubora wa Huduma
-                        </div>
-                        <div class="about-feature">
-                            <span class="icon"><i class="fas fa-handshake"></i></span> Uaminifu
-                        </div>
-                        <div class="about-feature">
-                            <span class="icon"><i class="fas fa-lightbulb"></i></span> Ubunifu
-                        </div>
-                        <div class="about-feature">
-                            <span class="icon"><i class="fas fa-globe-africa"></i></span> Uhusiano wa Kimataifa
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== SERVICES ===== -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Huduma <span style="color:var(--red);">Zetu</span></h2>
-                <p>Huduma mbalimbali tunazotoa kwa wateja wetu Zanzibar na nje yake.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-box"></i></div>
-                    <h3>Biashara ya Bidhaa</h3>
-                    <p>Uagizaji na usafirishaji wa bidhaa mbalimbali kutoka nje na ndani ya nchi.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-chart-bar"></i></div>
-                    <h3>Ushauri wa Biashara</h3>
-                    <p>Mashauri ya kitaalamu kwa wajasiriamali na makampuni yanayotaka kukua.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
-                    <h3>Mauza ya Jumla</h3>
-                    <p>Ugawaji wa bidhaa kwa wauzaji wadogo na makampuni makubwa.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
-                    <h3>Huduma za Simu</h3>
-                    <p>Uuzaji na ukarabati wa simu za mkononi na vifaa vya elektroniki.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-globe"></i></div>
-                    <h3>Biashara ya Kimataifa</h3>
-                    <p>Kuunganisha wateja wa Zanzibar na soko la kimataifa.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-bullseye"></i></div>
-                    <h3>Masoko &amp; Utangazaji</h3>
-                    <p>Mikakati ya masoko na utangazaji kwa biashara yako.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== CONTACT ===== -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Wasiliana <span style="color:var(--green);">Nasi</span></h2>
-                <p>Tupo tayari kusikiliza mahitaji yako na kukusaidia kwa kila njia.</p>
-            </div>
-            <div class="contact-wrapper">
-                <!-- Contact Info -->
-                <div class="contact-info">
-                    <h3><i class="fas fa-inbox"></i> Mawasiliano</h3>
-                    <p>
-                        Wasiliana nasi kupitia njia zifuatazo. Tunafurahi kusikia
-                        kutoka kwako na kukujibu haraka iwezekanavyo.
-                    </p>
-
-                    <div class="contact-item">
-                        <div class="icon"><i class="fas fa-phone-alt"></i></div>
-                        <div class="info">
-                            <div class="label">Simu</div>
-                            <div class="value"><a href="tel:+255776290901">+255 776 290 901</a></div>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="icon"><i class="fab fa-whatsapp"></i></div>
-                        <div class="info">
-                            <div class="label">WhatsApp</div>
-                            <div class="value">
-                                <a href="https://wa.me/255776290901" target="_blank">0776 290 901</a>
+                    <div class="about-text">
+                        <h3>JTL <span>Zanzibar</span></h3>
+                        <p>
+                            JTL Zanzibar ni kampuni inayoongoza katika biashara na
+                            huduma mbalimbali kisiwani Zanzibar. Tumejitolea kutoa
+                            huduma bora kwa wateja wetu kwa kutumia teknolojia ya
+                            kisasa na wataalamu wenye uzoefu.
+                        </p>
+                        <p>
+                            Tunaamini katika ukuaji wa pamoja na kujenga uhusiano
+                            wa muda mrefu kwa njia ya uwazi, uaminifu na ubora.
+                        </p>
+                        <div class="about-features">
+                            <div class="about-feature">
+                                <span class="icon"><i class="fas fa-star"></i></span> Ubora
+                            </div>
+                            <div class="about-feature">
+                                <span class="icon"><i class="fas fa-handshake"></i></span> Uaminifu
+                            </div>
+                            <div class="about-feature">
+                                <span class="icon"><i class="fas fa-lightbulb"></i></span> Ubunifu
+                            </div>
+                            <div class="about-feature">
+                                <span class="icon"><i class="fas fa-globe-africa"></i></span> Kimataifa
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="contact-item">
-                        <div class="icon"><i class="fas fa-envelope"></i></div>
-                        <div class="info">
-                            <div class="label">Barua Pepe</div>
-                            <div class="value">
-                                <a href="mailto:jeithirdtrade@gmail.com">jeithirdtrade@gmail.com</a>
-                            </div>
-                        </div>
+        <!-- ===== SERVICES ===== -->
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Huduma <span style="color:var(--red);">Zetu</span></h2>
+                    <p>Huduma mbalimbali tunazotoa kwa wateja wetu Zanzibar.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-box"></i></div>
+                        <h3>Biashara ya Bidhaa</h3>
+                        <p>Uagizaji na usafirishaji wa bidhaa mbalimbali.</p>
                     </div>
-
-                    <div class="contact-item">
-                        <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
-                        <div class="info">
-                            <div class="label">Mahali</div>
-                            <div class="value">Zanzibar, Tanzania</div>
-                        </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-chart-bar"></i></div>
+                        <h3>Ushauri wa Biashara</h3>
+                        <p>Mashauri kwa wajasiriamali na makampuni.</p>
                     </div>
-
-                    <div class="contact-social">
-                        <a href="https://wa.me/255776290901" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="mailto:jeithirdtrade@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-                        <a href="tel:+255776290901" title="Piga Simu"><i class="fas fa-phone-alt"></i></a>
-                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
+                        <h3>Mauza ya Jumla</h3>
+                        <p>Ugawaji wa bidhaa kwa wauzaji wadogo na makampuni.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3>Huduma za Simu</h3>
+                        <p>Uuzaji na ukarabati wa simu na vifaa vya elektroniki.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-globe"></i></div>
+                        <h3>Biashara ya Kimataifa</h3>
+                        <p>Kuunganisha Zanzibar na soko la kimataifa.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-bullseye"></i></div>
+                        <h3>Masoko &amp; Utangazaji</h3>
+                        <p>Mikakati ya masoko kwa biashara yako.</p>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Contact Form -->
-                <div class="contact-form">
-                    <h3>Tuma Ujumbe</h3>
-                    <p class="sub">Jaza fomu hapa chini na tutakujibu haraka.</p>
-                    <form id="contactForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Jina Lako</label>
-                                <input type="text" id="name" placeholder="Jina kamili" required />
+        <!-- ===== CONTACT ===== -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Wasiliana <span style="color:var(--green);">Nasi</span></h2>
+                    <p>Tupo tayari kusikiliza mahitaji yako na kukusaidia.</p>
+                </div>
+                <div class="contact-wrapper">
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <h3><i class="fas fa-inbox"></i> Mawasiliano</h3>
+                        <p>
+                            Wasiliana nasi kupitia njia zifuatazo. Tunafurahi kusikia
+                            kutoka kwako na kukujibu haraka.
+                        </p>
+
+                        <div class="contact-item">
+                            <div class="icon"><i class="fas fa-phone-alt"></i></div>
+                            <div class="info">
+                                <div class="label">Simu</div>
+                                <div class="value"><a href="tel:+255776290901">+255 776 290 901</a></div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="icon"><i class="fab fa-whatsapp"></i></div>
+                            <div class="info">
+                                <div class="label">WhatsApp</div>
+                                <div class="value">
+                                    <a href="https://wa.me/255776290901" target="_blank">0776 290 901</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="icon"><i class="fas fa-envelope"></i></div>
+                            <div class="info">
+                                <div class="label">Barua Pepe</div>
+                                <div class="value">
+                                    <a href="mailto:jeithirdtrade@gmail.com">jeithirdtrade@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="info">
+                                <div class="label">Mahali</div>
+                                <div class="value">Zanzibar, Tanzania</div>
+                            </div>
+                        </div>
+
+                        <div class="contact-social">
+                            <a href="https://wa.me/255776290901" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="mailto:jeithirdtrade@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="tel:+255776290901" title="Piga Simu"><i class="fas fa-phone-alt"></i></a>
+                            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="contact-form">
+                        <h3>Tuma Ujumbe</h3>
+                        <p class="sub">Jaza fomu hapa chini na tutakujibu haraka.</p>
+                        <form id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Jina Lako</label>
+                                    <input type="text" id="name" placeholder="Jina kamili" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Barua Pepe</label>
+                                    <input type="email" id="email" placeholder="email@example.com" required />
+                                </div>
                             </div>
                             <div class="form-group">
-                                <label for="email">Barua Pepe</label>
-                                <input type="email" id="email" placeholder="email@example.com" required />
+                                <label for="phone">Namba ya Simu</label>
+                                <input type="tel" id="phone" placeholder="+255 7XX XXX XXX" />
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Namba ya Simu</label>
-                            <input type="tel" id="phone" placeholder="+255 7XX XXX XXX" />
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Mada</label>
-                            <select id="subject">
-                                <option value="">Chagua mada...</option>
-                                <option value="biashara">Biashara</option>
-                                <option value="huduma">Huduma</option>
-                                <option value="ushauri">Ushauri</option>
-                                <option value="mengine">Mengineyo</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Ujumbe</label>
-                            <textarea id="message" placeholder="Andika ujumbe wako hapa..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit">
-                            <i class="fas fa-paper-plane"></i> Tuma Ujumbe
-                        </button>
-                    </form>
+                            <div class="form-group">
+                                <label for="subject">Mada</label>
+                                <select id="subject">
+                                    <option value="">Chagua mada...</option>
+                                    <option value="biashara">Biashara</option>
+                                    <option value="huduma">Huduma</option>
+                                    <option value="ushauri">Ushauri</option>
+                                    <option value="mengine">Mengineyo</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Ujumbe</label>
+                                <textarea id="message" placeholder="Andika ujumbe wako hapa..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit">
+                                <i class="fas fa-paper-plane"></i> Tuma Ujumbe
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ===== LOCATION ===== -->
-    <section class="location">
-        <div class="container">
-            <div class="section-title">
-                <h2>Mahali <span style="color:var(--red);">Papo</span></h2>
-                <p>JTL Zanzibar iko hapa tayari kukuhudumia.</p>
-            </div>
-            <div class="location-card">
-                <div class="map-placeholder">
-                    <!-- Embedded Google Map for Zanzibar -->
-                    <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253682.69318427724!2d39.168272573557!3d-6.165277362229592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185cd2b1d79d8a39%3A0x3aa17b0ac6e11b9!2sZanzibar%2C%20Tanzania!5e0!3m2!1sen!2s!4v1700000000000"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                    title="Ramani ya Zanzibar"
-                    ></iframe>
+        <!-- ===== LOCATION ===== -->
+        <section class="location">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Mahali <span style="color:var(--red);">Papo</span></h2>
+                    <p>JTL Zanzibar iko hapa tayari kukuhudumia.</p>
                 </div>
-                <div class="location-details">
-                    <span class="loc-item"><span class="icon"><i class="fas fa-map-marker-alt"></i></span> Zanzibar, Tanzania</span>
-                    <span class="loc-item"><span class="icon"><i class="far fa-clock"></i></span> Saa za Kazi: 8:00 AM – 6:00 PM</span>
-                    <span class="loc-item"><span class="icon"><i class="fas fa-phone-alt"></i></span> +255 776 290 901</span>
+                <div class="location-card">
+                    <div class="map-placeholder">
+                        <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253682.69318427724!2d39.168272573557!3d-6.165277362229592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185cd2b1d79d8a39%3A0x3aa17b0ac6e11b9!2sZanzibar%2C%20Tanzania!5e0!3m2!1sen!2s!4v1700000000000"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Ramani ya Zanzibar"
+                        ></iframe>
+                    </div>
+                    <div class="location-details">
+                        <span class="loc-item"><span class="icon"><i class="fas fa-map-marker-alt"></i></span> Zanzibar, Tanzania</span>
+                        <span class="loc-item"><span class="icon"><i class="far fa-clock"></i></span> 8:00 AM – 6:00 PM</span>
+                        <span class="loc-item"><span class="icon"><i class="fas fa-phone-alt"></i></span> +255 776 290 901</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ===== FOOTER ===== -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h3>JTL <span>Zanzibar</span></h3>
+        <!-- ===== FOOTER ===== -->
+        <footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <h3>JTL <span>Zanzibar</span></h3>
+                        <p>
+                            Kampuni inayoaminika ya biashara na huduma mbalimbali
+                            Zanzibar. Tunatoa ubora, uaminifu na ufanisi.
+                        </p>
+                    </div>
+                    <div class="footer-links">
+                        <h4><i class="fas fa-link"></i> Viungo</h4>
+                        <ul>
+                            <li><a href="#home">Nyumbani</a></li>
+                            <li><a href="#about">Kuhusu</a></li>
+                            <li><a href="#services">Huduma</a></li>
+                            <li><a href="#contact">Mawasiliano</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-social">
+                        <h4><i class="fas fa-mobile-alt"></i> Tuungane</h4>
+                        <div class="social-icons">
+                            <a href="https://wa.me/255776290901" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="mailto:jeithirdtrade@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="tel:+255776290901" title="Simu"><i class="fas fa-phone-alt"></i></a>
+                            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="contact-mini">
+                            <p><i class="fas fa-envelope"></i> jeithirdtrade@gmail.com</p>
+                            <p><i class="fas fa-phone-alt"></i> +255 776 290 901</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
                     <p>
-                        Kampuni inayoaminika ya biashara na huduma mbalimbali
-                        Zanzibar. Tunatoa ubora, uaminifu na ufanisi katika
-                        kila kazi tunayoifanya.
+                        &copy; 2026 <span class="highlight">JTL Zanzibar</span> —
+                        Haki zote zimehifadhiwa. <br />
+                        Imetengenezwa kwa <i class="fas fa-heart" style="color:var(--red);"></i> Zanzibar
                     </p>
                 </div>
-                <div class="footer-links">
-                    <h4><i class="fas fa-link"></i> Viungo</h4>
-                    <ul>
-                        <li><a href="#home">Nyumbani</a></li>
-                        <li><a href="#about">Kuhusu</a></li>
-                        <li><a href="#services">Huduma</a></li>
-                        <li><a href="#contact">Mawasiliano</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h4><i class="fas fa-mobile-alt"></i> Tuungane</h4>
-                    <div class="social-icons">
-                        <a href="https://wa.me/255776290901" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="mailto:jeithirdtrade@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-                        <a href="tel:+255776290901" title="Simu"><i class="fas fa-phone-alt"></i></a>
-                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                    </div>
-                    <div style="margin-top:16px; font-size:0.9rem; opacity:0.7;">
-                        <p><i class="fas fa-envelope"></i> jeithirdtrade@gmail.com</p>
-                        <p><i class="fas fa-phone-alt"></i> +255 776 290 901</p>
-                    </div>
-                </div>
             </div>
-            <div class="footer-bottom">
-                <p>
-                    &copy; 2026 <span class="highlight">JTL Zanzibar</span> —
-                    Haki zote zimehifadhiwa. | Imetengenezwa kwa <i class="fas fa-heart" style="color:var(--red);"></i> Zanzibar
-                </p>
-            </div>
-        </div>
-    </footer>
+        </footer>
 
-    <!-- ===== TOAST ===== -->
-    <div class="toast" id="toast"></div>
+        <!-- ===== TOAST ===== -->
+        <div class="toast" id="toast"></div>
+
+    </div>
+    <!-- ===== END PHONE FRAME ===== -->
 
     <!-- ===== JAVASCRIPT ===== -->
     <script>
         (function() {
             'use strict';
 
-            // ===== DOM refs =====
-            const header = document.getElementById('header');
             const hamburger = document.getElementById('hamburger');
             const navLinks = document.getElementById('navLinks');
             const navAnchors = document.querySelectorAll('.nav-links a');
             const contactForm = document.getElementById('contactForm');
             const toast = document.getElementById('toast');
 
-            // ===== Hamburger toggle =====
-            hamburger.addEventListener('click', function() {
+            // ===== Hamburger =====
+            hamburger.addEventListener('click', function(e) {
+                e.stopPropagation();
                 this.classList.toggle('active');
                 navLinks.classList.toggle('open');
             });
 
-            // Close menu on link click (mobile)
             navAnchors.forEach(link => {
-                link.addEventListener('click', function(e) {
+                link.addEventListener('click', function() {
                     hamburger.classList.remove('active');
                     navLinks.classList.remove('open');
-
-                    // active class
                     navAnchors.forEach(a => a.classList.remove('active'));
                     this.classList.add('active');
                 });
             });
 
-            // ===== Scroll: header shadow + active nav =====
+            // ===== Active nav on scroll =====
             const sections = document.querySelectorAll('section[id]');
 
             function updateActiveNav() {
                 let current = '';
-                const scrollY = window.scrollY + 120;
-
+                const scrollY = window.scrollY + 100;
                 sections.forEach(section => {
                     const top = section.offsetTop;
                     const height = section.offsetHeight;
@@ -1593,7 +1529,6 @@
                         current = section.getAttribute('id');
                     }
                 });
-
                 navAnchors.forEach(a => {
                     a.classList.remove('active');
                     if (a.getAttribute('href') === '#' + current) {
@@ -1602,37 +1537,25 @@
                 });
             }
 
-            function handleScroll() {
-                if (window.scrollY > 60) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-                updateActiveNav();
-            }
+            window.addEventListener('scroll', updateActiveNav);
+            window.addEventListener('load', updateActiveNav);
 
-            window.addEventListener('scroll', handleScroll);
-            window.addEventListener('load', handleScroll);
-
-            // ===== Toast helper =====
+            // ===== Toast =====
             let toastTimer = null;
 
             function showToast(message, isError = false) {
                 toast.textContent = message;
                 toast.className = 'toast';
                 if (isError) toast.classList.add('error');
-
                 clearTimeout(toastTimer);
-                // force reflow
                 void toast.offsetWidth;
                 toast.classList.add('show');
-
                 toastTimer = setTimeout(() => {
                     toast.classList.remove('show');
                 }, 4000);
             }
 
-            // ===== Form submission =====
+            // ===== Form =====
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
 
@@ -1642,18 +1565,15 @@
                 const subject = document.getElementById('subject').value;
                 const message = document.getElementById('message').value.trim();
 
-                // basic validation
                 if (!name || !email || !message) {
-                    showToast('Tafadhali jaza sehemu zote muhimu (Jina, Barua Pepe, Ujumbe).', true);
+                    showToast('Tafadhali jaza sehemu zote muhimu.', true);
                     return;
                 }
-
                 if (!email.includes('@') || !email.includes('.')) {
-                    showToast('Tafadhali ingiza barua pepe sahihi.', true);
+                    showToast('Barua pepe sahihi tafadhali.', true);
                     return;
                 }
 
-                // Build the WhatsApp message
                 const whatsappNumber = '255776290901';
                 let whatsappMsg = 'Halo JTL Zanzibar!%0A';
                 whatsappMsg += `Jina: ${name}%0A`;
@@ -1662,18 +1582,12 @@
                 if (subject) whatsappMsg += `Mada: ${subject}%0A`;
                 whatsappMsg += `Ujumbe: ${message}`;
 
-                // Open WhatsApp
-                const url = `https://wa.me/${whatsappNumber}?text=${whatsappMsg}`;
-                window.open(url, '_blank');
-
-                // Also show a success toast
-                showToast('✅ Ujumbe wako umetumwa! Tuta wasiliana nawe hivi karibuni.', false);
-
-                // Reset form
+                window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMsg}`, '_blank');
+                showToast('✅ Ujumbe wako umetumwa! Tuta wasiliana nawe.', false);
                 contactForm.reset();
             });
 
-            // ===== Smooth scroll for all anchor links =====
+            // ===== Smooth scroll =====
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     const targetId = this.getAttribute('href');
@@ -1681,14 +1595,14 @@
                     const targetEl = document.querySelector(targetId);
                     if (targetEl) {
                         e.preventDefault();
-                        const offset = 70;
+                        const offset = 60;
                         const top = targetEl.getBoundingClientRect().top + window.scrollY - offset;
                         window.scrollTo({ top, behavior: 'smooth' });
                     }
                 });
             });
 
-            // ===== Keyboard: close menu on Escape =====
+            // ===== Close menu on Escape =====
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
                     hamburger.classList.remove('active');
@@ -1696,20 +1610,18 @@
                 }
             });
 
-            // ===== Click outside to close menu =====
+            // ===== Click outside =====
             document.addEventListener('click', function(e) {
-                const isInside = header.contains(e.target);
-                if (!isInside && navLinks.classList.contains('open')) {
+                const header = document.getElementById('header');
+                if (!header.contains(e.target) && navLinks.classList.contains('open')) {
                     hamburger.classList.remove('active');
                     navLinks.classList.remove('open');
                 }
             });
 
-            console.log('🚀 JTL Zanzibar website loaded successfully!');
-            console.log('📞 +255 776 290 901 | ✉️ jeithirdtrade@gmail.com');
-
+            console.log('📱 JTL Zanzibar — Mobile View');
         })();
     </script>
 
 </body>
-                    </html>
+    </html>
