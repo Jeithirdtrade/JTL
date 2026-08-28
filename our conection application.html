@@ -1,116 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sw">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Happy Nane Nane Day to all farmers - Celebrating the hard work, dedication, and contribution of farmers towards food security and national development." />
-    <meta name="keywords" content="Nane Nane, Farmers Day, Tanzania, Agriculture, Food Security, JTL Zanzibar" />
-    <meta name="author" content="JTL Zanzibar" />
-    <title>Happy Nane Nane Day | Celebrating Our Farmers</title>
+    <title>JTL Zanzibar - Kampuni ya Biashara</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
-    <!-- Font Awesome 6 (free) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- ===== FONT AWESOME ICONS ===== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <style>
-        /* ============================================================
-               MASTER CSS — Nane Nane Day Landing Page
-               Premium Poster-Style Design — BLUE DOMINANT + COLORFUL TEXT
-               ============================================================ */
-
-        /* ============================================================
-               1.  CSS VARIABLES (Root)
-               ============================================================ */
-        :root {
-            /* ----- Primary Colors (Blue Dominant) ----- */
-            --color-primary: #0d2b4e;
-            /* deep navy blue */
-            --color-primary-dark: #071b33;
-            --color-primary-light: #1a4d7a;
-            --color-primary-mid: #143b5e;
-
-            --color-blue-deep: #0d2b4e;
-            --color-blue-dark: #071b33;
-            --color-blue-mid: #1a4d7a;
-            --color-blue-bright: #2e86c1;
-            --color-blue-light: #5dade2;
-            --color-blue-pale: #d6eaf8;
-            --color-blue-glass: rgba(13, 43, 78, 0.85);
-
-            /* ----- Accent Colors ----- */
-            --color-gold: #d4a02b;
-            --color-gold-dark: #b8860b;
-            --color-gold-light: #f0d078;
-            --color-gold-pale: #fcf3e0;
-
-            --color-red: #c0392b;
-            --color-red-bright: #e74c3c;
-            --color-red-pale: #fadbd8;
-
-            --color-green: #1e8449;
-            --color-green-bright: #27ae60;
-            --color-green-pale: #d5f5e3;
-            --color-green-light: #7ddfa0;
-
-            --color-yellow: #d4ac0d;
-            --color-yellow-bright: #f1c40f;
-            --color-yellow-pale: #fcf3cf;
-
-            --color-purple: #6c3483;
-            --color-purple-bright: #8e44ad;
-            --color-purple-pale: #ebdef0;
-
-            --color-gray: #5a5a5a;
-            --color-gray-light: #8a8a8a;
-            --color-gray-pale: #f0f0f0;
-
-            --color-white: #ffffff;
-            --color-dark: #1a1a1a;
-            --color-black: #0a0a0a;
-
-            --color-text: #2c2c2c;
-            --color-text-light: #5a5a5a;
-            --color-shadow: rgba(13, 43, 78, 0.15);
-
-            /* ----- Typography ----- */
-            --font-heading: 'Playfair Display', serif;
-            --font-body: 'Poppins', sans-serif;
-
-            /* ----- Spacing ----- */
-            --section-padding: 5rem 0;
-            --container-width: 1200px;
-            --card-radius: 1.25rem;
-            --transition-speed: 0.4s;
-
-            /* ----- Gradients (Blue-Dominant) ----- */
-            --gradient-hero: linear-gradient(145deg, rgba(13, 43, 78, 0.94) 0%, rgba(7, 27, 51, 0.96) 100%);
-            --gradient-blue: linear-gradient(135deg, var(--color-blue-mid), var(--color-blue-bright));
-            --gradient-blue-dark: linear-gradient(135deg, var(--color-primary), var(--color-blue-deep));
-            --gradient-gold: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
-            --gradient-green: linear-gradient(135deg, var(--color-green), var(--color-green-bright));
-            --gradient-red: linear-gradient(135deg, var(--color-red), var(--color-red-bright));
-            --gradient-purple: linear-gradient(135deg, var(--color-purple), var(--color-purple-bright));
-            --gradient-yellow: linear-gradient(135deg, var(--color-yellow), var(--color-yellow-bright));
-
-            /* ----- Shadows ----- */
-            --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.06);
-            --shadow-md: 0 12px 40px rgba(0, 0, 0, 0.08);
-            --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.12);
-            --shadow-blue: 0 8px 32px rgba(26, 77, 122, 0.3);
-            --shadow-blue-lg: 0 16px 48px rgba(26, 77, 122, 0.4);
-            --shadow-gold: 0 8px 32px rgba(212, 160, 43, 0.3);
-        }
-
-        /* ============================================================
-               2.  GLOBAL RESET & BASE
-               ============================================================ */
-        *,
-        *::before,
-        *::after {
+        /* ===== RESET & BASE ===== */
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -118,22 +18,14 @@
 
         html {
             scroll-behavior: smooth;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
         body {
-            font-family: var(--font-body);
-            font-weight: 400;
-            color: var(--color-text);
-            background-color: var(--color-white);
-            line-height: 1.7;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #1e1e2a;
+            line-height: 1.6;
             overflow-x: hidden;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
         }
 
         a {
@@ -141,2515 +33,1683 @@
             color: inherit;
         }
 
-        ul {
-            list-style: none;
+        img {
+            max-width: 100%;
+            display: block;
         }
 
-        /* ============================================================
-               3.  TYPOGRAPHY
-               ============================================================ */
         .container {
-            max-width: var(--container-width);
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 24px;
         }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 3.5rem;
+        /* ===== COLORS ===== */
+        :root {
+            --blue: #1a5276;
+            --blue-light: #2980b9;
+            --red: #c0392b;
+            --red-light: #e74c3c;
+            --green: #27ae60;
+            --green-light: #2ecc71;
+            --yellow: #f1c40f;
+            --yellow-light: #f9e74b;
+            --black: #1e1e2a;
+            --white: #ffffff;
+            --purple: #8e44ad;
+            --purple-light: #a569bd;
+            --gray: #f0f2f5;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --radius: 16px;
+            --transition: 0.35s ease;
         }
 
-        .section-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--color-blue-bright);
-            background: var(--color-blue-pale);
-            padding: 0.4rem 1.4rem;
-            border-radius: 2rem;
-            margin-bottom: 1rem;
-            border: 1px solid rgba(46, 134, 193, 0.2);
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--gray);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--blue);
+            border-radius: 8px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--purple);
         }
 
-        .section-tag i {
-            font-size: 0.7rem;
-            color: var(--color-blue-bright);
-        }
-
-        .section-title {
-            font-family: var(--font-heading);
-            font-size: clamp(2.2rem, 4.5vw, 3.4rem);
-            font-weight: 900;
-            color: var(--color-blue-deep);
-            margin-bottom: 0.75rem;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-        }
-
-        .section-title .color-red {
-            color: var(--color-red);
-        }
-        .section-title .color-green {
-            color: var(--color-green);
-        }
-        .section-title .color-gold {
-            color: var(--color-gold);
-        }
-        .section-title .color-purple {
-            color: var(--color-purple);
-        }
-        .section-title .color-blue {
-            color: var(--color-blue-bright);
-        }
-        .section-title .color-black {
-            color: var(--color-black);
-        }
-        .section-title .color-gray {
-            color: var(--color-gray);
-        }
-
-        .section-subtitle {
-            font-size: 1.05rem;
-            font-weight: 300;
-            color: var(--color-text-light);
-            max-width: 640px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-
-        .section-divider {
-            width: 80px;
-            height: 4px;
-            background: var(--gradient-blue);
-            border-radius: 4px;
-            margin: 0.8rem auto 0;
-            position: relative;
-        }
-
-        .section-divider::after {
-            content: '';
-            position: absolute;
-            top: -4px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 12px;
-            height: 12px;
-            background: var(--color-blue-bright);
-            border-radius: 50%;
-            border: 2px solid var(--color-white);
-        }
-
-        /* ============================================================
-               4.  BUTTONS
-               ============================================================ */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.7rem;
-            padding: 0.85rem 2.2rem;
-            font-family: var(--font-body);
-            font-weight: 600;
-            font-size: 1rem;
-            border: none;
-            border-radius: 3rem;
-            cursor: pointer;
-            transition: all var(--transition-speed) cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
-            letter-spacing: 0.02em;
-        }
-
-        .btn i {
-            font-size: 1.1rem;
-        }
-
-        .btn-primary {
-            background: var(--gradient-blue);
-            color: var(--color-white);
-            box-shadow: var(--shadow-blue);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: var(--shadow-blue-lg);
-        }
-
-        .btn-primary:active {
-            transform: translateY(0) scale(0.97);
-        }
-
-        .btn-gold {
-            background: var(--gradient-gold);
-            color: var(--color-white);
-            box-shadow: var(--shadow-gold);
-        }
-
-        .btn-gold:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: var(--shadow-gold);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--color-white);
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(4px);
-        }
-
-        .btn-outline:hover {
-            background: var(--color-white);
-            color: var(--color-blue-deep);
-            border-color: var(--color-white);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .btn-red {
-            background: var(--gradient-red);
-            color: var(--color-white);
-            box-shadow: 0 8px 32px rgba(192, 57, 43, 0.3);
-        }
-
-        .btn-red:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 12px 40px rgba(192, 57, 43, 0.4);
-        }
-
-        .btn-green {
-            background: var(--gradient-green);
-            color: var(--color-white);
-            box-shadow: 0 8px 32px rgba(30, 132, 73, 0.3);
-        }
-
-        .btn-green:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 12px 40px rgba(30, 132, 73, 0.4);
-        }
-
-        .btn-sm {
-            padding: 0.5rem 1.2rem;
-            font-size: 0.85rem;
-        }
-
-        /* ============================================================
-               5.  PRELOADER
-               ============================================================ */
-        #preloader {
-            position: fixed;
-            inset: 0;
-            z-index: 9999;
-            background: var(--color-blue-deep);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: opacity 0.8s ease, visibility 0.8s ease;
-        }
-
-        #preloader.fade-out {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-
-        .loader-icon {
-            font-size: 4rem;
-            color: var(--color-gold);
-            animation: pulseLoader 1.2s ease-in-out infinite;
-        }
-
-        .loader-bar {
-            width: 200px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.12);
-            border-radius: 4px;
-            margin-top: 1.5rem;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .loader-bar::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-blue);
-            border-radius: 4px;
-            animation: loaderSlide 1.5s ease-in-out infinite;
-        }
-
-        @keyframes loaderSlide {
-            0% {
-                left: -100%;
-                width: 30%;
-            }
-            50% {
-                left: 20%;
-                width: 60%;
-            }
-            100% {
-                left: 100%;
-                width: 30%;
-            }
-        }
-
-        @keyframes pulseLoader {
-            0%,
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            50% {
-                transform: scale(1.15);
-                opacity: 0.6;
-            }
-        }
-
-        /* ============================================================
-               6.  HEADER / NAVIGATION
-               ============================================================ */
-        .navbar {
+        /* ===== HEADER / NAV ===== */
+        header {
             position: fixed;
             top: 0;
             left: 0;
-            right: 0;
+            width: 100%;
             z-index: 1000;
-            padding: 0.9rem 0;
-            background: rgba(13, 43, 78, 0.95);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            transition: all 0.3s ease;
+            background: rgba(26, 82, 118, 0.92);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+            transition: var(--transition);
+            padding: 6px 0;
         }
 
-        .navbar.scrolled {
-            background: rgba(7, 27, 51, 0.98);
-            box-shadow: 0 4px 40px rgba(0, 0, 0, 0.25);
-            padding: 0.5rem 0;
+        header.scrolled {
+            background: rgba(26, 82, 118, 0.97);
+            padding: 2px 0;
         }
 
         .nav-container {
-            max-width: var(--container-width);
-            margin: 0 auto;
-            padding: 0 1.5rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
-        .nav-logo {
+        .logo {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            color: var(--color-white);
-            font-family: var(--font-heading);
+            gap: 10px;
+            color: var(--white);
             font-size: 1.5rem;
-            font-weight: 900;
-            letter-spacing: 0.02em;
+            font-weight: 800;
+            letter-spacing: 1px;
         }
 
-        .nav-logo i {
-            color: var(--color-gold);
-            font-size: 1.8rem;
-        }
-
-        .nav-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--color-white);
-            font-size: 1.6rem;
-            cursor: pointer;
-            padding: 0.3rem;
-            transition: transform 0.3s ease;
-        }
-
-        .nav-toggle:hover {
-            transform: rotate(90deg);
-        }
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
-        }
-
-        .nav-link {
-            color: rgba(255, 255, 255, 0.75);
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-            position: relative;
-            padding: 0.3rem 0;
-            cursor: pointer;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2.5px;
-            background: var(--color-gold);
-            transition: width 0.3s ease;
-            border-radius: 2px;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--color-white);
-        }
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-
-        .nav-link.active {
-            color: var(--color-gold);
-        }
-
-        /* ============================================================
-               7.  HERO SECTION
-               ============================================================ */
-        .hero {
-            position: relative;
-            min-height: 100vh;
+        .logo-icon {
+            background: var(--yellow);
+            color: var(--black);
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 900;
+            box-shadow: 0 4px 12px rgba(241, 196, 15, 0.4);
+        }
+
+        .logo span {
+            color: var(--yellow);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.85);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: var(--yellow);
+            color: var(--black);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(241, 196, 15, 0.35);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--yellow);
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover::after {
+            width: 60%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            border: none;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background: var(--white);
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 60%, var(--red) 100%);
+            position: relative;
             overflow: hidden;
-            background: var(--color-blue-deep);
-            padding: 7rem 1.5rem 4rem;
+            padding: 120px 0 80px;
         }
 
-        #particleCanvas {
+        .hero::before {
+            content: '';
             position: absolute;
             inset: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(241, 196, 15, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(46, 204, 113, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(142, 68, 173, 0.08) 0%, transparent 70%);
             pointer-events: none;
         }
 
-        .hero-overlay {
+        /* animated shapes */
+        .hero-shapes {
             position: absolute;
             inset: 0;
-            z-index: 2;
-            background: var(--gradient-hero);
+            overflow: hidden;
             pointer-events: none;
         }
 
-        /* Decorative abstract shapes */
-        .hero-shape {
+        .shape {
             position: absolute;
             border-radius: 50%;
-            pointer-events: none;
-            z-index: 1;
-            opacity: 0.05;
+            opacity: 0.10;
+            animation: floatShape 18s infinite alternate ease-in-out;
         }
 
-        .hero-shape-1 {
-            width: 600px;
-            height: 600px;
-            top: -200px;
-            right: -150px;
-            background: var(--color-blue-bright);
-            border-radius: 50%;
+        .shape-1 {
+            width: 500px;
+            height: 500px;
+            background: var(--yellow);
+            top: -150px;
+            right: -100px;
+            animation-duration: 22s;
         }
-
-        .hero-shape-2 {
-            width: 400px;
-            height: 400px;
+        .shape-2 {
+            width: 350px;
+            height: 350px;
+            background: var(--green);
             bottom: -100px;
-            left: -100px;
-            background: var(--color-gold);
-            border-radius: 50%;
-            opacity: 0.04;
+            left: -80px;
+            animation-duration: 26s;
+            animation-delay: 2s;
         }
-
-        .hero-shape-3 {
+        .shape-3 {
             width: 200px;
             height: 200px;
-            top: 30%;
-            right: 10%;
-            background: var(--color-purple-bright);
-            border-radius: 50%;
-            opacity: 0.04;
+            background: var(--red);
+            top: 50%;
+            left: 60%;
+            animation-duration: 20s;
+            animation-delay: 4s;
+        }
+
+        @keyframes floatShape {
+            0% {
+                transform: translate(0, 0) scale(1) rotate(0deg);
+            }
+            33% {
+                transform: translate(30px, -40px) scale(1.05) rotate(8deg);
+            }
+            66% {
+                transform: translate(-20px, 20px) scale(0.95) rotate(-5deg);
+            }
+            100% {
+                transform: translate(10px, -10px) scale(1.02) rotate(3deg);
+            }
         }
 
         .hero-content {
             position: relative;
-            z-index: 3;
-            max-width: 960px;
-            text-align: center;
-            color: var(--color-white);
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.7rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(8px);
-            padding: 0.4rem 1.6rem;
-            border-radius: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            margin-bottom: 1.8rem;
-            animation: fadeInDown 0.8s ease;
-        }
-
-        .hero-badge i {
-            color: var(--color-gold);
-            font-size: 0.75rem;
-        }
-
-        .hero-title {
-            font-family: var(--font-heading);
-            font-size: clamp(3rem, 10vw, 5.6rem);
-            font-weight: 900;
-            line-height: 1.05;
-            margin-bottom: 1.2rem;
-            animation: fadeInUp 1s ease;
-            letter-spacing: -0.02em;
-        }
-
-        .hero-title .highlight-gold {
-            color: var(--color-gold);
-            text-shadow: 0 0 60px rgba(212, 160, 43, 0.25);
-        }
-
-        .hero-title .highlight-green {
-            color: #7ddfa0;
-            text-shadow: 0 0 60px rgba(125, 223, 160, 0.2);
-        }
-
-        .hero-title .highlight-blue {
-            color: #85c1e9;
-            text-shadow: 0 0 60px rgba(133, 193, 233, 0.3);
-        }
-
-        .hero-title .highlight-red {
-            color: #f1948a;
-            text-shadow: 0 0 60px rgba(241, 148, 138, 0.2);
-        }
-
-        .hero-title .highlight-purple {
-            color: #bb8fce;
-            text-shadow: 0 0 60px rgba(187, 143, 206, 0.2);
-        }
-
-        .hero-title-sub {
-            display: block;
-            font-size: 0.42em;
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.8);
-            letter-spacing: 0.12em;
-            margin-top: 0.3rem;
-            font-family: var(--font-body);
-            text-transform: uppercase;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1rem, 1.4vw, 1.3rem);
-            font-weight: 300;
-            max-width: 720px;
-            margin: 1.2rem auto 2.8rem;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.9;
-            animation: fadeInUp 1.1s ease;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.2rem;
-            animation: fadeInUp 1.2s ease;
-        }
-
-        /* Floating decorative icons */
-        .float-icon {
-            position: absolute;
-            font-size: 2.4rem;
-            color: rgba(255, 255, 255, 0.06);
             z-index: 2;
-            animation: floatY 6s ease-in-out infinite;
-            pointer-events: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            width: 100%;
         }
 
-        .float-icon-1 {
-            top: 10%;
-            left: 5%;
-            animation-delay: 0s;
-            font-size: 3.2rem;
-            color: rgba(212, 160, 43, 0.08);
-        }
-        .float-icon-2 {
-            bottom: 15%;
-            right: 4%;
-            animation-delay: 1.5s;
+        .hero-text h1 {
             font-size: 3.6rem;
-            color: rgba(133, 193, 233, 0.08);
-        }
-        .float-icon-3 {
-            top: 22%;
-            right: 8%;
-            animation-delay: 3s;
-            font-size: 2.8rem;
-            color: rgba(241, 148, 138, 0.06);
-        }
-        .float-icon-4 {
-            bottom: 28%;
-            left: 6%;
-            animation-delay: 0.8s;
-            font-size: 3rem;
-            color: rgba(187, 143, 206, 0.06);
-        }
-
-        @keyframes floatY {
-            0%,
-            100% {
-                transform: translateY(0) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-22px) rotate(6deg);
-            }
-        }
-
-        /* Scroll indicator */
-        .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 3;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.3rem;
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 0.7rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            animation: bounceDown 2.5s ease-in-out infinite;
-        }
-
-        .scroll-indicator i {
-            font-size: 1.2rem;
-        }
-
-        @keyframes bounceDown {
-            0%,
-            100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            50% {
-                transform: translateX(-50%) translateY(10px);
-            }
-        }
-
-        /* ============================================================
-               8.  THEME / VISION SECTION
-               ============================================================ */
-        .theme-section {
-            padding: var(--section-padding);
-            background: var(--color-white);
-            position: relative;
-        }
-
-        .theme-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(ellipse at 10% 20%, rgba(46, 134, 193, 0.04) 0%, transparent 60%),
-                radial-gradient(ellipse at 90% 80%, rgba(13, 43, 78, 0.04) 0%, transparent 60%);
-            pointer-events: none;
-        }
-
-        .theme-card {
-            background: var(--color-white);
-            border-radius: var(--card-radius);
-            padding: 3.5rem 3rem;
-            max-width: 860px;
-            margin: 0 auto 3.5rem;
-            text-align: center;
-            box-shadow: var(--shadow-md);
-            border: 1px solid rgba(46, 134, 193, 0.12);
-            position: relative;
-            transition: all var(--transition-speed) ease;
-            overflow: hidden;
-        }
-
-        .theme-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-blue);
-        }
-
-        .theme-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .theme-icon-wrapper {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 88px;
-            height: 88px;
-            border-radius: 50%;
-            background: var(--gradient-blue);
-            color: var(--color-white);
-            font-size: 2.6rem;
-            margin-bottom: 1.5rem;
-            box-shadow: var(--shadow-blue);
-            transition: transform 0.4s ease;
-        }
-
-        .theme-card:hover .theme-icon-wrapper {
-            transform: scale(1.05) rotate(-4deg);
-        }
-
-        .theme-quote {
-            font-family: var(--font-heading);
-            font-size: clamp(1.5rem, 2.8vw, 2.4rem);
-            font-weight: 700;
-            font-style: italic;
-            color: var(--color-blue-deep);
-            line-height: 1.5;
-            margin-bottom: 0.75rem;
-        }
-
-        .theme-quote .color-red {
-            color: var(--color-red);
-        }
-        .theme-quote .color-green {
-            color: var(--color-green);
-        }
-        .theme-quote .color-gold {
-            color: var(--color-gold);
-        }
-        .theme-quote .color-purple {
-            color: var(--color-purple);
-        }
-        .theme-quote .color-blue {
-            color: var(--color-blue-bright);
-        }
-
-        .theme-quote::before {
-            content: '\201C';
-            font-size: 3.2rem;
-            color: var(--color-blue-bright);
-            opacity: 0.3;
-            margin-right: 0.2rem;
-        }
-
-        .theme-attribution {
-            font-weight: 500;
-            color: var(--color-text-light);
-            font-size: 0.95rem;
-        }
-
-        .theme-decoration {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .theme-decoration span {
-            flex: 1;
-            max-width: 60px;
-            height: 1.5px;
-            background: linear-gradient(90deg, transparent, var(--color-blue-bright), transparent);
-        }
-
-        .theme-decoration i {
-            color: var(--color-blue-bright);
-            font-size: 1.2rem;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            max-width: 860px;
-            margin: 0 auto;
-        }
-
-        .stat-item {
-            text-align: center;
-            background: var(--color-white);
-            padding: 2.2rem 1.5rem;
-            border-radius: var(--card-radius);
-            box-shadow: var(--shadow-sm);
-            border: 1px solid rgba(13, 43, 78, 0.06);
-            transition: all var(--transition-speed) ease;
-            position: relative;
-        }
-
-        .stat-item:nth-child(1) {
-            border-top: 3px solid var(--color-blue-bright);
-        }
-        .stat-item:nth-child(2) {
-            border-top: 3px solid var(--color-gold);
-        }
-        .stat-item:nth-child(3) {
-            border-top: 3px solid var(--color-green);
-        }
-
-        .stat-item::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40%;
-            height: 3px;
-            background: var(--gradient-blue);
-            border-radius: 2px;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .stat-item:hover::after {
-            opacity: 1;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-md);
-            border-color: rgba(46, 134, 193, 0.15);
-        }
-
-        .stat-number {
-            font-family: var(--font-heading);
-            font-size: clamp(2.8rem, 5.5vw, 4rem);
             font-weight: 900;
-            line-height: 1.1;
+            color: var(--white);
+            line-height: 1.15;
+            margin-bottom: 18px;
+            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
         }
 
-        .stat-number.color-blue {
-            color: var(--color-blue-bright);
+        .hero-text h1 .highlight-yellow {
+            color: var(--yellow);
         }
-        .stat-number.color-gold {
-            color: var(--color-gold);
+        .hero-text h1 .highlight-green {
+            color: var(--green-light);
         }
-        .stat-number.color-green {
-            color: var(--color-green);
-        }
-
-        .stat-number::after {
-            content: '%';
-            font-size: 0.5em;
-            font-weight: 700;
+        .hero-text h1 .highlight-red {
+            color: var(--red-light);
         }
 
-        .stat-number.color-blue::after {
-            color: var(--color-blue-mid);
-        }
-        .stat-number.color-gold::after {
-            color: var(--color-gold-dark);
-        }
-        .stat-number.color-green::after {
-            color: var(--color-green);
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--color-text-light);
-            margin-top: 0.3rem;
-            line-height: 1.5;
-        }
-
-        /* ============================================================
-               9.  SPONSORS SECTION
-               ============================================================ */
-        .sponsors-section {
-            padding: var(--section-padding);
-            background: var(--color-blue-pale);
-            border-top: 1px solid rgba(46, 134, 193, 0.1);
-            border-bottom: 1px solid rgba(46, 134, 193, 0.1);
-            position: relative;
-        }
-
-        .sponsors-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(ellipse at 20% 50%, rgba(46, 134, 193, 0.05) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 50%, rgba(13, 43, 78, 0.04) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .sponsors-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            max-width: 940px;
-            margin: 0 auto 2.5rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .sponsor-card {
-            background: var(--color-white);
-            border-radius: var(--card-radius);
-            padding: 2.8rem 2.2rem;
-            text-align: center;
-            transition: all var(--transition-speed) cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            border: 1px solid rgba(13, 43, 78, 0.06);
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .sponsor-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(46, 134, 193, 0.03), transparent);
-            pointer-events: none;
-        }
-
-        .sponsor-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-blue);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .sponsor-card:hover::after {
-            opacity: 1;
-        }
-
-        .sponsor-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-            border-color: rgba(46, 134, 193, 0.15);
-        }
-
-        .sponsor-primary {
-            border-color: rgba(46, 134, 193, 0.15);
-        }
-
-        .sponsor-primary::after {
-            background: var(--gradient-blue);
-        }
-
-        .sponsor-secondary {
-            border-color: rgba(13, 43, 78, 0.08);
-        }
-
-        .sponsor-secondary::after {
-            background: var(--gradient-gold);
-        }
-
-        .sponsor-badge {
-            display: inline-block;
-            font-size: 0.65rem;
-            font-weight: 800;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            padding: 0.3rem 1.2rem;
-            border-radius: 2rem;
-            color: var(--color-white);
-            margin-bottom: 1.2rem;
-        }
-
-        .sponsor-badge-blue {
-            background: var(--gradient-blue);
-        }
-
-        .sponsor-badge-gold {
-            background: var(--gradient-gold);
-        }
-
-        .sponsor-icon {
-            font-size: 3rem;
-            color: var(--color-blue-bright);
-            margin-bottom: 0.8rem;
-            transition: transform 0.4s ease;
-        }
-
-        .sponsor-card:hover .sponsor-icon {
-            transform: scale(1.1) rotate(-4deg);
-        }
-
-        .sponsor-secondary .sponsor-icon {
-            color: var(--color-gold);
-        }
-
-        .sponsor-name {
-            font-family: var(--font-heading);
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--color-blue-deep);
-            margin-bottom: 0.2rem;
-        }
-
-        .sponsor-name .color-red {
-            color: var(--color-red);
-        }
-        .sponsor-name .color-green {
-            color: var(--color-green);
-        }
-        .sponsor-name .color-purple {
-            color: var(--color-purple);
-        }
-
-        .sponsor-role {
-            font-size: 0.9rem;
-            color: var(--color-text-light);
+        .hero-text p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 500px;
+            margin-bottom: 30px;
             font-weight: 400;
-            margin-bottom: 1rem;
+            line-height: 1.8;
         }
 
-        .sponsor-divider {
-            width: 40px;
-            height: 2px;
-            background: var(--color-blue-bright);
-            margin: 1rem auto;
-            border-radius: 2px;
-            opacity: 0.3;
-        }
-
-        .sponsor-secondary .sponsor-divider {
-            background: var(--color-gold);
-        }
-
-        .sponsor-message {
-            font-size: 0.95rem;
-            font-style: italic;
-            color: var(--color-text);
-            font-weight: 400;
-        }
-
-        .sponsor-message .color-red {
-            color: var(--color-red);
-        }
-        .sponsor-message .color-green {
-            color: var(--color-green);
-        }
-        .sponsor-message .color-gold {
-            color: var(--color-gold);
-        }
-        .sponsor-message .color-purple {
-            color: var(--color-purple);
-        }
-        .sponsor-message .color-blue {
-            color: var(--color-blue-bright);
-        }
-
-        .sponsor-message i {
-            color: var(--color-blue-bright);
-            opacity: 0.5;
-            margin-right: 0.3rem;
-        }
-
-        .sponsor-tags {
+        .hero-buttons {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 0.8rem;
+            gap: 14px;
         }
 
-        .sponsor-tags span {
+        .btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 0.25rem 0.9rem;
-            background: var(--color-blue-pale);
-            border-radius: 2rem;
-            color: var(--color-blue-deep);
-            border: 1px solid rgba(46, 134, 193, 0.1);
-            transition: all 0.3s ease;
+            gap: 10px;
+            padding: 14px 34px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .sponsor-tags span:hover {
-            background: var(--color-gold-pale);
-            border-color: var(--color-gold);
-            transform: translateY(-2px);
+        .btn-primary {
+            background: var(--yellow);
+            color: var(--black);
+        }
+        .btn-primary:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 10px 35px rgba(241, 196, 15, 0.45);
         }
 
-        .sponsor-tags span i {
-            font-size: 0.65rem;
-            color: var(--color-blue-bright);
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--white);
+            backdrop-filter: blur(6px);
+            border: 2px solid rgba(255, 255, 255, 0.25);
+        }
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--blue);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 10px 35px rgba(255, 255, 255, 0.25);
         }
 
-        .partners-strip {
+        .btn-green {
+            background: var(--green);
+            color: var(--white);
+        }
+        .btn-green:hover {
+            background: var(--green-light);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 35px rgba(39, 174, 96, 0.45);
+        }
+
+        .btn-purple {
+            background: var(--purple);
+            color: var(--white);
+        }
+        .btn-purple:hover {
+            background: var(--purple-light);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 35px rgba(142, 68, 173, 0.45);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border-radius: var(--radius);
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+            max-width: 480px;
+            width: 100%;
+            transition: var(--transition);
+        }
+
+        .hero-image-card:hover {
+            transform: scale(1.01);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+        }
+
+        .hero-image-card img {
+            border-radius: 12px;
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            background: var(--gray);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            justify-content: center;
+        }
+
+        .hero-stats .stat {
             text-align: center;
-            padding: 1.4rem;
-            background: var(--color-white);
-            border-radius: var(--card-radius);
-            max-width: 720px;
-            margin: 0 auto;
-            font-weight: 500;
-            color: var(--color-text-light);
-            border: 1px dashed rgba(46, 134, 193, 0.2);
-            box-shadow: var(--shadow-sm);
+            color: var(--white);
+        }
+
+        .hero-stats .stat-number {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--yellow);
+            display: block;
+        }
+
+        .hero-stats .stat-label {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===== SECTION COMMON ===== */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: var(--black);
             position: relative;
-            z-index: 1;
+            display: inline-block;
         }
 
-        .partners-strip i {
-            color: var(--color-blue-bright);
-            margin-right: 0.6rem;
-        }
-
-        .partners-strip .color-red {
-            color: var(--color-red);
-        }
-        .partners-strip .color-green {
-            color: var(--color-green);
-        }
-        .partners-strip .color-gold {
-            color: var(--color-gold);
-        }
-        .partners-strip .color-purple {
-            color: var(--color-purple);
-        }
-
-        /* ============================================================
-               10. APPRECIATION / MESSAGE SECTION
-               ============================================================ */
-        .appreciation-section {
-            padding: var(--section-padding);
-            background: var(--color-white);
-            position: relative;
-        }
-
-        .appreciation-section::before {
+        .section-title h2::after {
             content: '';
             position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(ellipse at 30% 70%, rgba(46, 134, 193, 0.04) 0%, transparent 50%),
-                radial-gradient(ellipse at 70% 30%, rgba(13, 43, 78, 0.04) 0%, transparent 50%);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            border-radius: 4px;
+            background: linear-gradient(90deg, var(--yellow), var(--red), var(--purple));
+        }
+
+        .section-title p {
+            margin-top: 18px;
+            color: #666;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.1rem;
+        }
+
+        /* ===== ABOUT ===== */
+        .about {
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image img {
+            border-radius: var(--radius);
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .about-image img:hover {
+            transform: scale(1.01);
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.18);
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--blue);
+        }
+
+        .about-text h3 span {
+            color: var(--purple);
+        }
+
+        .about-text p {
+            color: #555;
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 20px;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gray);
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .about-feature:hover {
+            background: var(--yellow);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(241, 196, 15, 0.3);
+        }
+
+        .about-feature .icon {
+            font-size: 1.4rem;
+            width: 1.8rem;
+            text-align: center;
+        }
+
+        /* ===== SERVICES ===== */
+        .services {
+            background: var(--gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-bottom: 4px solid var(--blue);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(26, 82, 118, 0.03), rgba(142, 68, 173, 0.03));
             pointer-events: none;
         }
 
-        .appreciation-card {
-            max-width: 860px;
-            margin: 0 auto;
-            background: var(--color-white);
-            border-radius: var(--card-radius);
-            padding: 3.5rem 3rem;
-            box-shadow: var(--shadow-md);
-            border: 1px solid rgba(13, 43, 78, 0.06);
-            position: relative;
-            transition: all var(--transition-speed) ease;
-            overflow: hidden;
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
         }
 
-        .appreciation-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--color-blue-bright), var(--color-gold), var(--color-green), var(--color-purple), var(--color-red));
-            background-size: 200% 100%;
-            animation: shimmerBorder 6s ease-in-out infinite;
+        .service-card:nth-child(1) {
+            border-bottom-color: var(--blue);
+        }
+        .service-card:nth-child(2) {
+            border-bottom-color: var(--red);
+        }
+        .service-card:nth-child(3) {
+            border-bottom-color: var(--green);
+        }
+        .service-card:nth-child(4) {
+            border-bottom-color: var(--purple);
+        }
+        .service-card:nth-child(5) {
+            border-bottom-color: var(--yellow);
+        }
+        .service-card:nth-child(6) {
+            border-bottom-color: var(--red);
         }
 
-        @keyframes shimmerBorder {
-            0% {
-                background-position: 0% 0%;
-            }
-            100% {
-                background-position: 200% 0%;
-            }
+        .service-icon {
+            font-size: 3.2rem;
+            margin-bottom: 16px;
+            display: inline-block;
+            padding: 16px;
+            border-radius: 50%;
+            background: rgba(26, 82, 118, 0.08);
+            transition: var(--transition);
+            width: 5.5rem;
+            height: 5.5rem;
+            line-height: 1.2;
+            text-align: center;
         }
 
-        .appreciation-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-lg);
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(-6deg);
         }
 
-        .appreciation-quote-mark {
-            font-size: 4rem;
-            color: var(--color-blue-bright);
-            opacity: 0.15;
-            line-height: 1;
-            margin-bottom: -1.2rem;
-        }
-
-        .appreciation-text {
-            font-family: var(--font-heading);
-            font-size: clamp(1.1rem, 1.8vw, 1.5rem);
-            font-weight: 400;
-            color: var(--color-text);
-            line-height: 1.9;
-            padding: 0.5rem 0 1.5rem;
-        }
-
-        .appreciation-text .color-red {
-            color: var(--color-red);
-        }
-        .appreciation-text .color-green {
-            color: var(--color-green);
-        }
-        .appreciation-text .color-gold {
-            color: var(--color-gold);
-        }
-        .appreciation-text .color-purple {
-            color: var(--color-purple);
-        }
-        .appreciation-text .color-blue {
-            color: var(--color-blue-bright);
-        }
-        .appreciation-text .color-gray {
-            color: var(--color-gray);
-        }
-        .appreciation-text .color-black {
-            color: var(--color-black);
-        }
-
-        .appreciation-footer {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(13, 43, 78, 0.06);
-            gap: 1rem;
-        }
-
-        .appreciation-signature {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-weight: 700;
-            color: var(--color-blue-deep);
-            font-size: 1.05rem;
-        }
-
-        .appreciation-signature i {
-            color: var(--color-blue-bright);
+        .service-card h3 {
             font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--black);
         }
 
-        .appreciation-date {
+        .service-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact {
+            background: var(--white);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            padding: 40px 36px;
+            border-radius: var(--radius);
+            color: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .contact-info p {
+            opacity: 0.85;
+            margin-bottom: 28px;
+            line-height: 1.7;
+        }
+
+        .contact-item {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 0.85rem;
-            color: var(--color-text-light);
+            gap: 16px;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
         }
 
-        .appreciation-date i {
-            color: var(--color-gold);
+        .contact-item:last-child {
+            border-bottom: none;
         }
 
-        .appreciation-decorations {
+        .contact-item .icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 50%;
             display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 2.5rem;
-            font-size: 1.8rem;
-            color: rgba(46, 134, 193, 0.2);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover .icon {
+            background: var(--yellow);
+            color: var(--black);
+            transform: scale(1.08);
+        }
+
+        .contact-item .info {
+            flex: 1;
+        }
+
+        .contact-item .info .label {
+            font-size: 0.75rem;
+            opacity: 0.6;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-item .info .value {
+            font-weight: 600;
+            font-size: 1.05rem;
+            word-break: break-word;
+        }
+
+        .contact-item .info .value a {
+            color: var(--yellow);
+            transition: var(--transition);
+        }
+
+        .contact-item .info .value a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        .contact-social {
+            display: flex;
+            gap: 14px;
+            margin-top: 24px;
             flex-wrap: wrap;
         }
 
-        .appreciation-decorations i {
-            transition: all 0.4s ease;
-            cursor: default;
+        .contact-social a {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.10);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .appreciation-decorations i:nth-child(1) {
-            color: var(--color-blue-bright);
-        }
-        .appreciation-decorations i:nth-child(2) {
-            color: var(--color-gold);
-        }
-        .appreciation-decorations i:nth-child(3) {
-            color: var(--color-red);
-        }
-        .appreciation-decorations i:nth-child(4) {
-            color: var(--color-green);
-        }
-        .appreciation-decorations i:nth-child(5) {
-            color: var(--color-purple);
+        .contact-social a:hover {
+            background: var(--yellow);
+            color: var(--black);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(241, 196, 15, 0.35);
         }
 
-        .appreciation-decorations i:hover {
-            transform: scale(1.2) rotate(10deg);
-            opacity: 0.8;
+        .contact-form {
+            background: var(--gray);
+            padding: 36px 32px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
         }
 
-        /* ============================================================
-               11. FOOTER
-               ============================================================ */
-        .footer {
-            background: var(--color-blue-deep);
-            color: rgba(255, 255, 255, 0.8);
-            padding: 4.5rem 0 2rem;
-            position: relative;
+        .contact-form h3 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--blue);
+            margin-bottom: 8px;
+        }
+
+        .contact-form .sub {
+            color: #777;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            color: var(--black);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--white);
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--blue);
+            box-shadow: 0 0 0 4px rgba(26, 82, 118, 0.12);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            color: var(--white);
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(26, 82, 118, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(26, 82, 118, 0.4);
+            background: linear-gradient(135deg, var(--purple), var(--blue));
+        }
+
+        .btn-submit:active {
+            transform: scale(0.97);
+        }
+
+        /* ===== MAP / LOCATION ===== */
+        .location {
+            background: var(--gray);
+            padding-top: 0;
+            padding-bottom: 80px;
+        }
+
+        .location-card {
+            background: var(--white);
+            border-radius: var(--radius);
             overflow: hidden;
+            box-shadow: var(--shadow);
         }
 
-        .footer::before {
-            content: '';
+        .location-card .map-placeholder {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.4rem;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .location-card .map-placeholder::after {
+            content: '📍 Zanzibar, Tanzania';
+            font-size: 2rem;
+            opacity: 0.3;
+            font-weight: 900;
+            letter-spacing: 4px;
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-blue);
+        }
+
+        .location-card .map-placeholder iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .location-details {
+            padding: 24px 30px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+            background: var(--white);
+        }
+
+        .location-details .loc-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .location-details .loc-item .icon {
+            font-size: 1.4rem;
+            width: 1.8rem;
+            text-align: center;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--black);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 50px 0 20px;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 2.5rem;
-            padding-bottom: 3rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            position: relative;
-            z-index: 1;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
         }
 
-        .footer-brand .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-family: var(--font-heading);
-            font-size: 1.7rem;
-            font-weight: 900;
-            color: var(--color-white);
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-brand .footer-logo i {
-            color: var(--color-gold);
+        .footer-brand h3 {
+            color: var(--white);
             font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 12px;
         }
 
-        .footer-tagline {
-            font-weight: 600;
+        .footer-brand h3 span {
+            color: var(--yellow);
+        }
+
+        .footer-brand p {
+            max-width: 320px;
+            line-height: 1.8;
             font-size: 0.95rem;
-            color: var(--color-gold-light);
-            margin-bottom: 0.6rem;
-            letter-spacing: 0.04em;
         }
 
-        .footer-mission {
-            font-size: 0.9rem;
-            opacity: 0.7;
-            max-width: 280px;
-            line-height: 1.7;
+        .footer-links h4,
+        .footer-social h4 {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 14px;
         }
 
-        .footer-social {
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links ul li a {
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--yellow);
+            padding-left: 6px;
+        }
+
+        .footer-social .social-icons {
             display: flex;
-            gap: 0.8rem;
-            margin-top: 1.2rem;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
-        .footer-social a {
-            display: inline-flex;
+        .footer-social .social-icons a {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.06);
+            display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--color-white);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            text-decoration: none;
-            font-size: 0.95rem;
-        }
-
-        .footer-social a:hover {
-            background: var(--gradient-blue);
-            color: var(--color-white);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-blue);
-            border-color: transparent;
-        }
-
-        .footer h4 {
-            font-family: var(--font-heading);
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--color-white);
-            margin-bottom: 1.2rem;
-            letter-spacing: 0.04em;
-        }
-
-        .footer h4 .color-gold {
-            color: var(--color-gold);
-        }
-        .footer h4 .color-blue-light {
-            color: var(--color-blue-light);
-        }
-
-        .footer-links ul,
-        .footer-contact ul {
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
-        }
-
-        .footer-links a,
-        .footer-contact li {
-            font-size: 0.9rem;
-            opacity: 0.7;
-            transition: all 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            opacity: 1;
-            color: var(--color-gold);
-            padding-left: 0.3rem;
-        }
-
-        .footer-contact li {
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-        }
-
-        .footer-contact li i {
-            color: var(--color-gold);
-            width: 20px;
-            font-size: 0.9rem;
-        }
-
-        .footer-newsletter p {
-            font-size: 0.9rem;
-            opacity: 0.7;
-            margin-bottom: 1rem;
-        }
-
-        .newsletter-form {
-            display: flex;
-            align-items: center;
-            gap: 0;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 3rem;
+            font-size: 1.2rem;
+            transition: var(--transition);
             border: 1px solid rgba(255, 255, 255, 0.06);
-            overflow: hidden;
-            transition: border-color 0.3s ease;
         }
 
-        .newsletter-form:focus-within {
-            border-color: var(--color-gold);
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            padding: 0.7rem 1.2rem;
-            background: transparent;
-            border: none;
-            outline: none;
-            color: var(--color-white);
-            font-family: var(--font-body);
-            font-size: 0.9rem;
-            min-width: 0;
-        }
-
-        .newsletter-form input::placeholder {
-            color: rgba(255, 255, 255, 0.3);
-        }
-
-        .newsletter-form button {
-            background: var(--gradient-blue);
-            color: var(--color-white);
-            border: none;
-            padding: 0.7rem 1.4rem;
-            border-radius: 0 3rem 3rem 0;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            flex-shrink: 0;
-        }
-
-        .newsletter-form button:hover {
-            background: var(--color-blue-mid);
-            transform: scale(1.02);
+        .footer-social .social-icons a:hover {
+            background: var(--yellow);
+            color: var(--black);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(241, 196, 15, 0.3);
         }
 
         .footer-bottom {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 2rem;
-            font-size: 0.8rem;
-            opacity: 0.5;
-            gap: 1rem;
-            position: relative;
-            z-index: 1;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
         }
 
-        .footer-credit {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
+        .footer-bottom .highlight {
+            color: var(--yellow);
+            font-weight: 600;
         }
 
-        .footer-credit i {
-            color: var(--color-gold);
-        }
-
-        /* ============================================================
-               12. BACK TO TOP BUTTON
-               ============================================================ */
-        .back-to-top {
+        /* ===== TOAST ===== */
+        .toast {
             position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 999;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--gradient-blue);
-            color: var(--color-white);
-            border: none;
-            box-shadow: var(--shadow-blue);
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
+            bottom: 30px;
+            right: 30px;
+            background: var(--black);
+            color: var(--white);
+            padding: 16px 28px;
+            border-radius: 14px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+            transform: translateY(100px);
             opacity: 0;
-            visibility: hidden;
-            transform: translateY(20px) scale(0.9);
+            transition: 0.5s ease;
+            z-index: 9999;
+            font-weight: 500;
+            border-left: 5px solid var(--green);
         }
 
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0) scale(1);
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-4px) scale(1.06);
-            box-shadow: var(--shadow-blue-lg);
-        }
-
-        .back-to-top:active {
-            transform: scale(0.92);
-        }
-
-        /* ============================================================
-               13. UTILITY & ANIMATIONS
-               ============================================================ */
-        /* Scroll reveal */
-        [data-animate] {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.9s ease, transform 0.9s ease;
-        }
-
-        [data-animate].visible {
-            opacity: 1;
+        .toast.show {
             transform: translateY(0);
-        }
-
-        [data-animate="fade-up"] {
-            opacity: 0;
-            transform: translateY(50px);
-        }
-
-        [data-animate="fade-up"].visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        [data-animate="fade-in"] {
-            opacity: 0;
-        }
-
-        [data-animate="fade-in"].visible {
             opacity: 1;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .toast.error {
+            border-left-color: var(--red);
         }
 
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-40px);
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
 
-        /* Glow pulse - blue version */
-        .glow-pulse-blue {
-            animation: glowPulseBlue 3s ease-in-out infinite;
-        }
-
-        @keyframes glowPulseBlue {
-            0%,
-            100% {
-                box-shadow: 0 0 20px rgba(46, 134, 193, 0.2);
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
             }
-            50% {
-                box-shadow: 0 0 50px rgba(46, 134, 193, 0.5);
+            .hero-buttons {
+                justify-content: center;
             }
-        }
 
-        /* ============================================================
-               14. RESPONSIVE MEDIA QUERIES
-               ============================================================ */
-        /* ----- Tablets & small laptops (≤ 1024px) ----- */
-        @media (max-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-features {
+                justify-items: center;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
-                gap: 2rem;
             }
 
-            .hero-title {
-                font-size: clamp(2.6rem, 8vw, 4.2rem);
+            .hero-text h1 {
+                font-size: 2.8rem;
             }
 
-            .float-icon {
-                display: none;
-            }
-
-            .stats-grid {
-                gap: 1.2rem;
+            .section-title h2 {
+                font-size: 2.2rem;
             }
         }
 
-        /* ----- Tablets (≤ 768px) ----- */
         @media (max-width: 768px) {
-            /* Navigation */
-            .nav-toggle {
-                display: block;
-            }
-
-            .nav-menu {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--color-blue-deep);
+            .nav-links {
+                display: none;
                 flex-direction: column;
-                padding: 1.5rem 2rem;
-                gap: 0.6rem;
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-                border-top: 1px solid rgba(255, 255, 255, 0.05);
-                transform: scaleY(0);
-                transform-origin: top center;
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.35s ease;
-                border-radius: 0 0 1rem 1rem;
-            }
-
-            .nav-menu.open {
-                transform: scaleY(1);
-                opacity: 1;
-                visibility: visible;
-            }
-
-            .nav-link {
-                padding: 0.6rem 0;
                 width: 100%;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+                background: rgba(26, 82, 118, 0.98);
+                padding: 16px 0;
+                border-radius: 12px;
+                margin-top: 6px;
+                gap: 4px;
             }
 
-            .nav-link::after {
-                display: none;
+            .nav-links.open {
+                display: flex;
             }
 
-            /* Stats */
-            .stats-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 1rem;
+            .hamburger {
+                display: flex;
             }
 
-            .stat-item:last-child {
-                grid-column: span 2;
-            }
-
-            /* Sponsors */
-            .sponsors-grid {
-                grid-template-columns: 1fr;
-                max-width: 500px;
-            }
-
-            /* Footer */
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-            }
-
-            .footer-brand .footer-logo {
-                justify-content: center;
-            }
-
-            .footer-mission {
-                max-width: 100%;
-            }
-
-            .footer-social {
-                justify-content: center;
-            }
-
-            .footer-links ul,
-            .footer-contact ul {
-                align-items: center;
-            }
-
-            .footer-contact li {
-                justify-content: center;
-            }
-
-            .newsletter-form {
-                max-width: 380px;
-                margin: 0 auto;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            /* Appreciation */
-            .appreciation-card {
-                padding: 2rem 1.5rem;
-            }
-
-            .appreciation-footer {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            /* Theme card */
-            .theme-card {
-                padding: 2rem 1.5rem;
-            }
-
-            .theme-quote {
-                font-size: 1.2rem;
-            }
-
-            /* Back to top */
-            .back-to-top {
-                bottom: 1.2rem;
-                right: 1.2rem;
-                width: 44px;
-                height: 44px;
-                font-size: 1rem;
-            }
-
-            .hero-shape-1,
-            .hero-shape-2,
-            .hero-shape-3 {
-                display: none;
-            }
-        }
-
-        /* ----- Mobile (≤ 480px) ----- */
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 1rem;
-            }
-
-            .hero {
-                padding: 5.5rem 1rem 3rem;
-                min-height: 92vh;
-            }
-
-            .hero-title {
+            .hero-text h1 {
                 font-size: 2.2rem;
             }
 
-            .hero-title-sub {
-                font-size: 0.5em;
+            .hero-image-card img {
+                height: 220px;
             }
 
-            .hero-subtitle {
-                font-size: 0.9rem;
-            }
-
-            .hero-actions {
-                flex-direction: column;
-                align-items: center;
-                gap: 0.8rem;
-            }
-
-            .btn {
-                padding: 0.7rem 1.6rem;
-                font-size: 0.9rem;
-                width: 100%;
+            .hero-stats {
+                flex-wrap: wrap;
                 justify-content: center;
+                gap: 16px;
             }
 
-            .section-title {
-                font-size: 1.6rem;
-            }
-
-            .stats-grid {
+            .form-row {
                 grid-template-columns: 1fr;
-                gap: 0.8rem;
-            }
-
-            .stat-item:last-child {
-                grid-column: span 1;
-            }
-
-            .stat-number {
-                font-size: 2.6rem;
-            }
-
-            .sponsor-card {
-                padding: 1.8rem 1.2rem;
-            }
-
-            .sponsor-name {
-                font-size: 1.3rem;
-            }
-
-            .appreciation-text {
-                font-size: 1rem;
-            }
-
-            .appreciation-decorations {
-                gap: 1.2rem;
-                font-size: 1.4rem;
-            }
-
-            .theme-card {
-                padding: 1.5rem 1rem;
-            }
-
-            .theme-icon-wrapper {
-                width: 68px;
-                height: 68px;
-                font-size: 2rem;
-            }
-
-            .theme-quote {
-                font-size: 1.05rem;
-            }
-
-            .footer {
-                padding: 2.5rem 0 1.5rem;
             }
 
             .footer-grid {
-                gap: 1.5rem;
-                padding-bottom: 2rem;
+                grid-template-columns: 1fr;
+                text-align: center;
             }
 
-            .back-to-top {
-                width: 40px;
-                height: 40px;
-                font-size: 0.85rem;
-                bottom: 1rem;
-                right: 1rem;
+            .footer-brand p {
+                margin-left: auto;
+                margin-right: auto;
             }
 
-            .scroll-indicator {
-                display: none;
+            .footer-social .social-icons {
+                justify-content: center;
             }
 
-            .float-icon {
-                display: none;
+            .location-details {
+                flex-direction: column;
+                align-items: flex-start;
             }
 
-            .hero-badge {
-                font-size: 0.65rem;
-                padding: 0.25rem 1rem;
+            .about-features {
+                grid-template-columns: 1fr;
             }
 
-            .partners-strip {
-                font-size: 0.8rem;
-                padding: 1rem;
+            .contact-info {
+                padding: 28px 20px;
             }
 
-            .section-subtitle {
-                font-size: 0.9rem;
+            .contact-form {
+                padding: 24px 18px;
+            }
+
+            section {
+                padding: 50px 0;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
             }
         }
 
-        /* ----- Extra small (≤ 360px) ----- */
-        @media (max-width: 360px) {
-            .hero-title {
+        @media (max-width: 480px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
                 font-size: 1.8rem;
             }
 
             .btn {
-                font-size: 0.8rem;
-                padding: 0.6rem 1.2rem;
+                padding: 12px 24px;
+                font-size: 0.9rem;
             }
 
-            .section-title {
-                font-size: 1.3rem;
+            .logo {
+                font-size: 1.2rem;
+            }
+            .logo-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 1.2rem;
             }
 
-            .sponsor-tags span {
-                font-size: 0.65rem;
-                padding: 0.15rem 0.6rem;
-            }
-
-            .stat-number {
-                font-size: 2.2rem;
+            .section-title h2 {
+                font-size: 1.8rem;
             }
         }
     </style>
 </head>
-
 <body>
 
-    <!-- ===== PRELOADER ===== -->
-    <div id="preloader" aria-hidden="true">
-        <div class="loader-icon">
-            <i class="fas fa-seedling"></i>
-        </div>
-        <div class="loader-bar"></div>
-    </div>
-
-    <!-- ===== NAVIGATION ===== -->
-    <header class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <i class="fas fa-seedling"></i>
-                <span>Nane Nane</span>
-            </div>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
+    <!-- ===== HEADER ===== -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">J</div>
+                JTL <span>Zanzibar</span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
             </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#theme" class="nav-link">Theme</a></li>
-                <li><a href="#sponsors" class="nav-link">Sponsors</a></li>
-                <li><a href="#appreciation" class="nav-link">Appreciation</a></li>
-                <li><a href="#footer" class="nav-link">Contact</a></li>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Nyumbani</a></li>
+                <li><a href="#about">Kuhusu</a></li>
+                <li><a href="#services">Huduma</a></li>
+                <li><a href="#contact">Mawasiliano</a></li>
             </ul>
         </div>
     </header>
 
-    <!-- ===== HERO SECTION ===== -->
-    <section id="home" class="hero">
-        <canvas id="particleCanvas"></canvas>
-
-        <div class="hero-overlay"></div>
-
-        <!-- Decorative shapes -->
-        <div class="hero-shape hero-shape-1"></div>
-        <div class="hero-shape hero-shape-2"></div>
-        <div class="hero-shape hero-shape-3"></div>
-
-        <div class="hero-content">
-            <div class="hero-badge">
-                <i class="fas fa-award"></i> National Farmers' Day
-            </div>
-
-            <h1 class="hero-title">
-                <span class="highlight-gold">HAPPY</span>
-                <span class="highlight-blue">NANE NANE</span>
-                <span class="highlight-gold">DAY</span>
-                <span class="hero-title-sub"><span class="highlight-green">To All Farmers</span> <span class="highlight-red">•</span> <span class="highlight-purple">Tanzania</span></span>
-            </h1>
-
-            <p class="hero-subtitle">
-                Celebrating the Hard Work, Dedication, and Contribution of Farmers Towards <span style="color:#7ddfa0;">Food Security</span> and <span style="color:#f0d078;">National Development</span>.
-            </p>
-
-            <div class="hero-actions">
-                <a href="#theme" class="btn btn-primary">
-                    <i class="fas fa-leaf"></i> Explore Theme
-                </a>
-                <a href="#sponsors" class="btn btn-outline">
-                    <i class="fas fa-handshake"></i> Our Sponsors
-                </a>
-            </div>
-
-            <!-- Floating decorative elements -->
-            <div class="float-icon float-icon-1"><i class="fas fa-wheat-alt"></i></div>
-            <div class="float-icon float-icon-2"><i class="fas fa-tractor"></i></div>
-            <div class="float-icon float-icon-3"><i class="fas fa-apple-alt"></i></div>
-            <div class="float-icon float-icon-4"><i class="fas fa-cloud-sun"></i></div>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
         </div>
-
-        <!-- Scroll indicator -->
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
-
-    <!-- ===== THEME / VISION SECTION ===== -->
-    <section id="theme" class="theme-section">
         <div class="container">
-            <div class="section-header" data-animate="fade-up">
-                <span class="section-tag"><i class="fas fa-quote-left"></i> Theme Message</span>
-                <h2 class="section-title">
-                    Our <span class="color-blue">Guiding</span> <span class="color-green">Vision</span>
-                </h2>
-                <p class="section-subtitle">
-                    A shared commitment to <span style="color:var(--color-green);">agricultural growth</span>,
-                    <span style="color:var(--color-blue-bright);">food security</span>, and
-                    <span style="color:var(--color-gold);">national prosperity</span>.
-                </p>
-                <div class="section-divider"></div>
-            </div>
-
-            <div class="theme-card" data-animate="fade-up">
-                <div class="theme-icon-wrapper">
-                    <i class="fas fa-hand-holding-heart"></i>
-                </div>
-                <blockquote class="theme-quote">
-                    "<span class="color-blue">Agriculture</span> is the Backbone of Our Nation.
-                    <span class="color-green">Together</span> We <span class="color-gold">Grow</span>,
-                    <span class="color-red">Together</span> We <span class="color-purple">Prosper</span>."
-                </blockquote>
-                <p class="theme-attribution">
-                    — Nane Nane Day 2026
-                </p>
-                <div class="theme-decoration">
-                    <span></span>
-                    <i class="fas fa-seedling"></i>
-                    <span></span>
-                </div>
-            </div>
-
-            <!-- Stats -->
-            <div class="stats-grid" data-animate="fade-up">
-                <div class="stat-item">
-                    <div class="stat-number color-blue" data-count="70">0</div>
-                    <p class="stat-label">% of Population<br />in Agriculture</p>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number color-gold" data-count="65">0</div>
-                    <p class="stat-label">% of Employment<br />from Farming</p>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number color-green" data-count="85">0</div>
-                    <p class="stat-label">% of Food<br />Self-Sufficiency</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== SPONSORS SECTION ===== -->
-    <section id="sponsors" class="sponsors-section">
-        <div class="container">
-            <div class="section-header" data-animate="fade-up">
-                <span class="section-tag"><i class="fas fa-star"></i> Partners</span>
-                <h2 class="section-title">
-                    Our <span class="color-gold">Esteemed</span> <span class="color-blue">Sponsors</span>
-                </h2>
-                <p class="section-subtitle">
-                    Proudly supported by leaders who believe in the <span style="color:var(--color-red);">power</span> of
-                    <span style="color:var(--color-green);">agriculture</span>.
-                </p>
-                <div class="section-divider"></div>
-            </div>
-
-            <div class="sponsors-grid" data-animate="fade-up">
-                <!-- Sponsored By -->
-                <div class="sponsor-card sponsor-primary">
-                    <div class="sponsor-badge sponsor-badge-blue">Sponsored By</div>
-                    <div class="sponsor-icon">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <h3 class="sponsor-name">Haji <span class="color-gold">Jecha</span> Khamis</h3>
-                    <p class="sponsor-role">Patron &amp; Supporter of Agriculture</p>
-                    <div class="sponsor-divider"></div>
-                    <p class="sponsor-message">
-                        <i class="fas fa-quote-left"></i>
-                        <span class="color-blue">Empowering</span> farmers,
-                        <span class="color-green">building</span> a
-                        <span class="color-gold">food-secure</span> nation.
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>
+                        JTL <span class="highlight-yellow">Zanzibar</span><br />
+                        <span class="highlight-green">Biashara</span> &
+                        <span class="highlight-red">Ushirikiano</span>
+                    </h1>
+                    <p>
+                        Kampuni inayoaminika ya biashara na huduma mbalimbali
+                        Zanzibar. Tunatoa ubora, uaminifu na ufanisi katika
+                        kila kazi tunayoifanya.
                     </p>
-                </div>
-
-                <!-- In Collaboration With -->
-                <div class="sponsor-card sponsor-secondary">
-                    <div class="sponsor-badge sponsor-badge-gold">In Collaboration With</div>
-                    <div class="sponsor-icon">
-                        <i class="fas fa-building"></i>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-phone-alt"></i> Wasiliana Nasi
+                        </a>
+                        <a href="#about" class="btn btn-secondary">
+                            Jifunze Zaidi <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
-                    <h3 class="sponsor-name">JTL <span class="color-red">Zanzibar</span></h3>
-                    <p class="sponsor-role">Jeithird Trade &amp; Logistics</p>
-                    <div class="sponsor-divider"></div>
-                    <div class="sponsor-tags">
-                        <span><i class="fas fa-chart-line"></i> Trade</span>
-                        <span><i class="fas fa-graduation-cap"></i> Education</span>
-                        <span><i class="fas fa-briefcase"></i> Business</span>
-                        <span><i class="fas fa-truck"></i> Logistics</span>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Miaka ya Uzoefu</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">200+</span>
+                            <span class="stat-label">Wateja Walioridhika</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Uaminifu</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="partners-strip" data-animate="fade-up">
-                <p><i class="fas fa-handshake"></i> Supported by the agricultural community of
-                    <span class="color-red">Zanzibar</span> &amp;
-                    <span class="color-green">Tanzania</span>
-                    <span style="color:var(--color-gold);">★</span>
-                </p>
+                <div class="hero-image">
+                    <div class="hero-image-card">
+                        <img
+                        src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&h=600&fit=crop&crop=center&auto=format"
+                        alt="JTL Zanzibar - Biashara na Huduma"
+                        loading="lazy"
+                        />
+                        <div style="display:flex; gap:12px; justify-content:center; margin-top:14px; flex-wrap:wrap;">
+                            <span style="background:var(--yellow); padding:4px 14px; border-radius:20px; font-size:0.8rem; font-weight:700; color:var(--black);">
+                                <i class="fas fa-trophy"></i> Ubora
+                            </span>
+                            <span style="background:var(--green); padding:4px 14px; border-radius:20px; font-size:0.8rem; font-weight:700; color:white;">
+                                <i class="fas fa-check-circle"></i> Uaminifu
+                            </span>
+                            <span style="background:var(--purple); padding:4px 14px; border-radius:20px; font-size:0.8rem; font-weight:700; color:white;">
+                                <i class="fas fa-rocket"></i> Ufanisi
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== APPRECIATION SECTION ===== -->
-    <section id="appreciation" class="appreciation-section">
+    <!-- ===== ABOUT ===== -->
+    <section class="about" id="about">
         <div class="container">
-            <div class="section-header" data-animate="fade-up">
-                <span class="section-tag"><i class="fas fa-heart"></i> Appreciation</span>
-                <h2 class="section-title">
-                    A <span class="color-red">Message</span> of <span class="color-gold">Gratitude</span>
-                </h2>
-                <p class="section-subtitle">
-                    Honoring the <span style="color:var(--color-purple);">resilience</span> and
-                    <span style="color:var(--color-blue-bright);">dedication</span> of every farmer who
-                    <span style="color:var(--color-green);">nourishes</span> our nation.
-                </p>
-                <div class="section-divider"></div>
+            <div class="section-title">
+                <h2>Kuhusu <span style="color:var(--purple);">JTL</span> Zanzibar</h2>
+                <p>Kampuni yetu inajengwa juu ya msingi wa uaminifu, ubora na maendeleo ya pamoja.</p>
             </div>
-
-            <div class="appreciation-card" data-animate="fade-up">
-                <div class="appreciation-quote-mark">
-                    <i class="fas fa-quote-right"></i>
+            <div class="about-grid">
+                <div class="about-image">
+                    <img
+                    src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop&crop=center&auto=format"
+                    alt="Kampuni ya JTL Zanzibar"
+                    loading="lazy"
+                    />
                 </div>
-                <p class="appreciation-text">
-                    We extend our <span class="color-red">heartfelt appreciation</span> and
-                    <span class="color-gold">best wishes</span> to all farmers on the occasion of
-                    <span class="color-blue">Nane Nane</span>. Your
-                    <span class="color-green">commitment</span>,
-                    <span class="color-purple">resilience</span>, and
-                    <span class="color-gold">hard work</span> continue to
-                    <span class="color-blue">nourish</span> our nation and build a
-                    <span class="color-green">stronger</span> future.
-                    <span class="color-red">Happy Nane Nane</span>!
-                </p>
-                <div class="appreciation-footer">
-                    <div class="appreciation-signature">
-                        <i class="fas fa-signature"></i>
-                        <span>JTL Zanzibar Team</span>
-                    </div>
-                    <div class="appreciation-date">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>August 1, 2026</span>
+                <div class="about-text">
+                    <h3>JTL <span>Zanzibar</span></h3>
+                    <p>
+                        JTL Zanzibar ni kampuni inayoongoza katika biashara na
+                        huduma mbalimbali kisiwani Zanzibar. Tumejitolea kutoa
+                        huduma bora kwa wateja wetu kwa kutumia teknolojia ya
+                        kisasa na wataalamu wenye uzoefu.
+                    </p>
+                    <p>
+                        Tunaamini katika ukuaji wa pamoja na kujenga uhusiano
+                        wa muda mrefu na wateja wetu kupitia uwazi, uaminifu
+                        na ubora wa huduma.
+                    </p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <span class="icon"><i class="fas fa-star"></i></span> Ubora wa Huduma
+                        </div>
+                        <div class="about-feature">
+                            <span class="icon"><i class="fas fa-handshake"></i></span> Uaminifu
+                        </div>
+                        <div class="about-feature">
+                            <span class="icon"><i class="fas fa-lightbulb"></i></span> Ubunifu
+                        </div>
+                        <div class="about-feature">
+                            <span class="icon"><i class="fas fa-globe-africa"></i></span> Uhusiano wa Kimataifa
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="appreciation-decorations">
-                <i class="fas fa-seedling"></i>
-                <i class="fas fa-wheat-alt"></i>
-                <i class="fas fa-apple-alt"></i>
-                <i class="fas fa-carrot"></i>
-                <i class="fas fa-leaf"></i>
+    <!-- ===== SERVICES ===== -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Huduma <span style="color:var(--red);">Zetu</span></h2>
+                <p>Huduma mbalimbali tunazotoa kwa wateja wetu Zanzibar na nje yake.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-box"></i></div>
+                    <h3>Biashara ya Bidhaa</h3>
+                    <p>Uagizaji na usafirishaji wa bidhaa mbalimbali kutoka nje na ndani ya nchi.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3>Ushauri wa Biashara</h3>
+                    <p>Mashauri ya kitaalamu kwa wajasiriamali na makampuni yanayotaka kukua.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
+                    <h3>Mauza ya Jumla</h3>
+                    <p>Ugawaji wa bidhaa kwa wauzaji wadogo na makampuni makubwa.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Huduma za Simu</h3>
+                    <p>Uuzaji na ukarabati wa simu za mkononi na vifaa vya elektroniki.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-globe"></i></div>
+                    <h3>Biashara ya Kimataifa</h3>
+                    <p>Kuunganisha wateja wa Zanzibar na soko la kimataifa.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Masoko &amp; Utangazaji</h3>
+                    <p>Mikakati ya masoko na utangazaji kwa biashara yako.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Wasiliana <span style="color:var(--green);">Nasi</span></h2>
+                <p>Tupo tayari kusikiliza mahitaji yako na kukusaidia kwa kila njia.</p>
+            </div>
+            <div class="contact-wrapper">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h3><i class="fas fa-inbox"></i> Mawasiliano</h3>
+                    <p>
+                        Wasiliana nasi kupitia njia zifuatazo. Tunafurahi kusikia
+                        kutoka kwako na kukujibu haraka iwezekanavyo.
+                    </p>
+
+                    <div class="contact-item">
+                        <div class="icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="info">
+                            <div class="label">Simu</div>
+                            <div class="value"><a href="tel:+255776290901">+255 776 290 901</a></div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="icon"><i class="fab fa-whatsapp"></i></div>
+                        <div class="info">
+                            <div class="label">WhatsApp</div>
+                            <div class="value">
+                                <a href="https://wa.me/255776290901" target="_blank">0776 290 901</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="icon"><i class="fas fa-envelope"></i></div>
+                        <div class="info">
+                            <div class="label">Barua Pepe</div>
+                            <div class="value">
+                                <a href="mailto:jeithirdtrade@gmail.com">jeithirdtrade@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="info">
+                            <div class="label">Mahali</div>
+                            <div class="value">Zanzibar, Tanzania</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-social">
+                        <a href="https://wa.me/255776290901" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:jeithirdtrade@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+255776290901" title="Piga Simu"><i class="fas fa-phone-alt"></i></a>
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3>Tuma Ujumbe</h3>
+                    <p class="sub">Jaza fomu hapa chini na tutakujibu haraka.</p>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Jina Lako</label>
+                                <input type="text" id="name" placeholder="Jina kamili" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Barua Pepe</label>
+                                <input type="email" id="email" placeholder="email@example.com" required />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Namba ya Simu</label>
+                            <input type="tel" id="phone" placeholder="+255 7XX XXX XXX" />
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Mada</label>
+                            <select id="subject">
+                                <option value="">Chagua mada...</option>
+                                <option value="biashara">Biashara</option>
+                                <option value="huduma">Huduma</option>
+                                <option value="ushauri">Ushauri</option>
+                                <option value="mengine">Mengineyo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Ujumbe</label>
+                            <textarea id="message" placeholder="Andika ujumbe wako hapa..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-paper-plane"></i> Tuma Ujumbe
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LOCATION ===== -->
+    <section class="location">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mahali <span style="color:var(--red);">Papo</span></h2>
+                <p>JTL Zanzibar iko hapa tayari kukuhudumia.</p>
+            </div>
+            <div class="location-card">
+                <div class="map-placeholder">
+                    <!-- Embedded Google Map for Zanzibar -->
+                    <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253682.69318427724!2d39.168272573557!3d-6.165277362229592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185cd2b1d79d8a39%3A0x3aa17b0ac6e11b9!2sZanzibar%2C%20Tanzania!5e0!3m2!1sen!2s!4v1700000000000"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Ramani ya Zanzibar"
+                    ></iframe>
+                </div>
+                <div class="location-details">
+                    <span class="loc-item"><span class="icon"><i class="fas fa-map-marker-alt"></i></span> Zanzibar, Tanzania</span>
+                    <span class="loc-item"><span class="icon"><i class="far fa-clock"></i></span> Saa za Kazi: 8:00 AM – 6:00 PM</span>
+                    <span class="loc-item"><span class="icon"><i class="fas fa-phone-alt"></i></span> +255 776 290 901</span>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- ===== FOOTER ===== -->
-    <footer id="footer" class="footer">
+    <footer>
         <div class="container">
             <div class="footer-grid">
-                <!-- Brand -->
-                <div class="footer-brand" data-animate="fade-up">
-                    <div class="footer-logo">
-                        <i class="fas fa-seedling"></i>
-                        <span>JTL Zanzibar</span>
-                    </div>
-                    <p class="footer-tagline">
-                        Trade • Education • Business • Logistics
+                <div class="footer-brand">
+                    <h3>JTL <span>Zanzibar</span></h3>
+                    <p>
+                        Kampuni inayoaminika ya biashara na huduma mbalimbali
+                        Zanzibar. Tunatoa ubora, uaminifu na ufanisi katika
+                        kila kazi tunayoifanya.
                     </p>
-                    <p class="footer-mission">
-                        Empowering Communities Through Knowledge and Opportunity
-                    </p>
-                    <div class="footer-social">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
                 </div>
-
-                <!-- Quick Links -->
-                <div class="footer-links" data-animate="fade-up">
-                    <h4>Quick <span class="color-gold">Links</span></h4>
+                <div class="footer-links">
+                    <h4><i class="fas fa-link"></i> Viungo</h4>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#theme">Theme</a></li>
-                        <li><a href="#sponsors">Sponsors</a></li>
-                        <li><a href="#appreciation">Appreciation</a></li>
+                        <li><a href="#home">Nyumbani</a></li>
+                        <li><a href="#about">Kuhusu</a></li>
+                        <li><a href="#services">Huduma</a></li>
+                        <li><a href="#contact">Mawasiliano</a></li>
                     </ul>
                 </div>
-
-                <!-- Contact -->
-                <div class="footer-contact" data-animate="fade-up">
-                    <h4>Get in <span class="color-blue-light">Touch</span></h4>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> Zanzibar, Tanzania</li>
-                        <li><i class="fas fa-envelope"></i> info@jtlzanzibar.com</li>
-                        <li><i class="fas fa-phone"></i> +255 777 123 456</li>
-                    </ul>
-                </div>
-
-                <!-- Newsletter -->
-                <div class="footer-newsletter" data-animate="fade-up">
-                    <h4>Stay <span class="color-gold">Connected</span></h4>
-                    <p>Join our community and celebrate agriculture.</p>
-                    <form id="newsletterForm" class="newsletter-form">
-                        <input type="email" placeholder="Your email address" required id="newsletterEmail" />
-                        <button type="submit" class="btn btn-primary btn-sm">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
+                <div class="footer-social">
+                    <h4><i class="fas fa-mobile-alt"></i> Tuungane</h4>
+                    <div class="social-icons">
+                        <a href="https://wa.me/255776290901" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:jeithirdtrade@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+255776290901" title="Simu"><i class="fas fa-phone-alt"></i></a>
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div style="margin-top:16px; font-size:0.9rem; opacity:0.7;">
+                        <p><i class="fas fa-envelope"></i> jeithirdtrade@gmail.com</p>
+                        <p><i class="fas fa-phone-alt"></i> +255 776 290 901</p>
+                    </div>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <p>&copy; 2026 JTL Zanzibar — Jeithird Trade &amp; Logistics. All rights reserved.</p>
-                <p class="footer-credit">
-                    <i class="fas fa-seedling"></i> Nane Nane Day Celebration
+                <p>
+                    &copy; 2026 <span class="highlight">JTL Zanzibar</span> —
+                    Haki zote zimehifadhiwa. | Imetengenezwa kwa <i class="fas fa-heart" style="color:var(--red);"></i> Zanzibar
                 </p>
             </div>
         </div>
     </footer>
 
-    <!-- ===== BACK TO TOP BUTTON ===== -->
-    <button id="backToTop" class="back-to-top" aria-label="Back to top">
-        <i class="fas fa-chevron-up"></i>
-    </button>
+    <!-- ===== TOAST ===== -->
+    <div class="toast" id="toast"></div>
 
     <!-- ===== JAVASCRIPT ===== -->
     <script>
-        // ============================================================
-        // MASTER JAVASCRIPT — Nane Nane Day Landing Page
-        // ============================================================
-
         (function() {
             'use strict';
 
-            // ============================================================
-            // 1. PRELOADER
-            // ============================================================
-            const preloader = document.getElementById('preloader');
-            if (preloader) {
-                window.addEventListener('load', function() {
-                    setTimeout(function() {
-                        preloader.classList.add('fade-out');
-                    }, 600);
+            // ===== DOM refs =====
+            const header = document.getElementById('header');
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+            const navAnchors = document.querySelectorAll('.nav-links a');
+            const contactForm = document.getElementById('contactForm');
+            const toast = document.getElementById('toast');
+
+            // ===== Hamburger toggle =====
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navLinks.classList.toggle('open');
+            });
+
+            // Close menu on link click (mobile)
+            navAnchors.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('open');
+
+                    // active class
+                    navAnchors.forEach(a => a.classList.remove('active'));
+                    this.classList.add('active');
                 });
-                setTimeout(function() {
-                    if (!preloader.classList.contains('fade-out')) {
-                        preloader.classList.add('fade-out');
-                    }
-                }, 4000);
-            }
+            });
 
-            // ============================================================
-            // 2. PARTICLE CANVAS
-            // ============================================================
-            const canvas = document.getElementById('particleCanvas');
-            if (canvas) {
-                let ctx = canvas.getContext('2d');
-                let particles = [];
-                let w, h;
-
-                function resizeCanvas() {
-                    const rect = canvas.parentElement.getBoundingClientRect();
-                    w = canvas.width = rect.width;
-                    h = canvas.height = rect.height;
-                }
-                resizeCanvas();
-                window.addEventListener('resize', resizeCanvas);
-
-                function Particle() {
-                    this.x = Math.random() * w;
-                    this.y = Math.random() * h;
-                    this.size = Math.random() * 2.5 + 0.5;
-                    this.speedX = (Math.random() - 0.5) * 0.5;
-                    this.speedY = (Math.random() - 0.5) * 0.5;
-                    this.opacity = Math.random() * 0.4 + 0.1;
-                }
-
-                Particle.prototype.update = function() {
-                    this.x += this.speedX;
-                    this.y += this.speedY;
-                    if (this.x < 0 || this.x > w) this.speedX *= -1;
-                    if (this.y < 0 || this.y > h) this.speedY *= -1;
-                };
-
-                Particle.prototype.draw = function() {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                    ctx.fillStyle = 'rgba(46, 134, 193, ' + this.opacity + ')';
-                    ctx.fill();
-                };
-
-                const count = Math.min(70, Math.floor((w * h) / 9000));
-                for (let i = 0; i < count; i++) {
-                    particles.push(new Particle());
-                }
-
-                function drawLines() {
-                    for (let i = 0; i < particles.length; i++) {
-                        for (let j = i + 1; j < particles.length; j++) {
-                            const dx = particles[i].x - particles[j].x;
-                            const dy = particles[i].y - particles[j].y;
-                            const dist = Math.sqrt(dx * dx + dy * dy);
-                            if (dist < 140) {
-                                ctx.beginPath();
-                                ctx.moveTo(particles[i].x, particles[i].y);
-                                ctx.lineTo(particles[j].x, particles[j].y);
-                                ctx.strokeStyle = 'rgba(46, 134, 193, ' + (0.05 * (1 - dist / 140)) + ')';
-                                ctx.lineWidth = 0.5;
-                                ctx.stroke();
-                            }
-                        }
-                    }
-                }
-
-                function animateParticles() {
-                    ctx.clearRect(0, 0, w, h);
-                    particles.forEach(function(p) {
-                        p.update();
-                        p.draw();
-                    });
-                    drawLines();
-                    requestAnimationFrame(animateParticles);
-                }
-                animateParticles();
-            }
-
-            // ============================================================
-            // 3. NAVIGATION TOGGLE
-            // ============================================================
-            const navToggle = document.getElementById('navToggle');
-            const navMenu = document.getElementById('navMenu');
-
-            if (navToggle && navMenu) {
-                navToggle.addEventListener('click', function() {
-                    navMenu.classList.toggle('open');
-                    const icon = this.querySelector('i');
-                    if (icon) {
-                        icon.classList.toggle('fa-bars');
-                        icon.classList.toggle('fa-times');
-                    }
-                });
-
-                navMenu.querySelectorAll('.nav-link').forEach(function(link) {
-                    link.addEventListener('click', function() {
-                        navMenu.classList.remove('open');
-                        const icon = navToggle.querySelector('i');
-                        if (icon) {
-                            icon.classList.add('fa-bars');
-                            icon.classList.remove('fa-times');
-                        }
-                    });
-                });
-            }
-
-            // ============================================================
-            // 4. SCROLL EFFECTS
-            // ============================================================
-            const navbar = document.querySelector('.navbar');
-            const backToTop = document.getElementById('backToTop');
-            const navLinks = document.querySelectorAll('.nav-link');
+            // ===== Scroll: header shadow + active nav =====
             const sections = document.querySelectorAll('section[id]');
 
-            function updateScrollState() {
-                const scrollY = window.scrollY;
-
-                if (navbar) {
-                    navbar.classList.toggle('scrolled', scrollY > 80);
-                }
-
-                if (backToTop) {
-                    backToTop.classList.toggle('visible', scrollY > 500);
-                }
-
+            function updateActiveNav() {
                 let current = '';
-                sections.forEach(function(section) {
-                    const sectionTop = section.offsetTop - 120;
-                    if (scrollY >= sectionTop) {
+                const scrollY = window.scrollY + 120;
+
+                sections.forEach(section => {
+                    const top = section.offsetTop;
+                    const height = section.offsetHeight;
+                    if (scrollY >= top && scrollY < top + height) {
                         current = section.getAttribute('id');
                     }
                 });
 
-                navLinks.forEach(function(link) {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === '#' + current) {
-                        link.classList.add('active');
+                navAnchors.forEach(a => {
+                    a.classList.remove('active');
+                    if (a.getAttribute('href') === '#' + current) {
+                        a.classList.add('active');
                     }
                 });
             }
 
-            window.addEventListener('scroll', updateScrollState);
-            window.addEventListener('resize', updateScrollState);
-            setTimeout(updateScrollState, 100);
-
-            // ============================================================
-            // 5. BACK TO TOP
-            // ============================================================
-            if (backToTop) {
-                backToTop.addEventListener('click', function() {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-            }
-
-            // ============================================================
-            // 6. SCROLL REVEAL
-            // ============================================================
-            const animateElements = document.querySelectorAll('[data-animate]');
-
-            function revealElements() {
-                const windowHeight = window.innerHeight;
-                const revealThreshold = 100;
-
-                animateElements.forEach(function(el) {
-                    const rect = el.getBoundingClientRect();
-                    if (rect.top < windowHeight - revealThreshold) {
-                        el.classList.add('visible');
-                    }
-                });
-            }
-
-            window.addEventListener('scroll', revealElements);
-            window.addEventListener('resize', revealElements);
-            setTimeout(revealElements, 300);
-
-            // ============================================================
-            // 7. STAT COUNTER
-            // ============================================================
-            const statNumbers = document.querySelectorAll('.stat-number[data-count]');
-            let statsAnimated = false;
-
-            function animateStats() {
-                if (statsAnimated) return;
-                const windowHeight = window.innerHeight;
-
-                let shouldAnimate = false;
-                statNumbers.forEach(function(el) {
-                    const rect = el.getBoundingClientRect();
-                    if (rect.top < windowHeight - 50) {
-                        shouldAnimate = true;
-                    }
-                });
-
-                if (shouldAnimate) {
-                    statsAnimated = true;
-                    statNumbers.forEach(function(el) {
-                        const target = parseInt(el.getAttribute('data-count'), 10);
-                        if (isNaN(target)) return;
-                        let current = 0;
-                        const increment = Math.ceil(target / 50);
-                        const timer = setInterval(function() {
-                            current += increment;
-                            if (current >= target) {
-                                current = target;
-                                clearInterval(timer);
-                            }
-                            el.textContent = current;
-                        }, 25);
-                    });
+            function handleScroll() {
+                if (window.scrollY > 60) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
                 }
+                updateActiveNav();
             }
 
-            window.addEventListener('scroll', animateStats);
-            window.addEventListener('resize', animateStats);
-            setTimeout(animateStats, 500);
+            window.addEventListener('scroll', handleScroll);
+            window.addEventListener('load', handleScroll);
 
-            // ============================================================
-            // 8. NEWSLETTER FORM
-            // ============================================================
-            const newsletterForm = document.getElementById('newsletterForm');
-            if (newsletterForm) {
-                newsletterForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const input = this.querySelector('input[type="email"]');
-                    if (input && input.value.trim() !== '') {
-                        const btn = this.querySelector('button');
-                        const originalText = btn.innerHTML;
-                        btn.innerHTML = '<i class="fas fa-check"></i>';
-                        btn.style.background = '#1a4d7a';
-                        setTimeout(function() {
-                            btn.innerHTML = originalText;
-                            btn.style.background = '';
-                            input.value = '';
-                            alert('Thank you for subscribing! Stay tuned for updates.');
-                        }, 1500);
-                    } else {
-                        alert('Please enter a valid email address.');
-                    }
-                });
+            // ===== Toast helper =====
+            let toastTimer = null;
+
+            function showToast(message, isError = false) {
+                toast.textContent = message;
+                toast.className = 'toast';
+                if (isError) toast.classList.add('error');
+
+                clearTimeout(toastTimer);
+                // force reflow
+                void toast.offsetWidth;
+                toast.classList.add('show');
+
+                toastTimer = setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 4000);
             }
 
-            // ============================================================
-            // 9. SMOOTH SCROLL
-            // ============================================================
-            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            // ===== Form submission =====
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value.trim();
+
+                // basic validation
+                if (!name || !email || !message) {
+                    showToast('Tafadhali jaza sehemu zote muhimu (Jina, Barua Pepe, Ujumbe).', true);
+                    return;
+                }
+
+                if (!email.includes('@') || !email.includes('.')) {
+                    showToast('Tafadhali ingiza barua pepe sahihi.', true);
+                    return;
+                }
+
+                // Build the WhatsApp message
+                const whatsappNumber = '255776290901';
+                let whatsappMsg = 'Halo JTL Zanzibar!%0A';
+                whatsappMsg += `Jina: ${name}%0A`;
+                whatsappMsg += `Barua Pepe: ${email}%0A`;
+                if (phone) whatsappMsg += `Simu: ${phone}%0A`;
+                if (subject) whatsappMsg += `Mada: ${subject}%0A`;
+                whatsappMsg += `Ujumbe: ${message}`;
+
+                // Open WhatsApp
+                const url = `https://wa.me/${whatsappNumber}?text=${whatsappMsg}`;
+                window.open(url, '_blank');
+
+                // Also show a success toast
+                showToast('✅ Ujumbe wako umetumwa! Tuta wasiliana nawe hivi karibuni.', false);
+
+                // Reset form
+                contactForm.reset();
+            });
+
+            // ===== Smooth scroll for all anchor links =====
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    if (href === '#') return;
-                    const target = document.querySelector(href);
-                    if (target) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const targetEl = document.querySelector(targetId);
+                    if (targetEl) {
                         e.preventDefault();
-                        const offsetTop = target.offsetTop - 70;
-                        window.scrollTo({
-                            top: offsetTop,
-                            behavior: 'smooth'
-                        });
+                        const offset = 70;
+                        const top = targetEl.getBoundingClientRect().top + window.scrollY - offset;
+                        window.scrollTo({ top, behavior: 'smooth' });
                     }
                 });
             });
+
+            // ===== Keyboard: close menu on Escape =====
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('open');
+                }
+            });
+
+            // ===== Click outside to close menu =====
+            document.addEventListener('click', function(e) {
+                const isInside = header.contains(e.target);
+                if (!isInside && navLinks.classList.contains('open')) {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('open');
+                }
+            });
+
+            console.log('🚀 JTL Zanzibar website loaded successfully!');
+            console.log('📞 +255 776 290 901 | ✉️ jeithirdtrade@gmail.com');
 
         })();
     </script>
 
 </body>
-</html>
+                    </html>
