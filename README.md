@@ -2391,7 +2391,7 @@
                 <div class="social-links">
                     <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://wa.me/255777123456" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://wa.me/255776290901" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     <a href="https://drive.google.com/drive/folders/14i708FRvneNRfBEBI3WDnM0OMREu47zT"
                        target="_blank" rel="noopener noreferrer" aria-label="Google Drive">
                         <i class="fab fa-google-drive"></i>
@@ -2544,8 +2544,8 @@
                 <div class="footer-social">
                     <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://wa.me/255777123456" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    <a href="mailto:info@jtlzanzibar.co.tz" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://wa.me/255776290901" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="jeithirdtrade@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
 
@@ -2553,7 +2553,7 @@
 
         <div class="footer-bottom">
             <span data-i18n-html="footer_copy">
-                © 2025 <span class="highlight">JTL Zanzibar</span>. Haki zote zimehifadhiwa.
+                © 2026 <span class="highlight">JTL Zanzibar</span>. Haki zote zimehifadhiwa.
             </span>
         </div>
 
