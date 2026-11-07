@@ -186,12 +186,16 @@
         gap: 20px;
     }
 
-    /* LOGO */
+
+    /* =========================================================
+       LOGO — CYCLING BRAND MARK + "JTL Zanzibar"
+    ========================================================= */
 
     .logo {
         display: flex;
         align-items: center;
-        gap: 10px;
+
+        gap: 12px;
 
         color: white;
 
@@ -203,34 +207,110 @@
         flex-shrink: 0;
     }
 
+    .logo-name {
+        white-space: nowrap;
+    }
+
+    /* The circular badge: an outer colour ring that keeps "cycling" */
+
     .logo-icon {
-        width: 44px;
-        height: 44px;
+        width: 50px;
+        height: 50px;
+
+        padding: 4px;              /* ring thickness */
 
         display: flex;
         align-items: center;
         justify-content: center;
 
-        border-radius: 12px;
+        border-radius: 50%;
 
-        background: var(--yellow);
-        color: var(--dark);
+        background:
+            conic-gradient(
+                from 0deg,
+                var(--yellow) 0deg,
+                var(--green-light) 90deg,
+                var(--purple-light) 180deg,
+                var(--red-light) 270deg,
+                var(--yellow) 360deg
+            );
 
-        font-size: 1rem;
-        font-weight: 900;
+        box-shadow:
+            0 0 0 2px rgba(255, 255, 255, 0.10),
+            0 6px 22px rgba(241, 196, 15, 0.35);
 
         flex-shrink: 0;
 
+        /* continuous "cycling" rotation of the ring */
+        animation:
+            logoCycle 5s linear infinite;
+
+        transition:
+            box-shadow var(--transition);
+    }
+
+    /* Inner disc holding the bicycle */
+
+    .logo-icon i {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+
+        background:
+            linear-gradient(
+                135deg,
+                #ffd93d 0%,
+                var(--yellow) 55%,
+                #f0b400 100%
+            );
+
+        color: var(--dark);
+
+        font-size: 1.05rem;
+
+        /* counter-rotation keeps the bicycle upright */
+        animation:
+            logoCounter 5s linear infinite;
+    }
+
+    .logo:hover .logo-icon {
         box-shadow:
-            0 5px 20px rgba(241, 196, 15, 0.35);
+            0 0 0 3px rgba(255, 255, 255, 0.18),
+            0 10px 32px rgba(241, 196, 15, 0.60);
     }
 
     .logo span {
         color: var(--yellow);
     }
 
+    @keyframes logoCycle {
+        from { transform: rotate(0deg); }
+        to   { transform: rotate(360deg); }
+    }
 
-    /* NAVIGATION — desktop */
+    @keyframes logoCounter {
+        from { transform: rotate(0deg); }
+        to   { transform: rotate(-360deg); }
+    }
+
+    /* Accessibility: stop the motion when the user asks for it */
+
+    @media (prefers-reduced-motion: reduce) {
+        .logo-icon,
+        .logo-icon i {
+            animation: none;
+        }
+    }
+
+
+    /* =========================================================
+       NAVIGATION — desktop
+    ========================================================= */
 
     .nav-links {
         list-style: none;
@@ -1663,14 +1743,18 @@
         /* Header */
         .logo {
             font-size: 1.02rem;
-            gap: 8px;
+            gap: 9px;
         }
 
         .logo-icon {
-            width: 38px;
-            height: 38px;
-            font-size: 0.85rem;
-            border-radius: 10px;
+            width: 42px;
+            height: 42px;
+            padding: 3px;
+            border-radius: 50%;
+        }
+
+        .logo-icon i {
+            font-size: 0.9rem;
         }
 
         .lang-toggle {
@@ -1910,6 +1994,16 @@
             display: none; /* keeps the logo compact on tiny screens */
         }
 
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+            padding: 3px;
+        }
+
+        .logo-icon i {
+            font-size: 0.82rem;
+        }
+
         .hero h1 {
             font-size: 1.7rem;
         }
@@ -1941,9 +2035,16 @@
     <div class="container">
         <nav class="navbar">
 
-            <a href="#home" class="logo">
-                <div class="logo-icon">JTL</div>
-                <div data-i18n-html="logo_text">JTL <span>Zanzibar</span></div>
+            <a href="#home" class="logo" aria-label="JTL Zanzibar">
+
+                <!-- CYCLING LOGO: rotating colour ring + bicycle badge -->
+                <div class="logo-icon" aria-hidden="true">
+                    <i class="fas fa-bicycle"></i>
+                </div>
+
+                <!-- BRAND NAME -->
+                <div class="logo-name" data-i18n-html="logo_text">JTL <span>Zanzibar</span></div>
+
             </a>
 
             <ul class="nav-links" id="navLinks">
