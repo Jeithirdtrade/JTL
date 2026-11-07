@@ -2,8 +2,8 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- RESPONSIVE VIEWPORT FOR FULL SCREEN -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- DESKTOP-ONLY: fixed viewport width so phones render the desktop layout scaled -->
+<meta name="viewport" content="width=1280">
 
 <meta name="description"
       content="JTL Zanzibar - Kampuni ya biashara na huduma mbalimbali Zanzibar. Ubora, uaminifu na ufanisi.">
@@ -47,9 +47,12 @@
         background: #f5f7fa;
         color: #1e293b;
         line-height: 1.6;
-        
-        /* Changed to allow full width on mobile */
-        min-width: 100%; 
+
+        /* DESKTOP-ONLY: never collapse below desktop width */
+        min-width: 1280px;
+
+        /* FULL SCREEN: no horizontal gaps ever */
+        width: 100%;
         overflow-x: hidden;
     }
 
@@ -103,12 +106,22 @@
         --radius: 18px;
 
         --transition: 0.3s ease;
+
+        /* FULL SCREEN side padding */
+        --gutter: 56px;
     }
 
+
+    /* =========================================================
+       CONTAINER — FULL WIDTH
+    ========================================================= */
+
     .container {
-        width: 1180px;
-        max-width: 92%;
-        margin: auto;
+        width: 100%;
+        max-width: none;
+        margin: 0 auto;
+        padding-left: var(--gutter);
+        padding-right: var(--gutter);
     }
 
 
@@ -152,7 +165,7 @@
     }
 
     .navbar {
-        min-height: 74px;
+        min-height: 78px;
 
         display: flex;
         align-items: center;
@@ -203,7 +216,7 @@
     }
 
 
-    /* NAVIGATION */
+    /* NAVIGATION — always visible (desktop only) */
 
     .nav-links {
         list-style: none;
@@ -284,11 +297,11 @@
 
 
     /* =========================================================
-       HERO
+       HERO — FULL SCREEN HEIGHT
     ========================================================= */
 
     .hero {
-        min-height: 760px;
+        min-height: 100vh;
 
         padding:
             150px 0
@@ -297,6 +310,9 @@
         position: relative;
 
         overflow: hidden;
+
+        display: flex;
+        align-items: center;
 
         background:
             linear-gradient(
@@ -326,6 +342,10 @@
                 rgba(46, 204, 113, 0.14),
                 transparent 35%
             );
+    }
+
+    .hero > .container {
+        width: 100%;
     }
 
     .hero-grid {
@@ -372,7 +392,7 @@
     }
 
     .hero h1 {
-        font-size: 4.4rem;
+        font-size: 4.6rem;
 
         line-height: 1.05;
 
@@ -396,7 +416,7 @@
     }
 
     .hero-description {
-        max-width: 650px;
+        max-width: 720px;
 
         color:
             rgba(255, 255, 255, 0.84);
@@ -548,7 +568,9 @@
     }
 
     .hero-card img {
-        height: 420px;
+        height: 52vh;
+        min-height: 420px;
+        max-height: 620px;
 
         object-fit: cover;
 
@@ -605,7 +627,7 @@
     }
 
     .section-heading {
-        max-width: 720px;
+        max-width: 760px;
 
         margin:
             0 auto 55px;
@@ -614,7 +636,7 @@
     }
 
     .section-heading h2 {
-        font-size: 2.8rem;
+        font-size: 2.9rem;
 
         color: var(--dark);
 
@@ -676,7 +698,7 @@
     }
 
     .about-image img {
-        height: 450px;
+        height: 520px;
 
         object-fit: cover;
 
@@ -788,7 +810,7 @@
     .service-card {
         background: white;
 
-        padding: 32px 25px;
+        padding: 34px 26px;
 
         border-radius: var(--radius);
 
@@ -1148,7 +1170,7 @@
     .map-container iframe {
         width: 100%;
 
-        height: 430px;
+        height: 480px;
 
         border: 0;
 
@@ -1228,7 +1250,7 @@
     }
 
     .footer-brand p {
-        max-width: 450px;
+        max-width: 520px;
 
         line-height: 1.8;
 
@@ -1364,113 +1386,16 @@
         border-left-color: var(--red);
     }
 
+
     /* =========================================================
-       RESPONSIVE DESIGN (FULL SCREEN ON MOBILE)
-       This fixes the "boxed" look on phones by stacking elements.
+       DESKTOP-ONLY BUILD — FULL SCREEN
+       ---------------------------------------------------------
+       - No responsive breakpoints and no hamburger menu.
+       - .container now spans 100% of the viewport width with a
+         fixed side gutter instead of a 1180px centered box.
+       - Hero uses 100vh so it fills the whole first screen.
+       - Grids / images scale up to use the extra width.
     ========================================================= */
-
-    @media (max-width: 1024px) {
-        .hero h1 { font-size: 3.2rem; }
-        .about-grid { gap: 40px; }
-        .services-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 768px) {
-        .navbar {
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 15px 0;
-            gap: 15px;
-        }
-        
-        .nav-links {
-            order: 3;
-            width: 100%;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .hero {
-            padding: 130px 0 60px;
-            min-height: auto;
-        }
-
-        .hero-grid {
-            grid-template-columns: 1fr;
-            gap: 40px;
-            text-align: center;
-        }
-
-        .hero h1 { font-size: 2.5rem; }
-        
-        .hero-description {
-            margin: 0 auto 30px;
-        }
-
-        .hero-buttons { 
-            justify-content: center; 
-        }
-
-        .hero-stats { 
-            justify-content: center; 
-            flex-wrap: wrap; 
-            gap: 25px;
-        }
-
-        .about-grid { 
-            grid-template-columns: 1fr; 
-        }
-
-        .about-image::after { 
-            display: none; 
-        }
-
-        .services-grid { 
-            grid-template-columns: 1fr; 
-        }
-
-        .contact-grid { 
-            grid-template-columns: 1fr; 
-        }
-
-        .form-row { 
-            grid-template-columns: 1fr; 
-        }
-
-        .location-details { 
-            grid-template-columns: 1fr; 
-            gap: 15px;
-            text-align: center; 
-            justify-content: center;
-        }
-
-        .footer-grid { 
-            grid-template-columns: 1fr; 
-            gap: 30px; 
-            text-align: center; 
-        }
-
-        .footer-brand p { 
-            margin: 0 auto; 
-        }
-
-        .footer-social { 
-            justify-content: center; 
-        }
-
-        .footer-links { 
-            text-align: center; 
-        }
-    }
-
-    @media (max-width: 480px) {
-        .hero h1 { font-size: 2rem; }
-        .section-heading h2 { font-size: 2rem; }
-        .hero-buttons .btn { width: 100%; }
-        .logo { width: 100%; justify-content: center; }
-        .nav-right { width: 100%; justify-content: center; }
-        .features { grid-template-columns: 1fr; }
-    }
 
 </style>
 </head>
@@ -1589,7 +1514,7 @@
             <div class="hero-visual">
                 <div class="hero-card">
 
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80"
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"
                          alt="JTL Zanzibar business team"
                          data-i18n-alt="hero_img_alt"
                          loading="lazy">
@@ -1624,7 +1549,7 @@
         <div class="about-grid">
 
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80"
+                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
                      alt="JTL Zanzibar team meeting"
                      data-i18n-alt="about_img_alt"
                      loading="lazy">
