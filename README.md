@@ -1,9 +1,5 @@
-<html lang="sw">
-<head>
-<meta charset="UTF-8">
-
-<!-- DESKTOP-ONLY: fixed viewport width so phones render the desktop layout scaled -->
-<meta name="viewport" content="width=1280">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <meta name="description"
       content="JTL Zanzibar - Kampuni ya biashara na huduma mbalimbali Zanzibar. Ubora, uaminifu na ufanisi.">
@@ -11,8 +7,11 @@
 <meta name="keywords"
       content="JTL Zanzibar, biashara Zanzibar, huduma Zanzibar, JTL, Tanzania">
 
-<meta name="author" content="JTL Zanzibar">
-<meta name="theme-color" content="#123b5d">
+<meta name="author"
+      content="JTL Zanzibar">
+
+<meta name="theme-color"
+      content="#123b5d">
 
 <title>JTL Zanzibar | Biashara & Ushirikiano</title>
 
@@ -47,12 +46,6 @@
         background: #f5f7fa;
         color: #1e293b;
         line-height: 1.6;
-
-        /* DESKTOP-ONLY: never collapse below desktop width */
-        min-width: 1280px;
-
-        /* FULL SCREEN: no horizontal gaps ever */
-        width: 100%;
         overflow-x: hidden;
     }
 
@@ -106,22 +99,11 @@
         --radius: 18px;
 
         --transition: 0.3s ease;
-
-        /* FULL SCREEN side padding */
-        --gutter: 56px;
     }
 
-
-    /* =========================================================
-       CONTAINER — FULL WIDTH
-    ========================================================= */
-
     .container {
-        width: 100%;
-        max-width: none;
-        margin: 0 auto;
-        padding-left: var(--gutter);
-        padding-right: var(--gutter);
+        width: min(1180px, 92%);
+        margin: auto;
     }
 
 
@@ -131,7 +113,6 @@
 
     ::-webkit-scrollbar {
         width: 8px;
-        height: 8px;
     }
 
     ::-webkit-scrollbar-track {
@@ -165,13 +146,13 @@
     }
 
     .navbar {
-        min-height: 78px;
+        min-height: 74px;
 
         display: flex;
         align-items: center;
         justify-content: space-between;
 
-        gap: 20px;
+        gap: 30px;
     }
 
     /* LOGO */
@@ -204,7 +185,7 @@
         background: var(--yellow);
         color: var(--dark);
 
-        font-size: 1rem;
+        font-size: 1.35rem;
         font-weight: 900;
 
         box-shadow:
@@ -216,7 +197,7 @@
     }
 
 
-    /* NAVIGATION — always visible (desktop only) */
+    /* NAVIGATION */
 
     .nav-links {
         list-style: none;
@@ -249,59 +230,61 @@
     }
 
 
-    /* RIGHT SIDE (LANGUAGE) */
+    /* HAMBURGER */
 
-    .nav-right {
-        display: flex;
-        align-items: center;
-        gap: 10px;
+    .hamburger {
+        display: none;
 
-        flex-shrink: 0;
-    }
+        width: 45px;
+        height: 45px;
 
-    .lang-toggle {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 7px;
+        border: 0;
+        border-radius: 10px;
 
-        height: 42px;
-        padding: 0 16px;
-
-        border-radius: 50px;
-
-        border: 1px solid rgba(255, 255, 255, 0.28);
-        background: rgba(255, 255, 255, 0.10);
-
-        color: white;
-
-        font-size: 0.8rem;
-        font-weight: 800;
-        letter-spacing: 0.5px;
+        background:
+            rgba(255, 255, 255, 0.10);
 
         cursor: pointer;
+    }
+
+    .hamburger span {
+        display: block;
+
+        width: 25px;
+        height: 3px;
+
+        margin: 5px auto;
+
+        background: white;
+
+        border-radius: 10px;
 
         transition: var(--transition);
     }
 
-    .lang-toggle i {
-        font-size: 0.85rem;
+    .hamburger.active span:nth-child(1) {
+        transform:
+            translateY(8px)
+            rotate(45deg);
     }
 
-    .lang-toggle:hover {
-        background: var(--yellow);
-        border-color: var(--yellow);
-        color: var(--dark);
-        transform: translateY(-2px);
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform:
+            translateY(-8px)
+            rotate(-45deg);
     }
 
 
     /* =========================================================
-       HERO — FULL SCREEN HEIGHT
+       HERO
     ========================================================= */
 
     .hero {
-        min-height: 100vh;
+        min-height: 760px;
 
         padding:
             150px 0
@@ -310,9 +293,6 @@
         position: relative;
 
         overflow: hidden;
-
-        display: flex;
-        align-items: center;
 
         background:
             linear-gradient(
@@ -342,10 +322,6 @@
                 rgba(46, 204, 113, 0.14),
                 transparent 35%
             );
-    }
-
-    .hero > .container {
-        width: 100%;
     }
 
     .hero-grid {
@@ -392,7 +368,8 @@
     }
 
     .hero h1 {
-        font-size: 4.6rem;
+        font-size:
+            clamp(2.7rem, 6vw, 4.8rem);
 
         line-height: 1.05;
 
@@ -416,7 +393,7 @@
     }
 
     .hero-description {
-        max-width: 720px;
+        max-width: 650px;
 
         color:
             rgba(255, 255, 255, 0.84);
@@ -491,24 +468,6 @@
             rgba(255, 255, 255, 0.18);
     }
 
-    /* GOOGLE DRIVE BUTTON */
-
-    .btn-drive {
-        background: var(--green);
-        color: white;
-
-        box-shadow:
-            0 8px 25px
-            rgba(32, 160, 90, 0.35);
-    }
-
-    .btn-drive:hover {
-        background: var(--green-light);
-        box-shadow:
-            0 12px 30px
-            rgba(32, 160, 90, 0.45);
-    }
-
 
     /* HERO STATS */
 
@@ -568,9 +527,7 @@
     }
 
     .hero-card img {
-        height: 52vh;
-        min-height: 420px;
-        max-height: 620px;
+        height: 420px;
 
         object-fit: cover;
 
@@ -627,7 +584,7 @@
     }
 
     .section-heading {
-        max-width: 760px;
+        max-width: 720px;
 
         margin:
             0 auto 55px;
@@ -636,7 +593,8 @@
     }
 
     .section-heading h2 {
-        font-size: 2.9rem;
+        font-size:
+            clamp(2rem, 4vw, 2.8rem);
 
         color: var(--dark);
 
@@ -698,7 +656,7 @@
     }
 
     .about-image img {
-        height: 520px;
+        height: 450px;
 
         object-fit: cover;
 
@@ -810,7 +768,7 @@
     .service-card {
         background: white;
 
-        padding: 34px 26px;
+        padding: 32px 25px;
 
         border-radius: var(--radius);
 
@@ -1170,7 +1128,7 @@
     .map-container iframe {
         width: 100%;
 
-        height: 480px;
+        height: 430px;
 
         border: 0;
 
@@ -1250,7 +1208,7 @@
     }
 
     .footer-brand p {
-        max-width: 520px;
+        max-width: 450px;
 
         line-height: 1.8;
 
@@ -1279,11 +1237,6 @@
 
     .footer-links a:hover {
         color: var(--yellow);
-    }
-
-    .footer-links a i {
-        margin-right: 6px;
-        color: var(--green-light);
     }
 
     .footer-social {
@@ -1388,892 +1341,264 @@
 
 
     /* =========================================================
-       DESKTOP-ONLY BUILD — FULL SCREEN
-       ---------------------------------------------------------
-       - No responsive breakpoints and no hamburger menu.
-       - .container now spans 100% of the viewport width with a
-         fixed side gutter instead of a 1180px centered box.
-       - Hero uses 100vh so it fills the whole first screen.
-       - Grids / images scale up to use the extra width.
+       RESPONSIVE - TABLET
     ========================================================= */
 
-</style>
-</head>
+    @media (max-width: 900px) {
 
-<body>
-
-<!-- =========================================================
-     HEADER
-========================================================= -->
-
-<header>
-    <div class="container">
-        <nav class="navbar">
-
-            <a href="#home" class="logo">
-                <div class="logo-icon">JTL</div>
-                <div data-i18n-html="logo_text">JTL <span>Zanzibar</span></div>
-            </a>
-
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" data-i18n="nav_home">Nyumbani</a></li>
-                <li><a href="#about" data-i18n="nav_about">Kuhusu Sisi</a></li>
-                <li><a href="#services" data-i18n="nav_services">Huduma</a></li>
-                <li><a href="#contact" data-i18n="nav_contact">Wasiliana</a></li>
-            </ul>
-
-            <div class="nav-right">
-
-                <button class="lang-toggle"
-                        id="langToggle"
-                        type="button"
-                        aria-label="Switch language"
-                        title="Switch language">
-                    <i class="fas fa-globe"></i>
-                    <span id="langLabel">EN</span>
-                </button>
-
-            </div>
-
-        </nav>
-    </div>
-</header>
-
-
-<!-- =========================================================
-     HERO
-========================================================= -->
-
-<section class="hero" id="home">
-    <div class="container">
-        <div class="hero-grid">
-
-            <div class="hero-content">
-
-                <div class="hero-badge">
-                    <i class="fas fa-star"></i>
-                    <span data-i18n="hero_badge">Karibu JTL Zanzibar</span>
-                </div>
-
-                <h1 data-i18n-html="hero_title">
-                    Biashara <span class="yellow">Bora</span>,
-                    <span class="green">Ushirikiano</span>
-                    <span class="red">Imara</span>
-                </h1>
-
-                <p class="hero-description" data-i18n="hero_desc">
-                    JTL Zanzibar ni kampuni inayojihusisha na biashara na
-                    huduma mbalimbali Zanzibar. Tunatoa ubora, uaminifu na
-                    ufanisi katika kila tunachofanya kwa ajili ya wateja wetu.
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a href="#contact" class="btn btn-primary">
-                        <i class="fas fa-paper-plane"></i>
-                        <span data-i18n="btn_contact">Wasiliana Nasi</span>
-                    </a>
-
-                    <a href="#services" class="btn btn-secondary">
-                        <i class="fas fa-briefcase"></i>
-                        <span data-i18n="btn_services">Huduma Zetu</span>
-                    </a>
-
-                    <!-- GOOGLE DRIVE BUTTON -->
-                    <a href="https://drive.google.com/drive/folders/14i708FRvneNRfBEBI3WDnM0OMREu47zT"
-                       class="btn btn-drive"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        <i class="fab fa-google-drive"></i>
-                        <span data-i18n="btn_drive">Fungua Hifadhi ya Nyenzo</span>
-                    </a>
-
-                </div>
-
-                <div class="hero-stats">
-
-                    <div>
-                        <span class="stat-number" data-i18n="stat1_num">10+</span>
-                        <span class="stat-label" data-i18n="stat1_label">Miaka ya Uzoefu</span>
-                    </div>
-
-                    <div>
-                        <span class="stat-number" data-i18n="stat2_num">500+</span>
-                        <span class="stat-label" data-i18n="stat2_label">Wateja Walioridhika</span>
-                    </div>
-
-                    <div>
-                        <span class="stat-number" data-i18n="stat3_num">50+</span>
-                        <span class="stat-label" data-i18n="stat3_label">Miradi Iliyokamilika</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="hero-visual">
-                <div class="hero-card">
-
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"
-                         alt="JTL Zanzibar business team"
-                         data-i18n-alt="hero_img_alt"
-                         loading="lazy">
-
-                    <div class="hero-tags">
-                        <span class="tag-yellow" data-i18n="tag1">Ubora</span>
-                        <span class="tag-green" data-i18n="tag2">Uaminifu</span>
-                        <span class="tag-purple" data-i18n="tag3">Ufanisi</span>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-<!-- =========================================================
-     ABOUT
-========================================================= -->
-
-<section class="about" id="about">
-    <div class="container">
-
-        <div class="section-heading">
-            <h2 data-i18n-html="about_heading">Kuhusu <span>Sisi</span></h2>
-            <p data-i18n="about_sub">Mshirika wako wa kuaminika katika biashara na huduma Zanzibar.</p>
-            <div class="section-line"></div>
-        </div>
-
-        <div class="about-grid">
-
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
-                     alt="JTL Zanzibar team meeting"
-                     data-i18n-alt="about_img_alt"
-                     loading="lazy">
-            </div>
-
-            <div class="about-content">
-
-                <h3 data-i18n-html="about_h3">Mshirika Wako wa <span>Kuaminika</span></h3>
-
-                <p data-i18n="about_p1">
-                    JTL Zanzibar ni kampuni iliyoanzishwa kwa lengo la kutoa
-                    huduma bora za biashara kwa wakazi na wageni wa Zanzibar.
-                    Tunaamini kuwa mafanikio ya biashara yanatokana na uaminifu,
-                    ubora na huduma kwa wateja.
-                </p>
-
-                <p data-i18n="about_p2">
-                    Kwa miaka mingi tumekuwa tukiwahudumia wateja wetu kwa
-                    kutoa suluhisho la biashara lililo bora na la kuaminika.
-                    Timu yetu ya wataalamu iko tayari kukusaidia kufikia
-                    malengo yako.
-                </p>
-
-                <div class="features">
-
-                    <div class="feature">
-                        <i class="fas fa-users"></i>
-                        <span data-i18n="feat1">Timu ya Wataalamu</span>
-                    </div>
-
-                    <div class="feature">
-                        <i class="fas fa-bolt"></i>
-                        <span data-i18n="feat2">Huduma za Haraka</span>
-                    </div>
-
-                    <div class="feature">
-                        <i class="fas fa-tags"></i>
-                        <span data-i18n="feat3">Bei Nafuu</span>
-                    </div>
-
-                    <div class="feature">
-                        <i class="fas fa-handshake"></i>
-                        <span data-i18n="feat4">Uaminifu</span>
-                    </div>
-
-                    <div class="feature">
-                        <i class="fas fa-headset"></i>
-                        <span data-i18n="feat5">Msaada wa Wateja</span>
-                    </div>
-
-                    <div class="feature">
-                        <i class="fas fa-award"></i>
-                        <span data-i18n="feat6">Ubora wa Kimataifa</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-<!-- =========================================================
-     SERVICES
-========================================================= -->
-
-<section class="services" id="services">
-    <div class="container">
-
-        <div class="section-heading">
-            <h2 data-i18n-html="services_heading">Huduma <span>Zetu</span></h2>
-            <p data-i18n="services_sub">Tunatoa huduma mbalimbali za biashara kwa viwango vya juu.</p>
-            <div class="section-line"></div>
-        </div>
-
-        <div class="services-grid">
-
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-store"></i></div>
-                <h3 data-i18n="srv1_t">Biashara ya Jumla</h3>
-                <p data-i18n="srv1_d">
-                    Tunajihusisha na biashara mbalimbali za jumla na rejareja
-                    kwa bidhaa za ubora wa hali ya juu.
-                </p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-truck-fast"></i></div>
-                <h3 data-i18n="srv2_t">Usafirishaji na Lojistiki</h3>
-                <p data-i18n="srv2_d">
-                    Huduma za usafirishaji wa bidhaa kwa haraka, usalama na
-                    gharama nafuu kote Zanzibar.
-                </p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-briefcase"></i></div>
-                <h3 data-i18n="srv3_t">Ushauri wa Biashara</h3>
-                <p data-i18n="srv3_d">
-                    Tunatoa ushauri wa kitaalamu kwa wajasiriamali na makampuni
-                    ili kukuza biashara zao.
-                </p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-boxes-stacked"></i></div>
-                <h3 data-i18n="srv4_t">Ugavi na Ununuzi</h3>
-                <p data-i18n="srv4_d">
-                    Tunagavi bidhaa na vifaa mbalimbali kwa taasisi, makampuni
-                    na watu binafsi.
-                </p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
-                <h3 data-i18n="srv5_t">Huduma za Kidijitali</h3>
-                <p data-i18n="srv5_d">
-                    Tunatoa huduma za kidijitali ikiwemo uundaji wa tovuti,
-                    mifumo ya biashara na masoko ya mtandao.
-                </p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-building"></i></div>
-                <h3 data-i18n="srv6_t">Uwekezaji na Mali</h3>
-                <p data-i18n="srv6_d">
-                    Tunasaidia katika uwekezaji, ushauri wa mali na usimamizi
-                    wa miradi mbalimbali.
-                </p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-<!-- =========================================================
-     CONTACT
-========================================================= -->
-
-<section class="contact" id="contact">
-    <div class="container">
-
-        <div class="section-heading">
-            <h2 data-i18n-html="contact_heading">Wasiliana <span>Nasi</span></h2>
-            <p data-i18n="contact_sub">Tuko tayari kukusaidia — wasiliana nasi leo.</p>
-            <div class="section-line"></div>
-        </div>
-
-        <div class="contact-grid">
-
-            <!-- CONTACT INFO -->
-
-            <div class="contact-info">
-
-                <h3 data-i18n="ci_h3">Taarifa za Mawasiliano</h3>
-                <p data-i18n="ci_p">Karibu ofisini kwetu au wasiliana nasi kwa njia yoyote ile.</p>
-
-                <div class="contact-item">
-                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
-                    <div>
-                        <span class="contact-label" data-i18n="ci_phone_label">Simu</span>
-                        <span class="contact-value">
-                            <a href="tel:+255777123456">+255 777 123 456</a>
-                        </span>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                    <div>
-                        <span class="contact-label" data-i18n="ci_email_label">Barua Pepe</span>
-                        <span class="contact-value">
-                            <a href="mailto:info@jtlzanzibar.co.tz">info@jtlzanzibar.co.tz</a>
-                        </span>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <div class="contact-icon"><i class="fas fa-location-dot"></i></div>
-                    <div>
-                        <span class="contact-label" data-i18n="ci_loc_label">Mahali</span>
-                        <span class="contact-value" data-i18n="ci_loc_value">Zanzibar, Tanzania</span>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <div class="contact-icon"><i class="fas fa-clock"></i></div>
-                    <div>
-                        <span class="contact-label" data-i18n="ci_hours_label">Saa za Kazi</span>
-                        <span class="contact-value" data-i18n="ci_hours_value">Jumatatu - Jumamosi: 8:00 - 18:00</span>
-                    </div>
-                </div>
-
-                <div class="social-links">
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://wa.me/255777123456" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://drive.google.com/drive/folders/14i708FRvneNRfBEBI3WDnM0OMREu47zT"
-                       target="_blank" rel="noopener noreferrer" aria-label="Google Drive">
-                        <i class="fab fa-google-drive"></i>
-                    </a>
-                </div>
-
-            </div>
-
-            <!-- CONTACT FORM -->
-
-            <form class="contact-form" id="contactForm" novalidate>
-
-                <h3 data-i18n="form_h3">Tutumie Ujumbe</h3>
-                <p data-i18n="form_p">Jaza fomu hapa chini na tutakujibu haraka iwezekanavyo.</p>
-
-                <div class="form-row">
-
-                    <div class="form-group">
-                        <label for="name" data-i18n="f_name">Jina Kamili</label>
-                        <input type="text" id="name" name="name" required
-                               placeholder="Jina lako"
-                               data-i18n-placeholder="f_name_ph">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email" data-i18n="f_email">Barua Pepe</label>
-                        <input type="email" id="email" name="email" required
-                               placeholder="barua@mfano.com"
-                               data-i18n-placeholder="f_email_ph">
-                    </div>
-
-                </div>
-
-                <div class="form-row">
-
-                    <div class="form-group">
-                        <label for="phone" data-i18n="f_phone">Namba ya Simu</label>
-                        <input type="tel" id="phone" name="phone"
-                               placeholder="+255 7XX XXX XXX"
-                               data-i18n-placeholder="f_phone_ph">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="subject" data-i18n="f_subject">Aina ya Huduma</label>
-                        <select id="subject" name="subject">
-                            <option value="" data-i18n="f_subject_ph">Chagua huduma</option>
-                            <option value="general" data-i18n="f_subject_1">Ujumbe wa Jumla</option>
-                            <option value="consulting" data-i18n="f_subject_2">Ushauri wa Biashara</option>
-                            <option value="supply" data-i18n="f_subject_3">Ugavi na Ununuzi</option>
-                            <option value="digital" data-i18n="f_subject_4">Huduma za Kidijitali</option>
-                            <option value="other" data-i18n="f_subject_5">Nyingine</option>
-                        </select>
-                    </div>
-
-                </div>
-
-                <div class="form-group">
-                    <label for="message" data-i18n="f_msg">Ujumbe Wako</label>
-                    <textarea id="message" name="message" required
-                              placeholder="Andika ujumbe wako hapa..."
-                              data-i18n-placeholder="f_msg_ph"></textarea>
-                </div>
-
-                <button type="submit" class="submit-btn" data-i18n="f_submit">
-                    Tuma Ujumbe
-                </button>
-
-            </form>
-
-        </div>
-    </div>
-</section>
-
-
-<!-- =========================================================
-     LOCATION
-========================================================= -->
-
-<section class="location" id="location">
-    <div class="container">
-        <div class="map-container">
-
-            <iframe
-                src="https://www.google.com/maps?q=Zanzibar%2C%20Tanzania&output=embed"
-                title="JTL Zanzibar Location"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-
-            <div class="location-details">
-
-                <div class="location-item">
-                    <i class="fas fa-location-dot"></i>
-                    <span data-i18n="loc1">Zanzibar, Tanzania</span>
-                </div>
-
-                <div class="location-item">
-                    <i class="fas fa-clock"></i>
-                    <span data-i18n="loc2">Jumatatu - Jumamosi: 8:00 - 18:00</span>
-                </div>
-
-                <div class="location-item">
-                    <i class="fas fa-phone"></i>
-                    <span>+255 777 123 456</span>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
-<footer>
-    <div class="container">
-
-        <div class="footer-grid">
-
-            <div class="footer-brand">
-                <h3>JTL <span>Zanzibar</span></h3>
-                <p data-i18n="footer_desc">
-                    Kampuni ya biashara na huduma mbalimbali Zanzibar.
-                    Tunatoa ubora, uaminifu na ufanisi katika kila tunachofanya.
-                </p>
-            </div>
-
-            <div class="footer-column">
-                <h4 data-i18n="footer_col1">Viungo vya Haraka</h4>
-                <ul class="footer-links">
-                    <li><a href="#home" data-i18n="nav_home">Nyumbani</a></li>
-                    <li><a href="#about" data-i18n="nav_about">Kuhusu Sisi</a></li>
-                    <li><a href="#services" data-i18n="nav_services">Huduma</a></li>
-                    <li><a href="#contact" data-i18n="nav_contact">Wasiliana</a></li>
-                    <li>
-                        <a href="https://drive.google.com/drive/folders/14i708FRvneNRfBEBI3WDnM0OMREu47zT"
-                           target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-google-drive"></i>
-                            <span data-i18n="footer_drive">Hifadhi ya Nyenzo</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h4 data-i18n="footer_col2">Tufuate</h4>
-                <div class="footer-social">
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://wa.me/255777123456" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    <a href="mailto:info@jtlzanzibar.co.tz" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-            <span data-i18n-html="footer_copy">
-                © 2025 <span class="highlight">JTL Zanzibar</span>. Haki zote zimehifadhiwa.
-            </span>
-        </div>
-
-    </div>
-</footer>
-
-
-<!-- =========================================================
-     TOAST
-========================================================= -->
-
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-
-<script>
-/* =========================================================
-   TRANSLATIONS
-========================================================= */
-
-const translations = {
-
-    sw: {
-        logo_text: 'JTL <span>Zanzibar</span>',
-
-        nav_home: 'Nyumbani',
-        nav_about: 'Kuhusu Sisi',
-        nav_services: 'Huduma',
-        nav_contact: 'Wasiliana',
-
-        hero_badge: 'Karibu JTL Zanzibar',
-        hero_title: 'Biashara <span class="yellow">Bora</span>, <span class="green">Ushirikiano</span> <span class="red">Imara</span>',
-        hero_desc: 'JTL Zanzibar ni kampuni inayojihusisha na biashara na huduma mbalimbali Zanzibar. Tunatoa ubora, uaminifu na ufanisi katika kila tunachofanya kwa ajili ya wateja wetu.',
-        hero_img_alt: 'Timu ya JTL Zanzibar',
-
-        btn_contact: 'Wasiliana Nasi',
-        btn_services: 'Huduma Zetu',
-        btn_drive: 'Fungua Hifadhi ya Nyenzo',
-
-        stat1_num: '10+',
-        stat1_label: 'Miaka ya Uzoefu',
-        stat2_num: '500+',
-        stat2_label: 'Wateja Walioridhika',
-        stat3_num: '50+',
-        stat3_label: 'Miradi Iliyokamilika',
-
-        tag1: 'Ubora',
-        tag2: 'Uaminifu',
-        tag3: 'Ufanisi',
-
-        about_heading: 'Kuhusu <span>Sisi</span>',
-        about_sub: 'Mshirika wako wa kuaminika katika biashara na huduma Zanzibar.',
-        about_h3: 'Mshirika Wako wa <span>Kuaminika</span>',
-        about_p1: 'JTL Zanzibar ni kampuni iliyoanzishwa kwa lengo la kutoa huduma bora za biashara kwa wakazi na wageni wa Zanzibar. Tunaamini kuwa mafanikio ya biashara yanatokana na uaminifu, ubora na huduma kwa wateja.',
-        about_p2: 'Kwa miaka mingi tumekuwa tukiwahudumia wateja wetu kwa kutoa suluhisho la biashara lililo bora na la kuaminika. Timu yetu ya wataalamu iko tayari kukusaidia kufikia malengo yako.',
-        about_img_alt: 'Timu ya JTL Zanzibar katika kikao',
-
-        feat1: 'Timu ya Wataalamu',
-        feat2: 'Huduma za Haraka',
-        feat3: 'Bei Nafuu',
-        feat4: 'Uaminifu',
-        feat5: 'Msaada wa Wateja',
-        feat6: 'Ubora wa Kimataifa',
-
-        services_heading: 'Huduma <span>Zetu</span>',
-        services_sub: 'Tunatoa huduma mbalimbali za biashara kwa viwango vya juu.',
-        srv1_t: 'Biashara ya Jumla',
-        srv1_d: 'Tunajihusisha na biashara mbalimbali za jumla na rejareja kwa bidhaa za ubora wa hali ya juu.',
-        srv2_t: 'Usafirishaji na Lojistiki',
-        srv2_d: 'Huduma za usafirishaji wa bidhaa kwa haraka, usalama na gharama nafuu kote Zanzibar.',
-        srv3_t: 'Ushauri wa Biashara',
-        srv3_d: 'Tunatoa ushauri wa kitaalamu kwa wajasiriamali na makampuni ili kukuza biashara zao.',
-        srv4_t: 'Ugavi na Ununuzi',
-        srv4_d: 'Tunagavi bidhaa na vifaa mbalimbali kwa taasisi, makampuni na watu binafsi.',
-        srv5_t: 'Huduma za Kidijitali',
-        srv5_d: 'Tunatoa huduma za kidijitali ikiwemo uundaji wa tovuti, mifumo ya biashara na masoko ya mtandao.',
-        srv6_t: 'Uwekezaji na Mali',
-        srv6_d: 'Tunasaidia katika uwekezaji, ushauri wa mali na usimamizi wa miradi mbalimbali.',
-
-        contact_heading: 'Wasiliana <span>Nasi</span>',
-        contact_sub: 'Tuko tayari kukusaidia — wasiliana nasi leo.',
-        ci_h3: 'Taarifa za Mawasiliano',
-        ci_p: 'Karibu ofisini kwetu au wasiliana nasi kwa njia yoyote ile.',
-        ci_phone_label: 'Simu',
-        ci_email_label: 'Barua Pepe',
-        ci_loc_label: 'Mahali',
-        ci_loc_value: 'Zanzibar, Tanzania',
-        ci_hours_label: 'Saa za Kazi',
-        ci_hours_value: 'Jumatatu - Jumamosi: 8:00 - 18:00',
-
-        form_h3: 'Tutumie Ujumbe',
-        form_p: 'Jaza fomu hapa chini na tutakujibu haraka iwezekanavyo.',
-        f_name: 'Jina Kamili',
-        f_name_ph: 'Jina lako',
-        f_email: 'Barua Pepe',
-        f_email_ph: 'barua@mfano.com',
-        f_phone: 'Namba ya Simu',
-        f_phone_ph: '+255 7XX XXX XXX',
-        f_subject: 'Aina ya Huduma',
-        f_subject_ph: 'Chagua huduma',
-        f_subject_1: 'Ujumbe wa Jumla',
-        f_subject_2: 'Ushauri wa Biashara',
-        f_subject_3: 'Ugavi na Ununuzi',
-        f_subject_4: 'Huduma za Kidijitali',
-        f_subject_5: 'Nyingine',
-        f_msg: 'Ujumbe Wako',
-        f_msg_ph: 'Andika ujumbe wako hapa...',
-        f_submit: 'Tuma Ujumbe',
-
-        loc1: 'Zanzibar, Tanzania',
-        loc2: 'Jumatatu - Jumamosi: 8:00 - 18:00',
-
-        toast_success: 'Asante! Ujumbe wako umetumwa kwa mafanikio.',
-        toast_error: 'Tafadhali jaza sehemu zote zinazohitajika.',
-
-        footer_desc: 'Kampuni ya biashara na huduma mbalimbali Zanzibar. Tunatoa ubora, uaminifu na ufanisi katika kila tunachofanya.',
-        footer_col1: 'Viungo vya Haraka',
-        footer_col2: 'Tufuate',
-        footer_drive: 'Hifadhi ya Nyenzo',
-        footer_copy: '© 2025 <span class="highlight">JTL Zanzibar</span>. Haki zote zimehifadhiwa.'
-    },
-
-    en: {
-        logo_text: 'JTL <span>Zanzibar</span>',
-
-        nav_home: 'Home',
-        nav_about: 'About Us',
-        nav_services: 'Services',
-        nav_contact: 'Contact',
-
-        hero_badge: 'Welcome to JTL Zanzibar',
-        hero_title: 'Quality <span class="yellow">Business</span>, <span class="green">Strong</span> <span class="red">Partnerships</span>',
-        hero_desc: 'JTL Zanzibar is a company engaged in various businesses and services in Zanzibar. We deliver quality, trust and efficiency in everything we do for our customers.',
-        hero_img_alt: 'JTL Zanzibar team',
-
-        btn_contact: 'Contact Us',
-        btn_services: 'Our Services',
-        btn_drive: 'Open Resource Drive',
-
-        stat1_num: '10+',
-        stat1_label: 'Years of Experience',
-        stat2_num: '500+',
-        stat2_label: 'Happy Customers',
-        stat3_num: '50+',
-        stat3_label: 'Completed Projects',
-
-        tag1: 'Quality',
-        tag2: 'Trust',
-        tag3: 'Efficiency',
-
-        about_heading: 'About <span>Us</span>',
-        about_sub: 'Your trusted partner in business and services in Zanzibar.',
-        about_h3: 'Your Trusted <span>Partner</span>',
-        about_p1: 'JTL Zanzibar is a company established with the aim of providing quality business services to residents and visitors of Zanzibar. We believe that business success comes from trust, quality and customer care.',
-        about_p2: 'For many years we have served our clients by providing the best and most reliable business solutions. Our team of experts is ready to help you achieve your goals.',
-        about_img_alt: 'JTL Zanzibar team in a meeting',
-
-        feat1: 'Expert Team',
-        feat2: 'Fast Service',
-        feat3: 'Affordable Prices',
-        feat4: 'Reliability',
-        feat5: 'Customer Support',
-        feat6: 'International Quality',
-
-        services_heading: 'Our <span>Services</span>',
-        services_sub: 'We provide a wide range of business services at the highest standards.',
-        srv1_t: 'General Trade',
-        srv1_d: 'We engage in various wholesale and retail businesses with high quality products.',
-        srv2_t: 'Transport & Logistics',
-        srv2_d: 'Fast, safe and affordable goods transport services across Zanzibar.',
-        srv3_t: 'Business Consulting',
-        srv3_d: 'We provide professional advice to entrepreneurs and companies to grow their businesses.',
-        srv4_t: 'Supply & Procurement',
-        srv4_d: 'We supply various goods and equipment to institutions, companies and individuals.',
-        srv5_t: 'Digital Services',
-        srv5_d: 'We offer digital services including website development, business systems and online marketing.',
-        srv6_t: 'Investment & Property',
-        srv6_d: 'We assist with investment, property advisory and management of various projects.',
-
-        contact_heading: 'Contact <span>Us</span>',
-        contact_sub: 'We are ready to help — get in touch with us today.',
-        ci_h3: 'Contact Information',
-        ci_p: 'Visit our office or reach out to us through any channel.',
-        ci_phone_label: 'Phone',
-        ci_email_label: 'Email',
-        ci_loc_label: 'Location',
-        ci_loc_value: 'Zanzibar, Tanzania',
-        ci_hours_label: 'Working Hours',
-        ci_hours_value: 'Monday - Saturday: 8:00 - 18:00',
-
-        form_h3: 'Send Us a Message',
-        form_p: 'Fill in the form below and we will get back to you as soon as possible.',
-        f_name: 'Full Name',
-        f_name_ph: 'Your name',
-        f_email: 'Email Address',
-        f_email_ph: 'you@example.com',
-        f_phone: 'Phone Number',
-        f_phone_ph: '+255 7XX XXX XXX',
-        f_subject: 'Service Type',
-        f_subject_ph: 'Select a service',
-        f_subject_1: 'General Inquiry',
-        f_subject_2: 'Business Consulting',
-        f_subject_3: 'Supply & Procurement',
-        f_subject_4: 'Digital Services',
-        f_subject_5: 'Other',
-        f_msg: 'Your Message',
-        f_msg_ph: 'Write your message here...',
-        f_submit: 'Send Message',
-
-        loc1: 'Zanzibar, Tanzania',
-        loc2: 'Monday - Saturday: 8:00 - 18:00',
-
-        toast_success: 'Thank you! Your message has been sent successfully.',
-        toast_error: 'Please fill in all required fields.',
-
-        footer_desc: 'A company for various businesses and services in Zanzibar. We deliver quality, trust and efficiency in everything we do.',
-        footer_col1: 'Quick Links',
-        footer_col2: 'Follow Us',
-        footer_drive: 'Resource Drive',
-        footer_copy: '© 2025 <span class="highlight">JTL Zanzibar</span>. All rights reserved.'
-    }
-};
-
-
-/* =========================================================
-   LANGUAGE ENGINE
-========================================================= */
-
-let currentLang = localStorage.getItem('jtl-lang') || 'sw';
-
-const langToggle = document.getElementById('langToggle');
-const langLabel  = document.getElementById('langLabel');
-
-function applyLanguage(lang) {
-
-    if (!translations[lang]) lang = 'sw';
-
-    currentLang = lang;
-
-    document.documentElement.lang = lang;
-
-    const dict = translations[lang];
-
-    /* Plain text */
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (dict[key] !== undefined) el.textContent = dict[key];
-    });
-
-    /* HTML content */
-    document.querySelectorAll('[data-i18n-html]').forEach(el => {
-        const key = el.getAttribute('data-i18n-html');
-        if (dict[key] !== undefined) el.innerHTML = dict[key];
-    });
-
-    /* Placeholders */
-    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-        const key = el.getAttribute('data-i18n-placeholder');
-        if (dict[key] !== undefined) el.setAttribute('placeholder', dict[key]);
-    });
-
-    /* Image alt text */
-    document.querySelectorAll('[data-i18n-alt]').forEach(el => {
-        const key = el.getAttribute('data-i18n-alt');
-        if (dict[key] !== undefined) el.setAttribute('alt', dict[key]);
-    });
-
-    /* Toggle button label */
-    langLabel.textContent = (lang === 'sw') ? 'EN' : 'SW';
-
-    const tooltip = (lang === 'sw') ? 'Switch to English' : 'Badilisha kwa Kiswahili';
-    langToggle.setAttribute('aria-label', tooltip);
-    langToggle.setAttribute('title', tooltip);
-
-    /* Page title */
-    document.title = (lang === 'sw')
-        ? 'JTL Zanzibar | Biashara & Ushirikiano'
-        : 'JTL Zanzibar | Business & Partnership';
-
-    localStorage.setItem('jtl-lang', lang);
-}
-
-langToggle.addEventListener('click', () => {
-    applyLanguage(currentLang === 'sw' ? 'en' : 'sw');
-});
-
-
-/* =========================================================
-   ACTIVE NAV LINK ON SCROLL
-========================================================= */
-
-const pageSections = document.querySelectorAll('section[id]');
-const navAnchors    = document.querySelectorAll('.nav-links a');
-
-window.addEventListener('scroll', () => {
-
-    let current = '';
-
-    pageSections.forEach(sec => {
-        if (window.scrollY >= sec.offsetTop - 130) {
-            current = sec.id;
+        .navbar {
+            min-height: 68px;
         }
-    });
 
-    navAnchors.forEach(a => {
-        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-    });
-});
+        .hamburger {
+            display: block;
+        }
 
+        .nav-links {
+            position: absolute;
 
-/* =========================================================
-   TOAST
-========================================================= */
+            top: 68px;
+            left: 0;
 
-const toastEl = document.getElementById('toast');
-let toastTimer = null;
+            width: 100%;
 
-function showToast(message, isError) {
-    toastEl.textContent = message;
-    toastEl.classList.toggle('error', !!isError);
-    toastEl.classList.add('show');
+            display: none;
 
-    clearTimeout(toastTimer);
+            flex-direction: column;
 
-    toastTimer = setTimeout(() => {
-        toastEl.classList.remove('show');
-    }, 4000);
-}
+            align-items: stretch;
 
+            padding: 12px;
 
-/* =========================================================
-   CONTACT FORM
-========================================================= */
+            background:
+                rgba(18, 59, 93, 0.98);
 
-const contactForm = document.getElementById('contactForm');
+            box-shadow:
+                0 10px 30px
+                rgba(0, 0, 0, 0.18);
+        }
 
-contactForm.addEventListener('submit', event => {
+        .nav-links.open {
+            display: flex;
+        }
 
-    event.preventDefault();
+        .nav-links a {
+            display: block;
 
-    const dict = translations[currentLang];
+            padding: 13px 15px;
+        }
 
-    const name    = document.getElementById('name').value.trim();
-    const email   = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
+        .hero {
+            min-height: auto;
 
-    if (!name || !email || !message) {
-        showToast(dict.toast_error, true);
-        return;
+            padding:
+                130px 0
+                75px;
+        }
+
+        .hero-grid {
+            grid-template-columns: 1fr;
+
+            gap: 50px;
+        }
+
+        .hero-content {
+            text-align: center;
+        }
+
+        .hero-description {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            justify-content: center;
+        }
+
+        .hero-stats {
+            justify-content: center;
+        }
+
+        .hero-visual {
+            max-width: 650px;
+
+            width: 100%;
+
+            margin: auto;
+        }
+
+        .about-grid {
+            grid-template-columns: 1fr;
+
+            gap: 40px;
+        }
+
+        .about-image {
+            max-width: 700px;
+
+            margin: auto;
+
+            width: 100%;
+        }
+
+        .contact-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .services-grid {
+            grid-template-columns:
+                repeat(2, 1fr);
+        }
+
+        .footer-grid {
+            grid-template-columns:
+                1fr 1fr;
+        }
+
+        .footer-brand {
+            grid-column: 1 / -1;
+        }
     }
 
-    showToast(dict.toast_success, false);
 
-    contactForm.reset();
-});
+    /* =========================================================
+       RESPONSIVE - MOBILE
+    ========================================================= */
+
+    @media (max-width: 600px) {
+
+        .container {
+            width: 90%;
+        }
+
+        section {
+            padding:
+                70px 0;
+        }
+
+        .hero {
+            padding:
+                115px 0
+                65px;
+        }
+
+        .hero h1 {
+            font-size: 2.45rem;
+
+            letter-spacing: -1px;
+        }
+
+        .hero-description {
+            font-size: 0.94rem;
+        }
+
+        .hero-buttons {
+            flex-direction: column;
+        }
+
+        .btn {
+            width: 100%;
+        }
+
+        .hero-stats {
+            gap: 25px;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+        }
+
+        .hero-card img {
+            height: 260px;
+        }
+
+        .section-heading {
+            margin-bottom: 38px;
+        }
+
+        .about-image img {
+            height: 300px;
+        }
+
+        .about-image::after {
+            width: 80px;
+            height: 80px;
+        }
+
+        .features {
+            grid-template-columns: 1fr;
+        }
+
+        .services-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .service-card {
+            padding:
+                28px 20px;
+        }
+
+        .contact-info,
+        .contact-form {
+            padding: 25px 20px;
+        }
+
+        .form-row {
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+
+        .map-container iframe {
+            height: 300px;
+        }
+
+        .location-details {
+            grid-template-columns: 1fr;
+
+            padding: 20px;
+        }
+
+        .footer-grid {
+            grid-template-columns: 1fr;
+
+            gap: 35px;
+        }
+
+        .footer-brand {
+            grid-column: auto;
+        }
+    }
 
 
-/* =========================================================
-   INIT
-========================================================= */
+    /* =========================================================
+       SMALL MOBILE
+    ========================================================= */
 
-applyLanguage(currentLang);
-</script>
+    @media (max-width: 380px) {
 
-</body>
-</html>
+        .logo {
+            font-size: 1rem;
+        }
+
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+        }
+
+        .hero-stats {
+            gap: 17px;
+        }
+
+        .hero-card img {
+            height: 220px;
+        }
+    }
+
+</style>
+
+Modified the code above to make page to use  two languages which is swahili and English changes and to put ones button if user clicks it's open direct to the link of https://drive.google.com/drive/folders/14i708FRvneNRfBEBI3WDnM0OMREu47zT 
+And make the page to have a digital website like in a picture by addition 
