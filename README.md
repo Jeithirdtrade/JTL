@@ -2,7 +2,6 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- RESPONSIVE VIEWPORT: works on phones, tablets and desktops -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="description"
@@ -16,107 +15,53 @@
 
 <title>JTL Zanzibar | Biashara & Ushirikiano</title>
 
-<!-- FONT AWESOME -->
 <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 
-    /* =========================================================
-       RESET
-    ========================================================= */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    html {
-        scroll-behavior: smooth;
-        -webkit-text-size-adjust: 100%;
-    }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
     body {
-        font-family:
-            "Segoe UI",
-            Tahoma,
-            Geneva,
-            Verdana,
-            sans-serif;
-
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         background: #f5f7fa;
         color: #1e293b;
         line-height: 1.6;
-
-        /* RESPONSIVE: no fixed width — fluid on every device */
         width: 100%;
         min-height: 100%;
         overflow-x: hidden;
     }
 
-    img {
-        width: 100%;
-        display: block;
-    }
-
-    a {
-        text-decoration: none;
-        color: inherit;
-    }
-
-    button,
-    input,
-    textarea,
-    select {
-        font-family: inherit;
-    }
+    img { width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    button, input, textarea, select { font-family: inherit; }
 
     :root {
         --blue: #123b5d;
         --blue-light: #1f6b9c;
-
         --red: #c0392b;
         --red-light: #e74c3c;
-
         --green: #20a05a;
         --green-light: #2ecc71;
-
         --yellow: #f1c40f;
         --yellow-light: #ffe66d;
-
         --purple: #743b91;
         --purple-light: #9b59b6;
-
         --dark: #101820;
         --dark-2: #172331;
-
         --white: #ffffff;
         --light: #f5f7fa;
         --gray: #64748b;
         --border: #e2e8f0;
-
-        --shadow:
-            0 10px 35px rgba(15, 23, 42, 0.10);
-
-        --shadow-lg:
-            0 20px 60px rgba(15, 23, 42, 0.16);
-
+        --shadow: 0 10px 35px rgba(15, 23, 42, 0.10);
+        --shadow-lg: 0 20px 60px rgba(15, 23, 42, 0.16);
         --radius: 18px;
-
         --transition: 0.3s ease;
-
-        /* Side padding — shrinks automatically on small screens */
         --gutter: 56px;
-
-        /* Fixed header height reference */
         --header-h: 78px;
     }
-
-
-    /* =========================================================
-       CONTAINER — FULL WIDTH
-    ========================================================= */
 
     .container {
         width: 100%;
@@ -126,34 +71,11 @@
         padding-right: var(--gutter);
     }
 
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #edf1f5; }
+    ::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 20px; }
 
-    /* =========================================================
-       SCROLLBAR
-    ========================================================= */
-
-    ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background: #edf1f5;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: var(--blue);
-        border-radius: 20px;
-    }
-
-
-    /* =========================================================
-       ANCHOR OFFSET (fixed header)
-    ========================================================= */
-
-    section[id] {
-        scroll-margin-top: calc(var(--header-h) + 12px);
-    }
-
+    section[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
 
     /* =========================================================
        HEADER
@@ -165,179 +87,110 @@
         left: 0;
         width: 100%;
         z-index: 9999;
-
-        background:
-            rgba(18, 59, 93, 0.96);
-
+        background: rgba(18, 59, 93, 0.96);
         backdrop-filter: blur(14px);
         -webkit-backdrop-filter: blur(14px);
-
-        box-shadow:
-            0 5px 25px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
     }
 
     .navbar {
         min-height: var(--header-h);
-
         display: flex;
         align-items: center;
         justify-content: space-between;
-
         gap: 20px;
     }
-
-
-    /* =========================================================
-       LOGO — CYCLING BRAND MARK + "JTL Zanzibar"
-    ========================================================= */
 
     .logo {
         display: flex;
         align-items: center;
-
         gap: 12px;
-
         color: white;
-
         font-size: 1.25rem;
         font-weight: 900;
-
         letter-spacing: 0.4px;
-
         flex-shrink: 0;
     }
 
-    .logo-name {
-        white-space: nowrap;
-    }
-
-    /* The circular badge: an outer colour ring that keeps "cycling" */
+    .logo-name { white-space: nowrap; }
 
     .logo-icon {
         width: 50px;
         height: 50px;
-
-        padding: 4px;              /* ring thickness */
-
+        padding: 4px;
         display: flex;
         align-items: center;
         justify-content: center;
-
         border-radius: 50%;
-
-        background:
-            conic-gradient(
-                from 0deg,
-                var(--yellow) 0deg,
-                var(--green-light) 90deg,
-                var(--purple-light) 180deg,
-                var(--red-light) 270deg,
-                var(--yellow) 360deg
-            );
-
-        box-shadow:
-            0 0 0 2px rgba(255, 255, 255, 0.10),
-            0 6px 22px rgba(241, 196, 15, 0.35);
-
+        background: conic-gradient(
+            from 0deg,
+            var(--yellow) 0deg,
+            var(--green-light) 90deg,
+            var(--purple-light) 180deg,
+            var(--red-light) 270deg,
+            var(--yellow) 360deg
+        );
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.10),
+                    0 6px 22px rgba(241, 196, 15, 0.35);
         flex-shrink: 0;
-
-        /* continuous "cycling" rotation of the ring */
-        animation:
-            logoCycle 5s linear infinite;
-
-        transition:
-            box-shadow var(--transition);
+        animation: logoCycle 5s linear infinite;
+        transition: box-shadow var(--transition);
     }
-
-    /* Inner disc holding the bicycle */
 
     .logo-icon i {
         width: 100%;
         height: 100%;
-
         display: flex;
         align-items: center;
         justify-content: center;
-
         border-radius: 50%;
-
-        background:
-            linear-gradient(
-                135deg,
-                #ffd93d 0%,
-                var(--yellow) 55%,
-                #f0b400 100%
-            );
-
+        background: linear-gradient(
+            135deg,
+            #ffd93d 0%,
+            var(--yellow) 55%,
+            #f0b400 100%
+        );
         color: var(--dark);
-
         font-size: 1.05rem;
-
-        /* counter-rotation keeps the bicycle upright */
-        animation:
-            logoCounter 5s linear infinite;
+        animation: logoCounter 5s linear infinite;
     }
 
     .logo:hover .logo-icon {
-        box-shadow:
-            0 0 0 3px rgba(255, 255, 255, 0.18),
-            0 10px 32px rgba(241, 196, 15, 0.60);
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.18),
+                    0 10px 32px rgba(241, 196, 15, 0.60);
     }
 
-    .logo span {
-        color: var(--yellow);
-    }
+    .logo span { color: var(--yellow); }
 
     @keyframes logoCycle {
         from { transform: rotate(0deg); }
         to   { transform: rotate(360deg); }
     }
-
     @keyframes logoCounter {
         from { transform: rotate(0deg); }
         to   { transform: rotate(-360deg); }
     }
 
-    /* Accessibility: stop the motion when the user asks for it */
-
     @media (prefers-reduced-motion: reduce) {
-        .logo-icon,
-        .logo-icon i {
-            animation: none;
-        }
+        .logo-icon, .logo-icon i { animation: none; }
     }
-
-
-    /* =========================================================
-       NAVIGATION — desktop
-    ========================================================= */
 
     .nav-links {
         list-style: none;
-
         display: flex;
         align-items: center;
-
         gap: 6px;
     }
 
     .nav-links a {
         display: block;
-
-        color:
-            rgba(255, 255, 255, 0.88);
-
+        color: rgba(255, 255, 255, 0.88);
         font-size: 0.92rem;
         font-weight: 700;
-
         padding: 10px 15px;
-
         border-radius: 10px;
-
         white-space: nowrap;
-
-        transition:
-            var(--transition);
+        transition: var(--transition);
     }
 
     .nav-links a:hover,
@@ -346,14 +199,10 @@
         color: var(--dark);
     }
 
-
-    /* RIGHT SIDE (LANGUAGE + MENU) */
-
     .nav-right {
         display: flex;
         align-items: center;
         gap: 10px;
-
         flex-shrink: 0;
     }
 
@@ -362,29 +211,20 @@
         align-items: center;
         justify-content: center;
         gap: 7px;
-
         height: 42px;
         padding: 0 16px;
-
         border-radius: 50px;
-
         border: 1px solid rgba(255, 255, 255, 0.28);
         background: rgba(255, 255, 255, 0.10);
-
         color: white;
-
         font-size: 0.8rem;
         font-weight: 800;
         letter-spacing: 0.5px;
-
         cursor: pointer;
-
         transition: var(--transition);
     }
 
-    .lang-toggle i {
-        font-size: 0.85rem;
-    }
+    .lang-toggle i { font-size: 0.85rem; }
 
     .lang-toggle:hover {
         background: var(--yellow);
@@ -393,29 +233,18 @@
         transform: translateY(-2px);
     }
 
-
-    /* HAMBURGER — hidden on desktop, shown on tablet/mobile */
-
     .menu-toggle {
         display: none;
-
         align-items: center;
         justify-content: center;
-
         width: 44px;
         height: 44px;
-
         border-radius: 12px;
-
         border: 1px solid rgba(255, 255, 255, 0.28);
         background: rgba(255, 255, 255, 0.10);
-
         color: white;
-
         font-size: 1rem;
-
         cursor: pointer;
-
         transition: var(--transition);
     }
 
@@ -426,54 +255,39 @@
         color: var(--dark);
     }
 
-
     /* =========================================================
-       HERO — FULL SCREEN HEIGHT (desktop)
+       HERO
     ========================================================= */
 
     .hero {
         min-height: 100vh;
-
-        padding:
-            150px 0
-            90px;
-
+        padding: 150px 0 90px;
         position: relative;
-
         overflow: hidden;
-
         display: flex;
         align-items: center;
-
-        background:
-            linear-gradient(
-                120deg,
-                #123b5d 0%,
-                #263b75 45%,
-                #743b91 72%,
-                #c0392b 100%
-            );
+        background: linear-gradient(
+            120deg,
+            #123b5d 0%,
+            #263b75 45%,
+            #743b91 72%,
+            #c0392b 100%
+        );
     }
 
     @supports (min-height: 100svh) {
-        .hero {
-            min-height: 100svh;
-        }
+        .hero { min-height: 100svh; }
     }
 
     .hero::before {
         content: "";
-
         position: absolute;
         inset: 0;
-
-        background:
-            radial-gradient(
+        background: radial-gradient(
                 circle at 10% 20%,
                 rgba(241, 196, 15, 0.16),
                 transparent 35%
             ),
-
             radial-gradient(
                 circle at 90% 80%,
                 rgba(46, 204, 113, 0.14),
@@ -481,744 +295,566 @@
             );
     }
 
-    .hero > .container {
-        width: 100%;
-    }
+    .hero > .container { width: 100%; }
 
     .hero-grid {
         position: relative;
         z-index: 2;
-
         display: grid;
-
-        grid-template-columns:
-            1.05fr
-            0.95fr;
-
+        grid-template-columns: 1.05fr 0.95fr;
         align-items: center;
-
         gap: 70px;
     }
 
-    .hero-content {
-        color: white;
-    }
+    .hero-content { color: white; }
 
     .hero-badge {
         display: inline-flex;
-
         align-items: center;
         gap: 8px;
-
         padding: 8px 15px;
-
         margin-bottom: 22px;
-
         border-radius: 50px;
-
-        background:
-            rgba(255, 255, 255, 0.10);
-
-        border:
-            1px solid rgba(255, 255, 255, 0.18);
-
+        background: rgba(255, 255, 255, 0.10);
+        border: 1px solid rgba(255, 255, 255, 0.18);
         backdrop-filter: blur(8px);
-
         font-size: 0.82rem;
         font-weight: 700;
     }
 
     .hero h1 {
         font-size: clamp(2.4rem, 4.6vw, 4.6rem);
-
         line-height: 1.05;
-
         font-weight: 900;
-
         margin-bottom: 25px;
-
         letter-spacing: -1.5px;
     }
 
-    .hero h1 .yellow {
-        color: var(--yellow);
-    }
-
-    .hero h1 .green {
-        color: var(--green-light);
-    }
-
-    .hero h1 .red {
-        color: var(--red-light);
-    }
+    .hero h1 .yellow { color: var(--yellow); }
+    .hero h1 .green  { color: var(--green-light); }
+    .hero h1 .red    { color: var(--red-light); }
 
     .hero-description {
         max-width: 720px;
-
-        color:
-            rgba(255, 255, 255, 0.84);
-
+        color: rgba(255, 255, 255, 0.84);
         font-size: clamp(0.95rem, 1.05vw, 1.08rem);
-
         line-height: 1.8;
-
         margin-bottom: 30px;
     }
 
     .hero-buttons {
         display: flex;
         flex-wrap: wrap;
-
         gap: 14px;
-
         margin-bottom: 40px;
     }
 
     .btn {
         min-height: 52px;
-
         display: inline-flex;
-
         align-items: center;
         justify-content: center;
-
         gap: 9px;
-
-        padding:
-            13px 24px;
-
+        padding: 13px 24px;
         border-radius: 50px;
-
         font-size: 0.9rem;
         font-weight: 800;
-
         border: 0;
-
         cursor: pointer;
-
         text-align: center;
-
-        transition:
-            var(--transition);
+        transition: var(--transition);
     }
 
-    .btn:hover {
-        transform: translateY(-3px);
-    }
+    .btn:hover { transform: translateY(-3px); }
 
     .btn-primary {
         background: var(--yellow);
         color: var(--dark);
-
-        box-shadow:
-            0 8px 25px
-            rgba(241, 196, 15, 0.28);
+        box-shadow: 0 8px 25px rgba(241, 196, 15, 0.28);
     }
 
     .btn-secondary {
-        background:
-            rgba(255, 255, 255, 0.10);
-
+        background: rgba(255, 255, 255, 0.10);
         color: white;
-
-        border:
-            1px solid rgba(255, 255, 255, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.25);
     }
 
-    .btn-secondary:hover {
-        background:
-            rgba(255, 255, 255, 0.18);
-    }
-
-    /* GOOGLE DRIVE BUTTON */
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.18); }
 
     .btn-drive {
         background: var(--green);
         color: white;
-
-        box-shadow:
-            0 8px 25px
-            rgba(32, 160, 90, 0.35);
+        box-shadow: 0 8px 25px rgba(32, 160, 90, 0.35);
     }
 
     .btn-drive:hover {
         background: var(--green-light);
-        box-shadow:
-            0 12px 30px
-            rgba(32, 160, 90, 0.45);
+        box-shadow: 0 12px 30px rgba(32, 160, 90, 0.45);
     }
-
-
-    /* HERO STATS */
 
     .hero-stats {
         display: flex;
-
         gap: 45px;
     }
 
     .stat-number {
         display: block;
-
         color: var(--yellow);
-
         font-size: 1.9rem;
-
         font-weight: 900;
     }
 
     .stat-label {
         display: block;
-
-        color:
-            rgba(255, 255, 255, 0.65);
-
+        color: rgba(255, 255, 255, 0.65);
         font-size: 0.75rem;
-
         text-transform: uppercase;
-
         letter-spacing: 0.7px;
     }
 
-
-    /* HERO IMAGE */
-
-    .hero-visual {
-        position: relative;
-    }
+    .hero-visual { position: relative; }
 
     .hero-card {
         padding: 15px;
-
-        background:
-            rgba(255, 255, 255, 0.09);
-
-        border:
-            1px solid
-            rgba(255, 255, 255, 0.16);
-
+        background: rgba(255, 255, 255, 0.09);
+        border: 1px solid rgba(255, 255, 255, 0.16);
         border-radius: 24px;
-
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
-
-        box-shadow:
-            0 30px 80px
-            rgba(0, 0, 0, 0.25);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
     }
 
     .hero-card img {
         height: 52vh;
         min-height: 420px;
         max-height: 620px;
-
         object-fit: cover;
-
         border-radius: 16px;
     }
 
     .hero-tags {
         display: flex;
-
         flex-wrap: wrap;
-
         justify-content: center;
-
         gap: 8px;
-
-        padding:
-            15px 5px 3px;
+        padding: 15px 5px 3px;
     }
 
     .hero-tags span {
-        padding:
-            6px 12px;
-
+        padding: 6px 12px;
         border-radius: 30px;
-
         font-size: 0.72rem;
-
         font-weight: 800;
     }
 
-    .tag-yellow {
-        background: var(--yellow);
-        color: var(--dark);
-    }
-
-    .tag-green {
-        background: var(--green);
-        color: white;
-    }
-
-    .tag-purple {
-        background: var(--purple);
-        color: white;
-    }
-
+    .tag-yellow { background: var(--yellow); color: var(--dark); }
+    .tag-green  { background: var(--green); color: white; }
+    .tag-purple { background: var(--purple); color: white; }
 
     /* =========================================================
        GENERAL SECTIONS
     ========================================================= */
 
-    section {
-        padding:
-            100px 0;
-    }
+    section { padding: 100px 0; }
 
     .section-heading {
         max-width: 760px;
-
-        margin:
-            0 auto 55px;
-
+        margin: 0 auto 55px;
         text-align: center;
     }
 
     .section-heading h2 {
         font-size: clamp(1.9rem, 3vw, 2.9rem);
-
         color: var(--dark);
-
         font-weight: 900;
-
         margin-bottom: 15px;
     }
 
-    .section-heading h2 span {
-        color: var(--purple);
-    }
+    .section-heading h2 span { color: var(--purple); }
 
     .section-heading p {
         color: var(--gray);
-
         font-size: 1rem;
     }
 
     .section-line {
         width: 65px;
         height: 4px;
-
         margin: 15px auto 0;
-
         border-radius: 10px;
-
-        background:
-            linear-gradient(
-                90deg,
-                var(--yellow),
-                var(--red),
-                var(--purple)
-            );
+        background: linear-gradient(
+            90deg,
+            var(--yellow),
+            var(--red),
+            var(--purple)
+        );
     }
-
 
     /* =========================================================
        ABOUT
     ========================================================= */
 
-    .about {
-        background: white;
-    }
+    .about { background: white; }
 
     .about-grid {
         display: grid;
-
-        grid-template-columns:
-            1fr
-            1fr;
-
+        grid-template-columns: 1fr 1fr;
         gap: 70px;
-
         align-items: center;
     }
 
-    .about-image {
-        position: relative;
-    }
+    .about-image { position: relative; }
 
     .about-image img {
         height: 520px;
-
         object-fit: cover;
-
         border-radius: 22px;
-
         box-shadow: var(--shadow-lg);
     }
 
     .about-image::after {
         content: "";
-
         position: absolute;
-
         width: 120px;
         height: 120px;
-
         right: -20px;
         bottom: -20px;
-
         background: var(--yellow);
-
         border-radius: 25px;
-
         z-index: -1;
     }
 
     .about-content h3 {
         color: var(--blue);
-
         font-size: clamp(1.5rem, 2vw, 2rem);
-
         margin-bottom: 15px;
     }
 
-    .about-content h3 span {
-        color: var(--purple);
-    }
+    .about-content h3 span { color: var(--purple); }
 
     .about-content p {
         color: #52606d;
-
         margin-bottom: 15px;
-
         line-height: 1.8;
     }
 
     .features {
         display: grid;
-
-        grid-template-columns:
-            1fr
-            1fr;
-
+        grid-template-columns: 1fr 1fr;
         gap: 12px;
-
         margin-top: 25px;
     }
 
     .feature {
         display: flex;
-
         align-items: center;
-
         gap: 10px;
-
         padding: 13px;
-
         border-radius: 12px;
-
         background: var(--light);
-
         font-weight: 700;
-
         font-size: 0.88rem;
-
         transition: var(--transition);
     }
 
     .feature:hover {
         transform: translateY(-3px);
-
         background: #eef4f8;
     }
 
     .feature i {
         color: var(--blue);
-
         font-size: 1.1rem;
-
         flex-shrink: 0;
     }
-
 
     /* =========================================================
        SERVICES
     ========================================================= */
 
-    .services {
-        background: var(--light);
-    }
+    .services { background: var(--light); }
 
     .services-grid {
         display: grid;
-
-        grid-template-columns:
-            repeat(3, 1fr);
-
+        grid-template-columns: repeat(3, 1fr);
         gap: 24px;
     }
 
     .service-card {
         background: white;
-
         padding: 34px 26px;
-
         border-radius: var(--radius);
-
         box-shadow: var(--shadow);
-
         border-top: 4px solid var(--blue);
-
         transition: var(--transition);
-
         text-align: center;
     }
 
     .service-card:hover {
         transform: translateY(-8px);
-
         box-shadow: var(--shadow-lg);
     }
 
-    .service-card:nth-child(2) {
-        border-top-color: var(--red);
-    }
-
-    .service-card:nth-child(3) {
-        border-top-color: var(--green);
-    }
-
-    .service-card:nth-child(4) {
-        border-top-color: var(--purple);
-    }
-
-    .service-card:nth-child(5) {
-        border-top-color: var(--yellow);
-    }
-
-    .service-card:nth-child(6) {
-        border-top-color: var(--red);
-    }
+    .service-card:nth-child(2) { border-top-color: var(--red); }
+    .service-card:nth-child(3) { border-top-color: var(--green); }
+    .service-card:nth-child(4) { border-top-color: var(--purple); }
+    .service-card:nth-child(5) { border-top-color: var(--yellow); }
+    .service-card:nth-child(6) { border-top-color: var(--red); }
 
     .service-icon {
         width: 70px;
         height: 70px;
-
         display: flex;
-
         align-items: center;
         justify-content: center;
-
         margin: 0 auto 18px;
-
         border-radius: 20px;
-
-        background:
-            rgba(18, 59, 93, 0.08);
-
+        background: rgba(18, 59, 93, 0.08);
         color: var(--blue);
-
         font-size: 1.8rem;
     }
 
     .service-card h3 {
         font-size: 1.08rem;
-
         color: var(--dark);
-
         margin-bottom: 10px;
     }
 
     .service-card p {
         color: var(--gray);
-
         font-size: 0.9rem;
-
         line-height: 1.7;
     }
 
+    /* =========================================================
+       BOOK SECTION (NEW - Book Cover from Google Drive)
+    ========================================================= */
+
+    .book {
+        background: white;
+    }
+
+    .book-grid {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 70px;
+        align-items: center;
+    }
+
+    .book-cover {
+        position: relative;
+    }
+
+    .book-cover img {
+        width: 100%;
+        height: auto;
+        max-height: 650px;
+        object-fit: contain;
+        border-radius: 18px;
+        box-shadow: 0 25px 70px rgba(15, 23, 42, 0.25);
+        background: #f8fafc;
+        padding: 8px;
+        transition: transform var(--transition);
+    }
+
+    .book-cover img:hover {
+        transform: scale(1.02) rotate(-1deg);
+    }
+
+    .book-cover::after {
+        content: "";
+        position: absolute;
+        width: 130px;
+        height: 130px;
+        left: -20px;
+        bottom: -20px;
+        background: var(--green);
+        border-radius: 25px;
+        z-index: -1;
+    }
+
+    .book-content h3 {
+        color: var(--blue);
+        font-size: clamp(1.5rem, 2vw, 2rem);
+        margin-bottom: 15px;
+    }
+
+    .book-content h3 span { color: var(--purple); }
+
+    .book-content p {
+        color: #52606d;
+        margin-bottom: 15px;
+        line-height: 1.8;
+    }
+
+    .book-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 25px;
+    }
+
+    .book-buttons .btn-drive {
+        background: var(--green);
+        color: white;
+        box-shadow: 0 8px 25px rgba(32, 160, 90, 0.35);
+    }
+
+    .book-buttons .btn-secondary-dark {
+        background: var(--light);
+        color: var(--blue);
+        border: 1px solid var(--border);
+    }
+
+    .book-buttons .btn-secondary-dark:hover {
+        background: var(--blue);
+        color: white;
+    }
+
+    .book-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        margin-top: 25px;
+        padding-top: 20px;
+        border-top: 1px solid var(--border);
+    }
+
+    .book-meta-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--gray);
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+
+    .book-meta-item i {
+        color: var(--green);
+        font-size: 1rem;
+    }
 
     /* =========================================================
        CONTACT
     ========================================================= */
 
-    .contact {
-        background: white;
-    }
+    .contact { background: white; }
 
     .contact-grid {
         display: grid;
-
-        grid-template-columns:
-            0.85fr
-            1.15fr;
-
+        grid-template-columns: 0.85fr 1.15fr;
         gap: 30px;
     }
 
     .contact-info {
         padding: 38px;
-
         border-radius: 22px;
-
         color: white;
-
-        background:
-            linear-gradient(
-                135deg,
-                var(--blue),
-                var(--purple)
-            );
-
+        background: linear-gradient(135deg, var(--blue), var(--purple));
         box-shadow: var(--shadow-lg);
     }
 
     .contact-info h3 {
         font-size: 1.7rem;
-
         margin-bottom: 10px;
     }
 
     .contact-info > p {
-        color:
-            rgba(255, 255, 255, 0.78);
-
+        color: rgba(255, 255, 255, 0.78);
         margin-bottom: 25px;
     }
 
     .contact-item {
         display: flex;
-
         align-items: center;
-
         gap: 14px;
-
         padding: 15px 0;
-
-        border-bottom:
-            1px solid
-            rgba(255, 255, 255, 0.10);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.10);
     }
 
-    .contact-item:last-of-type {
-        border-bottom: 0;
-    }
+    .contact-item:last-of-type { border-bottom: 0; }
 
     .contact-icon {
         width: 45px;
         height: 45px;
-
         flex-shrink: 0;
-
         display: flex;
-
         align-items: center;
         justify-content: center;
-
         border-radius: 50%;
-
-        background:
-            rgba(255, 255, 255, 0.10);
+        background: rgba(255, 255, 255, 0.10);
     }
 
     .contact-label {
         display: block;
-
         font-size: 0.68rem;
-
         opacity: 0.6;
-
         text-transform: uppercase;
     }
 
     .contact-value {
         font-size: 0.92rem;
-
         font-weight: 700;
-
         word-break: break-word;
     }
 
-    .contact-value a {
-        color: var(--yellow);
-    }
+    .contact-value a { color: var(--yellow); }
 
     .social-links {
         display: flex;
-
         flex-wrap: wrap;
-
         gap: 10px;
-
         margin-top: 25px;
     }
 
     .social-links a {
         width: 42px;
         height: 42px;
-
         display: flex;
-
         align-items: center;
         justify-content: center;
-
         border-radius: 50%;
-
-        background:
-            rgba(255, 255, 255, 0.10);
-
+        background: rgba(255, 255, 255, 0.10);
         transition: var(--transition);
     }
 
     .social-links a:hover {
         background: var(--yellow);
-
         color: var(--dark);
-
         transform: translateY(-4px);
     }
 
-
-    /* CONTACT FORM */
-
     .contact-form {
         padding: 38px;
-
         background: var(--light);
-
         border-radius: 22px;
-
         box-shadow: var(--shadow);
     }
 
     .contact-form h3 {
         color: var(--blue);
-
         font-size: 1.7rem;
-
         margin-bottom: 5px;
     }
 
     .contact-form > p {
         color: var(--gray);
-
         margin-bottom: 25px;
     }
 
     .form-row {
         display: grid;
-
-        grid-template-columns:
-            1fr
-            1fr;
-
+        grid-template-columns: 1fr 1fr;
         gap: 18px;
     }
 
-    .form-group {
-        margin-bottom: 18px;
-    }
+    .form-group { margin-bottom: 18px; }
 
     .form-group label {
         display: block;
-
         margin-bottom: 7px;
-
         color: var(--dark);
-
         font-size: 0.85rem;
-
         font-weight: 700;
     }
 
@@ -1226,22 +862,13 @@
     .form-group textarea,
     .form-group select {
         width: 100%;
-
         padding: 13px 15px;
-
-        border:
-            1px solid var(--border);
-
+        border: 1px solid var(--border);
         border-radius: 11px;
-
         background: white;
-
         color: var(--dark);
-
         outline: none;
-
         font-size: 0.92rem;
-
         transition: var(--transition);
     }
 
@@ -1249,53 +876,31 @@
     .form-group textarea:focus,
     .form-group select:focus {
         border-color: var(--blue);
-
-        box-shadow:
-            0 0 0 3px
-            rgba(18, 59, 93, 0.08);
+        box-shadow: 0 0 0 3px rgba(18, 59, 93, 0.08);
     }
 
     .form-group textarea {
         min-height: 130px;
-
         resize: vertical;
     }
 
     .submit-btn {
         width: 100%;
-
         border: 0;
-
         min-height: 54px;
-
         border-radius: 50px;
-
-        background:
-            linear-gradient(
-                135deg,
-                var(--blue),
-                var(--purple)
-            );
-
+        background: linear-gradient(135deg, var(--blue), var(--purple));
         color: white;
-
         font-weight: 800;
-
         font-size: 0.95rem;
-
         cursor: pointer;
-
         transition: var(--transition);
     }
 
     .submit-btn:hover {
         transform: translateY(-3px);
-
-        box-shadow:
-            0 10px 25px
-            rgba(18, 59, 93, 0.25);
+        box-shadow: 0 10px 25px rgba(18, 59, 93, 0.25);
     }
-
 
     /* =========================================================
        LOCATION
@@ -1303,65 +908,45 @@
 
     .location {
         padding-top: 0;
-
         background: var(--light);
     }
 
     .map-container {
         overflow: hidden;
-
         border-radius: 22px;
-
         box-shadow: var(--shadow-lg);
-
         background: white;
     }
 
     .map-container iframe {
         width: 100%;
-
         height: 480px;
-
         border: 0;
-
         display: block;
     }
 
     .location-details {
         display: grid;
-
-        grid-template-columns:
-            repeat(3, 1fr);
-
+        grid-template-columns: repeat(3, 1fr);
         gap: 10px;
-
         padding: 22px;
     }
 
     .location-item {
         display: flex;
-
         align-items: center;
-
         justify-content: center;
-
         gap: 9px;
-
         color: #52606d;
-
         font-weight: 600;
-
         font-size: 0.88rem;
-
         text-align: center;
     }
 
     .location-item i {
         color: var(--red);
-
         flex-shrink: 0;
     }
-
 
     /* =========================================================
        FOOTER
@@ -1369,69 +954,43 @@
 
     footer {
         background: var(--dark);
-
-        color:
-            rgba(255, 255, 255, 0.65);
-
+        color: rgba(255, 255, 255, 0.65);
         padding: 65px 0 25px;
     }
 
     .footer-grid {
         display: grid;
-
-        grid-template-columns:
-            1.3fr
-            0.8fr
-            0.8fr;
-
+        grid-template-columns: 1.3fr 0.8fr 0.8fr;
         gap: 60px;
-
         padding-bottom: 40px;
     }
 
     .footer-brand h3 {
         color: white;
-
         font-size: 1.6rem;
-
         margin-bottom: 12px;
     }
 
-    .footer-brand h3 span {
-        color: var(--yellow);
-    }
+    .footer-brand h3 span { color: var(--yellow); }
 
     .footer-brand p {
         max-width: 520px;
-
         line-height: 1.8;
-
         font-size: 0.9rem;
     }
 
     .footer-column h4 {
         color: white;
-
         margin-bottom: 15px;
-
         font-size: 1rem;
     }
 
-    .footer-links {
-        list-style: none;
-    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 8px; }
 
-    .footer-links li {
-        margin-bottom: 8px;
-    }
+    .footer-links a { transition: var(--transition); }
 
-    .footer-links a {
-        transition: var(--transition);
-    }
-
-    .footer-links a:hover {
-        color: var(--yellow);
-    }
+    .footer-links a:hover { color: var(--yellow); }
 
     .footer-links a i {
         margin-right: 6px;
@@ -1440,55 +999,38 @@
 
     .footer-social {
         display: flex;
-
         flex-wrap: wrap;
-
         gap: 10px;
     }
 
     .footer-social a {
         width: 40px;
         height: 40px;
-
         display: flex;
-
         align-items: center;
         justify-content: center;
-
         border-radius: 50%;
-
-        background:
-            rgba(255, 255, 255, 0.07);
-
+        background: rgba(255, 255, 255, 0.07);
         transition: var(--transition);
     }
 
     .footer-social a:hover {
         background: var(--yellow);
-
         color: var(--dark);
-
         transform: translateY(-3px);
     }
 
     .footer-bottom {
         padding-top: 22px;
-
-        border-top:
-            1px solid
-            rgba(255, 255, 255, 0.08);
-
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
         text-align: center;
-
         font-size: 0.78rem;
     }
 
     .footer-bottom .highlight {
         color: var(--yellow);
-
         font-weight: 800;
     }
-
 
     /* =========================================================
        TOAST
@@ -1496,150 +1038,76 @@
 
     .toast {
         position: fixed;
-
         left: 50%;
         bottom: 25px;
-
-        transform:
-            translate(-50%, 120px);
-
+        transform: translate(-50%, 120px);
         opacity: 0;
-
         z-index: 10000;
-
         padding: 14px 22px;
-
         border-radius: 12px;
-
         background: var(--dark);
-
         color: white;
-
         box-shadow: var(--shadow-lg);
-
-        border-left:
-            4px solid var(--green);
-
+        border-left: 4px solid var(--green);
         transition: 0.4s ease;
-
         max-width: calc(100% - 40px);
-
         text-align: center;
-
         font-size: 0.85rem;
-
         pointer-events: none;
     }
 
     .toast.show {
-        transform:
-            translate(-50%, 0);
-
+        transform: translate(-50%, 0);
         opacity: 1;
     }
 
-    .toast.error {
-        border-left-color: var(--red);
-    }
-
+    .toast.error { border-left-color: var(--red); }
 
     /* =========================================================
-       RESPONSIVE — WORKS ON ALL DEVICES
-       Desktop keeps the full-width layout; tablet & mobile
-       gracefully collapse into fewer columns.
+       RESPONSIVE
     ========================================================= */
 
-    /* ---------- Large screens ---------- */
     @media (min-width: 1600px) {
-
-        :root {
-            --gutter: 80px;
-        }
-
-        .hero-grid {
-            gap: 90px;
-        }
-
-        .services-grid {
-            gap: 30px;
-        }
+        :root { --gutter: 80px; }
+        .hero-grid { gap: 90px; }
+        .services-grid { gap: 30px; }
     }
 
-
-    /* ---------- ≤ 1200px : small laptops ---------- */
     @media (max-width: 1200px) {
-
-        :root {
-            --gutter: 32px;
-        }
-
-        .hero-grid {
-            gap: 45px;
-        }
-
-        .about-grid {
-            gap: 45px;
-        }
-
-        .footer-grid {
-            gap: 40px;
-        }
-
-        .hero-stats {
-            gap: 32px;
-        }
-
-        .services-grid {
-            gap: 20px;
-        }
+        :root { --gutter: 32px; }
+        .hero-grid { gap: 45px; }
+        .about-grid { gap: 45px; }
+        .book-grid { gap: 45px; }
+        .footer-grid { gap: 40px; }
+        .hero-stats { gap: 32px; }
+        .services-grid { gap: 20px; }
     }
 
-
-    /* ---------- ≤ 1024px : tablets ---------- */
     @media (max-width: 1024px) {
+        :root { --gutter: 26px; --header-h: 72px; }
 
-        :root {
-            --gutter: 26px;
-            --header-h: 72px;
-        }
-
-        /* Show hamburger, hide inline nav */
-        .menu-toggle {
-            display: inline-flex;
-        }
+        .menu-toggle { display: inline-flex; }
 
         .nav-links {
             position: absolute;
-
             top: 100%;
             left: 0;
             right: 0;
-
             flex-direction: column;
             align-items: stretch;
-
             gap: 6px;
-
             padding: 14px var(--gutter) 22px;
-
             background: rgba(18, 59, 93, 0.99);
-
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
-
             border-top: 1px solid rgba(255, 255, 255, 0.10);
-
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
-
             max-height: calc(100vh - var(--header-h));
             overflow-y: auto;
-
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
-
             transform: translateY(-14px);
-
             transition: opacity 0.28s ease,
                         transform 0.28s ease,
                         visibility 0.28s ease;
@@ -1657,7 +1125,6 @@
             font-size: 0.95rem;
         }
 
-        /* Hero becomes single column */
         .hero {
             min-height: auto;
             padding: 130px 0 70px;
@@ -1668,22 +1135,15 @@
             gap: 45px;
         }
 
-        .hero-content {
-            text-align: center;
-        }
+        .hero-content { text-align: center; }
 
         .hero-description {
             margin-left: auto;
             margin-right: auto;
         }
 
-        .hero-buttons {
-            justify-content: center;
-        }
-
-        .hero-stats {
-            justify-content: center;
-        }
+        .hero-buttons { justify-content: center; }
+        .hero-stats { justify-content: center; }
 
         .hero-card img {
             height: 420px;
@@ -1691,56 +1151,40 @@
             max-height: 520px;
         }
 
-        /* About */
         .about-grid {
             grid-template-columns: 1fr;
             gap: 40px;
         }
 
-        .about-image img {
-            height: 400px;
-        }
+        .about-image img { height: 400px; }
 
-        /* Services */
-        .services-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        /* Contact */
-        .contact-grid {
+        .book-grid {
             grid-template-columns: 1fr;
+            gap: 40px;
         }
 
-        /* Footer */
+        .book-cover {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .services-grid { grid-template-columns: repeat(2, 1fr); }
+        .contact-grid { grid-template-columns: 1fr; }
+
         .footer-grid {
             grid-template-columns: 1fr 1fr;
             gap: 40px;
         }
 
-        .footer-brand {
-            grid-column: 1 / -1;
-        }
+        .footer-brand { grid-column: 1 / -1; }
 
-        /* Sections */
-        section {
-            padding: 80px 0;
-        }
-
-        .section-heading {
-            margin-bottom: 42px;
-        }
+        section { padding: 80px 0; }
+        .section-heading { margin-bottom: 42px; }
     }
 
-
-    /* ---------- ≤ 768px : phones / small tablets ---------- */
     @media (max-width: 768px) {
+        :root { --gutter: 20px; --header-h: 68px; }
 
-        :root {
-            --gutter: 20px;
-            --header-h: 68px;
-        }
-
-        /* Header */
         .logo {
             font-size: 1.02rem;
             gap: 9px;
@@ -1753,9 +1197,7 @@
             border-radius: 50%;
         }
 
-        .logo-icon i {
-            font-size: 0.9rem;
-        }
+        .logo-icon i { font-size: 0.9rem; }
 
         .lang-toggle {
             height: 40px;
@@ -1768,15 +1210,9 @@
             height: 40px;
         }
 
-        /* Sections */
-        section {
-            padding: 62px 0;
-        }
+        section { padding: 62px 0; }
 
-        /* Hero */
-        .hero {
-            padding: 110px 0 60px;
-        }
+        .hero { padding: 110px 0 60px; }
 
         .hero h1 {
             font-size: clamp(1.9rem, 7.5vw, 2.6rem);
@@ -1813,13 +1249,8 @@
             justify-content: center;
         }
 
-        .stat-number {
-            font-size: 1.5rem;
-        }
-
-        .stat-label {
-            font-size: 0.66rem;
-        }
+        .stat-number { font-size: 1.5rem; }
+        .stat-label { font-size: 0.66rem; }
 
         .hero-card {
             padding: 10px;
@@ -1838,16 +1269,9 @@
             padding: 5px 10px;
         }
 
-        /* Headings */
-        .section-heading h2 {
-            font-size: clamp(1.6rem, 5.5vw, 2rem);
-        }
+        .section-heading h2 { font-size: clamp(1.6rem, 5.5vw, 2rem); }
+        .section-heading p  { font-size: 0.92rem; }
 
-        .section-heading p {
-            font-size: 0.92rem;
-        }
-
-        /* About */
         .about-image img {
             height: 300px;
             border-radius: 18px;
@@ -1861,28 +1285,34 @@
             border-radius: 18px;
         }
 
-        .about-content h3 {
-            font-size: 1.45rem;
-        }
-
-        .about-content p {
-            font-size: 0.94rem;
-        }
+        .about-content h3 { font-size: 1.45rem; }
+        .about-content p  { font-size: 0.94rem; }
 
         .features {
             grid-template-columns: 1fr;
             gap: 10px;
         }
 
-        /* Services */
+        .book-cover::after {
+            width: 80px;
+            height: 80px;
+            left: -12px;
+            bottom: -12px;
+            border-radius: 18px;
+        }
+
+        .book-content h3 { font-size: 1.45rem; }
+        .book-content p  { font-size: 0.94rem; }
+
+        .book-buttons { flex-direction: column; }
+        .book-buttons .btn { width: 100%; }
+
         .services-grid {
             grid-template-columns: 1fr;
             gap: 16px;
         }
 
-        .service-card {
-            padding: 26px 20px;
-        }
+        .service-card { padding: 26px 20px; }
 
         .service-icon {
             width: 60px;
@@ -1891,7 +1321,6 @@
             border-radius: 16px;
         }
 
-        /* Contact */
         .contact-info,
         .contact-form {
             padding: 26px 20px;
@@ -1899,25 +1328,15 @@
         }
 
         .contact-info h3,
-        .contact-form h3 {
-            font-size: 1.35rem;
-        }
+        .contact-form h3 { font-size: 1.35rem; }
 
-        .contact-value {
-            font-size: 0.88rem;
-        }
+        .contact-value { font-size: 0.88rem; }
 
-        /* Prevent iOS input zoom */
         .form-group input,
         .form-group textarea,
-        .form-group select {
-            font-size: 16px;
-        }
+        .form-group select { font-size: 16px; }
 
-        /* Location */
-        .map-container iframe {
-            height: 320px;
-        }
+        .map-container iframe { height: 320px; }
 
         .location-details {
             grid-template-columns: 1fr;
@@ -1925,10 +1344,7 @@
             padding: 20px;
         }
 
-        /* Footer */
-        footer {
-            padding: 48px 0 22px;
-        }
+        footer { padding: 48px 0 22px; }
 
         .footer-grid {
             grid-template-columns: 1fr;
@@ -1936,40 +1352,25 @@
             padding-bottom: 30px;
         }
 
-        .footer-brand {
-            grid-column: auto;
-        }
-
-        .footer-brand h3 {
-            font-size: 1.35rem;
-        }
+        .footer-brand { grid-column: auto; }
+        .footer-brand h3 { font-size: 1.35rem; }
     }
 
-
-    /* ---------- ≤ 560px : small phones ---------- */
     @media (max-width: 560px) {
-
         .form-row {
             grid-template-columns: 1fr;
             gap: 0;
         }
 
-        .hero-stats {
-            gap: 20px;
-        }
-
-        .stat-number {
-            font-size: 1.4rem;
-        }
+        .hero-stats { gap: 20px; }
+        .stat-number { font-size: 1.4rem; }
 
         .hero-card img {
             height: 250px;
             min-height: 200px;
         }
 
-        .about-image img {
-            height: 250px;
-        }
+        .about-image img { height: 250px; }
 
         .social-links a,
         .footer-social a {
@@ -1978,21 +1379,11 @@
         }
     }
 
-
-    /* ---------- ≤ 400px : very small phones ---------- */
     @media (max-width: 400px) {
+        :root { --gutter: 16px; }
 
-        :root {
-            --gutter: 16px;
-        }
-
-        .logo {
-            font-size: 0.92rem;
-        }
-
-        .logo span {
-            display: none; /* keeps the logo compact on tiny screens */
-        }
+        .logo { font-size: 0.92rem; }
+        .logo span { display: none; }
 
         .logo-icon {
             width: 38px;
@@ -2000,21 +1391,11 @@
             padding: 3px;
         }
 
-        .logo-icon i {
-            font-size: 0.82rem;
-        }
+        .logo-icon i { font-size: 0.82rem; }
 
-        .hero h1 {
-            font-size: 1.7rem;
-        }
-
-        .hero-badge {
-            font-size: 0.7rem;
-        }
-
-        .stat-label {
-            font-size: 0.6rem;
-        }
+        .hero h1 { font-size: 1.7rem; }
+        .hero-badge { font-size: 0.7rem; }
+        .stat-label { font-size: 0.6rem; }
 
         .contact-info,
         .contact-form {
@@ -2036,26 +1417,21 @@
         <nav class="navbar">
 
             <a href="#home" class="logo" aria-label="JTL Zanzibar">
-
-                <!-- CYCLING LOGO: rotating colour ring + bicycle badge -->
                 <div class="logo-icon" aria-hidden="true">
                     <i class="fas fa-bicycle"></i>
                 </div>
-
-                <!-- BRAND NAME -->
                 <div class="logo-name" data-i18n-html="logo_text">JTL <span>Zanzibar</span></div>
-
             </a>
 
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home" data-i18n="nav_home">Nyumbani</a></li>
                 <li><a href="#about" data-i18n="nav_about">Kuhusu Sisi</a></li>
                 <li><a href="#services" data-i18n="nav_services">Huduma</a></li>
+                <li><a href="#book" data-i18n="nav_book">Kitabu</a></li>
                 <li><a href="#contact" data-i18n="nav_contact">Wasiliana</a></li>
             </ul>
 
             <div class="nav-right">
-
                 <button class="lang-toggle"
                         id="langToggle"
                         type="button"
@@ -2065,7 +1441,6 @@
                     <span id="langLabel">EN</span>
                 </button>
 
-                <!-- HAMBURGER (tablet & mobile only) -->
                 <button class="menu-toggle"
                         id="menuToggle"
                         type="button"
@@ -2074,13 +1449,11 @@
                         aria-expanded="false">
                     <i class="fas fa-bars"></i>
                 </button>
-
             </div>
 
         </nav>
     </div>
 </header>
-
 
 <!-- =========================================================
      HERO
@@ -2121,7 +1494,6 @@
                         <span data-i18n="btn_services">Huduma Zetu</span>
                     </a>
 
-                    <!-- GOOGLE DRIVE BUTTON -->
                     <a href="https://drive.google.com/drive/folders/14i708FRvneNRfBEBI3WDnM0OMREu47zT"
                        class="btn btn-drive"
                        target="_blank"
@@ -2173,7 +1545,6 @@
         </div>
     </div>
 </section>
-
 
 <!-- =========================================================
      ABOUT
@@ -2255,7 +1626,6 @@
     </div>
 </section>
 
-
 <!-- =========================================================
      SERVICES
 ========================================================= -->
@@ -2329,6 +1699,89 @@
     </div>
 </section>
 
+<!-- =========================================================
+     BOOK SECTION (NEW)
+     Displays the book cover from Google Drive
+========================================================= -->
+
+<section class="book" id="book">
+    <div class="container">
+
+        <div class="section-heading">
+            <h2 data-i18n-html="book_heading">Kitabu <span>Chetu</span></h2>
+            <p data-i18n="book_sub">Angalia jalada la kitabu chetu kipya — bofya kuona zaidi.</p>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="book-grid">
+
+            <!-- BOOK COVER IMAGE FROM GOOGLE DRIVE -->
+            <div class="book-cover">
+                <a href="https://drive.google.com/file/d/1E9i8OfY_j81rfWyijL5QYK36SKYaZbdG/view?usp=drivesdk"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Fungua jalada la kitabu kwenye Google Drive">
+                    <img src="https://drive.google.com/thumbnail?id=1E9i8OfY_j81rfWyijL5QYK36SKYaZbdG&sz=w1000"
+                         alt="Jalada la Kitabu - JTL Zanzibar"
+                         data-i18n-alt="book_img_alt"
+                         loading="lazy"
+                         onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/1E9i8OfY_j81rfWyijL5QYK36SKYaZbdG=w1000';">
+                </a>
+            </div>
+
+            <div class="book-content">
+
+                <h3 data-i18n-html="book_h3">Jalada la <span>Kitabu</span></h3>
+
+                <p data-i18n="book_p1">
+                    Tunayo furaha kuwasilisha jalada la kitabu chetu kipya.
+                    Kitabu hiki ni matokeo ya kazi ngumu na utafiti wa kina
+                    uliofanywa na timu yetu ya wataalamu wa JTL Zanzibar.
+                </p>
+
+                <p data-i18n="book_p2">
+                    Bofya kitufe hapa chini ili kufungua jalada kamili la
+                    kitabu kwenye Google Drive na upate maelezo zaidi
+                    kuhusu maudhui yake.
+                </p>
+
+                <div class="book-buttons">
+
+                    <a href="https://drive.google.com/file/d/1E9i8OfY_j81rfWyijL5QYK36SKYaZbdG/view?usp=drivesdk"
+                       class="btn btn-drive"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <i class="fab fa-google-drive"></i>
+                        <span data-i18n="book_view_btn">Tazama Kwenye Google Drive</span>
+                    </a>
+
+                    <a href="#contact" class="btn btn-secondary-dark">
+                        <i class="fas fa-envelope"></i>
+                        <span data-i18n="book_contact_btn">Uliza Kuhusu Kitabu</span>
+                    </a>
+
+                </div>
+
+                <div class="book-meta">
+                    <div class="book-meta-item">
+                        <i class="fas fa-book"></i>
+                        <span data-i18n="book_meta1">Chapisho Jipya</span>
+                    </div>
+                    <div class="book-meta-item">
+                        <i class="fas fa-pen-fancy"></i>
+                        <span data-i18n="book_meta2">Na JTL Zanzibar</span>
+                    </div>
+                    <div class="book-meta-item">
+                        <i class="fas fa-star"></i>
+                        <span data-i18n="book_meta3">Ubora wa Juu</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
 
 <!-- =========================================================
      CONTACT
@@ -2344,8 +1797,6 @@
         </div>
 
         <div class="contact-grid">
-
-            <!-- CONTACT INFO -->
 
             <div class="contact-info">
 
@@ -2399,8 +1850,6 @@
                 </div>
 
             </div>
-
-            <!-- CONTACT FORM -->
 
             <form class="contact-form" id="contactForm" novalidate>
 
@@ -2465,7 +1914,6 @@
     </div>
 </section>
 
-
 <!-- =========================================================
      LOCATION
 ========================================================= -->
@@ -2504,7 +1952,6 @@
     </div>
 </section>
 
-
 <!-- =========================================================
      FOOTER
 ========================================================= -->
@@ -2528,7 +1975,15 @@
                     <li><a href="#home" data-i18n="nav_home">Nyumbani</a></li>
                     <li><a href="#about" data-i18n="nav_about">Kuhusu Sisi</a></li>
                     <li><a href="#services" data-i18n="nav_services">Huduma</a></li>
+                    <li><a href="#book" data-i18n="nav_book">Kitabu</a></li>
                     <li><a href="#contact" data-i18n="nav_contact">Wasiliana</a></li>
+                    <li>
+                        <a href="https://drive.google.com/file/d/1E9i8OfY_j81rfWyijL5QYK36SKYaZbdG/view?usp=drivesdk"
+                           target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-book"></i>
+                            <span data-i18n="footer_book">Kitabu Chetu</span>
+                        </a>
+                    </li>
                     <li>
                         <a href="https://drive.google.com/drive/folders/14i708FRvneNRfBEBI3WDnM0OMREu47zT"
                            target="_blank" rel="noopener noreferrer">
@@ -2560,13 +2015,11 @@
     </div>
 </footer>
 
-
 <!-- =========================================================
      TOAST
 ========================================================= -->
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
 
 <script>
 /* =========================================================
@@ -2581,6 +2034,7 @@ const translations = {
         nav_home: 'Nyumbani',
         nav_about: 'Kuhusu Sisi',
         nav_services: 'Huduma',
+        nav_book: 'Kitabu',
         nav_contact: 'Wasiliana',
 
         hero_badge: 'Karibu JTL Zanzibar',
@@ -2632,6 +2086,19 @@ const translations = {
         srv6_t: 'Uwekezaji na Mali',
         srv6_d: 'Tunasaidia katika uwekezaji, ushauri wa mali na usimamizi wa miradi mbalimbali.',
 
+        /* BOOK SECTION */
+        book_heading: 'Kitabu <span>Chetu</span>',
+        book_sub: 'Angalia jalada la kitabu chetu kipya — bofya kuona zaidi.',
+        book_h3: 'Jalada la <span>Kitabu</span>',
+        book_p1: 'Tunayo furaha kuwasilisha jalada la kitabu chetu kipya. Kitabu hiki ni matokeo ya kazi ngumu na utafiti wa kina uliofanywa na timu yetu ya wataalamu wa JTL Zanzibar.',
+        book_p2: 'Bofya kitufe hapa chini ili kufungua jalada kamili la kitabu kwenye Google Drive na upate maelezo zaidi kuhusu maudhui yake.',
+        book_img_alt: 'Jalada la Kitabu - JTL Zanzibar',
+        book_view_btn: 'Tazama Kwenye Google Drive',
+        book_contact_btn: 'Uliza Kuhusu Kitabu',
+        book_meta1: 'Chapisho Jipya',
+        book_meta2: 'Na JTL Zanzibar',
+        book_meta3: 'Ubora wa Juu',
+
         contact_heading: 'Wasiliana <span>Nasi</span>',
         contact_sub: 'Tuko tayari kukusaidia — wasiliana nasi leo.',
         ci_h3: 'Taarifa za Mawasiliano',
@@ -2672,6 +2139,7 @@ const translations = {
         footer_col1: 'Viungo vya Haraka',
         footer_col2: 'Tufuate',
         footer_drive: 'Hifadhi ya Nyenzo',
+        footer_book: 'Kitabu Chetu',
         footer_copy: '© 2025 <span class="highlight">JTL Zanzibar</span>. Haki zote zimehifadhiwa.'
     },
 
@@ -2681,6 +2149,7 @@ const translations = {
         nav_home: 'Home',
         nav_about: 'About Us',
         nav_services: 'Services',
+        nav_book: 'Book',
         nav_contact: 'Contact',
 
         hero_badge: 'Welcome to JTL Zanzibar',
@@ -2732,6 +2201,19 @@ const translations = {
         srv6_t: 'Investment & Property',
         srv6_d: 'We assist with investment, property advisory and management of various projects.',
 
+        /* BOOK SECTION */
+        book_heading: 'Our <span>Book</span>',
+        book_sub: 'Take a look at the cover of our new book — click to see more.',
+        book_h3: 'The Book <span>Cover</span>',
+        book_p1: 'We are pleased to present the cover of our new book. This book is the result of hard work and in-depth research carried out by our expert team at JTL Zanzibar.',
+        book_p2: 'Click the button below to open the full book cover on Google Drive and learn more about its contents.',
+        book_img_alt: 'Book Cover - JTL Zanzibar',
+        book_view_btn: 'View on Google Drive',
+        book_contact_btn: 'Ask About the Book',
+        book_meta1: 'New Publication',
+        book_meta2: 'By JTL Zanzibar',
+        book_meta3: 'High Quality',
+
         contact_heading: 'Contact <span>Us</span>',
         contact_sub: 'We are ready to help — get in touch with us today.',
         ci_h3: 'Contact Information',
@@ -2772,6 +2254,7 @@ const translations = {
         footer_col1: 'Quick Links',
         footer_col2: 'Follow Us',
         footer_drive: 'Resource Drive',
+        footer_book: 'Our Book',
         footer_copy: '© 2025 <span class="highlight">JTL Zanzibar</span>. All rights reserved.'
     }
 };
@@ -2796,38 +2279,32 @@ function applyLanguage(lang) {
 
     const dict = translations[lang];
 
-    /* Plain text */
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (dict[key] !== undefined) el.textContent = dict[key];
     });
 
-    /* HTML content */
     document.querySelectorAll('[data-i18n-html]').forEach(el => {
         const key = el.getAttribute('data-i18n-html');
         if (dict[key] !== undefined) el.innerHTML = dict[key];
     });
 
-    /* Placeholders */
     document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
         const key = el.getAttribute('data-i18n-placeholder');
         if (dict[key] !== undefined) el.setAttribute('placeholder', dict[key]);
     });
 
-    /* Image alt text */
     document.querySelectorAll('[data-i18n-alt]').forEach(el => {
         const key = el.getAttribute('data-i18n-alt');
         if (dict[key] !== undefined) el.setAttribute('alt', dict[key]);
     });
 
-    /* Toggle button label */
     langLabel.textContent = (lang === 'sw') ? 'EN' : 'SW';
 
     const tooltip = (lang === 'sw') ? 'Switch to English' : 'Badilisha kwa Kiswahili';
     langToggle.setAttribute('aria-label', tooltip);
     langToggle.setAttribute('title', tooltip);
 
-    /* Page title */
     document.title = (lang === 'sw')
         ? 'JTL Zanzibar | Biashara & Ushirikiano'
         : 'JTL Zanzibar | Business & Partnership';
@@ -2866,24 +2343,20 @@ menuToggle.addEventListener('click', () => {
     navLinks.classList.contains('open') ? closeMenu() : openMenu();
 });
 
-/* Close after choosing a link */
 navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', closeMenu);
 });
 
-/* Close when tapping outside the menu */
 document.addEventListener('click', event => {
     if (!navLinks.classList.contains('open')) return;
     if (navLinks.contains(event.target) || menuToggle.contains(event.target)) return;
     closeMenu();
 });
 
-/* Close with Escape */
 document.addEventListener('keydown', event => {
     if (event.key === 'Escape') closeMenu();
 });
 
-/* Reset when resizing up to desktop */
 window.addEventListener('resize', () => {
     if (window.innerWidth > 1024) closeMenu();
 });
