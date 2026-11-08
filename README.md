@@ -2495,7 +2495,7 @@
 
                 <div class="location-item">
                     <i class="fas fa-phone"></i>
-                    <span>+255 777 123 456</span>
+                    <span>+255776290901</span>
                 </div>
 
             </div>
@@ -2592,11 +2592,11 @@ const translations = {
         btn_services: 'Huduma Zetu',
         btn_drive: 'Fungua Hifadhi ya Nyenzo',
 
-        stat1_num: '10+',
+        stat1_num: '1+',
         stat1_label: 'Miaka ya Uzoefu',
         stat2_num: '500+',
         stat2_label: 'Wateja Walioridhika',
-        stat3_num: '50+',
+        stat3_num: '2+',
         stat3_label: 'Miradi Iliyokamilika',
 
         tag1: 'Ubora',
@@ -2692,11 +2692,11 @@ const translations = {
         btn_services: 'Our Services',
         btn_drive: 'Open Resource Drive',
 
-        stat1_num: '10+',
+        stat1_num: '1+',
         stat1_label: 'Years of Experience',
         stat2_num: '500+',
         stat2_label: 'Happy Customers',
-        stat3_num: '50+',
+        stat3_num: '2+',
         stat3_label: 'Completed Projects',
 
         tag1: 'Quality',
