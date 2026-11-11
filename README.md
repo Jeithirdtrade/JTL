@@ -209,6 +209,31 @@ section { padding: 100px 0; }
 .service-card h3 { font-size: 1.08rem; color: var(--dark); margin-bottom: 10px; }
 .service-card p { color: var(--gray); font-size: 0.9rem; line-height: 1.7; }
 
+/* ===== BOOK ===== */
+.book { background: white; position: relative; overflow: hidden; }
+.book::before { content: ""; position: absolute; width: 280px; height: 280px; border-radius: 50%; background: radial-gradient(circle, rgba(116,59,145,0.10), transparent 70%); top: -60px; left: -60px; }
+.book::after { content: ""; position: absolute; width: 240px; height: 240px; border-radius: 50%; background: radial-gradient(circle, rgba(241,196,15,0.14), transparent 70%); bottom: -60px; right: -60px; }
+.book > .container { position: relative; z-index: 2; }
+.book-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 60px; align-items: center; }
+.book-cover { position: relative; text-align: center; }
+.book-cover img {
+    width: 100%; max-width: 360px; margin: 0 auto;
+    border-radius: 14px; box-shadow: 0 25px 60px rgba(15,23,42,0.28), 0 8px 20px rgba(15,23,42,0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    object-fit: cover;
+}
+.book-cover img:hover { transform: translateY(-10px) rotate(-1.5deg); box-shadow: 0 35px 80px rgba(15,23,42,0.35), 0 12px 25px rgba(15,23,42,0.18); }
+.book-cover::before {
+    content: ""; position: absolute; width: 90px; height: 90px; border-radius: 20px;
+    background: linear-gradient(135deg, var(--yellow), var(--red));
+    top: -18px; left: 50%; transform: translateX(-50%) rotate(-8deg);
+    z-index: -1; opacity: 0.85;
+}
+.book-content h3 { color: var(--blue); font-size: clamp(1.5rem, 2vw, 2rem); margin-bottom: 15px; }
+.book-content h3 span { color: var(--purple); }
+.book-content p { color: #52606d; margin-bottom: 15px; line-height: 1.8; }
+.book-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
 /* ===== TESTIMONIALS ===== */
 .testimonials { background: linear-gradient(135deg, #f5f7fa, #eef4f8); }
 .testimonial-slider { position: relative; overflow: hidden; max-width: 900px; margin: 0 auto; }
@@ -336,7 +361,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 65px 0
 
 /* ===== RESPONSIVE ===== */
 @media (min-width: 1600px) { :root { --gutter: 80px; } .hero-grid { gap: 90px; } .services-grid { gap: 30px; } }
-@media (max-width: 1200px) { :root { --gutter: 32px; } .hero-grid, .about-grid { gap: 45px; } .footer-grid { gap: 40px; } .hero-stats { gap: 32px; } .services-grid { gap: 20px; } }
+@media (max-width: 1200px) { :root { --gutter: 32px; } .hero-grid, .about-grid { gap: 45px; } .footer-grid { gap: 40px; } .hero-stats { gap: 32px; } .services-grid { gap: 20px; } .book-grid { gap: 40px; } }
 @media (max-width: 1024px) {
     :root { --gutter: 26px; --header-h: 72px; }
     .menu-toggle { display: inline-flex; }
@@ -361,6 +386,11 @@ footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 65px 0
     .hero-card img { height: 420px; min-height: 300px; max-height: 520px; }
     .about-grid { grid-template-columns: 1fr; gap: 40px; }
     .about-image img { height: 400px; }
+    .book-grid { grid-template-columns: 1fr; gap: 45px; }
+    .book-cover img { max-width: 320px; }
+    .book-content { text-align: center; }
+    .book-content .features { grid-template-columns: 1fr 1fr; }
+    .book-buttons { justify-content: center; }
     .services-grid { grid-template-columns: repeat(2, 1fr); }
     .contact-grid { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
@@ -395,6 +425,12 @@ footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 65px 0
     .about-content h3 { font-size: 1.45rem; }
     .about-content p { font-size: 0.94rem; }
     .features { grid-template-columns: 1fr; gap: 10px; }
+    .book-cover img { max-width: 260px; }
+    .book-cover::before { width: 70px; height: 70px; top: -12px; }
+    .book-content h3 { font-size: 1.45rem; }
+    .book-content p { font-size: 0.94rem; }
+    .book-content .features { grid-template-columns: 1fr; }
+    .book-buttons .btn { width: 100%; }
     .services-grid { grid-template-columns: 1fr; gap: 16px; }
     .service-card { padding: 26px 20px; }
     .service-icon { width: 60px; height: 60px; font-size: 1.5rem; border-radius: 16px; }
@@ -458,6 +494,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 65px 0
                 <li><a href="#home" data-i18n="nav_home">Nyumbani</a></li>
                 <li><a href="#about" data-i18n="nav_about">Kuhusu Sisi</a></li>
                 <li><a href="#services" data-i18n="nav_services">Huduma</a></li>
+                <li><a href="#book" data-i18n="nav_book">Kitabu</a></li>
                 <li><a href="#contact" data-i18n="nav_contact">Wasiliana</a></li>
             </ul>
             <div class="nav-right">
@@ -560,6 +597,46 @@ footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 65px 0
             <div class="service-card reveal"><div class="service-icon"><i class="fas fa-boxes-stacked"></i></div><h3 data-i18n="srv4_t">Ugavi na Ununuzi</h3><p data-i18n="srv4_d">Tunagavi bidhaa na vifaa mbalimbali kwa taasisi, makampuni na watu binafsi.</p></div>
             <div class="service-card reveal reveal-delay-1"><div class="service-icon"><i class="fas fa-laptop-code"></i></div><h3 data-i18n="srv5_t">Huduma za Kidijitali</h3><p data-i18n="srv5_d">Tunatoa huduma za kidijitali ikiwemo uundaji wa tovuti, mifumo ya biashara na masoko ya mtandao.</p></div>
             <div class="service-card reveal reveal-delay-2"><div class="service-icon"><i class="fas fa-building"></i></div><h3 data-i18n="srv6_t">Uwekezaji na Mali</h3><p data-i18n="srv6_d">Tunasaidia katika uwekezaji, ushauri wa mali na usimamizi wa miradi mbalimbali.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- BOOK (NEW SECTION) -->
+<section class="book" id="book">
+    <div class="container">
+        <div class="section-heading reveal">
+            <h2 data-i18n-html="book_heading">Kitabu <span>Chetu</span></h2>
+            <p data-i18n="book_sub">Chapisho letu maalum — lililoandaliwa kwa ajili yako.</p>
+            <div class="section-line"></div>
+        </div>
+        <div class="book-grid">
+            <div class="book-cover reveal">
+                <img
+                    src="https://lh3.googleusercontent.com/d/1E9i8OfY_j81rfWyijL5QYK36SKYaZbdG"
+                    alt="Book Cover - JTL Zanzibar"
+                    data-i18n-alt="book_img_alt"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://drive.google.com/uc?export=view&amp;id=1E9i8OfY_j81rfWyijL5QYK36SKYaZbdG';">
+            </div>
+            <div class="book-content reveal reveal-delay-1">
+                <h3 data-i18n-html="book_h3">Gundua <span>Kitabu Chetu</span></h3>
+                <p data-i18n="book_p1">Kitabu hiki ni mwongozo kamili wa biashara na ujasiriamali, kilichoandaliwa na wataalamu wa JTL Zanzibar kwa ajili ya wajasiriamali, wanafunzi na wataalamu wa biashara.</p>
+                <p data-i18n="book_p2">Ndani yake utapata mbinu bora, mikakati na maarifa muhimu yatakayokusaidia kukuza biashara yako na kufikia mafanikio endelevu.</p>
+                <div class="features">
+                    <div class="feature"><i class="fas fa-book-open"></i><span data-i18n="book_feat1">Mwongozo Kamili</span></div>
+                    <div class="feature"><i class="fas fa-lightbulb"></i><span data-i18n="book_feat2">Mbinu Bora</span></div>
+                    <div class="feature"><i class="fas fa-chart-line"></i><span data-i18n="book_feat3">Mikakati ya Ukuaji</span></div>
+                    <div class="feature"><i class="fas fa-user-graduate"></i><span data-i18n="book_feat4">Kwa Kila Mtu</span></div>
+                </div>
+                <div class="book-buttons">
+                    <a href="https://drive.google.com/file/d/1E9i8OfY_j81rfWyijL5QYK36SKYaZbdG/view?usp=drivesdk" class="btn btn-drive" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-google-drive"></i><span data-i18n="book_btn">Fungua Kitabu</span>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary" style="background:var(--blue);color:white;border-color:var(--blue);">
+                        <i class="fas fa-info-circle"></i><span data-i18n="book_btn2">Uliza Zaidi</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -703,6 +780,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 65px 0
                             <option value="consulting" data-i18n="f_subject_2">Ushauri wa Biashara</option>
                             <option value="supply" data-i18n="f_subject_3">Ugavi na Ununuzi</option>
                             <option value="digital" data-i18n="f_subject_4">Huduma za Kidijitali</option>
+                            <option value="book" data-i18n="f_subject_book">Kuhusu Kitabu</option>
                             <option value="other" data-i18n="f_subject_5">Nyingine</option>
                         </select>
                     </div>
@@ -745,6 +823,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 65px 0
                     <li><a href="#home"><i class="fas fa-house"></i><span data-i18n="nav_home">Nyumbani</span></a></li>
                     <li><a href="#about"><i class="fas fa-circle-info"></i><span data-i18n="nav_about">Kuhusu Sisi</span></a></li>
                     <li><a href="#services"><i class="fas fa-briefcase"></i><span data-i18n="nav_services">Huduma</span></a></li>
+                    <li><a href="#book"><i class="fas fa-book"></i><span data-i18n="nav_book">Kitabu</span></a></li>
                     <li><a href="#contact"><i class="fas fa-envelope"></i><span data-i18n="nav_contact">Wasiliana</span></a></li>
                     <li><a href="https://drive.google.com/drive/folders/14i708FRvneNRfBEBI3WDnM0OMREu47zT" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i><span data-i18n="footer_drive">Hifadhi ya Nyenzo</span></a></li>
                 </ul>
@@ -783,7 +862,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 65px 0
 const translations = {
     sw: {
         logo_text: 'JTL <span>Zanzibar</span>',
-        nav_home: 'Nyumbani', nav_about: 'Kuhusu Sisi', nav_services: 'Huduma', nav_contact: 'Wasiliana',
+        nav_home: 'Nyumbani', nav_about: 'Kuhusu Sisi', nav_services: 'Huduma', nav_book: 'Kitabu', nav_contact: 'Wasiliana',
         hero_badge: 'Karibu JTL Zanzibar',
         hero_title: 'Biashara <span class="yellow">Bora</span>, <span class="green">Ushirikiano</span> <span class="red">Imara</span>',
         hero_desc: 'JTL Zanzibar ni kampuni inayojihusisha na biashara na huduma mbalimbali Zanzibar. Tunatoa ubora, uaminifu na ufanisi katika kila tunachofanya kwa ajili ya wateja wetu.',
@@ -805,6 +884,14 @@ const translations = {
         srv4_t: 'Ugavi na Ununuzi', srv4_d: 'Tunagavi bidhaa na vifaa mbalimbali kwa taasisi, makampuni na watu binafsi.',
         srv5_t: 'Huduma za Kidijitali', srv5_d: 'Tunatoa huduma za kidijitali ikiwemo uundaji wa tovuti, mifumo ya biashara na masoko ya mtandao.',
         srv6_t: 'Uwekezaji na Mali', srv6_d: 'Tunasaidia katika uwekezaji, ushauri wa mali na usimamizi wa miradi mbalimbali.',
+        book_heading: 'Kitabu <span>Chetu</span>',
+        book_sub: 'Chapisho letu maalum — lililoandaliwa kwa ajili yako.',
+        book_h3: 'Gundua <span>Kitabu Chetu</span>',
+        book_p1: 'Kitabu hiki ni mwongozo kamili wa biashara na ujasiriamali, kilichoandaliwa na wataalamu wa JTL Zanzibar kwa ajili ya wajasiriamali, wanafunzi na wataalamu wa biashara.',
+        book_p2: 'Ndani yake utapata mbinu bora, mikakati na maarifa muhimu yatakayokusaidia kukuza biashara yako na kufikia mafanikio endelevu.',
+        book_img_alt: 'Jalada la Kitabu cha JTL Zanzibar',
+        book_feat1: 'Mwongozo Kamili', book_feat2: 'Mbinu Bora', book_feat3: 'Mikakati ya Ukuaji', book_feat4: 'Kwa Kila Mtu',
+        book_btn: 'Fungua Kitabu', book_btn2: 'Uliza Zaidi',
         testimonials_heading: 'Sauti za <span>Wateja</span>', testimonials_sub: 'Wateja wetu wanazungumza - jiunge na familia yetu ya wateja walioridhika.',
         t1_text: '"Huduma bora na za haraka. JTL Zanzibar wamekuwa msaada mkubwa kwa biashara yangu. Nawapendekeza kwa kila mtu!"', t1_name: 'Ahmed Hassan', t1_role: 'Mfanyabiashara, Stone Town',
         t2_text: '"Kutoka ushauri hadi utekelezaji, timu ni ya kitaalamu na ya kuaminika. Huduma zao zimeboresha biashara yangu kwa kiasi kikubwa."', t2_name: 'Fatma Ali', t2_role: 'Mmiliki wa Hoteli, Nungwi',
@@ -824,7 +911,7 @@ const translations = {
         form_h3: 'Tutumie Ujumbe', form_p: 'Jaza fomu hapa chini na tutakujibu haraka iwezekanavyo.',
         f_name: 'Jina Kamili', f_name_ph: 'Jina lako', f_email: 'Barua Pepe', f_email_ph: 'barua@mfano.com',
         f_phone: 'Namba ya Simu', f_phone_ph: '+255 7XX XXX XXX', f_subject: 'Aina ya Huduma', f_subject_ph: 'Chagua huduma',
-        f_subject_1: 'Ujumbe wa Jumla', f_subject_2: 'Ushauri wa Biashara', f_subject_3: 'Ugavi na Ununuzi', f_subject_4: 'Huduma za Kidijitali', f_subject_5: 'Nyingine',
+        f_subject_1: 'Ujumbe wa Jumla', f_subject_2: 'Ushauri wa Biashara', f_subject_3: 'Ugavi na Ununuzi', f_subject_4: 'Huduma za Kidijitali', f_subject_book: 'Kuhusu Kitabu', f_subject_5: 'Nyingine',
         f_msg: 'Ujumbe Wako', f_msg_ph: 'Andika ujumbe wako hapa...', f_submit: 'Tuma Ujumbe',
         loc1: 'Zanzibar, Tanzania', loc2: 'Jumatatu - Jumamosi: 8:00 - 18:00',
         whatsapp_tip: 'Piga Gumzo WhatsApp',
@@ -835,7 +922,7 @@ const translations = {
     },
     en: {
         logo_text: 'JTL <span>Zanzibar</span>',
-        nav_home: 'Home', nav_about: 'About Us', nav_services: 'Services', nav_contact: 'Contact',
+        nav_home: 'Home', nav_about: 'About Us', nav_services: 'Services', nav_book: 'Book', nav_contact: 'Contact',
         hero_badge: 'Welcome to JTL Zanzibar',
         hero_title: 'Quality <span class="yellow">Business</span>, <span class="green">Strong</span> <span class="red">Partnerships</span>',
         hero_desc: 'JTL Zanzibar is a company engaged in various businesses and services in Zanzibar. We deliver quality, trust and efficiency in everything we do for our customers.',
@@ -857,6 +944,14 @@ const translations = {
         srv4_t: 'Supply & Procurement', srv4_d: 'We supply various goods and equipment to institutions, companies and individuals.',
         srv5_t: 'Digital Services', srv5_d: 'We offer digital services including website development, business systems and online marketing.',
         srv6_t: 'Investment & Property', srv6_d: 'We assist with investment, property advisory and management of various projects.',
+        book_heading: 'Our <span>Book</span>',
+        book_sub: 'Our special publication — prepared just for you.',
+        book_h3: 'Discover <span>Our Book</span>',
+        book_p1: 'This book is a complete guide to business and entrepreneurship, prepared by JTL Zanzibar experts for entrepreneurs, students and business professionals.',
+        book_p2: 'Inside, you will find best practices, strategies and key insights to help you grow your business and achieve sustainable success.',
+        book_img_alt: 'JTL Zanzibar Book Cover',
+        book_feat1: 'Complete Guide', book_feat2: 'Best Practices', book_feat3: 'Growth Strategies', book_feat4: 'For Everyone',
+        book_btn: 'Open Book', book_btn2: 'Ask More',
         testimonials_heading: 'Client <span>Voices</span>', testimonials_sub: 'Our clients speak - join our family of satisfied customers.',
         t1_text: '"Excellent and fast service. JTL Zanzibar has been a great support for my business. I recommend them to everyone!"', t1_name: 'Ahmed Hassan', t1_role: 'Businessman, Stone Town',
         t2_text: '"From consultation to execution, the team is professional and reliable. Their services have greatly improved my business."', t2_name: 'Fatma Ali', t2_role: 'Hotel Owner, Nungwi',
@@ -876,7 +971,7 @@ const translations = {
         form_h3: 'Send Us a Message', form_p: 'Fill in the form below and we will get back to you as soon as possible.',
         f_name: 'Full Name', f_name_ph: 'Your name', f_email: 'Email Address', f_email_ph: 'you@example.com',
         f_phone: 'Phone Number', f_phone_ph: '+255 7XX XXX XXX', f_subject: 'Service Type', f_subject_ph: 'Select a service',
-        f_subject_1: 'General Inquiry', f_subject_2: 'Business Consulting', f_subject_3: 'Supply & Procurement', f_subject_4: 'Digital Services', f_subject_5: 'Other',
+        f_subject_1: 'General Inquiry', f_subject_2: 'Business Consulting', f_subject_3: 'Supply & Procurement', f_subject_4: 'Digital Services', f_subject_book: 'About the Book', f_subject_5: 'Other',
         f_msg: 'Your Message', f_msg_ph: 'Write your message here...', f_submit: 'Send Message',
         loc1: 'Zanzibar, Tanzania', loc2: 'Monday - Saturday: 8:00 - 18:00',
         whatsapp_tip: 'Chat on WhatsApp',
