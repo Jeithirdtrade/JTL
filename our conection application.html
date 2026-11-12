@@ -234,6 +234,95 @@ section { padding: 100px 0; }
 .book-content p { color: #52606d; margin-bottom: 15px; line-height: 1.8; }
 .book-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 
+/* ===== MORE BOOKS GRID ===== */
+.books-more { margin-top: 80px; position: relative; }
+.books-more::before {
+    content: ""; display: block; width: 90px; height: 3px; margin: 0 auto 25px;
+    background: linear-gradient(90deg, var(--yellow), var(--red), var(--purple));
+    border-radius: 10px;
+}
+.books-more-title { text-align: center; font-size: clamp(1.5rem, 2.2vw, 2rem); color: var(--blue); margin-bottom: 8px; font-weight: 900; }
+.books-more-title span { color: var(--purple); }
+.books-more-sub { text-align: center; color: var(--gray); margin-bottom: 35px; font-size: 0.94rem; max-width: 620px; margin-left: auto; margin-right: auto; }
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+    gap: 22px;
+}
+.book-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border);
+}
+.book-card:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--shadow-lg);
+    border-color: transparent;
+}
+.book-thumb {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: linear-gradient(135deg, #eef4f8, #f5f7fa);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.book-thumb::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.10), transparent 40%);
+    pointer-events: none;
+}
+.book-thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.book-card:hover .book-thumb img { transform: scale(1.06); }
+.book-thumb i { font-size: 3rem; color: var(--blue); }
+.book-card-info {
+    padding: 14px 12px 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    flex: 1;
+    justify-content: space-between;
+}
+.book-card-info h4 {
+    font-size: 0.92rem;
+    font-weight: 800;
+    color: var(--dark);
+    margin: 0;
+    letter-spacing: 0.2px;
+}
+.book-card-info a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    background: var(--green);
+    color: white;
+    font-size: 0.78rem;
+    font-weight: 800;
+    transition: var(--transition);
+    width: 100%;
+}
+.book-card-info a:hover {
+    background: var(--green-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(32,160,90,0.30);
+}
+
 /* ===== TESTIMONIALS ===== */
 .testimonials { background: linear-gradient(135deg, #f5f7fa, #eef4f8); }
 .testimonial-slider { position: relative; overflow: hidden; max-width: 900px; margin: 0 auto; }
@@ -431,6 +520,12 @@ footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 65px 0
     .book-content p { font-size: 0.94rem; }
     .book-content .features { grid-template-columns: 1fr; }
     .book-buttons .btn { width: 100%; }
+    .books-more { margin-top: 45px; }
+    .books-more-title { font-size: 1.3rem; }
+    .books-more-sub { font-size: 0.86rem; margin-bottom: 25px; }
+    .books-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 14px; }
+    .book-card-info h4 { font-size: 0.82rem; }
+    .book-card-info a { font-size: 0.72rem; padding: 7px 12px; }
     .services-grid { grid-template-columns: 1fr; gap: 16px; }
     .service-card { padding: 26px 20px; }
     .service-icon { width: 60px; height: 60px; font-size: 1.5rem; border-radius: 16px; }
@@ -453,7 +548,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 65px 0
     .floating-actions { right: 14px; bottom: 16px; gap: 10px; }
     .fab-wa, .fab-top { width: 50px; height: 50px; font-size: 1.3rem; }
 }
-@media (max-width: 560px) { .form-row { grid-template-columns: 1fr; gap: 0; } .hero-card img { height: 250px; min-height: 200px; } .about-image img { height: 250px; } .social-links a, .footer-social a { width: 38px; height: 38px; } }
+@media (max-width: 560px) { .form-row { grid-template-columns: 1fr; gap: 0; } .hero-card img { height: 250px; min-height: 200px; } .about-image img { height: 250px; } .social-links a, .footer-social a { width: 38px; height: 38px; } .books-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
 @media (max-width: 400px) {
     :root { --gutter: 16px; }
     .logo { font-size: 0.92rem; }
@@ -494,7 +589,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 65px 0
                 <li><a href="#home" data-i18n="nav_home">Nyumbani</a></li>
                 <li><a href="#about" data-i18n="nav_about">Kuhusu Sisi</a></li>
                 <li><a href="#services" data-i18n="nav_services">Huduma</a></li>
-                <li><a href="#book" data-i18n="nav_book">Kitabu</a></li>
+                <li><a href="#book" data-i18n="nav_book">Vitabu</a></li>
                 <li><a href="#contact" data-i18n="nav_contact">Wasiliana</a></li>
             </ul>
             <div class="nav-right">
@@ -525,7 +620,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 65px 0
                 <div class="hero-stats">
                     <div><span class="stat-number" data-counter="1">1+</span><span class="stat-label" data-i18n="stat1_label">Miaka ya Uzoefu</span></div>
                     <div><span class="stat-number" data-counter="500">500+</span><span class="stat-label" data-i18n="stat2_label">Wateja Walioridhika</span></div>
-                    <div><span class="stat-number" data-counter="2">2+</span><span class="stat-label" data-i18n="stat3_label">Miradi Iliyokamilika</span></div>
+                    <div><span class="stat-number" data-counter="22">22+</span><span class="stat-label" data-i18n="stat3_label">Vitabu Vilivyochapishwa</span></div>
                 </div>
             </div>
             <div class="hero-visual">
@@ -601,14 +696,16 @@ footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 65px 0
     </div>
 </section>
 
-<!-- BOOK (NEW SECTION) -->
+<!-- BOOK (WITH MULTIPLE BOOKS) -->
 <section class="book" id="book">
     <div class="container">
         <div class="section-heading reveal">
-            <h2 data-i18n-html="book_heading">Kitabu <span>Chetu</span></h2>
-            <p data-i18n="book_sub">Chapisho letu maalum — lililoandaliwa kwa ajili yako.</p>
+            <h2 data-i18n-html="book_heading">Vitabu <span>Vyetu</span></h2>
+            <p data-i18n="book_sub">Mkusanyiko wa machapisho yetu maalum — yaliyoandaliwa kwa ajili yako.</p>
             <div class="section-line"></div>
         </div>
+
+        <!-- FEATURED BOOK -->
         <div class="book-grid">
             <div class="book-cover reveal">
                 <img
@@ -619,7 +716,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 65px 0
                     onerror="this.onerror=null;this.src='https://drive.google.com/uc?export=view&amp;id=1E9i8OfY_j81rfWyijL5QYK36SKYaZbdG';">
             </div>
             <div class="book-content reveal reveal-delay-1">
-                <h3 data-i18n-html="book_h3">Gundua <span>Kitabu Chetu</span></h3>
+                <h3 data-i18n-html="book_h3">Gundua <span>Kitabu Kikuu</span></h3>
                 <p data-i18n="book_p1">Kitabu hiki ni mwongozo kamili wa biashara na ujasiriamali, kilichoandaliwa na wataalamu wa JTL Zanzibar kwa ajili ya wajasiriamali, wanafunzi na wataalamu wa biashara.</p>
                 <p data-i18n="book_p2">Ndani yake utapata mbinu bora, mikakati na maarifa muhimu yatakayokusaidia kukuza biashara yako na kufikia mafanikio endelevu.</p>
                 <div class="features">
@@ -636,6 +733,246 @@ footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 65px 0
                         <i class="fas fa-info-circle"></i><span data-i18n="book_btn2">Uliza Zaidi</span>
                     </a>
                 </div>
+            </div>
+        </div>
+
+        <!-- MORE BOOKS GRID -->
+        <div class="books-more reveal">
+            <h3 class="books-more-title" data-i18n-html="books_more_title">Vitabu <span>Zaidi</span></h3>
+            <p class="books-more-sub" data-i18n="books_more_sub">Chunguza mkusanyiko wetu kamili wa machapisho na vitabu vya JTL Zanzibar.</p>
+            <div class="books-grid">
+
+                <!-- Book 1 -->
+                <div class="book-card">
+                    <div class="book-thumb">
+                        <img src="https://lh3.googleusercontent.com/d/1xzgOhkYz5U4qWXvWVyKxu_gP5SvCIPH1" alt="Kitabu 1" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<i class=&quot;fas fa-file-pdf&quot;></i>';">
+                    </div>
+                    <div class="book-card-info">
+                        <h4><span data-i18n="book_n">Kitabu</span> 1</h4>
+                        <a href="https://drive.google.com/file/d/1xzgOhkYz5U4qWXvWVyKxu_gP5SvCIPH1/view?usp=drivesdk" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i><span data-i18n="book_open">Fungua</span></a>
+                    </div>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="book-card">
+                    <div class="book-thumb">
+                        <img src="https://lh3.googleusercontent.com/d/1ueWUgP4se-2fQDURSZdlsABa3DDb5MWX" alt="Kitabu 2" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<i class=&quot;fas fa-file-pdf&quot;></i>';">
+                    </div>
+                    <div class="book-card-info">
+                        <h4><span data-i18n="book_n">Kitabu</span> 2</h4>
+                        <a href="https://drive.google.com/file/d/1ueWUgP4se-2fQDURSZdlsABa3DDb5MWX/view?usp=drivesdk" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i><span data-i18n="book_open">Fungua</span></a>
+                    </div>
+                </div>
+
+                <!-- Book 3 -->
+                <div class="book-card">
+                    <div class="book-thumb">
+                        <img src="https://lh3.googleusercontent.com/d/1SS78Dwt3eAoq9ckM3Kwk7jk2Y4NCXhs7" alt="Kitabu 3" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<i class=&quot;fas fa-file-pdf&quot;></i>';">
+                    </div>
+                    <div class="book-card-info">
+                        <h4><span data-i18n="book_n">Kitabu</span> 3</h4>
+                        <a href="https://drive.google.com/file/d/1SS78Dwt3eAoq9ckM3Kwk7jk2Y4NCXhs7/view?usp=drivesdk" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i><span data-i18n="book_open">Fungua</span></a>
+                    </div>
+                </div>
+
+                <!-- Book 4 -->
+                <div class="book-card">
+                    <div class="book-thumb">
+                        <img src="https://lh3.googleusercontent.com/d/1_kVj2S8NUH42-NfyyZQIP7Og-t_8qQtL" alt="Kitabu 4" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<i class=&quot;fas fa-file-pdf&quot;></i>';">
+                    </div>
+                    <div class="book-card-info">
+                        <h4><span data-i18n="book_n">Kitabu</span> 4</h4>
+                        <a href="https://drive.google.com/file/d/1_kVj2S8NUH42-NfyyZQIP7Og-t_8qQtL/view?usp=drivesdk" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i><span data-i18n="book_open">Fungua</span></a>
+                    </div>
+                </div>
+
+                <!-- Book 5 -->
+                <div class="book-card">
+                    <div class="book-thumb">
+                        <img src="https://lh3.googleusercontent.com/d/1WtHDVzJwgC920mrHF0yz1cFV4NFa4pAk" alt="Kitabu 5" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<i class=&quot;fas fa-file-pdf&quot;></i>';">
+                    </div>
+                    <div class="book-card-info">
+                        <h4><span data-i18n="book_n">Kitabu</span> 5</h4>
+                        <a href="https://drive.google.com/file/d/1WtHDVzJwgC920mrHF0yz1cFV4NFa4pAk/view?usp=drivesdk" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i><span data-i18n="book_open">Fungua</span></a>
+                    </div>
+                </div>
+
+                <!-- Book 6 -->
+                <div class="book-card">
+                    <div class="book-thumb">
+                        <img src="https://lh3.googleusercontent.com/d/1FexF1_mWINsm5d1TMCDuiWgf_qKuRFJY" alt="Kitabu 6" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<i class=&quot;fas fa-file-pdf&quot;></i>';">
+                    </div>
+                    <div class="book-card-info">
+                        <h4><span data-i18n="book_n">Kitabu</span> 6</h4>
+                        <a href="https://drive.google.com/file/d/1FexF1_mWINsm5d1TMCDuiWgf_qKuRFJY/view?usp=drivesdk" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i><span data-i18n="book_open">Fungua</span></a>
+                    </div>
+                </div>
+
+                <!-- Book 7 -->
+                <div class="book-card">
+                    <div class="book-thumb">
+                        <img src="https://lh3.googleusercontent.com/d/1NylBaFS75COFm77DGfwiCjBOws_F2vIb" alt="Kitabu 7" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<i class=&quot;fas fa-file-pdf&quot;></i>';">
+                    </div>
+                    <div class="book-card-info">
+                        <h4><span data-i18n="book_n">Kitabu</span> 7</h4>
+                        <a href="https://drive.google.com/file/d/1NylBaFS75COFm77DGfwiCjBOws_F2vIb/view?usp=drivesdk" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i><span data-i18n="book_open">Fungua</span></a>
+                    </div>
+                </div>
+
+                <!-- Book 8 -->
+                <div class="book-card">
+                    <div class="book-thumb">
+                        <img src="https://lh3.googleusercontent.com/d/1CgwHXx5IlnsI1ngmQTteaBy-7OYFfnJt" alt="Kitabu 8" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<i class=&quot;fas fa-file-pdf&quot;></i>';">
+                    </div>
+                    <div class="book-card-info">
+                        <h4><span data-i18n="book_n">Kitabu</span> 8</h4>
+                        <a href="https://drive.google.com/file/d/1CgwHXx5IlnsI1ngmQTteaBy-7OYFfnJt/view?usp=drivesdk" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i><span data-i18n="book_open">Fungua</span></a>
+                    </div>
+                </div>
+
+                <!-- Book 9 -->
+                <div class="book-card">
+                    <div class="book-thumb">
+                        <img src="https://lh3.googleusercontent.com/d/1nD0W-WkmiOj1jVfnVVfcU_5RTd9vqVnM" alt="Kitabu 9" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<i class=&quot;fas fa-file-pdf&quot;></i>';">
+                    </div>
+                    <div class="book-card-info">
+                        <h4><span data-i18n="book_n">Kitabu</span> 9</h4>
+                        <a href="https://drive.google.com/file/d/1nD0W-WkmiOj1jVfnVVfcU_5RTd9vqVnM/view?usp=drivesdk" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i><span data-i18n="book_open">Fungua</span></a>
+                    </div>
+                </div>
+
+                <!-- Book 10 -->
+                <div class="book-card">
+                    <div class="book-thumb">
+                        <img src="https://lh3.googleusercontent.com/d/17hq9CO5WS7HumpG-PmEMCXUoVWZVOiwA" alt="Kitabu 10" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<i class=&quot;fas fa-file-pdf&quot;></i>';">
+                    </div>
+                    <div class="book-card-info">
+                        <h4><span data-i18n="book_n">Kitabu</span> 10</h4>
+                        <a href="https://drive.google.com/file/d/17hq9CO5WS7HumpG-PmEMCXUoVWZVOiwA/view?usp=drivesdk" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i><span data-i18n="book_open">Fungua</span></a>
+                    </div>
+                </div>
+
+                <!-- Book 11 -->
+                <div class="book-card">
+                    <div class="book-thumb">
+                        <img src="https://lh3.googleusercontent.com/d/1EpNna6LcDhwA9mTl6_s2AsRbWmJKvZab" alt="Kitabu 11" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<i class=&quot;fas fa-file-pdf&quot;></i>';">
+                    </div>
+                    <div class="book-card-info">
+                        <h4><span data-i18n="book_n">Kitabu</span> 11</h4>
+                        <a href="https://drive.google.com/file/d/1EpNna6LcDhwA9mTl6_s2AsRbWmJKvZab/view?usp=drivesdk" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i><span data-i18n="book_open">Fungua</span></a>
+                    </div>
+                </div>
+
+                <!-- Book 12 -->
+                <div class="book-card">
+                    <div class="book-thumb">
+                        <img src="https://lh3.googleusercontent.com/d/1_7YO9Urd5pmS_XjmDCi2vP37RI_EAN3S" alt="Kitabu 12" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<i class=&quot;fas fa-file-pdf&quot;></i>';">
+                    </div>
+                    <div class="book-card-info">
+                        <h4><span data-i18n="book_n">Kitabu</span> 12</h4>
+                        <a href="https://drive.google.com/file/d/1_7YO9Urd5pmS_XjmDCi2vP37RI_EAN3S/view?usp=drivesdk" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i><span data-i18n="book_open">Fungua</span></a>
+                    </div>
+                </div>
+
+                <!-- Book 13 -->
+                <div class="book-card">
+                    <div class="book-thumb">
+                        <img src="https://lh3.googleusercontent.com/d/1yu0aPmrH0qZ69tZQu2IHeNxltRqV-qlr" alt="Kitabu 13" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<i class=&quot;fas fa-file-pdf&quot;></i>';">
+                    </div>
+                    <div class="book-card-info">
+                        <h4><span data-i18n="book_n">Kitabu</span> 13</h4>
+                        <a href="https://drive.google.com/file/d/1yu0aPmrH0qZ69tZQu2IHeNxltRqV-qlr/view?usp=drivesdk" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i><span data-i18n="book_open">Fungua</span></a>
+                    </div>
+                </div>
+
+                <!-- Book 14 -->
+                <div class="book-card">
+                    <div class="book-thumb">
+                        <img src="https://lh3.googleusercontent.com/d/1Q6ZrfzBpREvf3sP-cRlorTed9QMEHNyA" alt="Kitabu 14" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<i class=&quot;fas fa-file-pdf&quot;></i>';">
+                    </div>
+                    <div class="book-card-info">
+                        <h4><span data-i18n="book_n">Kitabu</span> 14</h4>
+                        <a href="https://drive.google.com/file/d/1Q6ZrfzBpREvf3sP-cRlorTed9QMEHNyA/view?usp=drivesdk" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i><span data-i18n="book_open">Fungua</span></a>
+                    </div>
+                </div>
+
+                <!-- Book 15 -->
+                <div class="book-card">
+                    <div class="book-thumb">
+                        <img src="https://lh3.googleusercontent.com/d/1KkeX3tBLPlbzC3oOKXukqWcdEnRZ8di9" alt="Kitabu 15" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<i class=&quot;fas fa-file-pdf&quot;></i>';">
+                    </div>
+                    <div class="book-card-info">
+                        <h4><span data-i18n="book_n">Kitabu</span> 15</h4>
+                        <a href="https://drive.google.com/file/d/1KkeX3tBLPlbzC3oOKXukqWcdEnRZ8di9/view?usp=drivesdk" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i><span data-i18n="book_open">Fungua</span></a>
+                    </div>
+                </div>
+
+                <!-- Book 16 -->
+                <div class="book-card">
+                    <div class="book-thumb">
+                        <img src="https://lh3.googleusercontent.com/d/1CAODYH5mysHPlhCDUTdbRwIj390-9uaP" alt="Kitabu 16" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<i class=&quot;fas fa-file-pdf&quot;></i>';">
+                    </div>
+                    <div class="book-card-info">
+                        <h4><span data-i18n="book_n">Kitabu</span> 16</h4>
+                        <a href="https://drive.google.com/file/d/1CAODYH5mysHPlhCDUTdbRwIj390-9uaP/view?usp=drivesdk" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i><span data-i18n="book_open">Fungua</span></a>
+                    </div>
+                </div>
+
+                <!-- Book 17 -->
+                <div class="book-card">
+                    <div class="book-thumb">
+                        <img src="https://lh3.googleusercontent.com/d/1wv-rFNLfYq4-8j4-812BVJqkFOg4EET9" alt="Kitabu 17" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<i class=&quot;fas fa-file-pdf&quot;></i>';">
+                    </div>
+                    <div class="book-card-info">
+                        <h4><span data-i18n="book_n">Kitabu</span> 17</h4>
+                        <a href="https://drive.google.com/file/d/1wv-rFNLfYq4-8j4-812BVJqkFOg4EET9/view?usp=drivesdk" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i><span data-i18n="book_open">Fungua</span></a>
+                    </div>
+                </div>
+
+                <!-- Book 18 -->
+                <div class="book-card">
+                    <div class="book-thumb">
+                        <img src="https://lh3.googleusercontent.com/d/16dB2pZl2G1wgMRMMehhKHAK6IJpWpqHC" alt="Kitabu 18" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<i class=&quot;fas fa-file-pdf&quot;></i>';">
+                    </div>
+                    <div class="book-card-info">
+                        <h4><span data-i18n="book_n">Kitabu</span> 18</h4>
+                        <a href="https://drive.google.com/file/d/16dB2pZl2G1wgMRMMehhKHAK6IJpWpqHC/view?usp=drivesdk" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i><span data-i18n="book_open">Fungua</span></a>
+                    </div>
+                </div>
+
+                <!-- Book 19 -->
+                <div class="book-card">
+                    <div class="book-thumb">
+                        <img src="https://lh3.googleusercontent.com/d/1OYJINnKlPNgEBuTZh04ql9UQlYuzLTCx" alt="Kitabu 19" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<i class=&quot;fas fa-file-pdf&quot;></i>';">
+                    </div>
+                    <div class="book-card-info">
+                        <h4><span data-i18n="book_n">Kitabu</span> 19</h4>
+                        <a href="https://drive.google.com/file/d/1OYJINnKlPNgEBuTZh04ql9UQlYuzLTCx/view?usp=drivesdk" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i><span data-i18n="book_open">Fungua</span></a>
+                    </div>
+                </div>
+
+                <!-- Book 20 -->
+                <div class="book-card">
+                    <div class="book-thumb">
+                        <img src="https://lh3.googleusercontent.com/d/1Z9Q5g1fiNosyyAqKpKFp-EKCOm9SEKna" alt="Kitabu 20" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<i class=&quot;fas fa-file-pdf&quot;></i>';">
+                    </div>
+                    <div class="book-card-info">
+                        <h4><span data-i18n="book_n">Kitabu</span> 20</h4>
+                        <a href="https://drive.google.com/file/d/1Z9Q5g1fiNosyyAqKpKFp-EKCOm9SEKna/view?usp=drivesdk" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i><span data-i18n="book_open">Fungua</span></a>
+                    </div>
+                </div>
+
+                <!-- Book 21 -->
+                <div class="book-card">
+                    <div class="book-thumb">
+                        <img src="https://lh3.googleusercontent.com/d/1mHaGzgVDuDtYGAbYd7a6qDEOT0z1GlYH" alt="Kitabu 21" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<i class=&quot;fas fa-file-pdf&quot;></i>';">
+                    </div>
+                    <div class="book-card-info">
+                        <h4><span data-i18n="book_n">Kitabu</span> 21</h4>
+                        <a href="https://drive.google.com/file/d/1mHaGzgVDuDtYGAbYd7a6qDEOT0z1GlYH/view?usp=drivesdk" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i><span data-i18n="book_open">Fungua</span></a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -780,7 +1117,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 65px 0
                             <option value="consulting" data-i18n="f_subject_2">Ushauri wa Biashara</option>
                             <option value="supply" data-i18n="f_subject_3">Ugavi na Ununuzi</option>
                             <option value="digital" data-i18n="f_subject_4">Huduma za Kidijitali</option>
-                            <option value="book" data-i18n="f_subject_book">Kuhusu Kitabu</option>
+                            <option value="book" data-i18n="f_subject_book">Kuhusu Vitabu</option>
                             <option value="other" data-i18n="f_subject_5">Nyingine</option>
                         </select>
                     </div>
@@ -823,7 +1160,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 65px 0
                     <li><a href="#home"><i class="fas fa-house"></i><span data-i18n="nav_home">Nyumbani</span></a></li>
                     <li><a href="#about"><i class="fas fa-circle-info"></i><span data-i18n="nav_about">Kuhusu Sisi</span></a></li>
                     <li><a href="#services"><i class="fas fa-briefcase"></i><span data-i18n="nav_services">Huduma</span></a></li>
-                    <li><a href="#book"><i class="fas fa-book"></i><span data-i18n="nav_book">Kitabu</span></a></li>
+                    <li><a href="#book"><i class="fas fa-book"></i><span data-i18n="nav_book">Vitabu</span></a></li>
                     <li><a href="#contact"><i class="fas fa-envelope"></i><span data-i18n="nav_contact">Wasiliana</span></a></li>
                     <li><a href="https://drive.google.com/drive/folders/14i708FRvneNRfBEBI3WDnM0OMREu47zT" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i><span data-i18n="footer_drive">Hifadhi ya Nyenzo</span></a></li>
                 </ul>
@@ -862,13 +1199,13 @@ footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 65px 0
 const translations = {
     sw: {
         logo_text: 'JTL <span>Zanzibar</span>',
-        nav_home: 'Nyumbani', nav_about: 'Kuhusu Sisi', nav_services: 'Huduma', nav_book: 'Kitabu', nav_contact: 'Wasiliana',
+        nav_home: 'Nyumbani', nav_about: 'Kuhusu Sisi', nav_services: 'Huduma', nav_book: 'Vitabu', nav_contact: 'Wasiliana',
         hero_badge: 'Karibu JTL Zanzibar',
         hero_title: 'Biashara <span class="yellow">Bora</span>, <span class="green">Ushirikiano</span> <span class="red">Imara</span>',
         hero_desc: 'JTL Zanzibar ni kampuni inayojihusisha na biashara na huduma mbalimbali Zanzibar. Tunatoa ubora, uaminifu na ufanisi katika kila tunachofanya kwa ajili ya wateja wetu.',
         hero_img_alt: 'Timu ya JTL Zanzibar',
         btn_contact: 'Wasiliana Nasi', btn_services: 'Huduma Zetu', btn_drive: 'Fungua Hifadhi ya Nyenzo',
-        stat1_label: 'Miaka ya Uzoefu', stat2_label: 'Wateja Walioridhika', stat3_label: 'Miradi Iliyokamilika',
+        stat1_label: 'Miaka ya Uzoefu', stat2_label: 'Wateja Walioridhika', stat3_label: 'Vitabu Vilivyochapishwa',
         tag1: 'Ubora', tag2: 'Uaminifu', tag3: 'Ufanisi',
         trust_label: 'Wanaotutegemea', trust_1: 'Zanzibar Inc', trust_2: 'Coastal Hotels', trust_3: 'Spice Traders', trust_4: 'Stone Town Mall',
         about_heading: 'Kuhusu <span>Sisi</span>', about_sub: 'Mshirika wako wa kuaminika katika biashara na huduma Zanzibar.',
@@ -884,296 +1221,6 @@ const translations = {
         srv4_t: 'Ugavi na Ununuzi', srv4_d: 'Tunagavi bidhaa na vifaa mbalimbali kwa taasisi, makampuni na watu binafsi.',
         srv5_t: 'Huduma za Kidijitali', srv5_d: 'Tunatoa huduma za kidijitali ikiwemo uundaji wa tovuti, mifumo ya biashara na masoko ya mtandao.',
         srv6_t: 'Uwekezaji na Mali', srv6_d: 'Tunasaidia katika uwekezaji, ushauri wa mali na usimamizi wa miradi mbalimbali.',
-        book_heading: 'Kitabu <span>Chetu</span>',
-        book_sub: 'Chapisho letu maalum — lililoandaliwa kwa ajili yako.',
-        book_h3: 'Gundua <span>Kitabu Chetu</span>',
-        book_p1: 'Kitabu hiki ni mwongozo kamili wa biashara na ujasiriamali, kilichoandaliwa na wataalamu wa JTL Zanzibar kwa ajili ya wajasiriamali, wanafunzi na wataalamu wa biashara.',
-        book_p2: 'Ndani yake utapata mbinu bora, mikakati na maarifa muhimu yatakayokusaidia kukuza biashara yako na kufikia mafanikio endelevu.',
-        book_img_alt: 'Jalada la Kitabu cha JTL Zanzibar',
-        book_feat1: 'Mwongozo Kamili', book_feat2: 'Mbinu Bora', book_feat3: 'Mikakati ya Ukuaji', book_feat4: 'Kwa Kila Mtu',
-        book_btn: 'Fungua Kitabu', book_btn2: 'Uliza Zaidi',
-        testimonials_heading: 'Sauti za <span>Wateja</span>', testimonials_sub: 'Wateja wetu wanazungumza - jiunge na familia yetu ya wateja walioridhika.',
-        t1_text: '"Huduma bora na za haraka. JTL Zanzibar wamekuwa msaada mkubwa kwa biashara yangu. Nawapendekeza kwa kila mtu!"', t1_name: 'Ahmed Hassan', t1_role: 'Mfanyabiashara, Stone Town',
-        t2_text: '"Kutoka ushauri hadi utekelezaji, timu ni ya kitaalamu na ya kuaminika. Huduma zao zimeboresha biashara yangu kwa kiasi kikubwa."', t2_name: 'Fatma Ali', t2_role: 'Mmiliki wa Hoteli, Nungwi',
-        t3_text: '"Uaminifu na ubora ni sifa kuu za JTL. Tumekuwa tukifanya kazi nao kwa miaka mingi na hatujawahi kukatishwa tamaa."', t3_name: 'Mohamed Suleiman', t3_role: 'Mkurugenzi, Zanzibar Trading',
-        t4_text: '"Huduma za kidijitali walizotoa zimebadilisha kabisa biashara yangu. Tovuti nzuri na mfumo rahisi wa kutumia. Asanteni sana!"', t4_name: 'Zainab Omar', t4_role: 'Mjasiriamali, Paje',
-        cta_title: 'Tayari Kuanza Safari Yako ya Mafanikio?', cta_desc: 'Wasiliana nasi leo na tuanze kujenga suluhisho la biashara linalokufaa.', cta_btn: 'Anza Sasa',
-        faq_heading: 'Maswali ya <span>Mara kwa Mara</span>', faq_sub: 'Majibu ya haraka kwa maswali yanayoulizwa sana.',
-        faq_q1: 'Je, mnatoa huduma kwa makampuni makubwa?', faq_a1: 'Ndiyo, tunahudumia wateja wa aina zote - kutoka kwa wajasiriamali binafsi hadi makampuni makubwa na taasisi.',
-        faq_q2: 'Mnafanyaje kazi kuhusu bei na malipo?', faq_a2: 'Tunatoa bei nafuu na za ushindani. Tunaruhusu malipo kwa awamu kwa miradi mikubwa, na tunatoa nukuu ya bure kabla ya kuanza kazi.',
-        faq_q3: 'Mnahudumia maeneo gani?', faq_a3: 'Tunahudumia Zanzibar yote - Unguja na Pemba. Kwa miradi maalum tunaweza kufanya kazi kote Tanzania.',
-        faq_q4: 'Muda gani wa kujibu ujumbe?', faq_a4: 'Tunajibu ujumbe wote ndani ya saa 24. Kwa mahitaji ya haraka, wasiliana nasi kupitia WhatsApp au simu moja kwa moja.',
-        faq_q5: 'Je, mna dhamana ya ubora wa kazi?', faq_a5: 'Ndiyo, tunatoa dhamana ya ubora kwa kazi zote tunazofanya. Kuridhika kwako ni kipaumbele chetu cha kwanza.',
-        contact_heading: 'Wasiliana <span>Nasi</span>', contact_sub: 'Tuko tayari kukusaidia — wasiliana nasi leo.',
-        ci_h3: 'Taarifa za Mawasiliano', ci_p: 'Karibu ofisini kwetu au wasiliana nasi kwa njia yoyote ile.',
-        ci_phone_label: 'Simu', ci_email_label: 'Barua Pepe', ci_loc_label: 'Mahali', ci_loc_value: 'Zanzibar, Tanzania',
-        ci_hours_label: 'Saa za Kazi', ci_hours_value: 'Jumatatu - Jumamosi: 8:00 - 18:00',
-        form_h3: 'Tutumie Ujumbe', form_p: 'Jaza fomu hapa chini na tutakujibu haraka iwezekanavyo.',
-        f_name: 'Jina Kamili', f_name_ph: 'Jina lako', f_email: 'Barua Pepe', f_email_ph: 'barua@mfano.com',
-        f_phone: 'Namba ya Simu', f_phone_ph: '+255 7XX XXX XXX', f_subject: 'Aina ya Huduma', f_subject_ph: 'Chagua huduma',
-        f_subject_1: 'Ujumbe wa Jumla', f_subject_2: 'Ushauri wa Biashara', f_subject_3: 'Ugavi na Ununuzi', f_subject_4: 'Huduma za Kidijitali', f_subject_book: 'Kuhusu Kitabu', f_subject_5: 'Nyingine',
-        f_msg: 'Ujumbe Wako', f_msg_ph: 'Andika ujumbe wako hapa...', f_submit: 'Tuma Ujumbe',
-        loc1: 'Zanzibar, Tanzania', loc2: 'Jumatatu - Jumamosi: 8:00 - 18:00',
-        whatsapp_tip: 'Piga Gumzo WhatsApp',
-        toast_success: 'Asante! Ujumbe wako umetumwa kwa mafanikio.', toast_error: 'Tafadhali jaza sehemu zote zinazohitajika.',
-        footer_desc: 'Kampuni ya biashara na huduma mbalimbali Zanzibar. Tunatoa ubora, uaminifu na ufanisi katika kila tunachofanya.',
-        footer_col1: 'Viungo vya Haraka', footer_col2: 'Tufuate', footer_drive: 'Hifadhi ya Nyenzo',
-        footer_copy: '© 2025 <span class="highlight">JTL Zanzibar</span>. Haki zote zimehifadhiwa.'
-    },
-    en: {
-        logo_text: 'JTL <span>Zanzibar</span>',
-        nav_home: 'Home', nav_about: 'About Us', nav_services: 'Services', nav_book: 'Book', nav_contact: 'Contact',
-        hero_badge: 'Welcome to JTL Zanzibar',
-        hero_title: 'Quality <span class="yellow">Business</span>, <span class="green">Strong</span> <span class="red">Partnerships</span>',
-        hero_desc: 'JTL Zanzibar is a company engaged in various businesses and services in Zanzibar. We deliver quality, trust and efficiency in everything we do for our customers.',
-        hero_img_alt: 'JTL Zanzibar team',
-        btn_contact: 'Contact Us', btn_services: 'Our Services', btn_drive: 'Open Resource Drive',
-        stat1_label: 'Years of Experience', stat2_label: 'Happy Customers', stat3_label: 'Completed Projects',
-        tag1: 'Quality', tag2: 'Trust', tag3: 'Efficiency',
-        trust_label: 'Trusted By', trust_1: 'Zanzibar Inc', trust_2: 'Coastal Hotels', trust_3: 'Spice Traders', trust_4: 'Stone Town Mall',
-        about_heading: 'About <span>Us</span>', about_sub: 'Your trusted partner in business and services in Zanzibar.',
-        about_h3: 'Your Trusted <span>Partner</span>',
-        about_p1: 'JTL Zanzibar is a company established with the aim of providing quality business services to residents and visitors of Zanzibar. We believe that business success comes from trust, quality and customer care.',
-        about_p2: 'For many years we have served our clients by providing the best and most reliable business solutions. Our team of experts is ready to help you achieve your goals.',
-        about_img_alt: 'JTL Zanzibar team in a meeting',
-        feat1: 'Expert Team', feat2: 'Fast Service', feat3: 'Affordable Prices', feat4: 'Reliability', feat5: 'Customer Support', feat6: 'International Quality',
-        services_heading: 'Our <span>Services</span>', services_sub: 'We provide a wide range of business services at the highest standards.',
-        srv1_t: 'General Trade', srv1_d: 'We engage in various wholesale and retail businesses with high quality products.',
-        srv2_t: 'Transport & Logistics', srv2_d: 'Fast, safe and affordable goods transport services across Zanzibar.',
-        srv3_t: 'Business Consulting', srv3_d: 'We provide professional advice to entrepreneurs and companies to grow their businesses.',
-        srv4_t: 'Supply & Procurement', srv4_d: 'We supply various goods and equipment to institutions, companies and individuals.',
-        srv5_t: 'Digital Services', srv5_d: 'We offer digital services including website development, business systems and online marketing.',
-        srv6_t: 'Investment & Property', srv6_d: 'We assist with investment, property advisory and management of various projects.',
-        book_heading: 'Our <span>Book</span>',
-        book_sub: 'Our special publication — prepared just for you.',
-        book_h3: 'Discover <span>Our Book</span>',
-        book_p1: 'This book is a complete guide to business and entrepreneurship, prepared by JTL Zanzibar experts for entrepreneurs, students and business professionals.',
-        book_p2: 'Inside, you will find best practices, strategies and key insights to help you grow your business and achieve sustainable success.',
-        book_img_alt: 'JTL Zanzibar Book Cover',
-        book_feat1: 'Complete Guide', book_feat2: 'Best Practices', book_feat3: 'Growth Strategies', book_feat4: 'For Everyone',
-        book_btn: 'Open Book', book_btn2: 'Ask More',
-        testimonials_heading: 'Client <span>Voices</span>', testimonials_sub: 'Our clients speak - join our family of satisfied customers.',
-        t1_text: '"Excellent and fast service. JTL Zanzibar has been a great support for my business. I recommend them to everyone!"', t1_name: 'Ahmed Hassan', t1_role: 'Businessman, Stone Town',
-        t2_text: '"From consultation to execution, the team is professional and reliable. Their services have greatly improved my business."', t2_name: 'Fatma Ali', t2_role: 'Hotel Owner, Nungwi',
-        t3_text: '"Trust and quality are the main traits of JTL. We have worked with them for many years and have never been disappointed."', t3_name: 'Mohamed Suleiman', t3_role: 'Director, Zanzibar Trading',
-        t4_text: '"The digital services they provided completely transformed my business. Great website and easy-to-use system. Thank you so much!"', t4_name: 'Zainab Omar', t4_role: 'Entrepreneur, Paje',
-        cta_title: 'Ready to Start Your Success Journey?', cta_desc: 'Contact us today and let us build the right business solution for you.', cta_btn: 'Start Now',
-        faq_heading: 'Frequently Asked <span>Questions</span>', faq_sub: 'Quick answers to commonly asked questions.',
-        faq_q1: 'Do you offer services to large companies?', faq_a1: 'Yes, we serve clients of all types - from individual entrepreneurs to large companies and institutions.',
-        faq_q2: 'How do you handle pricing and payment?', faq_a2: 'We offer affordable and competitive prices. We allow installment payments for larger projects, and provide free quotes before starting work.',
-        faq_q3: 'Which areas do you serve?', faq_a3: 'We serve all of Zanzibar - Unguja and Pemba. For special projects we can work across Tanzania.',
-        faq_q4: 'What is your response time?', faq_a4: 'We respond to all messages within 24 hours. For urgent needs, contact us via WhatsApp or direct phone.',
-        faq_q5: 'Do you guarantee work quality?', faq_a5: 'Yes, we provide quality guarantees for all our work. Your satisfaction is our first priority.',
-        contact_heading: 'Contact <span>Us</span>', contact_sub: 'We are ready to help — get in touch with us today.',
-        ci_h3: 'Contact Information', ci_p: 'Visit our office or reach out to us through any channel.',
-        ci_phone_label: 'Phone', ci_email_label: 'Email', ci_loc_label: 'Location', ci_loc_value: 'Zanzibar, Tanzania',
-        ci_hours_label: 'Working Hours', ci_hours_value: 'Monday - Saturday: 8:00 - 18:00',
-        form_h3: 'Send Us a Message', form_p: 'Fill in the form below and we will get back to you as soon as possible.',
-        f_name: 'Full Name', f_name_ph: 'Your name', f_email: 'Email Address', f_email_ph: 'you@example.com',
-        f_phone: 'Phone Number', f_phone_ph: '+255 7XX XXX XXX', f_subject: 'Service Type', f_subject_ph: 'Select a service',
-        f_subject_1: 'General Inquiry', f_subject_2: 'Business Consulting', f_subject_3: 'Supply & Procurement', f_subject_4: 'Digital Services', f_subject_book: 'About the Book', f_subject_5: 'Other',
-        f_msg: 'Your Message', f_msg_ph: 'Write your message here...', f_submit: 'Send Message',
-        loc1: 'Zanzibar, Tanzania', loc2: 'Monday - Saturday: 8:00 - 18:00',
-        whatsapp_tip: 'Chat on WhatsApp',
-        toast_success: 'Thank you! Your message has been sent successfully.', toast_error: 'Please fill in all required fields.',
-        footer_desc: 'A company for various businesses and services in Zanzibar. We deliver quality, trust and efficiency in everything we do.',
-        footer_col1: 'Quick Links', footer_col2: 'Follow Us', footer_drive: 'Resource Drive',
-        footer_copy: '© 2025 <span class="highlight">JTL Zanzibar</span>. All rights reserved.'
-    }
-};
-
-/* ========== PRELOADER ========== */
-window.addEventListener('load', () => {
-    setTimeout(() => document.getElementById('preloader').classList.add('hide'), 900);
-});
-setTimeout(() => document.getElementById('preloader').classList.add('hide'), 2500);
-
-/* ========== LANGUAGE ENGINE ========== */
-let currentLang = localStorage.getItem('jtl-lang') || 'sw';
-const langToggle = document.getElementById('langToggle');
-const langLabel  = document.getElementById('langLabel');
-
-function applyLanguage(lang) {
-    if (!translations[lang]) lang = 'sw';
-    currentLang = lang;
-    document.documentElement.lang = lang;
-    const dict = translations[lang];
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (dict[key] !== undefined) el.textContent = dict[key];
-    });
-    document.querySelectorAll('[data-i18n-html]').forEach(el => {
-        const key = el.getAttribute('data-i18n-html');
-        if (dict[key] !== undefined) el.innerHTML = dict[key];
-    });
-    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-        const key = el.getAttribute('data-i18n-placeholder');
-        if (dict[key] !== undefined) el.setAttribute('placeholder', dict[key]);
-    });
-    document.querySelectorAll('[data-i18n-alt]').forEach(el => {
-        const key = el.getAttribute('data-i18n-alt');
-        if (dict[key] !== undefined) el.setAttribute('alt', dict[key]);
-    });
-    langLabel.textContent = (lang === 'sw') ? 'EN' : 'SW';
-    const tooltip = (lang === 'sw') ? 'Switch to English' : 'Badilisha kwa Kiswahili';
-    langToggle.setAttribute('aria-label', tooltip);
-    langToggle.setAttribute('title', tooltip);
-    document.title = (lang === 'sw') ? 'JTL Zanzibar | Biashara & Ushirikiano' : 'JTL Zanzibar | Business & Partnership';
-    localStorage.setItem('jtl-lang', lang);
-}
-
-langToggle.addEventListener('click', () => applyLanguage(currentLang === 'sw' ? 'en' : 'sw'));
-
-/* ========== MOBILE MENU ========== */
-const menuToggle = document.getElementById('menuToggle');
-const navLinks   = document.getElementById('navLinks');
-const ICON_BARS = '<i class="fas fa-bars"></i>';
-const ICON_X    = '<i class="fas fa-xmark"></i>';
-
-function openMenu() { navLinks.classList.add('open'); menuToggle.setAttribute('aria-expanded','true'); menuToggle.innerHTML = ICON_X; }
-function closeMenu() { navLinks.classList.remove('open'); menuToggle.setAttribute('aria-expanded','false'); menuToggle.innerHTML = ICON_BARS; }
-menuToggle.addEventListener('click', () => navLinks.classList.contains('open') ? closeMenu() : openMenu());
-navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', closeMenu));
-document.addEventListener('click', e => {
-    if (!navLinks.classList.contains('open')) return;
-    if (navLinks.contains(e.target) || menuToggle.contains(e.target)) return;
-    closeMenu();
-});
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
-window.addEventListener('resize', () => { if (window.innerWidth > 1024) closeMenu(); });
-
-/* ========== SCROLL PROGRESS + ACTIVE NAV + BACK TO TOP ========== */
-const scrollProgress = document.getElementById('scrollProgress');
-const backTop = document.getElementById('backTop');
-const pageSections = document.querySelectorAll('section[id]');
-const navAnchors   = document.querySelectorAll('.nav-links a');
-
-window.addEventListener('scroll', () => {
-    const h = document.documentElement;
-    const scrollTop = h.scrollTop || document.body.scrollTop;
-    const scrollHeight = h.scrollHeight - h.clientHeight;
-    scrollProgress.style.width = ((scrollTop / scrollHeight) * 100) + '%';
-
-    if (scrollTop > 500) backTop.classList.add('show');
-    else backTop.classList.remove('show');
-
-    let current = '';
-    pageSections.forEach(sec => { if (scrollTop >= sec.offsetTop - 130) current = sec.id; });
-    navAnchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
-}, { passive: true });
-
-backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-/* ========== ANIMATED COUNTERS ========== */
-const counterEls = document.querySelectorAll('.stat-number[data-counter]');
-let countersStarted = false;
-function animateCounters() {
-    if (countersStarted) return;
-    countersStarted = true;
-    counterEls.forEach(el => {
-        const target = parseInt(el.dataset.counter) || 0;
-        const suffix = '+';
-        let current = 0;
-        const duration = 1800;
-        const start = performance.now();
-        function step(now) {
-            const progress = Math.min((now - start) / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            current = Math.floor(eased * target);
-            el.textContent = current + suffix;
-            if (progress < 1) requestAnimationFrame(step);
-            else el.textContent = target + suffix;
-        }
-        requestAnimationFrame(step);
-    });
-}
-
-/* ========== SCROLL REVEAL + COUNTER TRIGGER ========== */
-if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    const heroStats = document.querySelector('.hero-stats');
-    if (heroStats) {
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) { animateCounters(); counterObserver.disconnect(); }
-            });
-        }, { threshold: 0.3 });
-        counterObserver.observe(heroStats);
-    }
-} else {
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
-    animateCounters();
-}
-
-/* ========== TESTIMONIALS SLIDER ========== */
-const track = document.getElementById('testimonialTrack');
-const dotsContainer = document.getElementById('testimonialDots');
-if (track && dotsContainer) {
-    const cards = track.querySelectorAll('.testimonial-card');
-    let currentSlide = 0;
-    cards.forEach((_, i) => {
-        const dot = document.createElement('button');
-        dot.className = 'testimonial-dot' + (i === 0 ? ' active' : '');
-        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
-        dot.addEventListener('click', () => goToSlide(i));
-        dotsContainer.appendChild(dot);
-    });
-    function goToSlide(i) {
-        currentSlide = i;
-        track.style.transform = `translateX(-${i * 100}%)`;
-        dotsContainer.querySelectorAll('.testimonial-dot').forEach((d, idx) => d.classList.toggle('active', idx === i));
-    }
-    let autoplay = setInterval(() => { goToSlide((currentSlide + 1) % cards.length); }, 5500);
-    track.addEventListener('mouseenter', () => clearInterval(autoplay));
-    track.addEventListener('mouseleave', () => { autoplay = setInterval(() => { goToSlide((currentSlide + 1) % cards.length); }, 5500); });
-}
-
-/* ========== FAQ ACCORDION ========== */
-document.querySelectorAll('.faq-question').forEach(q => {
-    q.addEventListener('click', () => {
-        const item = q.parentElement;
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(fi => fi.classList.remove('open'));
-        if (!isOpen) item.classList.add('open');
-    });
-});
-
-/* ========== TOAST ========== */
-const toastEl = document.getElementById('toast');
-let toastTimer = null;
-function showToast(message, isError) {
-    toastEl.textContent = message;
-    toastEl.classList.toggle('error', !!isError);
-    toastEl.classList.add('show');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toastEl.classList.remove('show'), 4000);
-}
-
-/* ========== CONTACT FORM ========== */
-const contactForm = document.getElementById('contactForm');
-contactForm.addEventListener('submit', event => {
-    event.preventDefault();
-    const dict = translations[currentLang];
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-    if (!name || !email || !message) { showToast(dict.toast_error, true); return; }
-    showToast(dict.toast_success, false);
-    contactForm.reset();
-});
-
-/* ========== INIT ========== */
-applyLanguage(currentLang);
-</script>
-</body>
-    </html>
+        book_heading: 'Vitabu <span>Vyetu</span>',
+        book_sub: 'Mkusanyiko wa machapisho yetu maalum — yaliyoandaliwa kwa ajili yako.',
+        book_h3: 'Gundua <span>Kitabu Kikuu</span
