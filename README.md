@@ -217,18 +217,16 @@ section { padding: 100px 0; }
 
 .books-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 22px;
     max-width: 1300px;
     margin: 0 auto;
 }
 .book-card {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 14px;
-    padding: 26px 16px 22px;
+    gap: 12px;
+    padding: 14px 14px 18px;
     background: white;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
@@ -236,8 +234,8 @@ section { padding: 100px 0; }
     text-align: center;
     transition: var(--transition);
     color: var(--dark);
-    min-height: 200px;
     position: relative;
+    overflow: hidden;
 }
 .book-card:nth-child(4n+2) { border-top-color: var(--red); }
 .book-card:nth-child(4n+3) { border-top-color: var(--green); }
@@ -247,40 +245,55 @@ section { padding: 100px 0; }
     box-shadow: var(--shadow-lg);
     border-top-color: var(--yellow);
 }
-.book-card-icon {
-    width: 64px;
-    height: 64px;
+.book-thumb {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 12px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #eef4f8, #dde8f0);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 18px;
-    background: rgba(18,59,93,0.08);
+    box-shadow: inset 0 0 0 1px rgba(18,59,93,0.06);
+}
+.book-thumb-fallback {
+    font-size: 2.6rem;
     color: var(--blue);
-    font-size: 1.7rem;
+    opacity: 0.4;
     transition: var(--transition);
 }
-.book-card:hover .book-card-icon {
-    background: var(--blue);
-    color: white;
-    transform: scale(1.08) rotate(-6deg);
+.book-card:hover .book-thumb-fallback { opacity: 0.65; }
+.book-thumb-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.45s ease;
 }
+.book-card:hover .book-thumb-img { transform: scale(1.06); }
 .book-card h4 {
-    font-size: 1rem;
+    font-size: 0.98rem;
     color: var(--dark);
     font-weight: 800;
     letter-spacing: 0.2px;
+    margin-top: 2px;
 }
 .book-open-btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
-    padding: 8px 20px;
+    padding: 8px 18px;
     border-radius: 50px;
     background: var(--green);
     color: white;
     font-size: 0.8rem;
     font-weight: 800;
     transition: var(--transition);
+    margin: 0 auto;
 }
 .book-card:hover .book-open-btn {
     background: var(--green-light);
@@ -414,7 +427,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 65px 0
 
 /* ===== RESPONSIVE ===== */
 @media (min-width: 1600px) { :root { --gutter: 80px; } .hero-grid { gap: 90px; } .services-grid { gap: 30px; } }
-@media (max-width: 1200px) { :root { --gutter: 32px; } .hero-grid, .about-grid { gap: 45px; } .footer-grid { gap: 40px; } .hero-stats { gap: 32px; } .services-grid { gap: 20px; } .books-grid { gap: 16px; } }
+@media (max-width: 1200px) { :root { --gutter: 32px; } .hero-grid, .about-grid { gap: 45px; } .footer-grid { gap: 40px; } .hero-stats { gap: 32px; } .services-grid { gap: 20px; } .books-grid { gap: 18px; } }
 @media (max-width: 1024px) {
     :root { --gutter: 26px; --header-h: 72px; }
     .menu-toggle { display: inline-flex; }
@@ -446,7 +459,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 65px 0
     section { padding: 80px 0; }
     .section-heading { margin-bottom: 42px; }
     .trust-logos { gap: 30px; }
-    .books-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; }
+    .books-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
 }
 @media (max-width: 768px) {
     :root { --gutter: 20px; --header-h: 68px; }
@@ -477,9 +490,9 @@ footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 65px 0
     .services-grid { grid-template-columns: 1fr; gap: 16px; }
     .service-card { padding: 26px 20px; }
     .service-icon { width: 60px; height: 60px; font-size: 1.5rem; border-radius: 16px; }
-    .books-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
-    .book-card { min-height: 175px; padding: 22px 12px 18px; gap: 10px; }
-    .book-card-icon { width: 54px; height: 54px; font-size: 1.4rem; border-radius: 14px; }
+    .books-grid { grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: 14px; }
+    .book-card { padding: 12px 12px 16px; gap: 10px; }
+    .book-thumb-fallback { font-size: 2rem; }
     .book-card h4 { font-size: 0.9rem; }
     .book-open-btn { padding: 7px 16px; font-size: 0.75rem; }
     .contact-info, .contact-form { padding: 26px 20px; border-radius: 18px; }
@@ -501,7 +514,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 65px 0
     .floating-actions { right: 14px; bottom: 16px; gap: 10px; }
     .fab-wa, .fab-top { width: 50px; height: 50px; font-size: 1.3rem; }
 }
-@media (max-width: 560px) { .form-row { grid-template-columns: 1fr; gap: 0; } .hero-card img { height: 250px; min-height: 200px; } .about-image img { height: 250px; } .social-links a, .footer-social a { width: 38px; height: 38px; } .books-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .form-row { grid-template-columns: 1fr; gap: 0; } .hero-card img { height: 250px; min-height: 200px; } .about-image img { height: 250px; } .social-links a, .footer-social a { width: 38px; height: 38px; } .books-grid { grid-template-columns: 1fr 1fr; gap: 12px; } }
 @media (max-width: 400px) {
     :root { --gutter: 16px; }
     .logo { font-size: 0.92rem; }
@@ -511,9 +524,9 @@ footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 65px 0
     .hero-badge { font-size: 0.7rem; }
     .stat-label { font-size: 0.6rem; }
     .contact-info, .contact-form { padding: 22px 16px; }
-    .book-card { min-height: 160px; padding: 18px 10px 14px; }
-    .book-card-icon { width: 48px; height: 48px; font-size: 1.25rem; }
+    .book-card { padding: 10px 10px 14px; gap: 8px; }
     .book-card h4 { font-size: 0.82rem; }
+    .book-open-btn { padding: 6px 14px; font-size: 0.7rem; }
 }
 </style>
 </head>
@@ -661,76 +674,133 @@ footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 65px 0
             <div class="section-line"></div>
         </div>
         <div class="books-grid">
+
             <a href="https://drive.google.com/file/d/1NylBaFS75COFm77DGfwiCjBOws_F2vIb/view?usp=drivesdk" class="book-card reveal" target="_blank" rel="noopener noreferrer">
-                <div class="book-card-icon"><i class="fas fa-book"></i></div>
+                <div class="book-thumb">
+                    <i class="fas fa-book book-thumb-fallback"></i>
+                    <img class="book-thumb-img" src="https://drive.google.com/thumbnail?id=1NylBaFS75COFm77DGfwiCjBOws_F2vIb&sz=w800" alt="JTL Zanzibar Kitabu 1" loading="lazy" onerror="this.style.display='none'">
+                </div>
                 <h4><span data-i18n="book_card_title">Kitabu</span> 1</h4>
                 <span class="book-open-btn"><i class="fas fa-external-link-alt"></i> <span data-i18n="book_open_btn">Fungua</span></span>
             </a>
+
             <a href="https://drive.google.com/file/d/1RhFt7Vn7C5G6Nppqp94Cq806nlSUB67B/view?usp=drivesdk" class="book-card reveal" target="_blank" rel="noopener noreferrer">
-                <div class="book-card-icon"><i class="fas fa-book"></i></div>
+                <div class="book-thumb">
+                    <i class="fas fa-book book-thumb-fallback"></i>
+                    <img class="book-thumb-img" src="https://drive.google.com/thumbnail?id=1RhFt7Vn7C5G6Nppqp94Cq806nlSUB67B&sz=w800" alt="JTL Zanzibar Kitabu 2" loading="lazy" onerror="this.style.display='none'">
+                </div>
                 <h4><span data-i18n="book_card_title">Kitabu</span> 2</h4>
                 <span class="book-open-btn"><i class="fas fa-external-link-alt"></i> <span data-i18n="book_open_btn">Fungua</span></span>
             </a>
+
             <a href="https://drive.google.com/file/d/17hq9CO5WS7HumpG-PmEMCXUoVWZVOiwA/view?usp=drivesdk" class="book-card reveal" target="_blank" rel="noopener noreferrer">
-                <div class="book-card-icon"><i class="fas fa-book"></i></div>
+                <div class="book-thumb">
+                    <i class="fas fa-book book-thumb-fallback"></i>
+                    <img class="book-thumb-img" src="https://drive.google.com/thumbnail?id=17hq9CO5WS7HumpG-PmEMCXUoVWZVOiwA&sz=w800" alt="JTL Zanzibar Kitabu 3" loading="lazy" onerror="this.style.display='none'">
+                </div>
                 <h4><span data-i18n="book_card_title">Kitabu</span> 3</h4>
                 <span class="book-open-btn"><i class="fas fa-external-link-alt"></i> <span data-i18n="book_open_btn">Fungua</span></span>
             </a>
+
             <a href="https://drive.google.com/file/d/1yu0aPmrH0qZ69tZQu2IHeNxltRqV-qlr/view?usp=drivesdk" class="book-card reveal" target="_blank" rel="noopener noreferrer">
-                <div class="book-card-icon"><i class="fas fa-book"></i></div>
+                <div class="book-thumb">
+                    <i class="fas fa-book book-thumb-fallback"></i>
+                    <img class="book-thumb-img" src="https://drive.google.com/thumbnail?id=1yu0aPmrH0qZ69tZQu2IHeNxltRqV-qlr&sz=w800" alt="JTL Zanzibar Kitabu 4" loading="lazy" onerror="this.style.display='none'">
+                </div>
                 <h4><span data-i18n="book_card_title">Kitabu</span> 4</h4>
                 <span class="book-open-btn"><i class="fas fa-external-link-alt"></i> <span data-i18n="book_open_btn">Fungua</span></span>
             </a>
+
             <a href="https://drive.google.com/file/d/1OYJINnKlPNgEBuTZh04ql9UQlYuzLTCx/view?usp=drivesdk" class="book-card reveal" target="_blank" rel="noopener noreferrer">
-                <div class="book-card-icon"><i class="fas fa-book"></i></div>
+                <div class="book-thumb">
+                    <i class="fas fa-book book-thumb-fallback"></i>
+                    <img class="book-thumb-img" src="https://drive.google.com/thumbnail?id=1OYJINnKlPNgEBuTZh04ql9UQlYuzLTCx&sz=w800" alt="JTL Zanzibar Kitabu 5" loading="lazy" onerror="this.style.display='none'">
+                </div>
                 <h4><span data-i18n="book_card_title">Kitabu</span> 5</h4>
                 <span class="book-open-btn"><i class="fas fa-external-link-alt"></i> <span data-i18n="book_open_btn">Fungua</span></span>
             </a>
+
             <a href="https://drive.google.com/file/d/1mHaGzgVDuDtYGAbYd7a6qDEOT0z1GlYH/view?usp=drivesdk" class="book-card reveal" target="_blank" rel="noopener noreferrer">
-                <div class="book-card-icon"><i class="fas fa-book"></i></div>
+                <div class="book-thumb">
+                    <i class="fas fa-book book-thumb-fallback"></i>
+                    <img class="book-thumb-img" src="https://drive.google.com/thumbnail?id=1mHaGzgVDuDtYGAbYd7a6qDEOT0z1GlYH&sz=w800" alt="JTL Zanzibar Kitabu 6" loading="lazy" onerror="this.style.display='none'">
+                </div>
                 <h4><span data-i18n="book_card_title">Kitabu</span> 6</h4>
                 <span class="book-open-btn"><i class="fas fa-external-link-alt"></i> <span data-i18n="book_open_btn">Fungua</span></span>
             </a>
+
             <a href="https://drive.google.com/file/d/1XmRVE7zUulK0a2bsc95pEwWdLKwsk2mW/view?usp=drivesdk" class="book-card reveal" target="_blank" rel="noopener noreferrer">
-                <div class="book-card-icon"><i class="fas fa-book"></i></div>
+                <div class="book-thumb">
+                    <i class="fas fa-book book-thumb-fallback"></i>
+                    <img class="book-thumb-img" src="https://drive.google.com/thumbnail?id=1XmRVE7zUulK0a2bsc95pEwWdLKwsk2mW&sz=w800" alt="JTL Zanzibar Kitabu 7" loading="lazy" onerror="this.style.display='none'">
+                </div>
                 <h4><span data-i18n="book_card_title">Kitabu</span> 7</h4>
                 <span class="book-open-btn"><i class="fas fa-external-link-alt"></i> <span data-i18n="book_open_btn">Fungua</span></span>
             </a>
+
             <a href="https://drive.google.com/file/d/1eC6D8_AivYlWwrUzwUFdgpH69nDeq7uz/view?usp=drivesdk" class="book-card reveal" target="_blank" rel="noopener noreferrer">
-                <div class="book-card-icon"><i class="fas fa-book"></i></div>
+                <div class="book-thumb">
+                    <i class="fas fa-book book-thumb-fallback"></i>
+                    <img class="book-thumb-img" src="https://drive.google.com/thumbnail?id=1eC6D8_AivYlWwrUzwUFdgpH69nDeq7uz&sz=w800" alt="JTL Zanzibar Kitabu 8" loading="lazy" onerror="this.style.display='none'">
+                </div>
                 <h4><span data-i18n="book_card_title">Kitabu</span> 8</h4>
                 <span class="book-open-btn"><i class="fas fa-external-link-alt"></i> <span data-i18n="book_open_btn">Fungua</span></span>
             </a>
+
             <a href="https://drive.google.com/file/d/1qBvcQiLGGOEHLzB4raibLcbvquVwM24q/view?usp=drivesdk" class="book-card reveal" target="_blank" rel="noopener noreferrer">
-                <div class="book-card-icon"><i class="fas fa-book"></i></div>
+                <div class="book-thumb">
+                    <i class="fas fa-book book-thumb-fallback"></i>
+                    <img class="book-thumb-img" src="https://drive.google.com/thumbnail?id=1qBvcQiLGGOEHLzB4raibLcbvquVwM24q&sz=w800" alt="JTL Zanzibar Kitabu 9" loading="lazy" onerror="this.style.display='none'">
+                </div>
                 <h4><span data-i18n="book_card_title">Kitabu</span> 9</h4>
                 <span class="book-open-btn"><i class="fas fa-external-link-alt"></i> <span data-i18n="book_open_btn">Fungua</span></span>
             </a>
+
             <a href="https://drive.google.com/file/d/1A8iyYDPTKlyVlWXA_l78aVlERLbIZH1D/view?usp=drivesdk" class="book-card reveal" target="_blank" rel="noopener noreferrer">
-                <div class="book-card-icon"><i class="fas fa-book"></i></div>
+                <div class="book-thumb">
+                    <i class="fas fa-book book-thumb-fallback"></i>
+                    <img class="book-thumb-img" src="https://drive.google.com/thumbnail?id=1A8iyYDPTKlyVlWXA_l78aVlERLbIZH1D&sz=w800" alt="JTL Zanzibar Kitabu 10" loading="lazy" onerror="this.style.display='none'">
+                </div>
                 <h4><span data-i18n="book_card_title">Kitabu</span> 10</h4>
                 <span class="book-open-btn"><i class="fas fa-external-link-alt"></i> <span data-i18n="book_open_btn">Fungua</span></span>
             </a>
+
             <a href="https://drive.google.com/file/d/10GL-mJO9BPYfQ1AZELvFco8MqVJhm5ri/view?usp=drivesdk" class="book-card reveal" target="_blank" rel="noopener noreferrer">
-                <div class="book-card-icon"><i class="fas fa-book"></i></div>
+                <div class="book-thumb">
+                    <i class="fas fa-book book-thumb-fallback"></i>
+                    <img class="book-thumb-img" src="https://drive.google.com/thumbnail?id=10GL-mJO9BPYfQ1AZELvFco8MqVJhm5ri&sz=w800" alt="JTL Zanzibar Kitabu 11" loading="lazy" onerror="this.style.display='none'">
+                </div>
                 <h4><span data-i18n="book_card_title">Kitabu</span> 11</h4>
                 <span class="book-open-btn"><i class="fas fa-external-link-alt"></i> <span data-i18n="book_open_btn">Fungua</span></span>
             </a>
+
             <a href="https://drive.google.com/file/d/1XtZeDFj4hDVtIv8sIXQpbVffgz88ctHj/view?usp=drivesdk" class="book-card reveal" target="_blank" rel="noopener noreferrer">
-                <div class="book-card-icon"><i class="fas fa-book"></i></div>
+                <div class="book-thumb">
+                    <i class="fas fa-book book-thumb-fallback"></i>
+                    <img class="book-thumb-img" src="https://drive.google.com/thumbnail?id=1XtZeDFj4hDVtIv8sIXQpbVffgz88ctHj&sz=w800" alt="JTL Zanzibar Kitabu 12" loading="lazy" onerror="this.style.display='none'">
+                </div>
                 <h4><span data-i18n="book_card_title">Kitabu</span> 12</h4>
                 <span class="book-open-btn"><i class="fas fa-external-link-alt"></i> <span data-i18n="book_open_btn">Fungua</span></span>
             </a>
+
             <a href="https://drive.google.com/file/d/1KjGr6b2AaTRQ3_CHWRB7FrXDeD-yaCtU/view?usp=drivesdk" class="book-card reveal" target="_blank" rel="noopener noreferrer">
-                <div class="book-card-icon"><i class="fas fa-book"></i></div>
+                <div class="book-thumb">
+                    <i class="fas fa-book book-thumb-fallback"></i>
+                    <img class="book-thumb-img" src="https://drive.google.com/thumbnail?id=1KjGr6b2AaTRQ3_CHWRB7FrXDeD-yaCtU&sz=w800" alt="JTL Zanzibar Kitabu 13" loading="lazy" onerror="this.style.display='none'">
+                </div>
                 <h4><span data-i18n="book_card_title">Kitabu</span> 13</h4>
                 <span class="book-open-btn"><i class="fas fa-external-link-alt"></i> <span data-i18n="book_open_btn">Fungua</span></span>
             </a>
+
             <a href="https://drive.google.com/file/d/1WlACPWKpCool8LpzMFvM4qhwNVdBs9Fn/view?usp=drivesdk" class="book-card reveal" target="_blank" rel="noopener noreferrer">
-                <div class="book-card-icon"><i class="fas fa-book"></i></div>
+                <div class="book-thumb">
+                    <i class="fas fa-book book-thumb-fallback"></i>
+                    <img class="book-thumb-img" src="https://drive.google.com/thumbnail?id=1WlACPWKpCool8LpzMFvM4qhwNVdBs9Fn&sz=w800" alt="JTL Zanzibar Kitabu 14" loading="lazy" onerror="this.style.display='none'">
+                </div>
                 <h4><span data-i18n="book_card_title">Kitabu</span> 14</h4>
                 <span class="book-open-btn"><i class="fas fa-external-link-alt"></i> <span data-i18n="book_open_btn">Fungua</span></span>
             </a>
+
         </div>
     </div>
 </section>
